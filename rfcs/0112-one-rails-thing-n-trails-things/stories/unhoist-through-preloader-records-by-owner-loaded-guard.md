@@ -1,7 +1,7 @@
 ---
 title: "Return ThroughAssociation#recordsByOwner's loaded? guard to Rails' per-owner arm"
-status: blocked
-updated: 2026-08-20
+status: closed
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
 packages: []
@@ -11,10 +11,10 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: "2026-08-20T16:43:10Z"
-assignee: "port-activejob-test-helper-for-destroy-association-async"
-blocked-by: "Blocked on converge-through-preloader-records-by-owner-onto-public-reader (status: ready, unclaimed). That story removes the unconditional pre-fetch in recordsByOwner (the two 'await Promise.all(...recordsByOwner())' lines above the loop, through-association.ts) by making the merge helpers force their own children. Until it lands, the per-owner 'loaded?' -> continue arm of through_association.rb:12-15 cannot replace the hoisted whole-loop early return: the pre-fetch still runs unconditionally, so unhoisting would issue queries for a fully-loaded owners list that Rails never issues. This story's own acceptance criteria name that ordering."
-closed-reason: null
+claim: null
+assignee: null
+blocked-by: null
+closed-reason: "Delivered by PR #6826 (17faad119, 'converge records_by_owner control flow'). On origin/main packages/activerecord/src/associations/preloader/through-association.ts:56-98 recordsByOwner is a single loop over owners with the per-owner 'if (this.isLoaded(owner)) { result.set(owner, this.targetFor(owner)); continue; }' arm matching through_association.rb:12-15; the hoisted whole-loop early return and the 'owners.length > 0' guard are both gone (git grep 'owners.length > 0' returns nothing in that file). Prereq converge-through-preloader-records-by-owner-onto-public-reader is done."
 ---
 
 ## Context
