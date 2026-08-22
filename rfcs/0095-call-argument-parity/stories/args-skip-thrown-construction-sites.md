@@ -1,6 +1,6 @@
 ---
 title: "Stop pairing throw new Error guards with Ruby constructors in the args gate"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0095-call-argument-parity"
 cluster: api-compare
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6889
 claim: "2026-08-22T23:01:35Z"
 assignee: "args-skip-thrown-construction-sites"
 blocked-by: null
