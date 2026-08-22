@@ -1,14 +1,13 @@
 ---
 title: "Consolidate the duplicated ThroughAssociation module into one mixin"
 status: done
-updated: 2026-08-20
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: dead-mixin-companions
 packages: []
 deps: []
 deps-rfc: []
 est-loc: 300
-priority: 17
 pr: 6757
 claim: "2026-08-20T01:56:44Z"
 assignee: "consolidate-duplicated-through-association-module"
