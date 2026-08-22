@@ -7,7 +7,6 @@ cluster: split-stores
 deps: []
 deps-rfc: []
 est-loc: 180
-priority: 40
 pr: null
 claim: null
 assignee: null
