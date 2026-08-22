@@ -1,7 +1,7 @@
 ---
 title: "LengthValidator :in/:within duck-types a range and re-derives max instead of calling Range#max"
-status: draft
-updated: 2026-08-08
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
