@@ -1,6 +1,6 @@
 ---
 title: "extra-surface scores structural interface members against the wrong Ruby file"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0117-arel-extra-surface-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 180
 priority: null
-pr: null
+pr: 6883
 claim: "2026-08-22T21:13:02Z"
 assignee: "extra-surface-scores-structural-interface-members"
 blocked-by: null
