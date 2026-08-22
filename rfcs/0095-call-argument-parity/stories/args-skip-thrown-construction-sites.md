@@ -1,7 +1,7 @@
 ---
 title: "Stop pairing throw new Error guards with Ruby constructors in the args gate"
-status: ready
-updated: 2026-08-21
+status: claimed
+updated: 2026-08-22
 rfc: "0095-call-argument-parity"
 cluster: api-compare
 packages: ["activerecord", "arel"]
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-22T23:01:35Z"
+assignee: "args-skip-thrown-construction-sites"
 blocked-by: null
 closed-reason: null
 ---
