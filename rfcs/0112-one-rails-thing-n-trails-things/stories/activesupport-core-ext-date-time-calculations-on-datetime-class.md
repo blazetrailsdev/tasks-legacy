@@ -1,6 +1,6 @@
 ---
 title: "Port core_ext/date_time/calculations.rb onto the DateTime class, not free functions"
-status: ready
+status: claimed
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: dead-mixin-companions
@@ -9,8 +9,8 @@ deps-rfc: []
 est-loc: 350
 priority: 30
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-22T23:00:03Z"
+assignee: "activesupport-core-ext-date-time-calculations-on-datetime-class"
 blocked-by: null
 closed-reason: null
 ---
