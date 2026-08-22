@@ -1,6 +1,6 @@
 ---
 title: "PostgreSQLAdapter#buildExplainClause invents option validation Rails does not have"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: 55
-pr: null
+pr: 6890
 claim: "2026-08-22T22:50:07Z"
 assignee: "wave-5d-tail-sweep"
 blocked-by: null
