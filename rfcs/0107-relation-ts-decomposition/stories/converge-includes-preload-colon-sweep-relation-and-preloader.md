@@ -1,6 +1,6 @@
 ---
 title: "Sweep includes/preload call sites onto the colon spelling: relation, preloader and test-helpers"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: null
+pr: 6895
 claim: "2026-08-22T23:05:06Z"
 assignee: "converge-includes-preload-colon-sweep-relation-and-preloader"
 blocked-by: null
