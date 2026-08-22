@@ -1,7 +1,7 @@
 ---
 title: "Model.new does not defer nested parameter hashes"
-status: draft
-updated: 2026-08-03
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
