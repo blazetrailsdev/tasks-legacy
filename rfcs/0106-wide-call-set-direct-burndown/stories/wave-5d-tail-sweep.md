@@ -1,6 +1,6 @@
 ---
 title: "wave-5d-tail-sweep"
-status: ready
+status: claimed
 updated: 2026-08-22
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-22T22:50:07Z"
+assignee: "wave-5d-tail-sweep"
 blocked-by: null
 closed-reason: null
 ---
