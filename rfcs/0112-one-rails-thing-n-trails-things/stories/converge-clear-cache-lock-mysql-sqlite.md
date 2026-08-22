@@ -1,7 +1,7 @@
 ---
 title: "clear_cache! mutates the statement pool outside the connection lock on mysql2/sqlite3"
-status: draft
-updated: 2026-08-16
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
