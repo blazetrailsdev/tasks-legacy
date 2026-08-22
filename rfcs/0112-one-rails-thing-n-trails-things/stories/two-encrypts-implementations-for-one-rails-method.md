@@ -1,6 +1,6 @@
 ---
 title: "One Rails encrypts, two trails implementations"
-status: ready
+status: claimed
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 150
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-22T23:57:28Z"
+assignee: "wave-5f-head-sweep"
 blocked-by: null
 closed-reason: null
 ---
