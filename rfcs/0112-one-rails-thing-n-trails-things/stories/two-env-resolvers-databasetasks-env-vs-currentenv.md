@@ -1,7 +1,7 @@
 ---
 title: "DatabaseTasks.env and currentEnv() are two resolvers where Rails has one"
-status: draft
-updated: 2026-07-31
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
