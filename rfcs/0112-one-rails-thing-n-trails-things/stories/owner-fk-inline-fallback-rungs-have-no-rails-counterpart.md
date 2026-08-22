@@ -1,13 +1,12 @@
 ---
 title: "Remove the no-reflection fallback rungs from ownerForeignKeyColumns"
 status: done
-updated: 2026-08-19
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: dead-mixin-companions
 deps: []
 deps-rfc: []
 est-loc: 80
-priority: 13
 pr: 6738
 claim: "2026-08-19T12:59:52Z"
 assignee: "days-into-week-duplicated-in-date-calculations"
