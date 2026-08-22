@@ -1,7 +1,7 @@
 ---
 title: "InsertAll defers its constructor tail (@returning, unique_by, ensure_valid_options) to execute"
-status: draft
-updated: 2026-08-08
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
