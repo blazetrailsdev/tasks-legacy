@@ -1,7 +1,7 @@
 ---
 title: "Remove Relation#distinctOn — Rails has distinct_on only on Arel::SelectManager"
-status: draft
-updated: 2026-08-17
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
