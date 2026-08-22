@@ -8,7 +8,6 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 120
-priority: 55
 pr: 6890
 claim: "2026-08-22T22:50:07Z"
 assignee: "wave-5d-tail-sweep"
