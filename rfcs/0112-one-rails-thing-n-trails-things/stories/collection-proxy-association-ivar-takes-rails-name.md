@@ -1,7 +1,7 @@
 ---
 title: "CollectionProxy's @association ivar cannot take the Rails name while the AssociationRelation this-alias holds it"
-status: draft
-updated: 2026-08-18
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
