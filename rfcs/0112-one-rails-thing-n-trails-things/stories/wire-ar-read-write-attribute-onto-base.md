@@ -7,7 +7,7 @@ cluster: dead-mixin-companions
 deps: ["move-accessed-fields-tracking-to-attribute"]
 deps-rfc: []
 est-loc: 60
-priority: null
+priority: 41
 pr: null
 claim: null
 assignee: null
