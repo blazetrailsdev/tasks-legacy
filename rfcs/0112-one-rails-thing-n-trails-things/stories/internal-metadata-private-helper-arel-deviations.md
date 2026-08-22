@@ -1,13 +1,12 @@
 ---
 title: "InternalMetadata private helpers: bare .eq vs BindParam, memoized currentTime, dead _q"
 status: done
-updated: 2026-08-21
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
 deps-rfc: []
 est-loc: 50
-priority: 26
 pr: 6811
 claim: "2026-08-21T11:40:36Z"
 assignee: "hash-config-primary-resolves-via-global-configurations"
