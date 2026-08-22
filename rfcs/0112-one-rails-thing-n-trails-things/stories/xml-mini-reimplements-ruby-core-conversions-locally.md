@@ -1,7 +1,7 @@
 ---
 title: "XmlMini defines private to_i/to_f/to_d/to_s instead of shared core-ext ports; its to_s is not inspect-faithful"
-status: draft
-updated: 2026-08-13
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: dead-mixin-companions
 packages: []
