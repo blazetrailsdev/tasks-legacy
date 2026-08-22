@@ -1,7 +1,7 @@
 ---
 title: "Relation#with builds a bespoke _ctes array instead of with_values + build_with"
-status: draft
-updated: 2026-08-13
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
