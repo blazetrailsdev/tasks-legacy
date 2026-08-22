@@ -5,7 +5,8 @@ updated: 2026-08-22
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: []
-deps: []
+deps:
+  - time-now-cheap-enough-for-the-clock-path
 deps-rfc: []
 est-loc: null
 priority: null
