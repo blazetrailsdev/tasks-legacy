@@ -1,6 +1,6 @@
 ---
 title: "Make Time.now cheap enough to sit on the production clock read"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 180
 priority: null
-pr: null
+pr: 6890
 claim: "2026-08-22T22:50:07Z"
 assignee: "wave-5d-tail-sweep"
 blocked-by: null
