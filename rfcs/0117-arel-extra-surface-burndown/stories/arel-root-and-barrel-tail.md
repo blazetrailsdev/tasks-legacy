@@ -1,6 +1,6 @@
 ---
 title: "Retire arel's root-file and barrel extra-surface residue"
-status: ready
+status: claimed
 updated: 2026-08-22
 rfc: "0117-arel-extra-surface-burndown"
 cluster: null
@@ -15,8 +15,8 @@ deps-rfc: []
 est-loc: 150
 priority: 10
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-22T23:08:30Z"
+assignee: "arel-root-and-barrel-tail"
 blocked-by: null
 closed-reason: null
 ---
