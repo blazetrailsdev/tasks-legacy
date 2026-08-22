@@ -1,7 +1,7 @@
 ---
 title: "apply_join_dependency delegates to the adapter's distinct_relation_for_primary_key instead of the bespoke _materializeLimitedIds"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
