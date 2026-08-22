@@ -1,7 +1,7 @@
 ---
 title: "Rename the adapter statement-pool field to _statements and drop _statementPoolForTest"
-status: draft
-updated: 2026-07-29
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
