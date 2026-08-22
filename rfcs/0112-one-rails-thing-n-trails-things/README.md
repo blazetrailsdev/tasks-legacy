@@ -3,7 +3,7 @@ rfc: "0112-one-rails-thing-n-trails-things"
 title: "One Rails thing, N trails things — duplicate bodies and split stores"
 status: active
 created: 2026-08-18
-updated: 2026-08-19
+updated: 2026-08-22
 owner: "@deanmarano"
 packages:
   - "activerecord"
@@ -26,6 +26,7 @@ related-rfcs:
   - "0006-collection-store-unification"
   - "0026-adapter-layout-fidelity"
   - "0107-relation-ts-decomposition"
+priority: 2
 ---
 
 # RFC 0112 — One Rails thing, N trails things
