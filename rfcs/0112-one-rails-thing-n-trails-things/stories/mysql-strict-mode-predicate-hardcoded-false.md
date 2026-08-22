@@ -1,7 +1,7 @@
 ---
 title: "AbstractMysqlAdapter#strict_mode? is a hardcoded false stub; Rails reads @config.fetch(:strict, true) and the real decision is duplicated inline in _buildInitSql"
-status: draft
-updated: 2026-08-15
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
