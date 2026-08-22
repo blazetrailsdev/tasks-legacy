@@ -1,6 +1,6 @@
 ---
 title: "converge-remaining-activerecord-copy-on-write-stores-onto-class-attribute"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6887
 claim: "2026-08-22T22:33:40Z"
 assignee: "converge-remaining-activerecord-copy-on-write-stores-onto-class-attribute"
 blocked-by: null
