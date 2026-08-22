@@ -1,6 +1,6 @@
 ---
 title: "The { format } EXPLAIN option arm is invented surface Rails' join cannot express"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 140
 priority: null
-pr: null
+pr: 6888
 claim: "2026-08-22T22:41:19Z"
 assignee: "missing-rails-call-tag-inert-on-top-level-function"
 blocked-by: null
