@@ -8,6 +8,7 @@ packages: []
 deps:
   - retire-collection-proxy-query-executor-flag
   - hoist-mid-load-guard-to-doasyncfindtarget-callers
+  - resolve-nested-through-unpersisted-owner-test-against-rails
 deps-rfc: []
 est-loc: null
 priority: null
