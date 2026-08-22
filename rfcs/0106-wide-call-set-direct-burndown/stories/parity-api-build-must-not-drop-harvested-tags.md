@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build silently drops pre-existing @missingRailsCall tags it did not migrate"
-status: in-progress
+status: done
 updated: 2026-08-22
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
