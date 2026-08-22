@@ -1,6 +1,6 @@
 ---
 title: "NumberConverter#execute gates on the invented isValidFloat, not Rails' valid_bigdecimal"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 160
 priority: null
-pr: null
+pr: 6885
 claim: "2026-08-22T21:20:01Z"
 assignee: "wave-5d-head-sweep"
 blocked-by: null
