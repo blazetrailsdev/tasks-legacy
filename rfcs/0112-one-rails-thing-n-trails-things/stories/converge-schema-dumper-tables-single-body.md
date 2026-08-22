@@ -1,7 +1,7 @@
 ---
 title: "Collapse SchemaDumper#tables' duplicated sync fast path into Rails' single body"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
