@@ -1,7 +1,7 @@
 ---
 title: "AssociationRelation create/build use scoping instead of the _pendingThroughScope field"
-status: draft
-updated: 2026-08-12
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
