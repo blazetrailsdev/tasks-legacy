@@ -1,7 +1,7 @@
 ---
 title: "Converge or remove the trailing CompositePrimaryKeyMismatchError raises in _findHasOneTarget"
-status: draft
-updated: 2026-08-02
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
