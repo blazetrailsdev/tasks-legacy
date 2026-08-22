@@ -1,7 +1,7 @@
 ---
 title: "Port CurrentAttributes' body to current_attributes.rb (defaults, Delegation.generate, IsolatedExecutionState, reset)"
-status: draft
-updated: 2026-08-14
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
