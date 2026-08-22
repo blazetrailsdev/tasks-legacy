@@ -1,7 +1,7 @@
 ---
 title: "Port json_shared_test_cases.rb (25 cases) as a shared module"
-status: draft
-updated: 2026-07-28
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
