@@ -1,7 +1,7 @@
 ---
 title: "stringify_keys/symbolize_keys route through a ported transform_keys"
-status: draft
-updated: 2026-08-07
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
