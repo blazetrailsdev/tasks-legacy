@@ -1,6 +1,6 @@
 ---
 title: "add_constraints applies the chain head's scope outside the reverse_each fold (association_scope.rb:131-156)"
-status: in-progress
+status: done
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
