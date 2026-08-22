@@ -2,7 +2,7 @@
 title: "collapse-collection-proxy-toarray-onto-load"
 status: blocked
 updated: 2026-08-22
-rfc: "0114-collection-proxy-decomposition"
+rfc: "0075-collection-association-target-fidelity"
 cluster: null
 packages: []
 deps:
@@ -65,7 +65,7 @@ null scope instead, which is what forces the no-cache arm.
 
 So the collapse is gated on the `find_target?` / `_queryExecutor` residue that
 RFC 0075 owns — specifically
-`0075-collection-association-target-fidelity/retire-collection-proxy-query-executor-flag`
+`retire-collection-proxy-query-executor-flag`
 and `.../hoist-mid-load-guard-to-doasyncfindtarget-callers`.
 
 ## Acceptance criteria
