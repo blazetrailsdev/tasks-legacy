@@ -1,7 +1,7 @@
 ---
 title: "Relation keeps promise bookkeeping where Rails keeps @future_result/scheduled?"
-status: draft
-updated: 2026-08-14
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
