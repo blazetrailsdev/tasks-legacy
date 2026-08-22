@@ -1,7 +1,7 @@
 ---
 title: "Converge Model.validates onto Rails' generic validator lookup"
-status: draft
-updated: 2026-08-17
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
