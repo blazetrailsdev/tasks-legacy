@@ -1,6 +1,6 @@
 ---
 title: "Time.new/Time.now should take MRI's in: and precision: kwargs"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 160
 priority: null
-pr: null
+pr: 6888
 claim: "2026-08-22T22:41:19Z"
 assignee: "missing-rails-call-tag-inert-on-top-level-function"
 blocked-by: null
