@@ -1,7 +1,7 @@
 ---
 title: "The { format } EXPLAIN option arm is invented surface Rails' join cannot express"
-status: draft
-updated: 2026-08-21
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
 packages: []
