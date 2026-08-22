@@ -1,7 +1,7 @@
 ---
 title: "Retire the anonymous-inline reflection fallback and its two klass==null guards"
-status: draft
-updated: 2026-08-12
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
