@@ -1,6 +1,6 @@
 ---
 title: "rounding-helper convert_to_decimal drops the Rational arm and its digit_count call"
-status: in-progress
+status: done
 updated: 2026-08-22
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
