@@ -1,7 +1,7 @@
 ---
 title: "converge-ar-dirty-generic-names-onto-dirty-ts"
-status: ready
-updated: 2026-08-21
+status: claimed
+updated: 2026-08-22
 rfc: "0096-naming-identifier-burndown"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-22T23:01:54Z"
+assignee: "converge-ar-dirty-generic-names-onto-dirty-ts"
 blocked-by: null
 closed-reason: null
 ---
