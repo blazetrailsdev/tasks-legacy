@@ -1,7 +1,7 @@
 ---
 title: "mismatched_foreign_key_details omits primary_key_column; the lookup is deferred to a trails-only _enrichMismatchedForeignKey rebuild"
-status: draft
-updated: 2026-08-15
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
