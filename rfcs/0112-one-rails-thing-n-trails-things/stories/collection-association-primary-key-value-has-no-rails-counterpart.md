@@ -1,6 +1,6 @@
 ---
 title: "primaryKeyValue has no Rails counterpart and returns a tuple no call site wants"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 180
-pr: null
+pr: 6894
 claim: "2026-08-22T23:20:01Z"
 assignee: "wave-5e-head-sweep"
 blocked-by: null
