@@ -1,14 +1,13 @@
 ---
 title: "Converge DateTimeType#applySecondsPrecision onto the Helpers::TimeValue mixin"
 status: done
-updated: 2026-08-19
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: dead-mixin-companions
 packages: []
 deps: []
 deps-rfc: []
 est-loc: 90
-priority: 11
 pr: 6738
 claim: "2026-08-19T12:59:52Z"
 assignee: "days-into-week-duplicated-in-date-calculations"
