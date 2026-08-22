@@ -1,7 +1,7 @@
 ---
 title: "AssociationScope _mergeReferencedJoins reimplements merger.rb instead of delegating to the join folders"
-status: draft
-updated: 2026-07-31
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
