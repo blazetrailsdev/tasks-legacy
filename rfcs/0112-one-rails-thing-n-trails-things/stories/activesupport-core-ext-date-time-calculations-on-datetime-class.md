@@ -7,7 +7,6 @@ cluster: dead-mixin-companions
 deps: []
 deps-rfc: []
 est-loc: 350
-priority: 30
 pr: null
 claim: "2026-08-22T23:00:03Z"
 assignee: "activesupport-core-ext-date-time-calculations-on-datetime-class"
