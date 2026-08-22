@@ -1,13 +1,12 @@
 ---
 title: "No-arg establishConnection must resolve from the configurations registry, not fall back to disk"
 status: done
-updated: 2026-08-20
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
 deps-rfc: []
 est-loc: 150
-priority: 24
 pr: 6777
 claim: "2026-08-20T17:22:15Z"
 assignee: "converge-event-children-invention"
