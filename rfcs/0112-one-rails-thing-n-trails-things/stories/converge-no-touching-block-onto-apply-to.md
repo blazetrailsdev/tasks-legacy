@@ -7,7 +7,6 @@ cluster: duplicate-bodies
 deps: []
 deps-rfc: []
 est-loc: 30
-priority: 50
 pr: null
 claim: null
 assignee: null
