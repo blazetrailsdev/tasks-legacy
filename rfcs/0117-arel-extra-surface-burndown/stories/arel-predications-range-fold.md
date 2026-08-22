@@ -1,6 +1,6 @@
 ---
 title: "Fold predications-range.ts back into predications.ts and delete it"
-status: in-progress
+status: done
 updated: 2026-08-22
 rfc: "0117-arel-extra-surface-burndown"
 cluster: null
