@@ -1,7 +1,7 @@
 ---
 title: "GlobalID#uri is the string form, not Rails' URI::GID object"
-status: draft
-updated: 2026-08-08
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: wrapper-vs-subclass
 packages: []
