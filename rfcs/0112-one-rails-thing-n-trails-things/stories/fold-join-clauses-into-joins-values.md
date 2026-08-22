@@ -1,7 +1,7 @@
 ---
 title: "Retire the trails-only _joinClauses store: raw SQL / Arel joins belong in joins_values"
-status: draft
-updated: 2026-07-31
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
