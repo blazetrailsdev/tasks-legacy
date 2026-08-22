@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: null
-priority: null
+priority: 55
 pr: null
 claim: null
 assignee: null
@@ -78,7 +78,7 @@ breaks.
 
 - [ ] `tokenDefinitions` and `generatedTokenVerifier` are `classAttribute()`
       declarations on `Base` with Rails' `instance_accessor: false,
-  instance_predicate: false`.
+instance_predicate: false`.
 - [ ] `tokenDefinitionRegistry`, `tokenVerifierRegistry`, `resolvedDefinitions`,
       `resolvedVerifier` and `ownVerifierEntry` are deleted; no
       copy-on-first-write helper survives under any name.

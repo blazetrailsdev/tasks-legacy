@@ -67,9 +67,15 @@ this story depends on it.
   updated if any emitted key changes, so the ts-api cache token changes and
   stale entries are evicted (see PR #4020 precedent noted at
   `scripts/parity/types.ts:56-58`).
-- `pnpm parity:api:extra --package activerecord` no longer counts the
-  `query-methods.ts` / `spawn-methods.ts` private and protected helpers as
-  public surface; the totals move and the delta is stated in the PR body.
+- `pnpm parity:api:extra --package activerecord` totals are UNCHANGED, and the
+  PR body says so. (Corrected 2026-08-22: an earlier draft of this criterion
+  claimed the totals would move. They should not. The Ruby side of the allowed
+  set already includes private and protected methods —
+  `extra-surface.ts:1199-1207` — so a TS public port of a Rails-private method
+  is already allowed and was never counted as extra. This story fixes
+  `internal` ACCURACY, which the visibility gate and the private-surface story
+  depend on; it is not an extra-surface reduction. A total that DOES move here
+  is a bug worth investigating, not the goal.)
 - `pnpm parity:api` / `pnpm parity:test` deltas are non-negative.
 - Unit cover in `scripts/api-compare/extract-ts-api.test.ts` for all three
   section kinds plus the alias-entry case.
