@@ -1,6 +1,6 @@
 ---
 title: "add_constraints' one loop body is split across three invented helpers"
-status: ready
+status: claimed
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 220
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-22T21:34:59Z"
+assignee: "api-build-should-retire-tags-compare-reports-stale"
 blocked-by: null
 closed-reason: null
 ---
