@@ -1,6 +1,6 @@
 ---
 title: "Stop pairing throw new Error guards with Ruby constructors in the args gate"
-status: in-progress
+status: done
 updated: 2026-08-22
 rfc: "0095-call-argument-parity"
 cluster: api-compare
