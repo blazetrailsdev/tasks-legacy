@@ -1,7 +1,7 @@
 ---
 title: "Wire AR readAttribute/writeAttribute onto Base instead of ActiveModel's"
-status: draft
-updated: 2026-08-04
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: dead-mixin-companions
 deps: ["move-accessed-fields-tracking-to-attribute"]
