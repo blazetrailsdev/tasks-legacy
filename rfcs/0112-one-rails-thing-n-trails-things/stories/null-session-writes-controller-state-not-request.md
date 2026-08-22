@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 250
-priority: null
+priority: 50
 pr: null
 claim: null
 assignee: null
