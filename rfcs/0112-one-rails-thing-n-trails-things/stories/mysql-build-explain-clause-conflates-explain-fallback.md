@@ -1,13 +1,12 @@
 ---
 title: "AbstractMysqlAdapter#buildExplainClause conflates the Explain fallback header and invents option validation"
 status: done
-updated: 2026-08-21
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
 deps-rfc: []
 est-loc: 160
-priority: 27
 pr: 6811
 claim: "2026-08-21T11:40:36Z"
 assignee: "hash-config-primary-resolves-via-global-configurations"
