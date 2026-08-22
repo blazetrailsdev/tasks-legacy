@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build should retire a tag compare.ts reports stale"
-status: claimed
+status: in-progress
 updated: 2026-08-22
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 140
 priority: null
-pr: null
+pr: 6886
 claim: "2026-08-22T21:34:59Z"
 assignee: "api-build-should-retire-tags-compare-reports-stale"
 blocked-by: null
