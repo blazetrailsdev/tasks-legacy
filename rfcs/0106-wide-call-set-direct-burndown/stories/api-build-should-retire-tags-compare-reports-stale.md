@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build should retire a tag compare.ts reports stale"
-status: in-progress
+status: done
 updated: 2026-08-22
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null

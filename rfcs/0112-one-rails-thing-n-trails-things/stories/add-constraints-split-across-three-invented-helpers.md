@@ -1,6 +1,6 @@
 ---
 title: "add_constraints' one loop body is split across three invented helpers"
-status: in-progress
+status: done
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
