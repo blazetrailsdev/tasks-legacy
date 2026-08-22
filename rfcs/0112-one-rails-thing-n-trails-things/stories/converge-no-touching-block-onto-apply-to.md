@@ -1,7 +1,7 @@
 ---
 title: "Converge NoTouching.no_touching block onto apply_to (drop duplicate push/pop)"
-status: draft
-updated: 2026-08-02
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
