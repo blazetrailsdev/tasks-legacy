@@ -1,7 +1,7 @@
 ---
 title: "mysql2-connected-drops-invented-permanently-closed-and-fake-terms"
-status: draft
-updated: 2026-08-03
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
