@@ -1,7 +1,7 @@
 ---
 title: "StringInquirer wraps a _value where Rails subclasses String"
-status: draft
-updated: 2026-08-17
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: wrapper-vs-subclass
 packages: []
