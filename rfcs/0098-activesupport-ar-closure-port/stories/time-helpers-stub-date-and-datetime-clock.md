@@ -1,7 +1,7 @@
 ---
 title: "time-helpers-stub-date-and-datetime-clock"
 status: blocked
-updated: 2026-08-14
+updated: 2026-08-22
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: []
@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: "2026-08-14T22:49:42Z"
 assignee: "retire-time-zone-config-test-only-zone-seams"
-blocked-by: "Blocked on `Time.at` plus the clock-seam dependency direction. Rails' `stubs.stub_object(Time, :now) { at(now) }` (time_helpers.rb:178) builds the stubbed value with `Time.at`, and @blazetrails/date's `Time` has no `at` constructor (packages/date/src/time.ts:239-331 exposes now/utc/mktime only), so the `at` baseline row cannot be deleted without porting it there. Porting it only pays off inside the larger decision this story names: routing currentTimeInstant() (time-travel.ts, read on every TimeWithZone construction) through @blazetrails/date's Time.now / Date.today / DateTime.now so travel_to stubs those statics the way time_helpers.rb:177-190 does. That is a dependency-direction plus hot-path question, not a diff-size one. PARTIALLY LANDED in PR #6550: the `order:parse,toTime` row is converged and deleted — travelTo now takes the Ruby-Date arm (midnight(plainDate).toTime(), time_helpers.rb:162-163) ahead of the String arm, so the pair is in Rails' order."
+blocked-by: "Narrowed by PR #6872. The two named prerequisites now EXIST: `Time.at` takes a Time (time.c time_s_at, argument's own zone) and `Time.new` is ported (time_s_init), and travel_to already stubs Time.now / Time.new / Date.today / DateTime.now with Rails' bodies (time_helpers.rb:177-190) — both `kind: args` rows and the `at` receipt are retired and the shard is deleted. What is left is ONLY the hot-path cost this story always named, now measured: currentTimeInstant() (time-travel.ts) is read on every TimeWithZone construction, and Time.now() costs 0.52ms/op against 0.008ms/op for a bare Temporal.Now.instant() — ~70x, dominated by Temporal.Now.timeZoneId() at 0.117ms plus the Time constructor. So travel_to stubs the `clock` seat alongside the four Rails receivers, justified at that call site. Unblocking means making @blazetrails/date's Time.now cheap enough for that path (cache the resolved timeZoneId; skip the validating constructor on the #atInstant seat), not re-deciding the dependency direction."
 closed-reason: null
 ---
 
