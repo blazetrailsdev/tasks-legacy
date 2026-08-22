@@ -1,7 +1,7 @@
 ---
 title: "converge-duplicate-url-options-and-url-for"
-status: draft
-updated: 2026-07-30
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
