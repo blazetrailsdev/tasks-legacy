@@ -1,7 +1,7 @@
 ---
 title: "StatementPool#setMaxSize has no Rails counterpart — the limit is constructor-only"
-status: draft
-updated: 2026-08-09
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
