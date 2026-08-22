@@ -1,6 +1,6 @@
 ---
 title: "travel_to's input arms should build a Time, and use change/getlocal"
-status: ready
+status: claimed
 updated: 2026-08-22
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 220
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-22T23:05:06Z"
+assignee: "converge-includes-preload-colon-sweep-relation-and-preloader"
 blocked-by: null
 closed-reason: null
 ---
