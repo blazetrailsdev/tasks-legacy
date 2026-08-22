@@ -1,7 +1,7 @@
 ---
 title: "Track accessed fields on the attribute (has_been_read?), not a Set on Model"
-status: draft
-updated: 2026-08-04
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
