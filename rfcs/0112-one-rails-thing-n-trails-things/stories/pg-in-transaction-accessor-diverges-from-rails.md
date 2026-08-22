@@ -1,7 +1,7 @@
 ---
 title: "PG inTransaction accessor is materialized-only where Rails' in_transaction? counts lazy frames"
-status: draft
-updated: 2026-08-10
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
