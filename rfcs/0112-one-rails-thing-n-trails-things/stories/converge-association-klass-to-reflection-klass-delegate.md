@@ -1,7 +1,7 @@
 ---
 title: "Make Association#klass the plain reflection.klass delegate Rails has"
-status: draft
-updated: 2026-08-12
+status: ready
+updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
