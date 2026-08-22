@@ -5,7 +5,9 @@ updated: 2026-08-22
 rfc: "0025-fidelity-verification-tooling"
 cluster: null
 packages: ["activerecord", "activesupport"]
-deps: []
+deps:
+  - extract-ts-api-stamp-mixin-section-visibility
+  - add-visibility-parity-gate
 deps-rfc: []
 est-loc: 420
 priority: null
