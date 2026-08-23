@@ -1,6 +1,6 @@
 ---
 title: "descends-from-active-record-cold-window-reads-attribute-types"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6926
 claim: "2026-08-23T16:42:28Z"
 assignee: "descends-from-active-record-cold-window-reads-attribute-types"
 blocked-by: null
