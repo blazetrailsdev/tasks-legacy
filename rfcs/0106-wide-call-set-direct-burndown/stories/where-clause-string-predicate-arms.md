@@ -1,6 +1,6 @@
 ---
 title: "where-clause-string-predicate-arms"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6911
 claim: "2026-08-23T12:42:25Z"
 assignee: "where-clause-string-predicate-arms"
 blocked-by: null
