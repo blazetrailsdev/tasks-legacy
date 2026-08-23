@@ -1,6 +1,6 @@
 ---
 title: "Retire activerecord/callbacks.ts's duplicate beforeValidation/afterValidation free functions"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 160
 priority: null
-pr: null
+pr: 6942
 claim: "2026-08-23T20:06:27Z"
 assignee: "retire-ar-callbacks-validation-free-functions"
 blocked-by: null
