@@ -1,7 +1,7 @@
 ---
 title: "Compute new-record dirtiness lazily and delete withoutMarkingRead"
-status: draft
-updated: 2026-08-22
+status: ready
+updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
