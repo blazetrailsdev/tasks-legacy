@@ -1,7 +1,7 @@
 ---
 title: "strip-freeform-comments-ar-adapters"
-status: draft
-updated: 2026-08-21
+status: claimed
+updated: 2026-08-23
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 650
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T20:38:54Z"
+assignee: "strip-freeform-comments-ar-adapters"
 blocked-by: null
 closed-reason: null
 ---
