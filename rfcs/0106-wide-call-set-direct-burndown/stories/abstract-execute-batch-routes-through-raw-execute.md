@@ -41,7 +41,7 @@ sqlite3 was already converged. The abstract base is the remaining
 ## Acceptance criteria
 
 - [ ] Abstract `executeBatch` calls `rawExecute(statement, name, [], false,
-  false, allowRetry, materializeTransactions)` per statement, matching
+false, allowRetry, materializeTransactions)` per statement, matching
       `abstract/database_statements.rb:596`.
 - [ ] `name` is forwarded (today it is dropped).
 - [ ] The `_inQueryTransformers` flag no longer wraps the batch path; if no

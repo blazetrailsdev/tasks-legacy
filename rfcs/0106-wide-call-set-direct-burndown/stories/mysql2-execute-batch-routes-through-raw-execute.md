@@ -40,7 +40,7 @@ last of the three still on the `execute` loop.
 ## Acceptance criteria
 
 - [ ] mysql2 `executeBatch` calls `rawExecute(statement, name, [], false, false,
-  allowRetry, materializeTransactions, true)` per combined block, matching
+allowRetry, materializeTransactions, true)` per combined block, matching
       `mysql2/database_statements.rb:19`.
 - [ ] The `_inQueryTransformers` flag no longer wraps the batch path.
 - [ ] Any `execute_batch` rows in
