@@ -1,6 +1,6 @@
 ---
 title: "Wave 5: burn down the AR-closure naming tail — encryption, activemodel, arel, globalid, test-support"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0096-naming-identifier-burndown"
 cluster: api-compare
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 70
 priority: 15
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T14:27:28Z"
+assignee: "resolve-serialization-thenable-hash-async-return"
 blocked-by: null
 closed-reason: null
 ---
