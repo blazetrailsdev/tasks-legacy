@@ -1,6 +1,6 @@
 ---
 title: "has_secure_password writes the digest via _writeAttribute, not public_send"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 130
 priority: null
-pr: null
+pr: 6956
 claim: "2026-08-23T22:12:31Z"
 assignee: "date-suite-is-not-run-by-any-ci-job"
 blocked-by: null
