@@ -1,6 +1,6 @@
 ---
 title: "TimeWithZone#strftime is getlocal(utc_offset).strftime; its PERMANENT tag's reason is stale"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T19:03:35Z"
+assignee: "converge-time-with-zone-strftime-onto-getlocal"
 blocked-by: null
 closed-reason: null
 ---
