@@ -58,7 +58,7 @@ Do NOT invent members neither Ruby call site uses.
 - [ ] `core-ext/tse/util.ts` and `duration/iso8601-parser.ts` both import the
       shared scanner; both local classes deleted.
 - [ ] `pnpm vitest run packages/activesupport/src/core-ext/tse/util.test.ts
-  packages/activesupport/src/core-ext/duration.test.ts` green.
+packages/activesupport/src/core-ext/duration.test.ts` green.
 - [ ] `pnpm parity:api:extra --package activesupport` shows no new novel
       surface (the module is `@noRailsEquivalent`-tagged Ruby-core modelling).
 - [ ] No import cycle introduced — the module has no runtime imports.
