@@ -1,7 +1,7 @@
 ---
 title: "Converge benchmark's level dispatch onto Rails' public_send (drop the not-a-function guard)"
-status: draft
-updated: 2026-08-22
+status: ready
+updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: ["activesupport"]
