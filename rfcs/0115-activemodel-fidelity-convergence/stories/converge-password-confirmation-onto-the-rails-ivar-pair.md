@@ -1,6 +1,6 @@
 ---
 title: "has_secure_password stores the confirmation in an attribute, not the attr_accessor ivar"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 140
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T22:12:31Z"
+assignee: "date-suite-is-not-run-by-any-ci-job"
 blocked-by: null
 closed-reason: null
 ---

@@ -1,6 +1,6 @@
 ---
 title: "No CI job runs packages/date: 362 date-gem tests are green-by-absence"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0061-ci-failures"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T22:12:31Z"
+assignee: "date-suite-is-not-run-by-any-ci-job"
 blocked-by: null
 closed-reason: null
 ---
