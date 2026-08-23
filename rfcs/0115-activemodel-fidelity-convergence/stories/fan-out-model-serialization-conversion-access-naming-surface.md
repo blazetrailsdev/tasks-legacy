@@ -9,7 +9,6 @@ deps:
   - fan-out-model-attribute-methods-and-registration-surface
 deps-rfc: []
 est-loc: 280
-priority: 18
 pr: null
 claim: null
 assignee: null
