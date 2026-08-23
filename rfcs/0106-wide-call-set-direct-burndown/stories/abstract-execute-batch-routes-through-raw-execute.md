@@ -1,6 +1,6 @@
 ---
 title: "abstract executeBatch calls rawExecute per statement and forwards name"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null

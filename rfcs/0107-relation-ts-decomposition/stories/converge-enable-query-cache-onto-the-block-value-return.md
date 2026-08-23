@@ -1,6 +1,6 @@
 ---
 title: "enable_query_cache/cache still adopt the block value where disable_query_cache no longer does"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
