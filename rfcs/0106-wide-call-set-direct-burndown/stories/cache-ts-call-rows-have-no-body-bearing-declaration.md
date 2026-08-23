@@ -1,6 +1,6 @@
 ---
 title: "cache-ts-call-rows-have-no-body-bearing-declaration"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T11:57:31Z"
+assignee: "cache-ts-call-rows-have-no-body-bearing-declaration"
 blocked-by: null
 closed-reason: null
 ---
