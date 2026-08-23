@@ -1,6 +1,6 @@
 ---
 title: "Wave 5: burn down the AR-closure naming rows in activerecord model core, migration and validations"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0096-naming-identifier-burndown"
 cluster: api-compare
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 90
 priority: 11
-pr: null
+pr: 6917
 claim: "2026-08-23T14:04:32Z"
 assignee: "wave-5-naming-activesupport"
 blocked-by: null
