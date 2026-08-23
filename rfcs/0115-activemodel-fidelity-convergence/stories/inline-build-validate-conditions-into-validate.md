@@ -1,6 +1,6 @@
 ---
 title: "Inline _buildValidateConditions into validate — Rails has no such helper"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: 56
-pr: null
+pr: 6932
 claim: "2026-08-23T17:56:07Z"
 assignee: "sweep-trails-only-test-files-onto-trails-name"
 blocked-by: null
