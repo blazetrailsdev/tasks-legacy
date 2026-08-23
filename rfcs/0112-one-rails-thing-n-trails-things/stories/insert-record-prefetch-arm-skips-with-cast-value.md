@@ -1,6 +1,6 @@
 ---
 title: "_insert_record's prefetch_primary_key arm assigns the raw sequence value instead of re-casting through _default_attributes"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null

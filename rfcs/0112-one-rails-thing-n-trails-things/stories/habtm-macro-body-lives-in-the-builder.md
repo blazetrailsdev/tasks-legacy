@@ -1,6 +1,6 @@
 ---
 title: "has_and_belongs_to_many's whole macro body lives in Builder::HasAndBelongsToMany._build, a method Rails' builder does not have"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
