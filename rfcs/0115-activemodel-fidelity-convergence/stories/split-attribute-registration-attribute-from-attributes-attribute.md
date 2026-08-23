@@ -1,6 +1,6 @@
 ---
 title: "split-attribute-registration-attribute-from-attributes-attribute"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 130
 priority: 55
-pr: null
+pr: 6934
 claim: "2026-08-23T18:32:16Z"
 assignee: "seat-the-per-instance-primary-key-slot"
 blocked-by: null
