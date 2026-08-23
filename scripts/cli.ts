@@ -2738,6 +2738,45 @@ const TERMINAL_STORY_STATUSES: readonly StoryStatus[] = ["done", "closed"];
 // 0000-rfc-story-cap-and-succession.
 export const OPEN_STORY_WARN_THRESHOLD = 40;
 
+// Width alone is not staleness. Measured 2026-08-23, the RFCs over the width
+// threshold split cleanly on the age of their OLDEST open story: the two active
+// ones sat at 3 days (`0112`, closing 11 stories/day) and 10 days (`0105`),
+// while the parked ones sat at 27 (`0025`, `0113`) and 58 (`0023`). Warning on
+// width alone therefore fires hardest on the fastest-moving campaigns — exactly
+// backwards. 21 days sits in the empty band between those two groups: three
+// weeks in which not one open story moved.
+export const OPEN_STORY_STALE_DAYS = 21;
+
+// Days since the least-recently-updated open story under `rfcSlug` was touched,
+// or null when the RFC has no open stories. `updated:` is the only age signal
+// stories carry (there is no `created:` field), so this measures "nothing here
+// has moved lately", which is the property that makes a wide RFC worth
+// succeeding.
+export function oldestOpenStoryAgeDays(
+  tasksDir: string,
+  rfcSlug: string,
+  now: Date = new Date(),
+): number | null {
+  let oldest: number | null = null;
+  for (const file of openStoryFiles(tasksDir, rfcSlug)) {
+    let updated: unknown = null;
+    try {
+      const fmMatch = readFileSync(file, "utf8").match(/^---\n([\s\S]*?)\n---/);
+      if (fmMatch) updated = (parseYaml(fmMatch[1]) as { updated?: unknown } | null)?.updated;
+    } catch {
+      // fall through
+    }
+    // A story with no readable `updated:` is treated as maximally stale, so a
+    // malformed file cannot mask an otherwise-stagnant RFC.
+    const days =
+      typeof updated === "string" && /^\d{4}-\d{2}-\d{2}$/.test(updated)
+        ? Math.floor((now.getTime() - Date.parse(`${updated}T00:00:00Z`)) / 86_400_000)
+        : Number.MAX_SAFE_INTEGER;
+    if (oldest === null || days > oldest) oldest = days;
+  }
+  return oldest;
+}
+
 // Counts stories under `rfcSlug` that are not in a terminal status. A story
 // whose frontmatter is missing or unparseable counts as open: the signal
 // should over-report rather than silently under-report scope.
@@ -3046,10 +3085,26 @@ export function newStory(
   // follow-up always succeeds. `tasks new` is the sanctioned mechanism for
   // out-of-scope discoveries, and refusing it here would turn "file it" into
   // "drop it" — the exact debt that rule prevents.
+  // Three conjuncts, each carrying its own weight:
+  //   active     — a non-active parent already fences its stories out of the
+  //                ready queue (effectiveStoryStatus), so a wide postponed RFC
+  //                is parked, not pressing. This is also what exempts the
+  //                standing intake backlogs (`0023` at 659 open) without
+  //                needing a gameable "intake" RFC kind.
+  //   width      — enough open scope that succession is worth the ceremony.
+  //   staleness  — and it has actually stagnated. Without this the warning
+  //                nags the fastest-moving campaigns hardest.
   const openCount = countOpenStories(tasksDir, rfcSlug);
-  if (openCount > OPEN_STORY_WARN_THRESHOLD) {
+  const oldestDays = oldestOpenStoryAgeDays(tasksDir, rfcSlug);
+  if (
+    readRfcStatus(tasksDir, rfcSlug) === "active" &&
+    openCount > OPEN_STORY_WARN_THRESHOLD &&
+    oldestDays !== null &&
+    oldestDays > OPEN_STORY_STALE_DAYS
+  ) {
     console.warn(
-      `\nwarning: ${rfcSlug} now has ${openCount} open stories (> ${OPEN_STORY_WARN_THRESHOLD}).\n` +
+      `\nwarning: ${rfcSlug} now has ${openCount} open stories (> ${OPEN_STORY_WARN_THRESHOLD}), ` +
+        `the oldest untouched for ${oldestDays} days.\n` +
         `  Wide RFCs accumulate stale context. Consider succeeding it:\n` +
         `    pnpm tasks rfc ${rfcSlug} --supersede <successor-slug> --carry\n` +
         `  which moves the open stories to the successor and leaves the\n` +

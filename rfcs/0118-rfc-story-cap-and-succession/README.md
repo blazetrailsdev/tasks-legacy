@@ -60,10 +60,22 @@ produces an empty successor and strands the predecessor's open work.
 
 ### 1. Open-story pressure signal in `tasks new`
 
-`newStory` counts stories under the target RFC whose `status` is neither `done`
-nor `closed`. When the new story would push that count above **40**, it prints
-a warning **after** creating the story, naming the succession command. It never
-refuses.
+`newStory` warns **after** creating the story, naming the succession command,
+when three conjuncts all hold. It never refuses.
+
+1. The RFC is **`active`**. A non-active parent already fences its stories out
+   of the ready queue via `effectiveStoryStatus`, so a wide postponed RFC is
+   parked, not pressing.
+2. It has more than **40** open (non-`done`, non-`closed`) stories.
+3. Its **oldest open story has not been touched in more than 21 days**.
+
+Conjunct 3 is not optional polish. Width alone is not staleness, and on
+measurement the two are anti-correlated among healthy RFCs: of the five RFCs
+over the width threshold on 2026-08-23, the two `active` ones had oldest-open
+ages of **3 days** (`0112`, closing 11 stories/day) and **10 days** (`0105`),
+while the parked ones sat at 27 (`0025`, `0113`) and 58 (`0023`). A
+width-only warning fires hardest on the fastest-moving campaigns — exactly
+backwards. 21 days sits in the empty band between the two groups.
 
 Warning, not refusal, is load-bearing. `tasks new` is the mechanism CLAUDE.md
 directs every agent to for out-of-scope discoveries ("do NOT open it yourself —
@@ -100,10 +112,13 @@ a carried story.
 
 ### 3. No intake exemption
 
-`0023` and `0061` need no special case under an open-count rule: `0061` has 1
-open story and `0023` is `postponed`. An explicit "intake" RFC kind would
-create a label that everything migrates to; the open-count metric exempts
-intake RFCs for free, by measuring the thing that actually matters.
+Standing intake backlogs need no special case, but **the mechanism is the
+`active` conjunct, not the open count** — `0023-surfaced-deviations` carries
+659 open stories, so an open-count metric alone would flag it hardest of all.
+What actually exempts it is that it is `postponed`; `0061-ci-failures` is
+`active` but sits at 1 open story. An explicit "intake" RFC kind would create a
+label that everything migrates to, and is unnecessary given the conjuncts
+above.
 
 ## Non-goals
 
@@ -125,9 +140,12 @@ intake RFCs for free, by measuring the thing that actually matters.
 - **Cap on total stories.** Rejected: decorrelated from open workload.
 - **Hard refusal in `tasks new`.** Rejected: blocks an agent mid-task and
   incentivizes working around the sanctioned follow-up mechanism.
-- **Age-based staleness cap.** Rejected as a primary signal: stories carry no
+- **Age-based staleness as the _primary_ signal.** Rejected as the primary
+  signal — it is used as a conjunct instead (see Design 1). Stories carry no
   `created:` field, and `updated:` — the only proxy — is refreshed by the very
-  sweeps it would be measuring. Measured on `updated:`, open stories run median
+  re-verification sweeps it would be measuring, so it understates true age and
+  is unsafe as a sole trigger. As a conjunct that only ever _suppresses_ a
+  warning, that bias is the safe direction. Measured on `updated:`, open stories run median
   10 days, p90 27, max 80, with only 9 stories over 60 days and all nine under
   `draft` RFCs.
 - **An explicit `intake` RFC kind.** Rejected: unnecessary under an open-count
@@ -161,3 +179,8 @@ intake RFCs for free, by measuring the thing that actually matters.
 
 - 2026-08-23: initial RFC
 - 2026-08-23: note that the successor must be flipped to `active` after `--carry`
+- 2026-08-23: add the `active` and 21-day staleness conjuncts. Width alone
+  flagged `0112` (11 stories/day, oldest open story 3 days) and `0105`, the two
+  fastest-moving campaigns, while the genuinely stagnant RFCs sat at 27-58 days.
+  Corrects the claim that an open-count metric exempts intake RFCs "for free":
+  `0023` has 659 open stories and is exempted by the `active` conjunct.

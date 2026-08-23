@@ -131,6 +131,8 @@ import {
   countOpenStories,
   openStoryFiles,
   OPEN_STORY_WARN_THRESHOLD,
+  OPEN_STORY_STALE_DAYS,
+  oldestOpenStoryAgeDays,
 } from "./cli.js";
 
 function story(over: Partial<StoryEntry>): StoryEntry {
@@ -4742,5 +4744,66 @@ describe("countOpenStories / openStoryFiles", () => {
 
   it("sits above the observed active-RFC p75 so healthy burndowns do not trip it", () => {
     expect(OPEN_STORY_WARN_THRESHOLD).toBe(40);
+  });
+});
+
+describe("oldestOpenStoryAgeDays", () => {
+  const NOW = new Date("2026-08-23T12:00:00Z");
+
+  function makeRfc(stories: Record<string, [string, string]>): { dir: string; slug: string } {
+    const dir = mkdtempSync(join(tmpdir(), "rfcs-stale-"));
+    const slug = "0001-r";
+    const storiesDir = join(dir, "rfcs", slug, "stories");
+    mkdirSync(storiesDir, { recursive: true });
+    for (const [name, [status, updated]] of Object.entries(stories)) {
+      writeFileSync(
+        join(storiesDir, `${name}.md`),
+        `---\nstatus: ${status}\nupdated: ${updated}\nrfc: "${slug}"\n---\nbody\n`,
+      );
+    }
+    return { dir, slug };
+  }
+
+  it("reports the age of the least-recently-updated OPEN story", () => {
+    const { dir, slug } = makeRfc({
+      a: ["ready", "2026-08-20"],
+      b: ["ready", "2026-08-01"],
+      c: ["ready", "2026-08-22"],
+    });
+    expect(oldestOpenStoryAgeDays(dir, slug, NOW)).toBe(22);
+  });
+
+  it("ignores done and closed stories, however old", () => {
+    const { dir, slug } = makeRfc({
+      a: ["ready", "2026-08-22"],
+      ancient: ["done", "2025-01-01"],
+    });
+    expect(oldestOpenStoryAgeDays(dir, slug, NOW)).toBe(1);
+  });
+
+  it("returns null when there are no open stories", () => {
+    const { dir, slug } = makeRfc({ a: ["done", "2026-08-01"] });
+    expect(oldestOpenStoryAgeDays(dir, slug, NOW)).toBeNull();
+  });
+
+  it("treats an unreadable updated: as maximally stale rather than masking it", () => {
+    const { dir, slug } = makeRfc({ a: ["ready", "2026-08-22"] });
+    writeFileSync(join(dir, "rfcs", slug, "stories", "junk.md"), "no frontmatter\n");
+    expect(oldestOpenStoryAgeDays(dir, slug, NOW)).toBe(Number.MAX_SAFE_INTEGER);
+  });
+
+  it("suppresses the warning for a wide but fast-moving RFC (the 0112 case)", () => {
+    // 0112 measured 76 open with its oldest open story 3 days old while closing
+    // 11 stories/day. Width alone would have flagged it; staleness must not.
+    const { dir, slug } = makeRfc(
+      Object.fromEntries(
+        Array.from({ length: 45 }, (_, i) => [
+          `s${i}`,
+          ["ready", "2026-08-20"] as [string, string],
+        ]),
+      ),
+    );
+    expect(countOpenStories(dir, slug)).toBeGreaterThan(OPEN_STORY_WARN_THRESHOLD);
+    expect(oldestOpenStoryAgeDays(dir, slug, NOW)).toBeLessThan(OPEN_STORY_STALE_DAYS);
   });
 });
