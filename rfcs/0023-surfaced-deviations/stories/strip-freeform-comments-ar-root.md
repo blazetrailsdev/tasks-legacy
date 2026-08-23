@@ -1,6 +1,6 @@
 ---
 title: "strip-freeform-comments-ar-root"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0023-surfaced-deviations"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 700
 priority: null
-pr: null
+pr: 6955
 claim: "2026-08-23T22:00:47Z"
 assignee: "strip-freeform-comments-ar-root"
 blocked-by: null
