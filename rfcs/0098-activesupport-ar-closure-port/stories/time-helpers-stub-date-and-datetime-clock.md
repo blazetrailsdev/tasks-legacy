@@ -1,6 +1,6 @@
 ---
 title: "time-helpers-stub-date-and-datetime-clock"
-status: blocked
+status: ready
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -11,9 +11,9 @@ deps-rfc: []
 est-loc: null
 priority: 3
 pr: null
-claim: "2026-08-14T22:49:42Z"
-assignee: "retire-time-zone-config-test-only-zone-seams"
-blocked-by: "Narrowed by PR #6872. The two named prerequisites now EXIST: `Time.at` takes a Time (time.c time_s_at, argument's own zone) and `Time.new` is ported (time_s_init), and travel_to already stubs Time.now / Time.new / Date.today / DateTime.now with Rails' bodies (time_helpers.rb:177-190) — both `kind: args` rows and the `at` receipt are retired and the shard is deleted. What is left is ONLY the hot-path cost this story always named, now measured: currentTimeInstant() (time-travel.ts) is read on every TimeWithZone construction, and Time.now() costs 0.52ms/op against 0.008ms/op for a bare Temporal.Now.instant() — ~70x, dominated by Temporal.Now.timeZoneId() at 0.117ms plus the Time constructor. So travel_to stubs the `clock` seat alongside the four Rails receivers, justified at that call site. Unblocking means making @blazetrails/date's Time.now cheap enough for that path (cache the resolved timeZoneId; skip the validating constructor on the #atInstant seat), not re-deciding the dependency direction."
+claim: null
+assignee: null
+blocked-by: null
 closed-reason: null
 ---
 
