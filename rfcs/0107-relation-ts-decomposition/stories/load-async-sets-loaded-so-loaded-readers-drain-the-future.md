@@ -5,7 +5,8 @@ updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
-deps: []
+deps:
+  - converge-relation-loaded-arm-readers-onto-seams
 deps-rfc: []
 est-loc: null
 priority: null
