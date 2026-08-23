@@ -1,6 +1,6 @@
 ---
 title: "Retire model.ts's transactional, initialize, find and touch callback macros"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
@@ -10,7 +10,7 @@ deps:
 deps-rfc: []
 est-loc: 300
 priority: null
-pr: null
+pr: 6923
 claim: "2026-08-23T15:57:33Z"
 assignee: "retire-model-transactional-and-find-callback-macros"
 blocked-by: null
