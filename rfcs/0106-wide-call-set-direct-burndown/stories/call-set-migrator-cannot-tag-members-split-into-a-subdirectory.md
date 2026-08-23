@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build cannot tag a member trails split out of its Rails file"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 160
 priority: null
-pr: null
+pr: 6904
 claim: "2026-08-23T10:42:30Z"
 assignee: "call-set-migrator-cannot-tag-members-split-into-a-subdirectory"
 blocked-by: null
