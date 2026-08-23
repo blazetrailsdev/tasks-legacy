@@ -1,6 +1,6 @@
 ---
 title: "Retire the revision-stamped attribute_names memo for Rails' nil-on-reload"
-status: claimed
+status: done
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: api-compare
@@ -8,7 +8,7 @@ packages: ["activerecord"]
 deps: []
 deps-rfc: []
 est-loc: 180
-pr: null
+pr: 5116
 claim: "2026-08-23T21:16:29Z"
 assignee: "retire-attribute-names-memo-revision-stamp"
 blocked-by: null
