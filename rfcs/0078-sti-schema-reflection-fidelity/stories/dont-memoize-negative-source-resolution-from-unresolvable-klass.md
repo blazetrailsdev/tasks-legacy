@@ -1,7 +1,7 @@
 ---
 title: "dont-memoize-negative-source-resolution-from-unresolvable-klass"
-status: ready
-updated: 2026-08-18
+status: claimed
+updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T16:57:27Z"
+assignee: "dont-memoize-negative-source-resolution-from-unresolvable-klass"
 blocked-by: null
 closed-reason: null
 ---
