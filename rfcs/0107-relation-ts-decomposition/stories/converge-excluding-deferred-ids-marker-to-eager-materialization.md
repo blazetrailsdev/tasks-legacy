@@ -1,6 +1,6 @@
 ---
 title: "excluding defers relations.flat_map(&:ids) to load time instead of materializing eagerly"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 150
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T17:39:45Z"
+assignee: "converge-excluding-deferred-ids-marker-to-eager-materialization"
 blocked-by: null
 closed-reason: null
 ---
