@@ -1,6 +1,6 @@
 ---
 title: "Time.new takes MRI's string form, the only path precision: acts on"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 260
 priority: 4
-pr: null
+pr: 6931
 claim: "2026-08-23T17:44:08Z"
 assignee: "encryption-schemes-test-lacks-transactional-fixtures"
 blocked-by: null
