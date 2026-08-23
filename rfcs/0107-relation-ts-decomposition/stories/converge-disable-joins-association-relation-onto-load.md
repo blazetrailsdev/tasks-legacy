@@ -1,6 +1,6 @@
 ---
 title: "DisableJoinsAssociationRelation overrides toArray on a clone where Rails overrides load in place"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: null
+pr: 6912
 claim: "2026-08-23T12:57:31Z"
 assignee: "converge-association-relation-inverse-wiring-onto-exec-queries"
 blocked-by: null
