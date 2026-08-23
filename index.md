@@ -119,4 +119,4 @@
 | [0114-collection-proxy-decomposition](rfcs/0114-collection-proxy-decomposition/README.md) | collection-proxy.ts decomposition: converge the proxy back onto its association | closed | @deanmarano | activerecord |
 | [0115-activemodel-fidelity-convergence](rfcs/0115-activemodel-fidelity-convergence/README.md) | activemodel package-wide fidelity convergence and line-bloat burndown | active | @deanmarano | activemodel, activerecord, activesupport, actionview |
 | [0116-activejob-dependent-activerecord-work](rfcs/0116-activejob-dependent-activerecord-work/README.md) | ActiveJob-dependent ActiveRecord work: the dependent: :destroy_async closure | draft | @deanmarano | activerecord |
-| [0117-arel-extra-surface-burndown](rfcs/0117-arel-extra-surface-burndown/README.md) | arel extra TS surface burndown to zero | active | @your-handle | arel |
+| [0117-arel-extra-surface-burndown](rfcs/0117-arel-extra-surface-burndown/README.md) | arel extra TS surface burndown to zero | closed | @your-handle | arel |
