@@ -1,6 +1,6 @@
 ---
 title: "Gate arel's extra-surface count with an only-shrink ratchet"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0117-arel-extra-surface-burndown"
 cluster: null
