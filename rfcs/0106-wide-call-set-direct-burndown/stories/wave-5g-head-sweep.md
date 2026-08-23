@@ -1,6 +1,6 @@
 ---
 title: "wave-5g-head-sweep"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6906
 claim: "2026-08-23T11:12:29Z"
 assignee: "wave-5g-head-sweep"
 blocked-by: null
