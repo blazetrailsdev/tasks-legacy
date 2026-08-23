@@ -1,7 +1,7 @@
 ---
 title: "travel_to's input arms should build a Time, and use change/getlocal"
-status: in-progress
-updated: 2026-08-22
+status: done
+updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: []

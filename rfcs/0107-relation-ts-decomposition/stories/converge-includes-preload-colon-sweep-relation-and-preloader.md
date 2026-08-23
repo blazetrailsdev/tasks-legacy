@@ -1,7 +1,7 @@
 ---
 title: "Sweep includes/preload call sites onto the colon spelling: relation, preloader and test-helpers"
-status: in-progress
-updated: 2026-08-22
+status: done
+updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
