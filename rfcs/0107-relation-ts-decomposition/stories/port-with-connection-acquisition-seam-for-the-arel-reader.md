@@ -1,6 +1,6 @@
 ---
 title: "port-with-connection-acquisition-seam-for-the-arel-reader"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: 5
-pr: null
+pr: 6928
 claim: "2026-08-23T17:39:45Z"
 assignee: "converge-excluding-deferred-ids-marker-to-eager-materialization"
 blocked-by: null
