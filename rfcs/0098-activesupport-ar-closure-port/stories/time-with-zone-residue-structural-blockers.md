@@ -1,7 +1,7 @@
 ---
 title: "time-with-zone-residue-structural-blockers"
-status: ready
-updated: 2026-08-21
+status: claimed
+updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T16:12:28Z"
+assignee: "time-with-zone-residue-structural-blockers"
 blocked-by: null
 closed-reason: null
 ---
