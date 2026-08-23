@@ -1,6 +1,6 @@
 ---
 title: "Port Core#init_internals' four missing assignments"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 200
 priority: 59
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T18:20:09Z"
+assignee: "sweep-trails-only-test-files-associations"
 blocked-by: null
 closed-reason: null
 ---
