@@ -1,6 +1,6 @@
 ---
 title: "HasManyThroughAssociation#find_target's disable_joins arm routes through two trails-only free functions instead of calling scope"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: null
-pr: null
+pr: 6900
 claim: "2026-08-23T00:57:31Z"
 assignee: "wave-5g-head-sweep"
 blocked-by: null
