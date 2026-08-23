@@ -1,6 +1,6 @@
 ---
 title: "in_batches' loaded? arm must drain a scheduled relation"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
