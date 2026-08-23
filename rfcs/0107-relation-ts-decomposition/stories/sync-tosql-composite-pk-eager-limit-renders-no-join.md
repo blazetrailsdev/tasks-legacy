@@ -1,6 +1,6 @@
 ---
 title: "toSql renders no eager JOIN for a composite PK with LIMIT/OFFSET over collection reflections"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -9,7 +9,7 @@ deps: ["converge-sync-eager-builders-async-to-sql"]
 deps-rfc: []
 est-loc: 150
 priority: 7
-pr: null
+pr: 6939
 claim: "2026-08-23T19:43:14Z"
 assignee: "sync-tosql-composite-pk-eager-limit-renders-no-join"
 blocked-by: null
