@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build cannot tag a member trails split out of its Rails file"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
