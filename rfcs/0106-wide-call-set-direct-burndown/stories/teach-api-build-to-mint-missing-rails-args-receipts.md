@@ -1,6 +1,6 @@
 ---
 title: 'parity:api:build cannot migrate kind: "args" rows into @missingRailsArgs receipts'
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: null
+pr: 6941
 claim: "2026-08-23T19:52:31Z"
 assignee: "teach-api-build-to-mint-missing-rails-args-receipts"
 blocked-by: null
