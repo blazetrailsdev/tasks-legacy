@@ -71,9 +71,9 @@ PR's band only**:
     activerecord/result.json                                        4
     activerecord/relation/batches.json                              2 of 3
     activesupport/duration.json                                     1 of 4
-    activesupport/values/time-zone.json                             1
+    activesupport/values/time-zone.json                             1  (`today | to_date`)
 
-The remaining ~36 rows — the other nine shards, plus the rows above that name a
+The remaining ~34 rows — the other nine shards, plus the rows above that name a
 real divergence rather than a language shortcoming and so must converge rather
 than migrate — are `wave-5g-head-sweep`, which lists them per shard with the
 specific blocker for each.

@@ -18,8 +18,9 @@ closed-reason: null
 
 ## Context
 
-`wave-5f-head-sweep` (PR #6897) cleared 11 of the ~47 `kind: "set"` rows in its
-band, emptying and deleting four shards. It stopped at the 700 LOC ceiling —
+`wave-5f-head-sweep` (PR #6897) cleared 13 of the ~47 `kind: "set"` rows in its
+band, emptying and deleting two shards (`result.json`,
+`connection-adapters/schema-cache.json`). It stopped at the 700 LOC ceiling —
 a migrated row costs ~7 JSON deletions plus a JSDoc line — so the rest of the
 band is this story.
 
@@ -35,6 +36,7 @@ Remaining shards and row counts (measured on #6897's branch):
     activerecord/attribute-methods.json                                 3  (all seed placeholder)
     activerecord/relation/batches.json                                  1  (`any?`)
     activesupport/duration.json                                         3  (`iso8601` x2, `parse`)
+    activesupport/values/time-zone.json                                 4  (`utc` x4, added on main after #6897 was cut)
 
 Four of those are **not** straight migrations — #6897 left them baselined on
 purpose because their reviewed reason names a real divergence, and a
