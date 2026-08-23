@@ -1,6 +1,6 @@
 ---
 title: "has_and_belongs_to_many's whole macro body lives in Builder::HasAndBelongsToMany._build, a method Rails' builder does not have"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 240
 priority: null
-pr: null
+pr: 6900
 claim: "2026-08-23T00:57:31Z"
 assignee: "wave-5g-head-sweep"
 blocked-by: null
