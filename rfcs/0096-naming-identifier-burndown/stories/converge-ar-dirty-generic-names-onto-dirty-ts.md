@@ -1,7 +1,7 @@
 ---
 title: "converge-ar-dirty-generic-names-onto-dirty-ts"
-status: in-progress
-updated: 2026-08-22
+status: done
+updated: 2026-08-23
 rfc: "0096-naming-identifier-burndown"
 cluster: null
 packages: []
