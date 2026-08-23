@@ -9,7 +9,6 @@ deps:
   - retire-model-transactional-and-find-callback-macros
 deps-rfc: []
 est-loc: 200
-priority: 11
 pr: null
 claim: null
 assignee: null
