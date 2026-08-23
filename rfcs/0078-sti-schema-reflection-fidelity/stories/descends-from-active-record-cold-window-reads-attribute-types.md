@@ -1,6 +1,6 @@
 ---
 title: "descends-from-active-record-cold-window-reads-attribute-types"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
