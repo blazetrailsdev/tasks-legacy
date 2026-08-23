@@ -1,7 +1,7 @@
 ---
 title: "time-helpers-stub-date-and-datetime-clock"
 status: blocked
-updated: 2026-08-22
+updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: []
@@ -9,7 +9,7 @@ deps:
   - time-now-cheap-enough-for-the-clock-path
 deps-rfc: []
 est-loc: null
-priority: null
+priority: 3
 pr: null
 claim: "2026-08-14T22:49:42Z"
 assignee: "retire-time-zone-config-test-only-zone-seams"
