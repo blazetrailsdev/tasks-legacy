@@ -1,6 +1,6 @@
 ---
 title: "converge-encryption-scheme-tests-onto-real-base-subclasses"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
