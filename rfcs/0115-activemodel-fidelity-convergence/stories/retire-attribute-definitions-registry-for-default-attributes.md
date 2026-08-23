@@ -1,6 +1,6 @@
 ---
 title: "Retire _attributeDefinitions in favour of _default_attributes + the pending queue"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: api-compare
@@ -9,8 +9,8 @@ deps: []
 deps-rfc: []
 est-loc: 500
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T20:34:25Z"
+assignee: "retire-attribute-definitions-registry-for-default-attributes"
 blocked-by: null
 closed-reason: null
 ---
