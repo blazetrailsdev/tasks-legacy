@@ -1,7 +1,7 @@
 ---
 title: "reset must cancel the parked future result, not just drop it"
-status: draft
-updated: 2026-08-20
+status: ready
+updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
