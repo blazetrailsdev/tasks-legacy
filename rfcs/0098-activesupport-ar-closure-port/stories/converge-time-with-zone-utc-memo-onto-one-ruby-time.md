@@ -1,6 +1,6 @@
 ---
 title: "TimeWithZone carries @utc twice; converge the seat onto one ::Time and the TimeZone readers with it"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 320
 priority: null
-pr: null
+pr: 6934
 claim: "2026-08-23T18:32:16Z"
 assignee: "seat-the-per-instance-primary-key-slot"
 blocked-by: null
