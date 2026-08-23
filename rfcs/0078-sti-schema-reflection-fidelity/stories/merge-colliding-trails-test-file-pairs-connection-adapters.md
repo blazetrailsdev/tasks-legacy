@@ -1,6 +1,6 @@
 ---
 title: "merge-colliding-trails-test-file-pairs-connection-adapters"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T21:44:31Z"
+assignee: "merge-colliding-trails-test-file-pairs-connection-adapters"
 blocked-by: null
 closed-reason: null
 ---
