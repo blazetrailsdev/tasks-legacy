@@ -1,6 +1,6 @@
 ---
 title: "JoinDependency#instantiate partitions by aliasSet.has, not Rails' alias-pattern match?"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: null
-pr: null
+pr: 6906
 claim: "2026-08-23T11:12:29Z"
 assignee: "wave-5g-head-sweep"
 blocked-by: null
