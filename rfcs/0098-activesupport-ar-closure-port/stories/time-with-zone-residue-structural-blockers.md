@@ -1,6 +1,6 @@
 ---
 title: "time-with-zone-residue-structural-blockers"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
