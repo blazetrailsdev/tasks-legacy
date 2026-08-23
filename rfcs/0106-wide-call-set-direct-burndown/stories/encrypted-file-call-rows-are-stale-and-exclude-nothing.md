@@ -1,6 +1,6 @@
 ---
 title: "encrypted-file.json's last 2 call rows are stale — the artifact flags no calls in the file"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
