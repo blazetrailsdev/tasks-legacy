@@ -1,6 +1,6 @@
 ---
 title: "tablename-only-model-resolves-columns-without-explicit-reflect"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6936
 claim: "2026-08-23T18:08:08Z"
 assignee: "tablename-only-model-resolves-columns-without-explicit-reflect"
 blocked-by: null
