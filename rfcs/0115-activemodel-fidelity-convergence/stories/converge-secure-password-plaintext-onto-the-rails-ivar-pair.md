@@ -1,6 +1,6 @@
 ---
 title: "has_secure_password stores the plaintext in an ivar pair, not an attribute plus an after_initialize eviction"
-status: draft
+status: ready
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
