@@ -1,6 +1,6 @@
 ---
 title: "Seed GeneratedAttributeMethods before the class body runs, retiring uninclude()"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 260
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T22:40:29Z"
+assignee: "collapse-the-activerecord-secure-password-duplicate"
 blocked-by: null
 closed-reason: null
 ---
