@@ -1,6 +1,6 @@
 ---
 title: "sweep-trails-only-test-files-connection-adapters"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6950
 claim: "2026-08-23T21:30:27Z"
 assignee: "sweep-trails-only-test-files-connection-adapters"
 blocked-by: null
