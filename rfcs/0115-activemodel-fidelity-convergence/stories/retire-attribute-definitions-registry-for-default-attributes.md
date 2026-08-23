@@ -1,7 +1,7 @@
 ---
 title: "Retire _attributeDefinitions in favour of _default_attributes + the pending queue"
-status: draft
-updated: 2026-08-20
+status: ready
+updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: api-compare
 packages: ["activemodel", "activerecord"]
