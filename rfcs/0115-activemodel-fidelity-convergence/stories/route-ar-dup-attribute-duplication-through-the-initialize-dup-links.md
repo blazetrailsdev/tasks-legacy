@@ -1,6 +1,6 @@
 ---
 title: "Route AR dup's attribute duplication through the initialize_dup links"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 300
 priority: 52
-pr: null
+pr: 6936
 claim: "2026-08-23T18:08:08Z"
 assignee: "tablename-only-model-resolves-columns-without-explicit-reflect"
 blocked-by: null
