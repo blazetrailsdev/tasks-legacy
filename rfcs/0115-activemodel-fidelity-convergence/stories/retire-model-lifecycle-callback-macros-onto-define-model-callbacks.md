@@ -1,7 +1,7 @@
 ---
 title: "Retire model.ts's lifecycle callback macros onto define_model_callbacks"
-status: ready
-updated: 2026-08-19
+status: claimed
+updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel", "activerecord"]
@@ -11,8 +11,8 @@ deps-rfc: []
 est-loc: 380
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T14:42:26Z"
+assignee: "retire-model-lifecycle-callback-macros-onto-define-model-callbacks"
 blocked-by: null
 closed-reason: null
 ---
