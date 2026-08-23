@@ -1,6 +1,6 @@
 ---
 title: "CollectionAssociation#replace is split across a ReplacePlan and replaceRecordsInTransaction"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 300
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T10:42:30Z"
+assignee: "call-set-migrator-cannot-tag-members-split-into-a-subdirectory"
 blocked-by: null
 closed-reason: null
 ---
