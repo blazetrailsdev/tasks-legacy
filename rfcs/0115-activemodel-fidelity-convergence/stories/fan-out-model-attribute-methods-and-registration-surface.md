@@ -9,7 +9,6 @@ deps:
   - fan-out-model-dirty-surface-to-dirty-ts
 deps-rfc: []
 est-loc: 300
-priority: 17
 pr: null
 claim: null
 assignee: null
