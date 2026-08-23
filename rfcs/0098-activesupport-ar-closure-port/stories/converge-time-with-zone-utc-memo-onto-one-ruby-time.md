@@ -1,6 +1,6 @@
 ---
 title: "TimeWithZone carries @utc twice; converge the seat onto one ::Time and the TimeZone readers with it"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
