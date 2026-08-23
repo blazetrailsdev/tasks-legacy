@@ -1,6 +1,6 @@
 ---
 title: "TimeWithZone carries @utc twice; converge the seat onto one ::Time and the TimeZone readers with it"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 320
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T18:32:16Z"
+assignee: "seat-the-per-instance-primary-key-slot"
 blocked-by: null
 closed-reason: null
 ---
@@ -67,6 +67,6 @@ from `main`.
 - [ ] `periodForUtc` / `periodsForLocal` / `periodForLocal` take the `::Time`
       their TZInfo counterparts take.
 - [ ] `_transferTimeValuesToUtcConstructor` reads as `Time.utc(year, month, day,
-  hour, min, sec + subsec)` (time_with_zone.rb:583-587).
+hour, min, sec + subsec)` (time_with_zone.rb:583-587).
 - [ ] `parity:api:calls` / `:args` clean; `parity:api:extra` novel count for
       `time-with-zone.ts` does not rise.
