@@ -1,6 +1,6 @@
 ---
 title: "Port ActiveRecord's alias_attribute override and wire it onto Base"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 220
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T22:26:33Z"
+assignee: "api-build-reflows-the-other-tag-familys-jsdoc"
 blocked-by: null
 closed-reason: null
 ---
