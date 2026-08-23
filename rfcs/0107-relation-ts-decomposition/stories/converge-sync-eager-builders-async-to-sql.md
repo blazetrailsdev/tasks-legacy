@@ -1,14 +1,14 @@
 ---
 title: "converge-sync-eager-builders-async-to-sql"
 status: blocked
-updated: 2026-08-17
+updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
 deps: []
 deps-rfc: []
 est-loc: null
-priority: null
+priority: 6
 pr: null
 claim: "2026-08-17T22:06:05Z"
 assignee: "converge-lock-value-stores-locks-not-clause-string"
