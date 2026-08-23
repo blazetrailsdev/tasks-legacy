@@ -1,6 +1,6 @@
 ---
 title: "AssociationRelation overrides toArray where Rails overrides exec_queries"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: null
-pr: null
+pr: 6912
 claim: "2026-08-23T12:57:31Z"
 assignee: "converge-association-relation-inverse-wiring-onto-exec-queries"
 blocked-by: null
