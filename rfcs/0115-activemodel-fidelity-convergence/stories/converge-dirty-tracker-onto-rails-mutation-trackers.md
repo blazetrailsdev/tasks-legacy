@@ -73,10 +73,21 @@ This is the largest Phase 2 story and the one that unlocks `dirty.rb`'s
 - `changesApplied` performs the `finalize_changes` → reassign → nil sequence of
   `dirty.rb:272-278`.
 - `DirtyTracker` is deleted, along with `snapshot`, `restore`, `_restoreOne`,
-  `reinstateNewRecordChanges`, `redetectChanges`, `attributeWritten`,
-  `_deleteChange`, `_clearChanges`, `_isInPlaceMutableChange`,
-  `_hasInPlaceMutableChange` — or each survivor names the Rails method it now
-  implements.
+  `deferNewRecordChanges`, `redetectChanges`, `attributeWritten`,
+  `_deriveChanges`, `_deriveWrites`, `_deleteChange`, `_clearChanges`,
+  `_isInPlaceMutableChange`, `_hasInPlaceMutableChange` — or each survivor names
+  the Rails method it now implements.
+
+  Member list refreshed by #6936, which made the new-record pass lazy:
+  `reinstateNewRecordChanges` is now `deferNewRecordChanges` (a queue) drained
+  by `_deriveChanges` / `_deriveWrites` against the `Attribute` graph, and
+  `attributeWritten` takes only a name. The queue exists solely because this
+  tracker records rather than derives, so it dies with it. Its two ActiveRecord
+  callers are
+  `0023-surfaced-deviations/activerecord-primes-a-new-records-dirty-set`, and
+  the transaction-restore caller is
+  `0023-surfaced-deviations/transaction-record-state-hand-seeds-the-dirty-tracker`.
+
 - The `@noRailsEquivalent CONVERGEABLE` tag at `dirty.ts:136` is removed, not
   reworded (CLAUDE.md: a deviation-convergence story always converges).
 - `pnpm parity:api:extra --package activemodel` shows `dirty.ts` at ≤ 1 novel.
