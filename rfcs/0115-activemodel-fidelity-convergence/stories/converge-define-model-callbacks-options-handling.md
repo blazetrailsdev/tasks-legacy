@@ -1,6 +1,6 @@
 ---
 title: "Converge defineModelCallbacks' options handling onto callbacks.rb:109-127"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
