@@ -1,6 +1,6 @@
 ---
 title: "load-async-sets-loaded-so-loaded-readers-drain-the-future"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
