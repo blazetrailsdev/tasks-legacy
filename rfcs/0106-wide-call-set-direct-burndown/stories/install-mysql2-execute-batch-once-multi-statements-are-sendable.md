@@ -1,6 +1,6 @@
 ---
 title: "install-mysql2-execute-batch-once-multi-statements-are-sendable"
-status: ready
+status: closed
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Superseded: folded back into mysql2-execute-batch-routes-through-raw-execute, which stays open (blocked) rather than being closed by PR #6913. Two stories for one gap is duplicate debt; the driver evidence now lives on the original."
 ---
 
 ## Context
