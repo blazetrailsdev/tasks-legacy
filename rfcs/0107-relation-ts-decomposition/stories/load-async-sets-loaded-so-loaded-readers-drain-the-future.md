@@ -9,7 +9,7 @@ deps:
   - converge-relation-loaded-arm-readers-onto-seams
 deps-rfc: []
 est-loc: null
-priority: null
+priority: 2
 pr: null
 claim: null
 assignee: null
