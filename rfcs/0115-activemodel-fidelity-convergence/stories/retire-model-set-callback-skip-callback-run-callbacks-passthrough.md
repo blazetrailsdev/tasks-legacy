@@ -1,7 +1,7 @@
 ---
 title: "Retire model.ts's setCallback/skipCallback/resetCallbacks/runCallbacks passthrough"
 status: ready
-updated: 2026-08-19
+updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -9,7 +9,7 @@ deps:
   - retire-model-transactional-and-find-callback-macros
 deps-rfc: []
 est-loc: 200
-priority: null
+priority: 11
 pr: null
 claim: null
 assignee: null
