@@ -1,6 +1,6 @@
 ---
 title: "Time#isdst, tzdataAbbreviation and TimeZone#isDst all guess DST from January/July offsets; tzdata carries the bit"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 420
 priority: null
-pr: null
+pr: 6949
 claim: "2026-08-23T21:02:49Z"
 assignee: "drop-djar-relation-prototype-toarray-punch"
 blocked-by: null
