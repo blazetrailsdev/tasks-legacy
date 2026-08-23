@@ -69,11 +69,14 @@ PR's band only**:
 
     activerecord/connection-adapters/schema-cache.json              5
     activerecord/result.json                                        4
-    activerecord/relation/batches.json                              2 of 3
     activesupport/duration.json                                     1 of 4
-    activesupport/values/time-zone.json                             1  (`today | to_date`)
 
-The remaining ~34 rows — the other nine shards, plus the rows above that name a
+`values/time-zone.json` (1 row) and `relation/batches.json` (2 rows) were in
+this band too, but converged or migrated on `main` while the PR was in review:
+PR #6890 made `TimeZone#today` actually call `to_date`, and PR #6898 migrated
+the two batches rows. They left the population there, not here.
+
+The remaining rows — the other nine shards, plus the rows above that name a
 real divergence rather than a language shortcoming and so must converge rather
 than migrate — are `wave-5g-head-sweep`, which lists them per shard with the
 specific blocker for each.

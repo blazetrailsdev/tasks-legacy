@@ -18,25 +18,29 @@ closed-reason: null
 
 ## Context
 
-`wave-5f-head-sweep` (PR #6897) cleared 13 of the ~47 `kind: "set"` rows in its
-band, emptying and deleting two shards (`result.json`,
-`connection-adapters/schema-cache.json`). It stopped at the 700 LOC ceiling —
+`wave-5f-head-sweep` (PR #6897) cleared 10 rows of its band, emptying and
+deleting two shards (`result.json`,
+`connection-adapters/schema-cache.json`). Its `values/time-zone.json` and
+`relation/batches.json` rows were converged or migrated on `main` by PR #6890 and
+PR #6898 while it was in review, so they left the population elsewhere. It stopped at the 700 LOC ceiling —
 a migrated row costs ~7 JSON deletions plus a JSDoc line — so the rest of the
 band is this story.
 
-Remaining shards and row counts (measured on #6897's branch):
+Remaining shards and row counts, re-measured against `main` at 2026-08-23
+(after #6890, #6896, #6897 and #6898 landed — several counts moved, so trust
+this list over the one #6897 first filed):
 
+    activesupport/encrypted-file.json                                   7
     activerecord/database-configurations/connection-url-resolver.json   5
     activerecord/relation/merger.json                                   5
     activerecord/relation/batches/batch-enumerator.json                 5
     activesupport/callbacks.json                                        5
-    activesupport/encrypted-file.json                                   7
     activerecord/connection-adapters/postgresql/database-statements.json 4
     activesupport/cache.json                                            4
-    activerecord/attribute-methods.json                                 3  (all seed placeholder)
-    activerecord/relation/batches.json                                  1  (`any?`)
+    activesupport/values/time-zone.json                                 4  (`utc` x4)
     activesupport/duration.json                                         3  (`iso8601` x2, `parse`)
-    activesupport/values/time-zone.json                                 4  (`utc` x4, added on main after #6897 was cut)
+    activerecord/attribute-methods.json                                 1  (seed placeholder)
+    activerecord/relation/batches.json                                  1  (`any?`)
 
 Four of those are **not** straight migrations — #6897 left them baselined on
 purpose because their reviewed reason names a real divergence, and a
