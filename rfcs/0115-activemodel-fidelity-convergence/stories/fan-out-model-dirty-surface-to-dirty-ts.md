@@ -9,7 +9,6 @@ deps:
   - fan-out-model-validates-of-macros-to-helper-methods
 deps-rfc: []
 est-loc: 300
-priority: 16
 pr: null
 claim: null
 assignee: null
