@@ -1,6 +1,6 @@
 ---
 title: "loadAsync issues its query before execQueries' trails-only prerequisites"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 200
 priority: 4
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T11:12:29Z"
+assignee: "wave-5g-head-sweep"
 blocked-by: null
 closed-reason: null
 ---
