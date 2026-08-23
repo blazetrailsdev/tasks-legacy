@@ -1,6 +1,6 @@
 ---
 title: "Move values/time-zone.ts' remaining Date-seated period callers onto ::Time, deleting utcTimeFrom"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: null
+pr: 6959
 claim: "2026-08-23T22:40:29Z"
 assignee: "collapse-the-activerecord-secure-password-duplicate"
 blocked-by: null
