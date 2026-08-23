@@ -1,7 +1,7 @@
 ---
 title: "Route AR dup's attribute duplication through the initialize_dup links"
-status: draft
-updated: 2026-08-21
+status: ready
+updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
