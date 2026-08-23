@@ -1,7 +1,7 @@
 ---
 title: "_insert_record's prefetch_primary_key arm assigns the raw sequence value instead of re-casting through _default_attributes"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 80
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T00:57:31Z"
+assignee: "wave-5g-head-sweep"
 blocked-by: null
 closed-reason: null
 ---
