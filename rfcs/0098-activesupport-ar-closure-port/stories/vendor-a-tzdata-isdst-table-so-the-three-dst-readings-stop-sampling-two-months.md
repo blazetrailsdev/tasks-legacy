@@ -1,6 +1,6 @@
 ---
 title: "Time#isdst, tzdataAbbreviation and TimeZone#isDst all guess DST from January/July offsets; tzdata carries the bit"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
