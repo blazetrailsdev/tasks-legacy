@@ -1,6 +1,6 @@
 ---
 title: "reset must cancel the parked future result, not just drop it"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
