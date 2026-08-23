@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build rewrites a mixed-family JSDoc comment while migrating nothing"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: null
-pr: null
+pr: 6958
 claim: "2026-08-23T22:26:33Z"
 assignee: "api-build-reflows-the-other-tag-familys-jsdoc"
 blocked-by: null
