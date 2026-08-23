@@ -1,7 +1,7 @@
 ---
 title: "Port core_ext/date_time/calculations.rb onto the DateTime class, not free functions"
-status: in-progress
-updated: 2026-08-22
+status: done
+updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: dead-mixin-companions
 deps: []
