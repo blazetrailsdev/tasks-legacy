@@ -1,7 +1,7 @@
 ---
 title: "Relation readers branch on _loaded/_records instead of the loaded?/records seams a CollectionProxy overrides"
-status: draft
-updated: 2026-08-20
+status: ready
+updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
