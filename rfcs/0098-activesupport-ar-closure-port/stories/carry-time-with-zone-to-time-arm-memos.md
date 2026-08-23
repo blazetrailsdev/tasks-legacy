@@ -5,7 +5,8 @@ updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: []
-deps: []
+deps:
+  - converge-time-with-zone-utc-onto-a-ruby-time
 deps-rfc: []
 est-loc: 120
 priority: 2
