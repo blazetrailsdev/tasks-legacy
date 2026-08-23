@@ -1,6 +1,6 @@
 ---
 title: "finder_needs_type_condition? memoizes conditionally where Rails memoizes unconditionally"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
