@@ -1,6 +1,6 @@
 ---
 title: "Port Time#+ so incorporate_utc_offset's else arm is Rails' `time + offset`"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 130
 priority: null
-pr: null
+pr: 6958
 claim: "2026-08-23T22:26:33Z"
 assignee: "api-build-reflows-the-other-tag-familys-jsdoc"
 blocked-by: null
