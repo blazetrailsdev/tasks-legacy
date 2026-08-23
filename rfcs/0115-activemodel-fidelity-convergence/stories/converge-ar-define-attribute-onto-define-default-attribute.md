@@ -8,7 +8,7 @@ packages: ["activerecord", "activemodel"]
 deps: ["retire-attribute-definitions-registry-for-default-attributes"]
 deps-rfc: []
 est-loc: 260
-priority: null
+priority: 51
 pr: null
 claim: null
 assignee: null
