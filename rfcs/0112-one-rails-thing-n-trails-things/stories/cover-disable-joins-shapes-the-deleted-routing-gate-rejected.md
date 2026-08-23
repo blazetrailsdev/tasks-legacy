@@ -1,6 +1,6 @@
 ---
 title: "Cover the disable_joins shapes the deleted DJAS routing gate used to reject"
-status: ready
+status: draft
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
