@@ -9,7 +9,7 @@ deps:
   - retire-model-lifecycle-callback-macros-onto-define-model-callbacks
 deps-rfc: []
 est-loc: 300
-priority: null
+priority: 10
 pr: 6923
 claim: "2026-08-23T15:57:33Z"
 assignee: "retire-model-transactional-and-find-callback-macros"
