@@ -1,6 +1,6 @@
 ---
 title: "DJAR#execQueries punches Relation.prototype.toArray where the plain chain now suffices"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 40
 priority: null
-pr: null
+pr: 6949
 claim: "2026-08-23T21:02:49Z"
 assignee: "drop-djar-relation-prototype-toarray-punch"
 blocked-by: null
