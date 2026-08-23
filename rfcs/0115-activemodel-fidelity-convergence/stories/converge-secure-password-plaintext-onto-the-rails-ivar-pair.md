@@ -1,6 +1,6 @@
 ---
 title: "has_secure_password stores the plaintext in an ivar pair, not an attribute plus an after_initialize eviction"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 220
 priority: null
-pr: null
+pr: 6941
 claim: "2026-08-23T19:52:31Z"
 assignee: "teach-api-build-to-mint-missing-rails-args-receipts"
 blocked-by: null
