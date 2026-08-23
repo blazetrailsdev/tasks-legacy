@@ -1,6 +1,6 @@
 ---
 title: "port-with-connection-acquisition-seam-for-the-arel-reader"
-status: in-progress
+status: blocked
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -12,7 +12,7 @@ priority: 5
 pr: 6928
 claim: "2026-08-23T17:39:45Z"
 assignee: "converge-excluding-deferred-ids-marker-to-eager-materialization"
-blocked-by: null
+blocked-by: "No synchronous with_connection seam is expressible: ConnectionPool#withConnection is async solely because checkout() awaits an available connection, so a sync seam could only serve an already-leased connection — exactly what Relation#_conn() returns. arel() otherwise ports query_methods.rb:1594-1595 verbatim (memo + connection arg) as of #6755/#6865; blocker cited at the call site in PR #6928."
 closed-reason: null
 ---
 
