@@ -9,7 +9,6 @@ deps:
   - api-compare-bodyless-declaration-outranks-real-body
 deps-rfc: []
 est-loc: 420
-priority: 40
 pr: null
 claim: null
 assignee: null
