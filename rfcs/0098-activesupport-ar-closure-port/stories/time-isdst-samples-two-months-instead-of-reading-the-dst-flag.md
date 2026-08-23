@@ -1,6 +1,6 @@
 ---
 title: "Time#isdst guesses the standard offset from January and July; MRI reads tm_isdst"
-status: claimed
+status: blocked
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: "2026-08-23T18:51:39Z"
 assignee: "carry-time-with-zone-to-time-arm-memos"
-blocked-by: null
+blocked-by: "MEASURED: no runtime API exposes tzdata's isdst bit, and both proposed convergences are WORSE than the current heuristic. Verified against MRI on 3,714 samples (418 Intl zones x 9 dates, TZ-set `Time.local(...).isdst`, ruby 3.x): current Jan/July sampling = 121 mismatches; the story's option 2 (offset vs surrounding getTimeZoneTransition segments) = 621-778 mismatches depending on window (3/6/7/9/12/18 months) -- it reads every PERMANENT standard-offset shift as DST (America/Cancun 2015, Europe/Istanbul 2016, Asia/Amman 2022, Africa/Juba 2020, all false in MRI). Option 1 (CLDR names) also fails: America/New_York 1943 formats as 'GMT-4' with no daylight wording (MRI true) and Europe/Dublin summer formats as 'Irish Standard Time' (MRI true), so the name does not carry the flag. Best offset-only variant found (min over 24 monthly samples of the year) = 113, still wrong for the year-round-DST years the story cites (1943 war time) and for permanent shifts. Only option 3 remains -- vendoring a generated tzdata isdst table into @blazetrails/date -- which is a data-table story of its own, not a rewrite of this getter. Re-scope to that, sized separately. Evidence scripts: scratchpad t7.mjs/t8.mjs from PR for the sibling stories in this bundle."
 closed-reason: null
 ---
 
