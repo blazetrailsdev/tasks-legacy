@@ -1,6 +1,6 @@
 ---
 title: "merge-colliding-test-file-pair-abstract-schema-definitions"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T21:58:26Z"
+assignee: "merge-colliding-test-file-pair-abstract-schema-definitions"
 blocked-by: null
 closed-reason: null
 ---
