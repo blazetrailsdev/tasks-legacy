@@ -17,7 +17,7 @@ est-loc: 80
 pr: null
 claim: "2026-08-11T01:14:36Z"
 assignee: "arel-collector-argument-order-convergence"
-blocked-by: "Re-scoped 2026-08-18 to the AR require-closure; see this story's '## Re-scope (2026-08-18)'. Unblocks when the closure's 94 convergeable naming rows (burndown 249 + module-mixin-receiver 10 repo-wide, of which 94 are in-closure) reach zero — NOT when all 15 packages are clean. The earlier precondition (21 of 329, 6.4%, per naming-residue-taxonomy-recalibration 2026-08-13) is superseded by a re-measurement: repo-wide the permanent residue is 52 of 311 (16.7%), and inside the AR closure it is 43 of 137 (31.4%), so the criterion-2 seeding step is ~2x its original scope. The remaining 173 out-of-closure rows (actiondispatch 79, actioncontroller 31, rack 28, actionview 26, trailties 1) stay report-only and are handed off to a future actionpack-family RFC; they no longer gate this flip."
+blocked-by: "Blocked on the wave-5 band (wave-5-naming-activesupport / -ar-model-core / -ar-adapters / -ar-associations / -ar-relation / -tail), which splits the 107 convergeable naming rows still standing inside the AR require-closure as of the 2026-08-21 parity artifact. Supersedes the 2026-08-18 reason: that re-scope to the AR closure still holds (out-of-closure rows stay report-only and want an actionpack-family RFC), but its wave-4 dep list is all done while the in-closure convergeable count is 107, not 0 - repo-wide burndown 244 + module-mixin-receiver 11, of which 107 are in-closure across 67 files. Unblocks when this band drives the in-closure convergeable count to zero."
 closed-reason: null
 priority: 20
 ---
