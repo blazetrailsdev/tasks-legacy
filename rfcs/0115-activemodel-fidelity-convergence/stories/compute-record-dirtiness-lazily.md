@@ -8,7 +8,6 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 200
-priority: 57
 pr: 6936
 claim: "2026-08-23T18:08:08Z"
 assignee: "tablename-only-model-resolves-columns-without-explicit-reflect"
