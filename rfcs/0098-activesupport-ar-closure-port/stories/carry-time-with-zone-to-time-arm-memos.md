@@ -1,6 +1,6 @@
 ---
 title: "TimeWithZone#to_time memoizes each preserve_timezone arm"
-status: draft
+status: ready
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
