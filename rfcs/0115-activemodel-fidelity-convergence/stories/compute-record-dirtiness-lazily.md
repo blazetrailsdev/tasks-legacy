@@ -1,6 +1,6 @@
 ---
 title: "Compute new-record dirtiness lazily and delete withoutMarkingRead"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: 57
-pr: null
+pr: 6936
 claim: "2026-08-23T18:08:08Z"
 assignee: "tablename-only-model-resolves-columns-without-explicit-reflect"
 blocked-by: null
