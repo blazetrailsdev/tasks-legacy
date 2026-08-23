@@ -1,6 +1,6 @@
 ---
 title: "toSql renders no eager JOIN for a composite PK with LIMIT/OFFSET over collection reflections"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
