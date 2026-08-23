@@ -1,6 +1,6 @@
 ---
 title: "CollectionAssociation#replace does not call transaction; the ReplacePlan split moved it"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 150
 priority: null
-pr: null
+pr: 6902
 claim: "2026-08-23T02:57:28Z"
 assignee: "top-level-function-missing-rails-call-tag-does-not-suppress"
 blocked-by: null
