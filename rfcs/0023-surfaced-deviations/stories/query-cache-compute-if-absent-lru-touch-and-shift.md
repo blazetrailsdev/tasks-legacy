@@ -1,6 +1,6 @@
 ---
 title: "compute_if_absent drops Rails' LRU touch and @map.shift eviction"
-status: draft
+status: done
 updated: 2026-08-23
 rfc: "0023-surfaced-deviations"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 90
 priority: null
-pr: null
+pr: 6929
 claim: null
 assignee: null
 blocked-by: null
