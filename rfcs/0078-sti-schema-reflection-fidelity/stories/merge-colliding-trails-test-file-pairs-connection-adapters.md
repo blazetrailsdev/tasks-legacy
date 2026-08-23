@@ -58,3 +58,17 @@ for the mysql pair alone and ~3600 for all four, well past the PR ceiling.
       (`postgresql/schema-statements-class.test.ts`).
 - [ ] Split across as many PRs as the LOC ceiling requires — one pair per PR
       is fine.
+
+## Rails counterpart check for the four
+
+None of the four is awaiting a Rails port, so none has a Rails counterpart to
+record. The three Rails files whose names read closest were checked through
+`rubyToConventionTs` and every one lands outside `connection-adapters/`:
+
+| Rails file                                                    | convention TS path                               | state                       |
+| ------------------------------------------------------------- | ------------------------------------------------ | --------------------------- |
+| `test/cases/migration/schema_definitions_test.rb:7`           | `migration/schema-definitions.test.ts`           | unported; that path is free |
+| `test/cases/adapters/abstract_mysql_adapter/schema_test.rb:6` | `adapters/abstract-mysql-adapter/schema.test.ts` | already ported              |
+| `test/cases/adapters/postgresql/schema_test.rb:587`           | `adapters/postgresql/schema.test.ts`             | already ported              |
+
+So the merge below does not block, or get blocked by, any future port.
