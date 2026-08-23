@@ -1,7 +1,7 @@
 ---
 title: "Burn down the activemodel call-mismatch baseline rows"
 status: ready
-updated: 2026-08-19
+updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -11,7 +11,7 @@ deps:
   - converge-dirty-tracker-onto-rails-mutation-trackers
 deps-rfc: []
 est-loc: 300
-priority: null
+priority: 90
 pr: null
 claim: null
 assignee: null
