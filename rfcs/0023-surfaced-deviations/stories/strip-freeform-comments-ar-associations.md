@@ -1,6 +1,6 @@
 ---
 title: "strip-freeform-comments-ar-associations"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0023-surfaced-deviations"
 cluster: null
