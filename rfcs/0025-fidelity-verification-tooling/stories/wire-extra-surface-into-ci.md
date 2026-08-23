@@ -17,6 +17,15 @@ closed-reason: null
 
 ## Context
 
+> **Partly delivered by PR #6897 (2026-08-23).** The only-shrink mark, the gate
+> script (`scripts/api-compare/lint-extra-surface-ratchet.ts`,
+> `pnpm parity:api:extra:gate`) and the CI wiring in the
+> `Rails API/Test Comparison` job all exist now — but scoped to **arel only**
+> (`GATED_PACKAGES` in `scripts/api-compare/extra-surface-mark.ts`), pinned at
+> the post-burndown `novel 0, total 63`. Widening to the other packages is
+> `extra-surface-ratchet-widen-beyond-arel`. What remains here is only whatever
+> this story wanted beyond that.
+
 The 2026-08-03 api-signals audit found `pnpm parity:api:extra`
 (`scripts/api-compare/extra-surface.ts`) is not referenced anywhere in
 `.github/workflows/ci.yml` (grep count 0), despite hard-exiting non-zero on
