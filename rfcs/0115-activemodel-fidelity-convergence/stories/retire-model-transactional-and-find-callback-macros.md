@@ -1,6 +1,6 @@
 ---
 title: "Retire model.ts's transactional, initialize, find and touch callback macros"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
