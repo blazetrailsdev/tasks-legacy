@@ -1,6 +1,6 @@
 ---
 title: "Retire model.ts's setCallback/skipCallback/resetCallbacks/runCallbacks passthrough"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
@@ -10,8 +10,8 @@ deps:
 deps-rfc: []
 est-loc: 200
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T21:16:29Z"
+assignee: "retire-attribute-names-memo-revision-stamp"
 blocked-by: null
 closed-reason: null
 ---
