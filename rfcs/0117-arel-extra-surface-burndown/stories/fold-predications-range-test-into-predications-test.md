@@ -1,6 +1,6 @@
 ---
 title: "Fold predications-range.test.ts into predications.test.ts (its source file is gone)"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0117-arel-extra-surface-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 240
 priority: 12
-pr: null
+pr: 6903
 claim: "2026-08-23T10:38:38Z"
 assignee: "fold-predications-range-test-into-predications-test"
 blocked-by: null
