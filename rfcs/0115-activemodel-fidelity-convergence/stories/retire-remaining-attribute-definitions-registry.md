@@ -1,6 +1,6 @@
 ---
 title: "Retire the remaining _attributeDefinitions registry (user declarations live in the pending queue)"
-status: ready
+status: draft
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
