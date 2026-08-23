@@ -1,6 +1,6 @@
 ---
 title: "encryption-schemes.test.ts lacks transactional fixtures, forcing a trails-only deleteAll"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
