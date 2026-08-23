@@ -1,6 +1,6 @@
 ---
 title: "Preloader::ThroughAssociation#source_preloaders derives a scope instead of passing scope"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T02:57:28Z"
+assignee: "top-level-function-missing-rails-call-tag-does-not-suppress"
 blocked-by: null
 closed-reason: null
 ---

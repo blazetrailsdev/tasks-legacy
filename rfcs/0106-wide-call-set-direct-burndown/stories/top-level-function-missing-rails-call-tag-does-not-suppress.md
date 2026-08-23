@@ -1,6 +1,6 @@
 ---
 title: "A @missingRailsCall tag on an exported top-level function does not suppress its call"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 140
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T02:57:28Z"
+assignee: "top-level-function-missing-rails-call-tag-does-not-suppress"
 blocked-by: null
 closed-reason: null
 ---
