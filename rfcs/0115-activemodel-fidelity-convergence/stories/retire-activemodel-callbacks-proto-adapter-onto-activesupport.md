@@ -9,7 +9,6 @@ deps:
   - retire-model-set-callback-skip-callback-run-callbacks-passthrough
 deps-rfc: []
 est-loc: 340
-priority: 30
 pr: null
 claim: null
 assignee: null
