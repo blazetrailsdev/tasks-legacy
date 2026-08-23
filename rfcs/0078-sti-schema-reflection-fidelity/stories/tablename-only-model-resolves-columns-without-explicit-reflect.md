@@ -1,6 +1,6 @@
 ---
 title: "tablename-only-model-resolves-columns-without-explicit-reflect"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
