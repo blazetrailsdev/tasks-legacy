@@ -1,7 +1,7 @@
 ---
 title: "Gate arel's extra-surface count with an only-shrink ratchet"
-status: claimed
-updated: 2026-08-22
+status: in-progress
+updated: 2026-08-23
 rfc: "0117-arel-extra-surface-burndown"
 cluster: null
 packages: ["arel"]
@@ -9,7 +9,7 @@ deps: ["arel-root-and-barrel-tail"]
 deps-rfc: []
 est-loc: 180
 priority: 11
-pr: null
+pr: 6897
 claim: "2026-08-22T23:57:28Z"
 assignee: "wave-5f-head-sweep"
 blocked-by: null
