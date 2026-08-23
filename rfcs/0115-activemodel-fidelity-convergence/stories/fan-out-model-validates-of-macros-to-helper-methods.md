@@ -9,7 +9,6 @@ deps:
   - fan-out-model-validation-runner-surface-to-validations
 deps-rfc: []
 est-loc: 220
-priority: 15
 pr: null
 claim: null
 assignee: null
