@@ -1,0 +1,48 @@
+---
+title: "merge-colliding-test-file-pair-abstract-schema-definitions"
+status: ready
+updated: 2026-08-23
+rfc: "0078-sti-schema-reflection-fidelity"
+cluster: null
+packages: []
+deps: []
+deps-rfc: []
+est-loc: null
+priority: null
+pr: null
+claim: null
+assignee: null
+blocked-by: null
+closed-reason: null
+---
+
+## Context
+
+Follow-up to `merge-colliding-trails-test-file-pairs-connection-adapters`
+(RFC 0078), which merged only the postgresql pair — the merges are
+size-bound, and the other three did not fit the 700 LOC ceiling in one PR.
+
+Remaining colliding pair under
+`packages/activerecord/src/connection-adapters/`:
+
+| plain (trails invention, still unrenamed)     | existing sibling                                     |
+| --------------------------------------------- | ---------------------------------------------------- |
+| `abstract/schema-definitions.test.ts` (519 L) | `abstract/schema-definitions.trails.test.ts` (299 L) |
+
+Both files are trails inventions: `rubyToConventionTs`
+(`scripts/test-compare/compare.ts:135`) only maps
+`cases/connection_adapters/*_test.rb` (13 files, all ported) under
+`connection-adapters/`, so no future Rails port ever lands at either path.
+
+The merge pattern is the one PR #<pg> used: fold the plain file's helpers and
+`describe` blocks into the `.trails.test.ts` sibling, de-duplicating any
+helper both copies define, merge the import lists, and delete the plain file.
+
+## Acceptance criteria
+
+- [ ] `abstract/schema-definitions.test.ts` is merged into `abstract/schema-definitions.trails.test.ts` and deleted,
+      preserving every `describe`/`it` name verbatim (no test-name edits).
+- [ ] `pnpm parity:test --package activerecord` totals byte-identical before
+      and after.
+- [ ] Any eslint exclude path naming the plain file is updated (eslint/no-explicit-any-test-exclude.json).
+- [ ] The merged file passes `pnpm vitest run <path>`.
