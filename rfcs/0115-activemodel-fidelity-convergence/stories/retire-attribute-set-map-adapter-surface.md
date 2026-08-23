@@ -1,7 +1,7 @@
 ---
 title: "Retire attribute-set.ts's JS Map adapter surface"
 status: ready
-updated: 2026-08-19
+updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -9,7 +9,7 @@ deps:
   - converge-dirty-tracker-onto-rails-mutation-trackers
 deps-rfc: []
 est-loc: 320
-priority: null
+priority: 31
 pr: null
 claim: null
 assignee: null
