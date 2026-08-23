@@ -9,7 +9,6 @@ deps:
   - converge-dirty-tracker-onto-rails-mutation-trackers
 deps-rfc: []
 est-loc: 320
-priority: 31
 pr: null
 claim: null
 assignee: null
