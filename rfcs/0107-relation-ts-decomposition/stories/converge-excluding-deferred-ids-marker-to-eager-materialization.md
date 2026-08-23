@@ -1,6 +1,6 @@
 ---
 title: "excluding defers relations.flat_map(&:ids) to load time instead of materializing eagerly"
-status: in-progress
+status: blocked
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -12,7 +12,7 @@ priority: null
 pr: 6928
 claim: "2026-08-23T17:39:45Z"
 assignee: "converge-excluding-deferred-ids-marker-to-eager-materialization"
-blocked-by: null
+blocked-by: "Loaded arm converged in PR #6928 (option 2 of the story: relation args that are already loaded? materialize eagerly, no marker, literal ids in toSql). The un-loaded arm is blocked: ids runs the SELECT (calculations.rb:390-404) while excluding is a synchronous chainable and every adapter select_all is Promise-returning (database-statements.ts:1293/1375); toSql(): string is read inline by 26 non-test callers so it cannot await either. Needs a synchronous query seam — same blocker as port-with-connection-acquisition-seam-for-the-arel-reader."
 closed-reason: null
 ---
 
