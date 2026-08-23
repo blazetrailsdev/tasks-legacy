@@ -1,6 +1,6 @@
 ---
 title: "attributes-for-create-reads-the-composite-pk-id-reader"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6907
 claim: "2026-08-23T11:42:26Z"
 assignee: "attributes-for-create-reads-the-composite-pk-id-reader"
 blocked-by: null
