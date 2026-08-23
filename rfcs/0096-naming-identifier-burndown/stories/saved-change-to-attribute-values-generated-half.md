@@ -1,7 +1,7 @@
 ---
 title: "saved-change-to-attribute-values-generated-half"
-status: in-progress
-updated: 2026-08-22
+status: done
+updated: 2026-08-23
 rfc: "0096-naming-identifier-burndown"
 cluster: null
 packages: []
