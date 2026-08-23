@@ -1,6 +1,6 @@
 ---
 title: "Seed _default_attributes' columns inside with_connection instead of a best-effort connection probe"
-status: ready
+status: draft
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
