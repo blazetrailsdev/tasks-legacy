@@ -1,6 +1,6 @@
 ---
 title: "Wave 5: burn down the AR-closure naming tail — encryption, activemodel, arel, globalid, test-support"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0096-naming-identifier-burndown"
 cluster: api-compare
