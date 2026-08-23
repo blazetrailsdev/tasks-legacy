@@ -1,6 +1,6 @@
 ---
 title: "nokogiri-backend-raises-syntax-error"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6920
 claim: "2026-08-23T15:27:26Z"
 assignee: "nokogiri-backend-raises-syntax-error"
 blocked-by: null
