@@ -1,6 +1,6 @@
 ---
 title: "sweep-trails-only-test-files-connection-adapters"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
