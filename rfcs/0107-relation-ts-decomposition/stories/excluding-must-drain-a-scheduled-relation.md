@@ -1,6 +1,6 @@
 ---
 title: "excluding must drain a scheduled relation instead of re-querying its ids"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
