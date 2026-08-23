@@ -1,6 +1,6 @@
 ---
 title: "Port Attributes#initialize_dup into Model's dup chain"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 160
 priority: 53
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T17:56:07Z"
+assignee: "sweep-trails-only-test-files-onto-trails-name"
 blocked-by: null
 closed-reason: null
 ---
