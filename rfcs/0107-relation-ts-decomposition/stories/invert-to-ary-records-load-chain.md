@@ -1,6 +1,6 @@
 ---
 title: "load() calls toArray() where Rails' to_ary calls records calls load"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 150
 priority: 1
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T20:22:56Z"
+assignee: "invert-to-ary-records-load-chain"
 blocked-by: null
 closed-reason: null
 ---
