@@ -1,6 +1,6 @@
 ---
 title: "converge-xmlmini-symbol-representation-onto-colon-strings"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6919
 claim: "2026-08-23T15:12:27Z"
 assignee: "converge-xmlmini-symbol-representation-onto-colon-strings"
 blocked-by: null
