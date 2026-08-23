@@ -9,7 +9,6 @@ deps:
   - fan-out-model-validates-macro-to-validations-validates
 deps-rfc: []
 est-loc: 280
-priority: 13
 pr: null
 claim: null
 assignee: null
