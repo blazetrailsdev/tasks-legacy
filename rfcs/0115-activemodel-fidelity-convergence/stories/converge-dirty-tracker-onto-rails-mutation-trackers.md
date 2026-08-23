@@ -1,7 +1,7 @@
 ---
 title: "Converge the invented DirtyTracker onto Rails' two mutation trackers"
 status: ready
-updated: 2026-08-19
+updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -9,7 +9,7 @@ deps:
   - fan-out-model-dirty-surface-to-dirty-ts
 deps-rfc: []
 est-loc: 400
-priority: null
+priority: 30
 pr: null
 claim: null
 assignee: null
