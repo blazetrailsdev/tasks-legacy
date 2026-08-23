@@ -9,7 +9,6 @@ deps:
   - retire-attribute-set-map-adapter-surface
 deps-rfc: []
 est-loc: 180
-priority: 32
 pr: null
 claim: null
 assignee: null
