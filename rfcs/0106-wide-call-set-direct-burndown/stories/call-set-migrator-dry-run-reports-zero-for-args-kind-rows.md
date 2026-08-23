@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build --dry-run reports a bare 0 for args-kind rows, so live rows read as stale"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
