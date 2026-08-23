@@ -61,28 +61,26 @@ first.
 
 ## Scope
 
-The 5-row band, second half, and the 4-row band (58 rows):
+The story's band was originally the whole 5-row second half plus the 4-row band
+(58 rows). It is larger than one PR at the 700 LOC ceiling — a migrated row
+costs ~7 JSON deletions plus a JSDoc line — so it ships as sequential
+non-overlapping PRs from `main`, never stacked, and this story is **the first
+PR's band only**:
 
     activerecord/connection-adapters/schema-cache.json              5
-    activerecord/database-configurations/connection-url-resolver.json 5
-    activerecord/relation/merger.json                               5
-    activerecord/relation/batches/batch-enumerator.json             5
-    activesupport/callbacks.json                                    5
-    activesupport/encrypted-file.json                               5
-    activerecord/attribute-methods.json                             4  (all 4 seed)
     activerecord/result.json                                        4
-    activerecord/connection-adapters/postgresql/database-statements.json 4
-    activerecord/relation/batches.json                              4
-    activesupport/cache.json                                        4
-    activesupport/duration.json                                     4
-    activesupport/values/time-zone.json                             4
+    activerecord/relation/batches.json                              2 of 3
+    activesupport/duration.json                                     1 of 4
+    activesupport/values/time-zone.json                             1
 
-Larger than one PR at the 700 LOC ceiling — ship it as sequential
-non-overlapping PRs from `main`, never stacked.
+The remaining ~36 rows — the other nine shards, plus the rows above that name a
+real divergence rather than a language shortcoming and so must converge rather
+than migrate — are `wave-5g-head-sweep`, which lists them per shard with the
+specific blocker for each.
 
 ## Acceptance criteria
 
-- [ ] Every row in the files above is converged, or leaves as a `@missingRailsCall` tag carrying its reviewed per-site reason at the call site. Never a name-keyed bulk edit, a broadened reason, or a move to another register.
+- [ ] Every row in the band above is converged, or leaves as a `@missingRailsCall` tag carrying its reviewed per-site reason at the call site. Never a name-keyed bulk edit, a broadened reason, or a move to another register.
 - [ ] Emptied shards deleted, not committed as `[]`; `pnpm parity:api:calls:tighten <shard>` for any shard left with a stale mark.
 - [ ] `pnpm parity:api:calls` and `pnpm parity:api:calls:args` green.
 - [ ] SQLite, PostgreSQL and MySQL/MariaDB lanes green.
