@@ -1,7 +1,7 @@
 ---
 title: "Fold predications-range.test.ts into predications.test.ts (its source file is gone)"
-status: draft
-updated: 2026-08-22
+status: ready
+updated: 2026-08-23
 rfc: "0117-arel-extra-surface-burndown"
 cluster: null
 packages: []
