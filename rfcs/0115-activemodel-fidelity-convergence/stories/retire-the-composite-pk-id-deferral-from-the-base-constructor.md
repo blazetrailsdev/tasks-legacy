@@ -8,7 +8,6 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 260
-priority: 60
 pr: 6933
 claim: "2026-08-23T18:20:09Z"
 assignee: "sweep-trails-only-test-files-associations"
