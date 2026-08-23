@@ -58,3 +58,39 @@ transformer, not in `preprocess_query`.
 Moved by the RFC 0023 backlog triage pass into `0113-branch-and-guard-parity`, which was carved out
 of that register for this deviation class. Nothing about the finding changed —
 every Rails and trails `file:line` citation above is as originally filed.
+
+## Update after PR #6913 (2026-08-23)
+
+The guard is now smaller and purer, which makes this story easier, not moot.
+
+`_inQueryTransformers` used to carry TWO jobs: a one-shot "skip the transformer
+pass" flag that `executeBatch` set per statement, and a re-entrancy guard.
+PR #6913 routed `executeBatch` through `rawExecute` on the abstract base and
+mysql2 (matching `abstract/database_statements.rb:594-598` and
+`mysql2/database_statements.rb:17-21`), which is BELOW `preprocess_query` —
+`preprocess_query` is `internal_execute`'s step (`:589-591`) — so batch SQL now
+skips the transformers structurally, exactly as in Rails, and the batch arm was
+deleted.
+
+What remains in `preprocessQuery`
+(`connection-adapters/abstract/database-statements.ts`) is only:
+
+```ts
+const host = this as DatabaseStatementsHost & { _inQueryTransformers?: boolean };
+if (host._inQueryTransformers) return sql;
+host._inQueryTransformers = true;
+try { ...transformers... } finally { host._inQueryTransformers = false; }
+```
+
+Rails' `preprocess_query` (`abstract/database_statements.rb:574-584`) has **no
+guard at all** — `check_if_write_query`, `mark_transaction_written_if_write`,
+then the `ActiveRecord.query_transformers.each` loop, nothing else. So the
+whole flag is now a single invented arm with one job, and the converged shape
+is simply to delete it and the `_inQueryTransformers` field on
+`DatabaseStatementsHost`.
+
+The one thing to establish before deleting: what a synchronous, SQL-issuing
+query transformer does without the guard. Rails tolerates it because nothing
+re-enters synchronously there; confirm no trails transformer does either
+(the flag is set and cleared within one synchronous stretch, so it never spans
+an await).

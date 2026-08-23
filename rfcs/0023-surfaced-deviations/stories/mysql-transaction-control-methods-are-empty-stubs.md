@@ -89,3 +89,36 @@ Coordinate with RFC 0076 (execute-primitive-convergence), which owns
 - [ ] `execRollbackDbTransaction` holds the rollback body under the Rails name.
 - [ ] A regression test that FAILS on baseline covers the restart path on MySQL/MariaDB.
 - [ ] SQLite, PostgreSQL and MySQL/MariaDB lanes green.
+
+## Update after PR #6913 (2026-08-23)
+
+One of the five is no longer a stub. `beginIsolatedDbTransaction` now ports
+`abstract_mysql_adapter.rb:230-239` in place of its `void isolation` no-op,
+including the Rails source comment and the `transaction_isolation_levels.fetch`
+KeyError arms:
+
+    await this.executeBatch([`SET TRANSACTION ISOLATION LEVEL ${level}`, "BEGIN"], "TRANSACTION", {
+      allowRetry: true,
+      materializeTransactions: false,
+    });
+
+That was possible because #6913 put the `allow_retry` /
+`materialize_transactions` kwargs on `executeBatch`'s declared signature at
+every level (`abstract_mysql_adapter.rb:230-239` is the caller Rails' kwargs
+exist for).
+
+So the remaining scope here is **four** empty bodies, not five, plus a new
+sub-item this surfaced:
+
+- **`Mysql2Adapter`'s `beginIsolatedDbTransaction` override
+  (`mysql2-adapter.ts`) is now redundant divergence and should be retired.**
+  Rails defines `begin_isolated_db_transaction` ONLY on `AbstractMysqlAdapter`
+  — `mysql2_adapter.rb` and `mysql2/database_statements.rb` have no such
+  method — so the override is invented surface. It hand-rolls
+  `withRawConnection({ allowRetry: true, materializeTransactions: false })` +
+  two `internalExecute` calls + a `this._inTransaction = true` assignment,
+  which is what the now-ported abstract body expresses through `executeBatch`
+  → `rawExecute` → `withRawConnection`. Retiring it needs the `_inTransaction`
+  bookkeeping accounted for (that flag is trails-only) and the MySQL lane
+  green; it shadows the abstract method today, so the abstract port is
+  currently unexercised on mysql2.
