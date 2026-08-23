@@ -1,6 +1,6 @@
 ---
 title: "enable_query_cache/cache still adopt the block value where disable_query_cache no longer does"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: null
-pr: null
+pr: 6913
 claim: "2026-08-23T13:12:30Z"
 assignee: "converge-enable-query-cache-onto-the-block-value-return"
 blocked-by: null
