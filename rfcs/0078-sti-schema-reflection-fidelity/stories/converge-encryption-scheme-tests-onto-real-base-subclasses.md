@@ -1,6 +1,6 @@
 ---
 title: "converge-encryption-scheme-tests-onto-real-base-subclasses"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6925
 claim: "2026-08-23T16:27:27Z"
 assignee: "converge-encryption-scheme-tests-onto-real-base-subclasses"
 blocked-by: null
