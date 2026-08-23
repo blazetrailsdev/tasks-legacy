@@ -1,6 +1,6 @@
 ---
 title: "Wave 5: burn down the AR-closure naming rows in activerecord relation, scoping and statement-cache"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0096-naming-identifier-burndown"
 cluster: api-compare
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 80
 priority: 14
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T14:04:32Z"
+assignee: "wave-5-naming-activesupport"
 blocked-by: null
 closed-reason: null
 ---
