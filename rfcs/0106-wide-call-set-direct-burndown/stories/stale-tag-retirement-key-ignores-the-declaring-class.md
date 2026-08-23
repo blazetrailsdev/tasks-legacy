@@ -1,6 +1,6 @@
 ---
 title: "staleTagKey ignores the declaring class, so retiring one stale tag can delete a sibling's receipt"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
