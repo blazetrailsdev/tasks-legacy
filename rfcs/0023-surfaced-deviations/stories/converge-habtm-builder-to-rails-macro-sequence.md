@@ -1,7 +1,7 @@
 ---
 title: "Converge the HABTM macro onto Rails' builder sequence"
-status: draft
-updated: 2026-08-18
+status: done
+updated: 2026-08-23
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages: []
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 400
 priority: null
-pr: null
+pr: 6900
 claim: null
 assignee: null
 blocked-by: null

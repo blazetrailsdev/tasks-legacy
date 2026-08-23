@@ -1,13 +1,13 @@
 ---
 title: "Converge the HMT disable_joins arm off the DJAS routing predicate onto scope.to_a"
-status: ready
-updated: 2026-08-22
+status: done
+updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
 deps-rfc: []
 est-loc: 250
-pr: null
+pr: 6900
 claim: null
 assignee: null
 blocked-by: null

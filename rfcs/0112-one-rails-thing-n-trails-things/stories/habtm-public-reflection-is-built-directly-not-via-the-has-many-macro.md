@@ -1,6 +1,6 @@
 ---
 title: "habtm-public-reflection-is-built-directly-not-via-the-has-many-macro"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
