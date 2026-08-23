@@ -128,6 +128,9 @@ import {
   readRfcPriority,
   rfcPriorityFlag,
   rfcPriorityMap,
+  countOpenStories,
+  openStoryFiles,
+  OPEN_STORY_WARN_THRESHOLD,
 } from "./cli.js";
 
 function story(over: Partial<StoryEntry>): StoryEntry {
@@ -4687,5 +4690,57 @@ describe("RFC-level priority", () => {
     it("documents the inherited marker in the legend", () => {
       expect(PRIORITY_LEGEND).toContain("N* = inherited");
     });
+  });
+});
+
+describe("countOpenStories / openStoryFiles", () => {
+  function makeRfc(stories: Record<string, string>): { dir: string; slug: string } {
+    const dir = mkdtempSync(join(tmpdir(), "rfcs-open-"));
+    const slug = "0001-r";
+    const storiesDir = join(dir, "rfcs", slug, "stories");
+    mkdirSync(storiesDir, { recursive: true });
+    for (const [name, status] of Object.entries(stories)) {
+      writeFileSync(
+        join(storiesDir, `${name}.md`),
+        `---\nstatus: ${status}\nrfc: "${slug}"\n---\nbody\n`,
+      );
+    }
+    return { dir, slug };
+  }
+
+  it("counts every non-terminal status, including blocked", () => {
+    const { dir, slug } = makeRfc({ a: "ready", b: "draft", c: "blocked", d: "in-progress" });
+    expect(countOpenStories(dir, slug)).toBe(4);
+  });
+
+  it("excludes done and closed", () => {
+    const { dir, slug } = makeRfc({ a: "ready", b: "done", c: "closed" });
+    expect(countOpenStories(dir, slug)).toBe(1);
+    expect(openStoryFiles(dir, slug).map((f) => f.slice(f.lastIndexOf("/") + 1))).toEqual(["a.md"]);
+  });
+
+  it("counts an unparseable story as open rather than silently dropping it", () => {
+    const { dir, slug } = makeRfc({ a: "done" });
+    writeFileSync(join(dir, "rfcs", slug, "stories", "junk.md"), "no frontmatter at all\n");
+    expect(countOpenStories(dir, slug)).toBe(1);
+  });
+
+  it("returns 0 / [] for an RFC with no stories dir", () => {
+    const dir = mkdtempSync(join(tmpdir(), "rfcs-open-"));
+    expect(countOpenStories(dir, "0002-none")).toBe(0);
+    expect(openStoryFiles(dir, "0002-none")).toEqual([]);
+  });
+
+  it("returns open story paths in sorted order", () => {
+    const { dir, slug } = makeRfc({ c: "ready", a: "ready", b: "ready" });
+    expect(openStoryFiles(dir, slug).map((f) => f.slice(f.lastIndexOf("/") + 1))).toEqual([
+      "a.md",
+      "b.md",
+      "c.md",
+    ]);
+  });
+
+  it("sits above the observed active-RFC p75 so healthy burndowns do not trip it", () => {
+    expect(OPEN_STORY_WARN_THRESHOLD).toBe(40);
   });
 });

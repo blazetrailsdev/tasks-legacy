@@ -2155,6 +2155,9 @@ function rfc(
   opts: {
     status?: string;
     supersede?: string;
+    // Migrate the superseded RFC's open stories into this one. Only meaningful
+    // alongside --supersede; see RFC 0000-rfc-story-cap-and-succession.
+    carry?: boolean;
     relate?: string;
     clusters?: string;
     packages?: string;
@@ -2184,6 +2187,15 @@ function rfc(
   }
   const clusters = opts.clusters !== undefined ? parseCsv(opts.clusters) : undefined;
   const packages = opts.packages !== undefined ? parseCsv(opts.packages) : undefined;
+
+  // --carry is a rider on --supersede: with no RFC being retired there is
+  // nothing to carry from, and silently ignoring it would lose stories the caller
+  // believes they migrated.
+  if (opts.carry === true && opts.supersede === undefined) {
+    console.error(`error: --carry requires --supersede <successor-slug>`);
+    restoreGeneratedFiles(TASKS_DIR);
+    process.exit(1);
+  }
 
   const otherEdits =
     status !== undefined ||
@@ -2227,12 +2239,44 @@ function rfc(
     }
   }
 
+  // Direction: `rfc <slug> --supersede <successor>` retires <slug>, so stories
+  // flow OUT of <slug> and INTO <successor> — not the other way round.
+  //
+  // Plan the migration before the commit so a missing stories dir or an empty
+  // open set is reported up front rather than producing a no-op commit. Slugs
+  // are preserved verbatim: `set-deps` addresses stories by bare slug, so a
+  // rename here would break every cross-RFC dep pointing at a carried story.
+  const successor = opts.supersede;
+  const carried: { from: string; to: string; slug: string }[] = [];
+  if (opts.carry === true && successor !== undefined) {
+    const destDir = join(TASKS_DIR, "rfcs", successor, "stories");
+    for (const from of openStoryFiles(TASKS_DIR, slug)) {
+      const name = from.slice(from.lastIndexOf("/") + 1);
+      const to = join(destDir, name);
+      if (existsSync(to)) {
+        console.error(
+          `error: cannot carry "${name}" — ${successor} already has a story with that slug.\n` +
+            `  Rename one of them before superseding; carried slugs are preserved verbatim\n` +
+            `  because set-deps addresses stories by bare slug.`,
+        );
+        restoreGeneratedFiles(TASKS_DIR);
+        process.exit(1);
+      }
+      carried.push({ from, to, slug: name.replace(/\.md$/, "") });
+    }
+    if (carried.length === 0) {
+      console.log(`note: ${slug} has no open stories to carry`);
+    }
+  }
+
   const changes: string[] = [];
   if (status !== undefined) {
     changes.push(
       opts.supersede !== undefined ? `superseded by ${opts.supersede}` : `status ${status}`,
     );
   }
+  if (carried.length > 0)
+    changes.push(`carry ${carried.length} open stor${carried.length === 1 ? "y" : "ies"}`);
   if (relate !== undefined) changes.push(`relate [${relate.join(", ")}]`);
   if (clusters !== undefined) changes.push(`clusters [${clusters.join(", ")}]`);
   if (packages !== undefined) changes.push(`packages [${packages.join(", ")}]`);
@@ -2242,11 +2286,22 @@ function rfc(
 
   commitAndPush({
     message: `rfc ${slug}: ${changes.join(", ")}`,
-    fileToStage: file,
+    // Both sides of each move: `git add` on the vanished source path records
+    // the deletion, on the destination the addition.
+    fileToStage: [file, ...carried.flatMap((c) => [c.from, c.to])],
     raceMessage: RETRY_MSG(slug),
     raceExitCode: 4,
     pushRefspec: TASKS_DIR_IS_NON_CANONICAL ? "HEAD:main" : "main",
     mutator: () => {
+      if (carried.length > 0 && successor !== undefined) {
+        mkdirSync(join(TASKS_DIR, "rfcs", successor, "stories"), { recursive: true });
+        for (const c of carried) {
+          renameSync(c.from, c.to);
+          // The `rfc:` field must match the parent dir or validate.mjs rejects
+          // the commit ("rfc field must match parent dir").
+          editFrontmatter(c.to, { rfc: JSON.stringify(successor), updated: today() });
+        }
+      }
       if (status !== undefined) {
         const scalar: Record<string, string> = { status };
         if (opts.supersede !== undefined) scalar["superseded-by"] = JSON.stringify(opts.supersede);
@@ -2669,6 +2724,73 @@ export function readRfcStatus(tasksDir: string, rfcSlug: string): RfcStatus | nu
   }
 }
 
+// Story statuses that represent finished work. Everything else — including
+// `blocked` — is open, i.e. still a claim on someone's attention. This is the
+// distinction the open-story pressure signal measures: `done`/`closed` stories
+// accumulate harmlessly as a burndown RFC succeeds, while open ones are the
+// scope that actually goes stale.
+const TERMINAL_STORY_STATUSES: readonly StoryStatus[] = ["done", "closed"];
+
+// The point past which an RFC's open scope is wide enough that succession is
+// worth considering. Measured on 2026-08-23 across the 10 active RFCs: open
+// stories run median 11, p75 37, p90 78. 40 sits just above p75, so it flags
+// the genuinely wide RFCs and leaves healthy burndowns alone. See RFC
+// 0000-rfc-story-cap-and-succession.
+export const OPEN_STORY_WARN_THRESHOLD = 40;
+
+// Counts stories under `rfcSlug` that are not in a terminal status. A story
+// whose frontmatter is missing or unparseable counts as open: the signal
+// should over-report rather than silently under-report scope.
+export function countOpenStories(tasksDir: string, rfcSlug: string): number {
+  const storiesDir = join(tasksDir, "rfcs", rfcSlug, "stories");
+  let names: string[];
+  try {
+    names = readdirSync(storiesDir);
+  } catch {
+    return 0;
+  }
+  let open = 0;
+  for (const name of names) {
+    if (!name.endsWith(".md")) continue;
+    let status: unknown = null;
+    try {
+      const fmMatch = readFileSync(join(storiesDir, name), "utf8").match(/^---\n([\s\S]*?)\n---/);
+      if (fmMatch) status = (parseYaml(fmMatch[1]) as { status?: unknown } | null)?.status;
+    } catch {
+      // fall through: unreadable story counts as open
+    }
+    if (!TERMINAL_STORY_STATUSES.includes(status as StoryStatus)) open += 1;
+  }
+  return open;
+}
+
+// The open stories a `--carry` supersede migrates: absolute source paths under
+// `rfcSlug`'s stories dir, in stable sorted order so the resulting commit is
+// reproducible.
+export function openStoryFiles(tasksDir: string, rfcSlug: string): string[] {
+  const storiesDir = join(tasksDir, "rfcs", rfcSlug, "stories");
+  let names: string[];
+  try {
+    names = readdirSync(storiesDir);
+  } catch {
+    return [];
+  }
+  return names
+    .filter((name) => name.endsWith(".md"))
+    .filter((name) => {
+      let status: unknown = null;
+      try {
+        const fmMatch = readFileSync(join(storiesDir, name), "utf8").match(/^---\n([\s\S]*?)\n---/);
+        if (fmMatch) status = (parseYaml(fmMatch[1]) as { status?: unknown } | null)?.status;
+      } catch {
+        // unreadable counts as open, matching countOpenStories
+      }
+      return !TERMINAL_STORY_STATUSES.includes(status as StoryStatus);
+    })
+    .sort()
+    .map((name) => join(storiesDir, name));
+}
+
 export function parseRfcPriority(text: string): number | null {
   const fmMatch = text.match(/^---\n([\s\S]*?)\n---/);
   if (!fmMatch) return null;
@@ -2920,6 +3042,20 @@ export function newStory(
     createdPath: storyFile,
   });
   console.log(`created ${rfcSlug}/stories/${storySlug}.md`);
+  // Pressure signal, not a gate: printed after the story lands so filing a
+  // follow-up always succeeds. `tasks new` is the sanctioned mechanism for
+  // out-of-scope discoveries, and refusing it here would turn "file it" into
+  // "drop it" — the exact debt that rule prevents.
+  const openCount = countOpenStories(tasksDir, rfcSlug);
+  if (openCount > OPEN_STORY_WARN_THRESHOLD) {
+    console.warn(
+      `\nwarning: ${rfcSlug} now has ${openCount} open stories (> ${OPEN_STORY_WARN_THRESHOLD}).\n` +
+        `  Wide RFCs accumulate stale context. Consider succeeding it:\n` +
+        `    pnpm tasks rfc ${rfcSlug} --supersede <successor-slug> --carry\n` +
+        `  which moves the open stories to the successor and leaves the\n` +
+        `  finished ones behind as this RFC's record.`,
+    );
+  }
 }
 
 // ──────────────────── duplicate RFC-dir reconciliation ────────────────────
@@ -3902,6 +4038,7 @@ function main(): void {
         priority,
         status: stringFlag(flags, "status"),
         supersede: stringFlag(flags, "supersede"),
+        carry: flags.carry === true,
         relate: stringFlag(flags, "relate"),
         clusters: stringFlag(flags, "clusters"),
         packages: stringFlag(flags, "packages"),
@@ -3957,7 +4094,8 @@ function usage(): never {
   edit <id-or-rfc-slug>                        ($EDITOR body edit for a story or RFC README)
   priority <id> <N> | priority <id> --clear    (lower N = higher priority)
   status-set <id> <status>                     (draft ↔ ready, blocked → ready, closed → ready; validates the transition)
-  rfc <slug> [--status <s>] [--supersede <other-slug>] [--relate <csv>] [--clusters <csv>] [--packages <csv>]
+  rfc <slug> [--status <s>] [--supersede <other-slug>] [--carry] [--relate <csv>] [--clusters <csv>] [--packages <csv>]
+                                               (--carry moves <slug>'s OPEN stories into the successor)
              [--priority <N> | --priority --clear]   (RFC-level default priority for its un-prioritized stories)
   set-deps <id> <csv>                          (replace deps; checks references + cycles; empty csv clears)
   set-deps-rfc <id> <csv>                      (replace deps-rfc; checks references; empty csv clears)
