@@ -1,6 +1,6 @@
 ---
 title: "loadAsync issues its query before execQueries' trails-only prerequisites"
-status: in-progress
+status: blocked
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -12,7 +12,7 @@ priority: 4
 pr: 6906
 claim: "2026-08-23T11:12:29Z"
 assignee: "wave-5g-head-sweep"
-blocked-by: null
+blocked-by: "Blocked by PR #6905 (same RFC), which landed 2026-08-23 after this story was written. #6905 makes `execMainQuery` deliberately NOT an `async` method (relation.ts:1115-1120): `FutureResult` defines `then`, so an `async` boundary adopts the handle, resolves it into rows, and leaves `reset` (relation.rb:1195) nothing to cancel. main documents the single surviving `Promise<Result>` arm — `apply_join_dependency`'s `distinct_relation_for_primary_key` rewrite — as the only place that loses cancellation.\n\nThe story's fallback shape (run `ensureSchemaLoaded` + `_materializeDeferredDistinctPkPredicates` on the `loadAsync` path too) requires awaiting before `execMainQuery(true)`, which forces every scheduled relation into that promise arm and loses `cancel` universally — a regression against #6905's just-landed design. The two cannot both hold: the prerequisites are async and the parked handle must stay unadopted.\n\nUnblocks when the prerequisites leave the query path, which is the story's own preferred direction and needs no wrapper: schema reflection satisfied before a relation reaches either entry point (overlaps the schema-cache warming work), and the deferred distinct-PK materialization moved to where `.where()` puts it in Rails (finder_methods.rb:463-475) instead of load time. The underlying hazard is unchanged and still latent — relation.ts:1051-1062 runs both prerequisites only on the foreground pass."
 closed-reason: null
 ---
 
