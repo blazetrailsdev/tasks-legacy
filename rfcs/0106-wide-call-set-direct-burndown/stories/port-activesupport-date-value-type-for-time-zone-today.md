@@ -1,6 +1,6 @@
 ---
 title: "port-activesupport-date-value-type-for-time-zone-today"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T00:27:26Z"
+assignee: "port-activesupport-date-value-type-for-time-zone-today"
 blocked-by: null
 closed-reason: null
 ---
