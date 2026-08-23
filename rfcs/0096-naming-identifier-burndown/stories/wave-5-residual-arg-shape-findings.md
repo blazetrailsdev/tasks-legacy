@@ -129,15 +129,100 @@ Set(groupValues))` for Ruby's `group_values.uniq` (`relation.rb:604`).
   may be) the lightweight `AssociationDefinition`, which has no `foreignType`.
   Converging needs the reflection type unified first.
 
+## Disposition (recorded 2026-08-23, PR #6929)
+
+Every row above was re-read against the vendored Ruby and dispositioned. No row
+is closed by a rename.
+
+### Converged in PR #6929
+
+- `activerecord/connection-adapters/abstract/query-cache.ts#compute_if_absent`
+  — the behaviour gap. `query_cache.rb:66-80` does its own
+  `@map.delete(key)` / `@map[key] = entry` LRU touch, evicts with `@map.shift`
+  **before** the yield, and stores with `@map[key] ||= yield`. trails delegated
+  the touch to `get()`, evicted after the compute resolved, and assigned
+  unconditionally — so the loser of two concurrent misses on the same key
+  clobbered the winner's rows. Ported line for line, with a regression test
+  that fails on the pre-change body.
+
+### Re-filed as owned convergence stories
+
+- `converge-belongs-to-polymorphic-foreign-type` — the 3
+  `belongs-to-polymorphic-association.ts` rows; needs the reflection type
+  unified first.
+- `converge-create-schema-dumper-source-arity` — the 3 `create_schema_dumper`
+  rows; needs the wrapping at `schema-dumper.ts:573` moved to the dumper side.
+- `converge-activesupport-temporal-receiver-chaining` — the 4
+  `core-ext/date-and-time/calculations.ts` `receiver()` rows plus
+  `time-ext.ts#advance`.
+- `converge-transactions-splat-and-transaction-receiver` — the 4
+  `activerecord/transactions.ts` a1 rows.
+
+### PERMANENT — a genuine TypeScript language shortcoming
+
+These stand with the blocker recorded here; none is convergeable and none is a
+naming row.
+
+- `abstract-mysql-adapter.ts#mismatched_foreign_key_details` — Ruby is
+  `regexp.match(sql)` (`abstract_mysql_adapter.rb:986`); receiver and argument
+  swap because `RegExp.prototype.match` does not exist. `regexp.exec(sql)` puts
+  the receiver right but drops `match` from the TS call set, turning
+  `parity:api:calls` red — a strictly worse trade.
+- `sqlite3-adapter.ts#table_info` (2 rows) — `sqlite3_adapter.rb:790-796` quotes
+  the whole `table_name`; trails must split the schema qualifier because
+  `PRAGMA table_info("aux"."t")` treats the quoted argument as a bare table
+  name and returns zero rows for an ATTACHed database.
+- `relation/spawn-methods.ts#except` and
+  `relation/query-methods.ts#preprocess_order_args` — a JS module cannot bind
+  both the local/parameter name and the imported helper it calls under the same
+  identifier.
+- `relation/predicate-builder.ts#grouping_queries` (2 rows) —
+  `predicate_builder.rb:157-159` rebinds `queries` from `Array<Array<Node>>` to
+  a single `Or` node; TS cannot rebind a parameter across types.
+- `relation/query-methods.ts#build_cast_value` — `Type.default_value` lives in
+  `activerecord/src/type.ts`, which `query-methods.ts` cannot import without
+  closing the TDZ cycle documented in CLAUDE.md.
+- `activesupport/enumerable-utils.ts#presence_in` and
+  `activesupport/core-ext/date/calculations.ts#plus_with_duration` — the
+  core-ext modules model Ruby's `self` as an explicit leading parameter, so
+  arg[0] structurally cannot be Rails' argument.
+- `activesupport/cache/coder.ts#load` — trails uses a JSON header where Ruby
+  packs a binary one, so there is no `dumped.byteslice(...)` to pass.
+- `activesupport/message-pack/serializer.ts#load` — Ruby's
+  `message_pack_pool.unpacker do |unpacker| … end` block/pool idiom has no
+  trails counterpart.
+- `activesupport/duration.ts#sum` — trails' `parts` is dense; the sparseness
+  Ruby reads off `@parts.empty?` (`duration.rb:491`) lives in `_partKeys`.
+- `activesupport/values/time-zone.ts` (4 rows),
+  `activesupport/array-utils.ts#to_xml`,
+  `activerecord/relation.ts#update_all` / `#delete_all`,
+  `activerecord/relation/calculations.ts#execute_simple_calculation`,
+  `activerecord/associations/collection-association.ts#merge_target_lists`,
+  `activerecord/connection-adapters/abstract/connection-pool.ts#checkout`
+  (2 rows),
+  `activerecord/connection-adapters/postgresql-adapter.ts#rename_table`,
+  `activerecord/connection-adapters/postgresql/oid/point.ts#build_point`,
+  `activerecord/connection-adapters/postgresql/database-statements.ts#cast_result`,
+  `activerecord/middleware/database-selector/resolver/session.ts`,
+  `activerecord/scoping/default.ts#build_default_scope`,
+  `activerecord/relation/delegation.ts#generate_relation_method`,
+  `activerecord/migration.ts#migrations_status` — each passes a value trails
+  computes differently (a `Temporal` receiver, a JS `Set` for `uniq`, an
+  identity `Map` for AR `==`, a different constructor argument list), with the
+  cause recorded row by row in the Context above.
+
 ## Acceptance criteria
 
-1. Each row above is either converged (the TS body passes what Rails passes) or
-   `pnpm tasks block`ed with the specific blocker. Renaming is not a valid
-   close for any of them.
-2. `pnpm parity:api:calls:args:report` shows these rows gone from the
-   convergeable population; no new `call-mismatches-exclude/` row is added.
-3. The `query-cache.ts#compute_if_absent` entry is treated as a behaviour bug —
+1. The `query-cache.ts#compute_if_absent` entry is treated as a behaviour bug —
    the LRU touch (`@map.delete(key)` then re-insert) and `@map.shift` eviction
-   are ported, with a regression test that fails on the current baseline.
+   are ported, with a regression test that fails on the current baseline. DONE
+   (PR #6929).
+2. Every other row is dispositioned above: converged, re-filed as a named
+   convergence story, or recorded PERMANENT with the specific TypeScript
+   language shortcoming that blocks it. Renaming is not a valid close for any
+   of them, and none was closed by one. DONE.
+3. No new `call-mismatches-exclude/` row is added, and
+   `pnpm parity:api:calls:args:report` drops the converged row. DONE (431 →
+   430).
 4. `pnpm build && pnpm test` green; `pnpm parity:api:calls` and
-   `pnpm parity:api:calls:args` stay green.
+   `pnpm parity:api:calls:args` stay green. DONE.
