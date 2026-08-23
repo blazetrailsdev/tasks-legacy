@@ -1,7 +1,7 @@
 ---
 title: "load-async-sets-loaded-so-loaded-readers-drain-the-future"
-status: blocked
-updated: 2026-08-20
+status: ready
+updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
@@ -10,9 +10,9 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: "2026-08-20T00:22:32Z"
-assignee: "load-async-sets-loaded-so-loaded-readers-drain-the-future"
-blocked-by: "Blocked on unmerged PR #6750 (split-future-result-scheduled-dispatch-out-of-exec-queries). This story is an explicit follow-up to it: the converged shape needs `_futureResult` parked by loadAsync and `isScheduled` reading it, plus execQueries' `if scheduled?` drain. On origin/main today relation.ts has no `_futureResult` and `Relation#isScheduled` (relation.ts:2707) is a hardcoded `return false`, so `toArray`/`load`'s Rails guard `!loaded? || scheduled?` (relation.rb:1180) cannot be written without duplicating #6750's diff in the same lines. Unblock once #6750 merges."
+claim: null
+assignee: null
+blocked-by: null
 closed-reason: null
 ---
 
