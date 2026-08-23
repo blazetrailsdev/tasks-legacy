@@ -1,6 +1,6 @@
 ---
 title: "Time.new takes MRI's string form, the only path precision: acts on"
-status: draft
+status: ready
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
