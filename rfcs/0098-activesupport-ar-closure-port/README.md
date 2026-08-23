@@ -90,6 +90,30 @@ this RFC now owns, is exactly:
 Nothing else in `xml_mini.rb` was touched; the backend/parsing half stays RFC
 0101's. AR closure moved 8917/8943 → 8940/8948.
 
+### `acts_like?` markers move to `@blazetrails/date` (arm D of `time-with-zone-residue-structural-blockers`)
+
+Rails hangs `acts_like_date?` / `acts_like_time?` by reopening `Date`, `Time`
+and `DateTime` (`core_ext/date/acts_like.rb:5-9`,
+`core_ext/time/acts_like.rb:5-9`, `core_ext/date_time/acts_like.rb:6-13`).
+trails cannot reopen its equivalents — `Date.parse` answers a
+`Temporal.PlainDate` and `DateTime.parse` a
+`Temporal.PlainDateTime | Temporal.ZonedDateTime`, values of a third-party
+package — which is why the marker #6465 put on a class at the Rails path was
+inert: nothing constructs one.
+
+Of the three options the blocker priced, the owner chose **(2) move the markers
+into `@blazetrails/date`**, where the values are constructed. They live in
+`packages/date/src/acts-like.ts` as `actsLikeDate` / `actsLikeTime` predicates
+over this package's own value types, and `Object.actsLike`
+(`core-ext/object/acts-like.ts`) calls them instead of carrying its own
+`isRubyTime` / `isRubyDate` copies. Option (1) — installing the markers on the
+`Temporal` polyfill prototypes at import time — was rejected as a global side
+effect on a third-party package that also overstates the mapping; option (3), a
+`SCOPED_SKIP_GROUPS` entry, was not seeded.
+
+The cost is explicit: these two members are credited at a path Rails does not
+have, so **RFC 0098's reachable ceiling drops by 1 member** (`Time#acts_like_time?`).
+
 ## Done means
 
 Every in-closure activesupport file reports 0 missing members in `pnpm parity:api` (or its non-portable members carry SKIP_GROUPS reasons), and the "AR closure" rollup (`0092/ar-closure-rollup-in-parity-summaries`) reads 100%.
