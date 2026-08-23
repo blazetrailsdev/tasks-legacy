@@ -1,5 +1,5 @@
 ---
-rfc: "0000-rfc-story-cap-and-succession"
+rfc: "0118-rfc-story-cap-and-succession"
 title: "Open-story pressure signal and a supersede that carries stories"
 status: draft
 created: 2026-08-23
@@ -11,7 +11,7 @@ clusters:
   - carrying-supersede
 ---
 
-# RFC — Open-story pressure signal and a supersede that carries stories
+# RFC 0118 — Open-story pressure signal and a supersede that carries stories
 
 ## Summary
 
