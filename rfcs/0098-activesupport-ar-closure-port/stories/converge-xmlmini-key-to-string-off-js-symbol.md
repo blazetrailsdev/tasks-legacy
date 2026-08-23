@@ -1,6 +1,6 @@
 ---
 title: "Converge XmlMini keyToString off the JS-Symbol arm"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 40
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T15:42:31Z"
+assignee: "excluding-must-drain-a-scheduled-relation"
 blocked-by: null
 closed-reason: null
 ---

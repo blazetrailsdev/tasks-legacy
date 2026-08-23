@@ -1,6 +1,6 @@
 ---
 title: "in_batches' loaded? arm must drain a scheduled relation"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T15:42:31Z"
+assignee: "excluding-must-drain-a-scheduled-relation"
 blocked-by: null
 closed-reason: null
 ---
