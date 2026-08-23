@@ -1,6 +1,6 @@
 ---
 title: "sweep-trails-only-test-files-associations"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
