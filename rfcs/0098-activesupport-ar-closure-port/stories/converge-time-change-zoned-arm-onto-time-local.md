@@ -1,6 +1,6 @@
 ---
 title: "Time#change's zoned arm rebuilds through Time.local with isdst"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 220
 priority: 5
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T17:32:06Z"
+assignee: "converge-time-with-zone-utc-onto-a-ruby-time"
 blocked-by: null
 closed-reason: null
 ---
