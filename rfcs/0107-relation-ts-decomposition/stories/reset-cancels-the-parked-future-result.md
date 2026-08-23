@@ -1,6 +1,6 @@
 ---
 title: "reset must cancel the parked future result, not just drop it"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 220
 priority: 3
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T10:57:34Z"
+assignee: "converge-relation-loaded-arm-readers-onto-seams"
 blocked-by: null
 closed-reason: null
 ---
