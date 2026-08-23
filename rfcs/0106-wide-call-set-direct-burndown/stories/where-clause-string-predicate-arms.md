@@ -1,7 +1,7 @@
 ---
 title: "where-clause-string-predicate-arms"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T12:42:25Z"
+assignee: "where-clause-string-predicate-arms"
 blocked-by: null
 closed-reason: null
 ---
