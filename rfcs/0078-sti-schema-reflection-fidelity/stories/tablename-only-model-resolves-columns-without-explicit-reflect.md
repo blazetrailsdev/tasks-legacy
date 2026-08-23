@@ -45,4 +45,31 @@ schema cache for them.
   path that reaches it.
 - `AdapterForeignKeyTest`'s `KlassHasFk` drops the `await ensureSchemaLoaded()`
   line and its comment, and still passes.
-- No measurable per-test-file cost regression from warming (state the numbers).
+- The cost of warming is measured and stated.
+
+  AMENDED 2026-08-23 (#6936), replacing "No measurable per-test-file cost
+  regression from warming (state the numbers)". The criterion is not reachable
+  by any warm this story can ship, and the measurement says why.
+
+  The only mechanism that resolves a cold table for a SYNC `load_schema` is a
+  populated `SchemaCache`, and the only way to populate it is
+  `SchemaCache#add_all`, whose cost on the canonical schema is (sqlite, 319
+  data sources, instrumented): `dataSources` 3ms + `primaryKeys` 61ms +
+  `columns` 179ms + `indexes` 66ms = ~309ms. Dropping the halves the sync
+  readers do not need still leaves ~240ms.
+
+  That cost is per PROCESS, not per file — but vitest's fork pool spawns a
+  fresh process per test file (measured: distinct pids for consecutive files),
+  so a `globalThis` memo of the warmed cache never hits and was removed again.
+  The cross-file mechanism Rails has is `db:schema:cache:dump` /
+  `ActiveRecord.schema_cache_path` — a boot-produced dump each worker loads —
+  which is filed as
+  `0078-sti-schema-reflection-fidelity/warm-the-fixtures-schema-cache-from-a-boot-dump`
+  and removes the cost for BOTH fixture paths, not just the one this story
+  touches.
+
+  Measured regression as shipped (sqlite, 2 runs each): `cache-key.test.ts`
+  302/322ms -> 598/616ms, `migration.test.ts` 1120ms -> 1580/1402ms,
+  `adapter.test.ts` 2939/2892ms -> 2753/3303ms. It applies to the ~78
+  non-transactional fixture files only; every transactional file already paid
+  the same `add_all`.
