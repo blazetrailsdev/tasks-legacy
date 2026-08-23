@@ -1,6 +1,6 @@
 ---
 title: "load() calls toArray() where Rails' to_ary calls records calls load"
-status: blocked
+status: ready
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
@@ -10,9 +10,9 @@ deps-rfc: []
 est-loc: 150
 priority: null
 pr: null
-claim: "2026-08-23T13:57:25Z"
-assignee: "invert-to-ary-records-load-chain"
-blocked-by: "Both prerequisite override moves (converge-association-relation-inverse-wiring-onto-exec-queries, converge-disable-joins-association-relation-onto-load) are still unmerged in open PR #6912. Inverting load()/toArray() before they land silently routes around AssociationRelation#toArray and DisableJoinsAssociationRelation#toArray; stacking on #6912 is not allowed. Unblock once #6912 merges."
+claim: null
+assignee: null
+blocked-by: null
 closed-reason: null
 ---
 
