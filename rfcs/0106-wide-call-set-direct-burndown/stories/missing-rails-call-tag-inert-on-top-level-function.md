@@ -1,7 +1,7 @@
 ---
 title: "@missingRailsCall on an exported top-level function does not suppress its flag"
-status: in-progress
-updated: 2026-08-22
+status: done
+updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
 packages: []
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: 6888
+pr: 6898
 claim: "2026-08-22T22:41:19Z"
 assignee: "missing-rails-call-tag-inert-on-top-level-function"
 blocked-by: null
