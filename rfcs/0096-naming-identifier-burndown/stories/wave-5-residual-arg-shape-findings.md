@@ -1,6 +1,6 @@
 ---
 title: "wave-5-residual-arg-shape-findings"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T17:42:07Z"
+assignee: "wave-5-residual-arg-shape-findings"
 blocked-by: null
 closed-reason: null
 ---
