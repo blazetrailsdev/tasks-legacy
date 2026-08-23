@@ -1,6 +1,6 @@
 ---
 title: "Time#change carries new_sec twice (a float and a rebuilt Rational); Rails carries one Rational"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
