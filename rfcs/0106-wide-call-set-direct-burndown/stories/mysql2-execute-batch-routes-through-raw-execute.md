@@ -1,6 +1,6 @@
 ---
 title: "mysql2 executeBatch calls rawExecute per combined block, not execute"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T13:12:30Z"
+assignee: "converge-enable-query-cache-onto-the-block-value-return"
 blocked-by: null
 closed-reason: null
 ---
