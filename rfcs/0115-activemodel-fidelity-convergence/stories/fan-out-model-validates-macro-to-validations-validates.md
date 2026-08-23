@@ -1,7 +1,7 @@
 ---
 title: "Fan out the validates macro from model.ts to validations/validates.ts"
 status: ready
-updated: 2026-08-19
+updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -9,7 +9,7 @@ deps:
   - retire-model-set-callback-skip-callback-run-callbacks-passthrough
 deps-rfc: []
 est-loc: 300
-priority: null
+priority: 12
 pr: null
 claim: null
 assignee: null
