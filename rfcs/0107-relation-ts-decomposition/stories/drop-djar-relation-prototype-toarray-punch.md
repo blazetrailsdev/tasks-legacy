@@ -1,6 +1,6 @@
 ---
 title: "DJAR#execQueries punches Relation.prototype.toArray where the plain chain now suffices"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
