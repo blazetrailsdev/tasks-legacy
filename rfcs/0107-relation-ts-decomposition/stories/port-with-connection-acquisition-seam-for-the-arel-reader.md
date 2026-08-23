@@ -1,7 +1,7 @@
 ---
 title: "port-with-connection-acquisition-seam-for-the-arel-reader"
-status: blocked
-updated: 2026-08-20
+status: ready
+updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
@@ -10,9 +10,9 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: "2026-08-20T03:52:32Z"
-assignee: "port-with-connection-acquisition-seam-for-the-arel-reader"
-blocked-by: "Depends on unmerged PR #6756 ('derive the proxy delegate list from the mixins and acquire at the arel reader'), which is the 'converge-toarel-onto-with-connection-acquisition' work this story's Context assumes has landed. On origin/main Relation#toArel still builds through '_resolveAdapter() ?? { sanitizeLimit }', so doing this story now would either re-do #6756's acquisition change in a conflicting way or stack on its branch (both disallowed). Re-open once #6756 merges; the remaining work is then the synchronous with_connection seam plus the '@arel ||=' memo."
+claim: null
+assignee: null
+blocked-by: null
 closed-reason: null
 ---
 
