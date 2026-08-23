@@ -1,6 +1,6 @@
 ---
 title: "Converge AR define_attribute onto define_default_attribute + Attribute::UserProvidedDefault"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: api-compare
@@ -9,8 +9,8 @@ deps: ["retire-attribute-definitions-registry-for-default-attributes"]
 deps-rfc: []
 est-loc: 260
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T23:16:55Z"
+assignee: "converge-ar-define-attribute-onto-define-default-attribute"
 blocked-by: null
 closed-reason: null
 ---
