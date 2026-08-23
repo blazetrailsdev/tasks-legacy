@@ -1,5 +1,5 @@
 ---
-title: "hmt-find-target-disable-joins-arm-routes-through-two-free-functions"
+title: "HasManyThroughAssociation#find_target's disable_joins arm routes through two trails-only free functions instead of calling scope"
 status: ready
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 120
 priority: null
 pr: null
 claim: null

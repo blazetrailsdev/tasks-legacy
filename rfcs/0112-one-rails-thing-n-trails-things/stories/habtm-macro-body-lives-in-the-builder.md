@@ -1,5 +1,5 @@
 ---
-title: "habtm-macro-body-lives-in-the-builder"
+title: "has_and_belongs_to_many's whole macro body lives in Builder::HasAndBelongsToMany._build, a method Rails' builder does not have"
 status: ready
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 240
 priority: null
 pr: null
 claim: null

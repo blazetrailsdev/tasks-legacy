@@ -1,5 +1,5 @@
 ---
-title: "insert-record-prefetch-arm-skips-with-cast-value"
+title: "_insert_record's prefetch_primary_key arm assigns the raw sequence value instead of re-casting through _default_attributes"
 status: ready
 updated: 2026-08-22
 rfc: "0112-one-rails-thing-n-trails-things"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 80
 priority: null
 pr: null
 claim: null
