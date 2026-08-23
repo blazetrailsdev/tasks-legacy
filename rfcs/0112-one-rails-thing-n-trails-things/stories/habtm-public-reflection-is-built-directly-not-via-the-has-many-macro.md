@@ -65,3 +65,9 @@ receipt. The macro string is read across reflection walking, join planning and
       (`packages/activerecord/src/associations.ts`) is deleted, not reworded.
 - [ ] `pnpm parity:api:calls` / `:args` green with no new rows; HABTM suites
       green on SQLite, PostgreSQL and MySQL/MariaDB.
+
+- [ ] The macro constructs `HasAndBelongsToManyReflection` as its own object
+      (`associations.rb:1871`) and points both
+      `middleReflection.parentReflection` and `_reflections[name]
+    .parentReflection` at it, instead of reusing the public reflection. The
+      `@missingRailsArgs new` receipt on `hasAndBelongsToMany` is deleted then.
