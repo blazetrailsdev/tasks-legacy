@@ -85,6 +85,15 @@ Terminal stories (`done`, `closed`) stay under the retired RFC as its
 historical record. A slug collision with an existing story in the successor is
 a hard error, not a silent overwrite.
 
+**Flip the successor to `active` as part of the rollover.** `effectiveStoryStatus`
+(`scripts/validate-lib.mjs:64`) downgrades any `ready` story under a non-`active`
+parent to `draft`, so carrying into a still-`draft` successor silently parks
+every story it just received — the campaign stops being claimable at the exact
+moment it was supposed to restart. This is the same rule that correctly keeps
+`0025`'s parked stories out of the queue, so the fix is the rollover procedure,
+not the rule: `--carry` first, then set the successor `active`. Nothing in the
+CLI enforces the ordering, which is why it is written down here.
+
 **Story slugs are preserved verbatim.** `set-deps` addresses stories by bare
 slug, so a rename during migration would break every cross-RFC dep pointing at
 a carried story.
@@ -151,3 +160,4 @@ intake RFCs for free, by measuring the thing that actually matters.
 ## Changelog
 
 - 2026-08-23: initial RFC
+- 2026-08-23: note that the successor must be flipped to `active` after `--carry`
