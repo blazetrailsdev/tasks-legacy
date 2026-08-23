@@ -1,6 +1,6 @@
 ---
 title: "wave-5-residual-arg-shape-findings"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0096-naming-identifier-burndown"
 cluster: null
