@@ -63,9 +63,16 @@ MRI's own errors (`ArgumentError: subsecond expected after dot: ...` when
 a malformed string). `precision:` then truncates the parsed sub-second to that
 many digits before the `Rational` reaches `#atInstant`, and stays a no-op on
 every non-string path. A zone suffix in the string binds the same seat the
-seventh positional and `in:` bind, so the existing
-"timezone argument given as positional and keyword arguments" guard covers the
-string-plus-keyword collision too.
+seventh positional and `in:` bind — but it does NOT collide with `in:` the way
+the seventh positional does: MRI takes the string's own zone and drops the
+keyword, confirmed on `ruby 3.3.11`:
+
+```ruby
+Time.new("2020-01-01 00:00:00+01:00", in: "+05:00").utc_offset  #=> 3600
+```
+
+so the "timezone argument given as positional and keyword arguments" guard
+stays where it is, over the positional only.
 
 Note `packages/activerecord` already has a separate, narrower string→Time
 grammar (`fast-string-to-time`, RFC 0023 story
@@ -77,11 +84,15 @@ ActiveRecord's cast path, not `Time.new`, and should not be reused here.
 - [ ] `Time.new("2000-12-31 23:59:59.56789", { precision: 3 })` equals
       `Time.new("2000-12-31 23:59:59.567")`.
 - [ ] `Time.new("2020-01-01 00:00:00", { in: "+05:00" }).utcOffset` is `18000`,
-      and a zone in the string plus `in:` raises MRI's ArgumentError.
+      and a zone in the string wins over `in:` rather than raising —
+      `Time.new("2020-01-01 00:00:00+01:00", { in: "+05:00" }).utcOffset` is
+      `3600`, as MRI answers.
 - [ ] `precision:` still changes nothing on the positional path:
       `Time.new(2020, 1, 1, 0, 0, 0.56789, { precision: 3 }).nsec` is
       `567890000`.
-- [ ] The four `assert_equal Time.new("2000-12-31 23:59:59.567"), ...` arms are
-      restored in `time-travel.test.ts` (`time_travel_test.rb:55,61` and the
-      with-usec pair). No test renames.
+- [ ] The `assert_equal Time.new("2000-12-31 23:59:59.567"), ...` arms are
+      restored in `time-travel.test.ts`. The vendored Rails carries the pair at
+      `time_travel_test.rb:55,61`, both inside `test_time_helper_travel_with_block`
+      (one in the block, one after it); the with-usec test has none. No test
+      renames.
 - [ ] `pnpm parity:test:assertions` green.
