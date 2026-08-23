@@ -1,6 +1,6 @@
 ---
 title: "load() calls toArray() where Rails' to_ary calls records calls load"
-status: in-progress
+status: done
 updated: 2026-08-23
 rfc: "0107-relation-ts-decomposition"
 cluster: null
