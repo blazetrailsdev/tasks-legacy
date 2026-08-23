@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build --dry-run reports a bare 0 for args-kind rows, so live rows read as stale"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: null
-pr: null
+pr: 6938
 claim: "2026-08-23T19:22:37Z"
 assignee: "call-set-migrator-dry-run-reports-zero-for-args-kind-rows"
 blocked-by: null
