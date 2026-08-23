@@ -1,6 +1,6 @@
 ---
 title: "Retire the composite-PK id deferral from the Base constructor"
-status: claimed
+status: in-progress
 updated: 2026-08-23
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 260
 priority: 60
-pr: null
+pr: 6933
 claim: "2026-08-23T18:20:09Z"
 assignee: "sweep-trails-only-test-files-associations"
 blocked-by: null
