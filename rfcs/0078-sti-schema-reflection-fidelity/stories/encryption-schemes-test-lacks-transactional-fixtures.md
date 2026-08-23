@@ -1,6 +1,6 @@
 ---
 title: "encryption-schemes.test.ts lacks transactional fixtures, forcing a trails-only deleteAll"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T17:44:08Z"
+assignee: "encryption-schemes-test-lacks-transactional-fixtures"
 blocked-by: null
 closed-reason: null
 ---
