@@ -1,6 +1,6 @@
 ---
 title: "Time#change carries new_sec twice (a float and a rebuilt Rational); Rails carries one Rational"
-status: ready
+status: claimed
 updated: 2026-08-23
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 160
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-23T18:51:39Z"
+assignee: "carry-time-with-zone-to-time-arm-memos"
 blocked-by: null
 closed-reason: null
 ---
