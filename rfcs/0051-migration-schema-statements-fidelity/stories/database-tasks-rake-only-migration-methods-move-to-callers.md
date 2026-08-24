@@ -1,6 +1,6 @@
 ---
 title: "DatabaseTasks carries five rake-only migration methods Rails has no counterpart for"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
