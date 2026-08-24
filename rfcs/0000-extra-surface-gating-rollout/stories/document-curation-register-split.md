@@ -1,6 +1,6 @@
 ---
 title: "Document the per-site vs aggregate curation split"
-status: draft
+status: ready
 updated: 2026-08-24
 rfc: "0000-extra-surface-gating-rollout"
 cluster: api-compare
