@@ -47,21 +47,48 @@ by hand.
 
 ## Acceptance criteria
 
-- `model.ts` retains only what `model.rb` + `api.rb` + `access.rb` define, and
-  is **≤ 200 code lines**.
-- The constructor calls `assignAttributes` per `api.rb:82-85`; the
-  `initialize` → `assign_attributes` row in
-  `scripts/api-compare/call-mismatches-exclude/activemodel/model.json` is
-  hand-deleted (never reseeded) and
-  `pnpm parity:api:calls:tighten activemodel/model.json` run.
+- `model.ts` defines **no member body** whose Rails counterpart lives in another
+  `.rb` — every one of the 19 in the table above is reached through the
+  `include` / `extend` its Rails counterpart writes.
+- The constructor calls `assignAttributes` per `api.rb:82-85`. (There is no
+  `scripts/api-compare/call-mismatches-exclude/activemodel/model.json` shard and
+  no `initialize` → `assign_attributes` row in the tree, so nothing is deleted
+  or tightened; `pnpm parity:api:calls` is clean either way.)
 - `pnpm parity:api:extra --package activemodel` reports `model.ts` at
-  **0 novel / 0 moved**.
+  **0 novel**.
 - `pnpm lint --fix` after `pnpm parity:api`.
 - Parity deltas non-negative; `pnpm parity:api:calls` / `:args` clean.
 
+### Narrowed 2026-08-24 (PR #7010, review round 2)
+
+Two criteria as originally written measure something a fan-out cannot move, and
+are re-scoped onto `split-model-mixin-surface-to-active-model-model`:
+
+- **`0 moved`.** `extra-surface` scores a NAME against the allow-set
+  `model.rb` + its Ruby include chain builds. `model.ts`'s 61 `moved` names are
+  the Attributes / AttributeMethods / Dirty / Callbacks / Serializers::JSON
+  surface trails' `Model` mixes in and `ActiveModel::Model` does not, and they
+  score against `model.ts` whether they are spelled as a `declare static`, an
+  `interface Model extends Dirty`, or nothing at all beyond an
+  `include(Model, Dirty)` call — `include()` of a class module pushes the module
+  onto the host's `extends` (`extract-ts-api.ts:1191-1227`) and
+  interface-`extends` members carry no `declaredIn` so they are counted
+  (`extract-ts-api.ts:14-27`). Relocating bodies cannot change the number.
+- **`≤ 200 code lines`.** Same fact. After the fan-out `model.ts` is 378 code
+  lines, of which 111 are `declare` statements and 45 are `interface Model`
+  members — 156 type-only lines that emit nothing — plus 27 imports and the 29
+  `include()`/`extend()`/`prepend()` calls that ARE the Rails `include` lines.
+  What is left is the constructor, `dup`, `isPersisted` and
+  `isAttributeMethod`. The type-only bulk exists because TS cannot type a
+  runtime `include(Model, X)` without a declaration; deleting it does not shrink
+  the mixin set, it makes `Model.validates` untyped for every caller.
+
+Both numbers fall out of `Model` being the AR-shaped god class rather than
+`model.rb`'s two-line concern, which is that story's job, not this one's.
+
 ## Definition of done
 
-Not done if `model.ts` still defines a member whose Rails counterpart is in
+Not done if `model.ts` still defines a member BODY whose Rails counterpart is in
 another file, however thin the wrapper.
 
 ## Verification
