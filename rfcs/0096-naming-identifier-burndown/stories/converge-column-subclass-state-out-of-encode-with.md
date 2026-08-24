@@ -1,6 +1,6 @@
 ---
 title: "Drop subclass state from Column#encodeWith to Rails' seven base keys"
-status: claimed
+status: closed
 updated: 2026-08-24
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -10,10 +10,10 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: "2026-08-24T18:07:08Z"
-assignee: "stale-story-references-scan-times-out-under-load"
+claim: null
+assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Misspecified: premise contradicted by vendor/rails. Rails DOES persist subclass state — postgresql/column.rb:50-61 encodes serial/identity/generated, sqlite3/column.rb:35-42 encodes auto_increment; only mysql/column.rb has no coder overrides, because it derives unsigned?/auto_increment?/virtual? from sql_type and sql_type_metadata.extra (:7-24). PG's oid/fmod are not dropped either: they delegate to sql_type_metadata (:7), which the base encode_with already persists, and array derives from sql_type (:37-39). So 'Rails' seven base keys' is not the target shape, and the fixtures-warm comparison is not the residual deviation. Re-specified as converge-column-subclass-coders-to-rails-per-subclass-key-sets (same RFC), which carries the measured breakage: dropping the keys today leaves the fields undefined, and sqlite3/column.ts:55, postgresql/column.ts:90 and :100 port Ruby nil?/present? as x !== null, so undefined flips them true and primary-keys.test.ts reds with NOT NULL constraint failed: subscribers.nick."
 ---
 
 ## Context
