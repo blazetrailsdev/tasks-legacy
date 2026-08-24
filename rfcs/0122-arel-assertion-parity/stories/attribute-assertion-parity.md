@@ -1,6 +1,6 @@
 ---
 title: "Converge attributes/attribute assertion parity"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 280
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T18:14:58Z"
+assignee: "attribute-assertion-parity"
 blocked-by: null
 closed-reason: null
 ---
