@@ -1,7 +1,7 @@
 ---
 title: "Fold resolveTableName back into Rails' table_name / reset_table_name / compute_table_name split"
-status: draft
-updated: 2026-08-21
+status: ready
+updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
 packages: []
