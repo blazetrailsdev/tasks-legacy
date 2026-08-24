@@ -1,5 +1,5 @@
 ---
-rfc: "0000-arel-assertion-parity"
+rfc: "0122-arel-assertion-parity"
 title: "arel assertion parity to zero"
 status: draft
 created: 2026-08-24
