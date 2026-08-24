@@ -1,6 +1,6 @@
 ---
 title: "Fan out validates_with from model.ts to validations/with.ts"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
