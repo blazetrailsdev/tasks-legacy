@@ -1,6 +1,6 @@
 ---
 title: "Port Ruby's Array#drop for the two reflection-chain call sites"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 60
 priority: 3
-pr: null
+pr: 6968
 claim: "2026-08-24T02:45:38Z"
 assignee: "sweep-trails-only-test-files-relation"
 blocked-by: null
