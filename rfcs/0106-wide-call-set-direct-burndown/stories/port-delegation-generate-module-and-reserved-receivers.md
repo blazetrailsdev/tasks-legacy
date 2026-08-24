@@ -1,6 +1,6 @@
 ---
 title: "port-delegation-generate-module-and-reserved-receivers"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: 4
-pr: null
+pr: 6995
 claim: "2026-08-24T15:57:23Z"
 assignee: "port-delegation-generate-module-and-reserved-receivers"
 blocked-by: null
