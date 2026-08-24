@@ -53,13 +53,15 @@ covers the `ConnectionNotEstablished` catch in `adapterNameFrom`
 
 ## Acceptance criteria
 
-- Decide and record whether the family collapse is a deliberate trails
-  deviation or a bug; if deliberate, justify it at the `adapterNameFromConfig`
-  call site (per the justify-deviations-at-call-site convention).
-- Rails-spelled adapter names (`postgresql`, `mysql2`) either resolve
-  identically to the family name or are documented as unsupported spellings.
-- The unknown-adapter `default: -> "sqlite"` arm either raises, passes the
-  name through, or carries a comment stating why silently defaulting is
-  correct.
+- `adapterNameFromConfig` preserves Rails' adapter spellings rather than
+  collapsing them into three families: `postgresql` and `mysql2` are the Rails
+  names (`connection_adapters.rb` registry keys) and must survive round-trip.
+- The unknown-adapter `default: -> "sqlite"` arm raises `AdapterNotFound`
+  rather than silently defaulting — silently picking sqlite for an unknown
+  adapter hides a misconfiguration Rails surfaces immediately.
 - Existing adapter-specific type registration tests still pass on all three
   adapters.
+- If the family collapse turns out to be load-bearing for the adapter-arg
+  whitelist (see `sqlite-adapter-arg-whitelist-drops-config-keys-rails-passes`),
+  that story is the prerequisite — link it as a dep rather than justifying the
+  collapse at the call site.

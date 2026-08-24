@@ -38,9 +38,11 @@ fixed.
 
 ## Acceptance criteria
 
-- Determine whether the `Map` arm of `initWith` has any real caller; if not,
-  delete it and keep the single object shape Rails has.
-- If it must stay, route its entries through `rehydrateColumn` / `rehydrateIndex`
-  so both arms produce the same instance types, and drop the casts.
-- A test covers `initWith` with a `Map` whose values are plain rows, asserting
-  the resulting cache yields `Column` / `IndexDefinition` instances.
+- `initWith` takes the single object shape Rails has (`schema_cache.rb`). The
+  `Map` arm is deleted if nothing calls it; if a real caller exists, its
+  entries route through `rehydrateColumn` / `rehydrateIndex` so both arms
+  produce the same instance types, and the casts go.
+- A test covers `initWith` with the retained shape, asserting the resulting
+  cache yields `Column` / `IndexDefinition` instances rather than plain rows.
+- Either way, `initWith` afterwards has exactly one rehydration path — a second
+  arm that skips rehydration is the defect, not the `Map` type itself.

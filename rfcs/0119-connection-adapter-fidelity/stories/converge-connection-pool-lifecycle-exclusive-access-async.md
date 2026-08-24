@@ -4,9 +4,9 @@ status: draft
 updated: 2026-08-03
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
-deps: []
+deps: ["converge-sync-connection-lease-per-checkout-verify"]
 deps-rfc: []
-est-loc: null
+est-loc: 90
 priority: null
 pr: null
 claim: null

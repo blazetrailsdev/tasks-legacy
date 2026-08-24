@@ -42,8 +42,12 @@ for hosts lacking the mixed-in accessor.
 
 ## Acceptance criteria
 
-- Decide whether the test doubles can carry a real `maxAllowedPacket`/
-  `showVariable` so the fallback and the receiver-dispatch branch can both be
-  deleted, converging on Rails' single `show_variable` path.
-- If the fallback must stay, narrow it so a live adapter whose `showVariable`
-  fails raises rather than silently using 16 MiB.
+- The 16 MiB fallback and the receiver-dispatch branch are both deleted;
+  `maxAllowedPacket` is Rails' single `show_variable` path
+  (`mysql/database_statements.rb`).
+- The test doubles carry a real `maxAllowedPacket` / `showVariable` so they
+  exercise that path rather than the fallback.
+- A live adapter whose `showVariable` fails raises rather than silently using
+  16 MiB.
+- `mysql/database-statements.trails.test.ts` stays green (its
+  `16_777_216` expectation moves to the raising case or goes away).

@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 120
 priority: null
 pr: null
 claim: null
@@ -47,16 +47,15 @@ mutate in a synchronous core and only then await the drains that core returns.
 
 ## Acceptance criteria
 
-- Decide and record whether the interleaving is actually reachable in trails'
-  concurrency model — a failing test that checks out concurrently and observes
-  a duplicated `_connections` entry or an over-subscribed `_checkedOut` is the
-  evidence; if it is NOT reachable, say why with the `file:line` that makes it
-  unreachable and close.
-- If reachable: serialize the async section (an await-queue over the pool's
+- A test checks out concurrently and observes either a duplicated
+  `_connections` entry or an over-subscribed `_checkedOut`. It lives in the
+  pool's own test file and must fail on baseline.
+- The async critical section is serialized (an await-queue over the pool's
   critical section is the shape Rails' mutex has), keeping the Rails method
   names and the per-checkout verify/self-heal semantics.
 - Do not "converge back" to a synchronous `checkout`: `verifyBang` is async in
   trails by design (abstract_adapter.rb:759 is sync; the trails port issues a
   real backend liveness round-trip).
-- Add the regression test to the pool's own test file; it must fail on
-  baseline.
+- If the interleaving proves unreachable, close with the `file:line` that makes
+  it unreachable — an unreachable divergence is a call-site comment, not
+  backlog (RFC 0023 intake rule 3).

@@ -30,6 +30,13 @@ Surfaced during PR #5633 (story `arity-cache-sql-ported-block-param`), which onl
 
 ## Acceptance criteria
 
-- Decide whether the two-function split is required by the async port or whether `cacheSql` can absorb the hit path + instrumentation and return a copy, matching Rails' single-method shape.
-- If it converges: `cacheSql` owns the hit instrumentation and the result copy; `lookupSqlCache` either disappears or becomes a pure lookup with no notification side effect. Callers in `query-cache.ts` updated; `query-cache.test.ts` and `query-cache.trails.test.ts` stay green.
-- If it cannot converge: keep the split, but ensure the rationale comment names the exact Rails lines it deviates from, and record the deviation wherever converged-deviation tracking lives rather than only in a code comment.
+- `cacheSql` absorbs the hit path, the instrumentation and the result copy, so
+  it is Rails' single `cache_sql` (`abstract/query_cache.rb`). `lookupSqlCache`
+  either disappears or becomes a pure lookup with no notification side effect.
+- Callers in `query-cache.ts` updated; `query-cache.test.ts` and
+  `query-cache.trails.test.ts` stay green.
+- If the split cannot be removed, the blocker is the documented no-`await`
+  invariant between `lookupSqlCache` and `cacheSql` (query-cache.ts:514-523).
+  Establish whether that invariant genuinely forces two functions; if it does,
+  `pnpm tasks block` this story naming it. Do NOT close by rewording the
+  existing rationale comment — a better justification is not convergence.

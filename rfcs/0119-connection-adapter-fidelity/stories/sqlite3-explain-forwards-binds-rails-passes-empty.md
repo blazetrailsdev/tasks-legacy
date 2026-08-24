@@ -40,11 +40,12 @@ silently persisting.
 
 ## Acceptance criteria
 
-- Determine whether trails' explain path can render the collected sql+binds to
-  a bind-free statement before EXPLAIN (Rails' `to_sql(arel, binds)` shape).
-- If it can, do so and pass `[]` to `internalExecQuery`, matching Rails
-  verbatim.
-- If it cannot without breaking `Relation#explain` bind rendering (which needs
-  the binds for its header — `_renderExplainBinds`), record the reason at the
-  call site and close this out as a justified deviation.
+- sqlite3 `explain` renders the collected sql+binds to a bind-free statement
+  and passes `[]` to `internalExecQuery`, matching Rails' `to_sql(arel, binds)`
+  shape verbatim.
 - `explain.test.ts` and `adapters/sqlite3/explain.test.ts` pass on sqlite.
+- If `Relation#explain`'s bind rendering genuinely blocks this (it needs the
+  binds for its header — `_renderExplainBinds`), that dependency is the
+  blocker: `pnpm tasks block` naming it, or file the `_renderExplainBinds`
+  prerequisite as its own story first. Do NOT close this as a justified
+  deviation — a deviation-convergence story always converges (CLAUDE.md).

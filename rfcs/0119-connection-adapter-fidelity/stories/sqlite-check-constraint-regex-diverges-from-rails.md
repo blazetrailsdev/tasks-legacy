@@ -44,9 +44,14 @@ but neither is verified against a Rails test.
 
 ## Acceptance criteria
 
-- Determine whether any trails path emits a quoted CHECK constraint name; if
-  not, drop the quoted alternative so the regex matches Rails exactly.
-- Either match Rails' unbounded nesting or pin the two-level limit with a test
-  and a call-site justification.
+- The `check_constraints` regex matches Rails' (`sqlite3_adapter.rb`): the
+  quoted-name alternative is dropped once confirmed no trails path emits a
+  quoted CHECK constraint name, and the nesting is unbounded rather than capped
+  at the current two levels (`fn1`/`fn2`, sqlite3-adapter.ts:234-247).
 - Tests named verbatim after the Rails check-constraint tests in
   `vendor/rails/activerecord/test/cases/migration/check_constraint_test.rb`.
+- A test covers a CHECK expression nested deeper than two function calls and
+  fails on baseline.
+- If unbounded nesting is genuinely unexpressible in a JS RegExp, that is the
+  language wall: `pnpm tasks block` naming it. Pinning the two-level limit with
+  a call-site justification is not convergence.

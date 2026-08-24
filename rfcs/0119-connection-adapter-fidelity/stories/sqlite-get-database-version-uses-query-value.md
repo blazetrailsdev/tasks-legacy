@@ -1,5 +1,5 @@
 ---
-title: "SQLite3Adapter#getDatabaseVersion derives from queryValue, not the raw driver"
+title: "SQLite3Adapter#getDatabaseVersion probes the raw driver, not query_value"
 status: draft
 updated: 2026-08-08
 rfc: "0119-connection-adapter-fidelity"
@@ -19,7 +19,7 @@ closed-reason: null
 ## Context
 
 `SQLite3Adapter#getDatabaseVersion`
-(`packages/activerecord/src/connection-adapters/sqlite3-adapter.ts:1484-1496`)
+(`packages/activerecord/src/connection-adapters/sqlite3-adapter.ts:1541-1556`)
 issues its probe straight on the driver instead of through `queryValue`:
 
 ```ruby

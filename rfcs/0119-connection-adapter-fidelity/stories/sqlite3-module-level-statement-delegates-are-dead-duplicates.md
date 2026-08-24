@@ -39,14 +39,13 @@ anything ever wired it up.
 
 ## Acceptance criteria
 
-- Decide the endgame for each dead export: either wire the adapter to actually
-  call it (matching Rails' module-mixin layout per CLAUDE.md's `this`-typed
-  mixin convention), or delete it and record why the Rails-layout slot is
-  intentionally empty.
-- Do NOT simply delete to make the file smaller — the exports exist so
-  `parity:api` finds the method in the file matching Rails' layout. Removing
-  them without a replacement will regress the parity:api file-structure
-  numbers; check `pnpm parity:api:extra` and `pnpm parity:api:calls` both ways.
-- Whichever direction, the logic must exist exactly once afterwards.
+- Each currently-dead export in `sqlite3/schema-statements.ts` and
+  `sqlite3/database-statements.ts` is wired so the adapter actually calls it,
+  matching Rails' module-mixin layout per CLAUDE.md's `this`-typed mixin
+  convention. The logic exists exactly once afterwards.
+- Deleting the exports is NOT the default resolution: they occupy the file
+  matching Rails' layout, which is where `parity:api` looks for the method.
+  Check `pnpm parity:api:extra` and `pnpm parity:api:calls` both ways before
+  choosing, and if deletion wins, say which file then carries the Rails slot.
 - Scope check before starting: this may exceed the LOC ceiling across both
-  files. Split by file if so.
+  files. Split by file if so — one story per file, filed with `tasks new`.

@@ -5,7 +5,7 @@ updated: 2026-08-21
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []
-deps: []
+deps: ["sql-for-insert-pk-inference-binds-a-promise"]
 deps-rfc: []
 est-loc: 160
 priority: null

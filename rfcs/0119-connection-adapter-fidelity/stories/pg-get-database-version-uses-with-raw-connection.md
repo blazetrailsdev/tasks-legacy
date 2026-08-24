@@ -1,5 +1,5 @@
 ---
-title: "PostgreSQLAdapter#getDatabaseVersion fetches through withRawConnection"
+title: "PostgreSQLAdapter#getDatabaseVersion bypasses withRawConnection for a fresh client"
 status: draft
 updated: 2026-08-08
 rfc: "0119-connection-adapter-fidelity"

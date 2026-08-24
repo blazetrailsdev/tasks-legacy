@@ -6,7 +6,7 @@ rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 120
 priority: null
 pr: null
 claim: null

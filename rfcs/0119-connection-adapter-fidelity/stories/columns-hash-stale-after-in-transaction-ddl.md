@@ -51,12 +51,9 @@ instrumentation bug.
 
 ## Acceptance criteria
 
-- Determine whether `columnsHash()` should re-reflect after
-  `resetColumnInformation()` inside an open transaction, anchored to how Rails'
-  `reset_column_information` + `columns_hash` behave there
-  (`activerecord/lib/active_record/model_schema.rb`), and fix the trails side to
-  match — or, if the synchronous accessor genuinely cannot, document the
-  deviation at the call site per the repo's deviation convention.
+- `columnsHash()` re-reflects after `resetColumnInformation()` inside an open
+  transaction, matching `reset_column_information` + `columns_hash`
+  (`activerecord/lib/active_record/model_schema.rb`).
 - `citext.test.ts` "change table supports json" restores
   `column = Citext.columns_hash["username"]` / `assert_equal :citext,
 column.type` and drops the `TODO` (the stale
@@ -64,3 +61,6 @@ column.type` and drops the `TODO` (the stale
 - The restored assertion is verified against a real PostgreSQL lane, not
   sqlite3 — the test is PG-only.
 - `parity:api` / `parity:test` deltas non-negative.
+- If the synchronous accessor genuinely cannot re-reflect, that is a TypeScript
+  language wall: `pnpm tasks block` naming it, rather than documenting the
+  deviation and closing.
