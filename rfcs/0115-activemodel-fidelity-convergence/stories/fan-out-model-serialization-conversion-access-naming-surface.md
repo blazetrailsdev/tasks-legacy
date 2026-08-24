@@ -1,6 +1,6 @@
 ---
 title: "Fan out the serialization, conversion, access and naming surface from model.ts"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
@@ -9,7 +9,7 @@ deps:
   - fan-out-model-attribute-methods-and-registration-surface
 deps-rfc: []
 est-loc: 280
-pr: null
+pr: 7010
 claim: "2026-08-24T22:42:07Z"
 assignee: "fan-out-model-serialization-conversion-access-naming-surface"
 blocked-by: null
