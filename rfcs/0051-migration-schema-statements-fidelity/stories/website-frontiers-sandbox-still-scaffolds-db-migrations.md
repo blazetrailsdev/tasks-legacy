@@ -1,6 +1,6 @@
 ---
 title: "website-frontiers-sandbox-still-scaffolds-db-migrations"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6983
 claim: "2026-08-24T13:33:14Z"
 assignee: "website-frontiers-sandbox-still-scaffolds-db-migrations"
 blocked-by: null
