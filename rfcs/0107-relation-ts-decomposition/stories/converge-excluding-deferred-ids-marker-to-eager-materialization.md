@@ -1,11 +1,12 @@
 ---
 title: "excluding defers relations.flat_map(&:ids) to load time instead of materializing eagerly"
 status: blocked
-updated: 2026-08-23
+updated: 2026-08-24
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
-deps: []
+deps:
+  - port-with-connection-acquisition-seam-for-the-arel-reader
 deps-rfc: []
 est-loc: 150
 priority: 7
