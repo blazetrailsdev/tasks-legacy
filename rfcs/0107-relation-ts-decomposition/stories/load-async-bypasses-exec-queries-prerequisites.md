@@ -1,7 +1,7 @@
 ---
 title: "loadAsync issues its query before execQueries' trails-only prerequisites"
 status: blocked
-updated: 2026-08-23
+updated: 2026-08-24
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
@@ -12,7 +12,7 @@ priority: 4
 pr: 6906
 claim: "2026-08-23T11:12:29Z"
 assignee: "wave-5g-head-sweep"
-blocked-by: "Blocked by PR #6905 (same RFC), which landed 2026-08-23 after this story was written. #6905 makes `execMainQuery` deliberately NOT an `async` method (relation.ts:1115-1120): `FutureResult` defines `then`, so an `async` boundary adopts the handle, resolves it into rows, and leaves `reset` (relation.rb:1195) nothing to cancel. main documents the single surviving `Promise<Result>` arm — `apply_join_dependency`'s `distinct_relation_for_primary_key` rewrite — as the only place that loses cancellation.\n\nThe story's fallback shape (run `ensureSchemaLoaded` + `_materializeDeferredDistinctPkPredicates` on the `loadAsync` path too) requires awaiting before `execMainQuery(true)`, which forces every scheduled relation into that promise arm and loses `cancel` universally — a regression against #6905's just-landed design. The two cannot both hold: the prerequisites are async and the parked handle must stay unadopted.\n\nUnblocks when the prerequisites leave the query path, which is the story's own preferred direction and needs no wrapper: schema reflection satisfied before a relation reaches either entry point (overlaps the schema-cache warming work), and the deferred distinct-PK materialization moved to where `.where()` puts it in Rails (finder_methods.rb:463-475) instead of load time. The underlying hazard is unchanged and still latent — relation.ts:1051-1062 runs both prerequisites only on the foreground pass."
+blocked-by: "Re-verified against origin/main 2026-08-24: blocker still live. execMainQuery is still deliberately non-async (relation.ts:1125, with the FutureResult-adoption rationale in the doc comment at :1120-1124 — the body's :1115-1120 anchor has drifted by ~5 lines), so awaiting the prerequisites before execMainQuery(true) would still force every scheduled relation into the Promise arm and lose cancel universally. The hazard itself is unchanged and still latent: execQueries runs ensureSchemaLoaded + _materializeDeferredDistinctPkPredicates only on the foreground pass (relation.ts:1066; _materializeDeferredDistinctPkPredicates is still async at :1857). Unblocks only when both prerequisites leave the query path — schema warm before either entry point (RFC 0031 is closed, so this needs a new home) and distinct-PK materialization moved to where .where() puts it (finder_methods.rb:463-475)."
 closed-reason: null
 ---
 
