@@ -1,6 +1,6 @@
 ---
 title: "Decide whether activerecord-test-support belongs in the compared population"
-status: draft
+status: ready
 updated: 2026-08-24
 rfc: "0000-extra-surface-gating-rollout"
 cluster: api-compare
