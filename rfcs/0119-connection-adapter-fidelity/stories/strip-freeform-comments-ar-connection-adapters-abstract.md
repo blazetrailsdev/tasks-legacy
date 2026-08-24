@@ -1,7 +1,7 @@
 ---
 title: "strip-freeform-comments-ar-connection-adapters-abstract"
-status: draft
-updated: 2026-08-23
+status: claimed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T14:09:23Z"
+assignee: "strip-freeform-comments-ar-connection-adapters-abstract"
 blocked-by: null
 closed-reason: null
 ---
