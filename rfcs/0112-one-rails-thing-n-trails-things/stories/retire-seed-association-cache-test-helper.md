@@ -1,6 +1,6 @@
 ---
 title: "seedAssociationCache is a trails-only test helper with no Rails counterpart"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T12:03:42Z"
+assignee: "extra-surface-allow-reopened-module-method-files"
 blocked-by: null
 closed-reason: null
 ---

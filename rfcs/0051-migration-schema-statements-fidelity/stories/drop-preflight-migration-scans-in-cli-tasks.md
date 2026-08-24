@@ -1,6 +1,6 @@
 ---
 title: "trailties and activerecord-cli scan migrations a second time; the rake tasks do not"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T12:03:42Z"
+assignee: "extra-surface-allow-reopened-module-method-files"
 blocked-by: null
 closed-reason: null
 ---
