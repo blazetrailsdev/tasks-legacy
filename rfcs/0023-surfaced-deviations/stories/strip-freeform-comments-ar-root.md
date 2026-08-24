@@ -1,7 +1,7 @@
 ---
 title: "strip-freeform-comments-ar-root"
-status: in-progress
-updated: 2026-08-23
+status: done
+updated: 2026-08-24
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages: []
