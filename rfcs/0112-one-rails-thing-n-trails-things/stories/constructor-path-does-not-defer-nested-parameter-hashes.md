@@ -1,15 +1,15 @@
 ---
 title: "Model.new does not defer nested parameter hashes"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-24
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
 deps-rfc: []
 est-loc: 180
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T09:21:48Z"
+assignee: "association-cache-holds-only-association-instances"
 blocked-by: null
 closed-reason: null
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Fragment caching drops content.to_str and never forwards options to exist?/delete/delete_matched"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-24
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
@@ -9,8 +9,8 @@ deps: []
 deps-rfc: []
 est-loc: 120
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T09:21:48Z"
+assignee: "association-cache-holds-only-association-instances"
 blocked-by: null
 closed-reason: null
 ---
