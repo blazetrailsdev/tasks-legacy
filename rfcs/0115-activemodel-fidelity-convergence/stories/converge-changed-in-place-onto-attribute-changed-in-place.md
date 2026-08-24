@@ -1,6 +1,6 @@
 ---
 title: "Converge DirtyTracker#changedInPlace onto Attribute#changed_in_place?"
-status: ready
+status: draft
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
