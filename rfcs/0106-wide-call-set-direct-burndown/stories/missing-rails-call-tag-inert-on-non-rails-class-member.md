@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build should report a @missingRailsCall tag on a non-Rails class member as INERT"
-status: ready
+status: draft
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
