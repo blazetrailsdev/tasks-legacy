@@ -1,7 +1,7 @@
 ---
 title: "Port Ruby's Array#drop for the two reflection-chain call sites"
-status: draft
-updated: 2026-08-22
+status: ready
+updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
 packages: []
