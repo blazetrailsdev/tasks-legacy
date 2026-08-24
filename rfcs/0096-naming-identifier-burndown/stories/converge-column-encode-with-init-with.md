@@ -1,6 +1,6 @@
 ---
 title: "Converge Column JSON serialization onto encode_with/init_with"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: null
+pr: 6980
 claim: "2026-08-24T12:51:22Z"
 assignee: "converge-schema-cache-install-onto-cache-replacement"
 blocked-by: null
