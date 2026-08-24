@@ -1,6 +1,6 @@
 ---
 title: "build-record-await-deferred-initialize"
-status: draft
+status: closed
 updated: 2026-08-24
 rfc: "0023-surfaced-deviations"
 cluster: null
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Converged in PR #7005: buildRecord parks the deferred initializeAttributes on the record via parkNestedReaderLoad so save drains it, keeping Rails' yield-then-return order (association.rb:383-388). No awaited buildRecord needed."
 ---
 
 ## Context
