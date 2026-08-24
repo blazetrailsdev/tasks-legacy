@@ -1,6 +1,6 @@
 ---
 title: "migrator-run-surface-caller-migration"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -8,7 +8,7 @@ deps:
   - unify-migration-discovery-delete-registered-migrations-seam
 deps-rfc: []
 est-loc: null
-pr: null
+pr: 6982
 claim: "2026-08-24T13:19:12Z"
 assignee: "migrator-run-surface-caller-migration"
 blocked-by: null
