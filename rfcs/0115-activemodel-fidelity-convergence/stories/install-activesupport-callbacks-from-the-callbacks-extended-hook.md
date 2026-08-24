@@ -1,6 +1,6 @@
 ---
 title: "Install ActiveSupport::Callbacks from an ActiveModel::Callbacks extended hook"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
