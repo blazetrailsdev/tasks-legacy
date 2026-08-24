@@ -39,6 +39,45 @@ would have created the table during a read-only guard.
 Remaining callers of the read-only variant: `tasks/database-tasks.ts:1037` and
 `packages/trailties/src/commands/db.ts:716`.
 
+## Correction before claiming (added post-#6981)
+
+**This story cites the wrong `current_version`, and criterion 1 as written would
+ADD a divergence.** `vendor/rails/activerecord/lib/active_record/migration.rb`
+defines it twice:
+
+- `:1290` — `MigrationContext#current_version` (class opens `:1211`):
+  `get_all_versions.max || 0`, and `get_all_versions` (`:1282-1288`) IS
+  `table_exists?`-guarded. This is the one the Context text quotes.
+- `:1435` — `Migrator#current_version` (class opens `:1405`): `migrated.max || 0`,
+  guarded by nothing. `Migrator#initialize` (`:1421-1432`) creates both
+  bookkeeping tables after `validate`, so a `Migrator` read DOES create them in
+  Rails.
+
+`Migrator#currentVersion` is the `:1435` one. Making it "return 0 when the table
+is absent" would diverge from Rails, not converge toward it.
+
+The same premise error produced the sibling story
+`migrator-pending-migrations-must-not-create-schema-table`, whose headline
+("pending reader must not create the schema table") is likewise not Rails
+behavior — `MigrationContext#open` (`:1413-1415`) builds a `Migrator`, whose
+constructor creates the tables, so `databases.rake:333`'s
+`open.pending_migrations` writes on a fresh database in Rails too. #6981
+converged the reader body (`migrated` + `reject`, `migration.rb:1475-1478`) and
+deleted `pendingMigrationsReadOnly`, and the reviewer confirmed the remaining
+write as justified.
+
+The genuinely convergeable part of this story survives and is worth doing:
+**delete `currentVersionReadOnly`** (trails-only spelling of a Rails method) and
+move its two callers onto `currentVersion`, or onto
+`MigrationContext#currentVersion` where a guarded read is what the site actually
+wants — that is the reader Rails uses for a no-write current-version probe.
+Criterion 1 should be restated as "`Migrator#currentVersion` mirrors
+`migration.rb:1435` exactly (`migrated.max || 0`) with the table creation left
+at the constructor stand-in", not as a behavior change.
+
+The lazy-`_ensureSchemaTable` shape itself is already tracked and closed by
+[[migrator-defers-schema-table-creation-to-lazy-ensure]] (#5777).
+
 ## Acceptance criteria
 
 - [ ] `Migrator#currentVersion` does not create `schema_migrations` — it reads
