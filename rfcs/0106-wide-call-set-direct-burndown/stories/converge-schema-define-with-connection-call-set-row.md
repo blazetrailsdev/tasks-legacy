@@ -1,6 +1,6 @@
 ---
 title: "converge-schema-define-with-connection-call-set-row"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
