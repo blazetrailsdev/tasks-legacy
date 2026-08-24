@@ -1,6 +1,6 @@
 ---
 title: 'Give type/time.test.ts the verbatim "user input in time zone" Rails test name'
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T16:20:09Z"
+assignee: "sync-reflection-needs-explicit-warm-for-fake-adapter"
 blocked-by: null
 closed-reason: null
 ---
