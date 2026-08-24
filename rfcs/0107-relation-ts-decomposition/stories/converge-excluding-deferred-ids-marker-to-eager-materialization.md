@@ -13,7 +13,7 @@ priority: 7
 pr: 6928
 claim: "2026-08-23T17:39:45Z"
 assignee: "converge-excluding-deferred-ids-marker-to-eager-materialization"
-blocked-by: "Loaded arm converged in PR #6928 (option 2 of the story: relation args that are already loaded? materialize eagerly, no marker, literal ids in toSql). The un-loaded arm is blocked: ids runs the SELECT (calculations.rb:390-404) while excluding is a synchronous chainable and every adapter select_all is Promise-returning (database-statements.ts:1293/1375); toSql(): string is read inline by 26 non-test callers so it cannot await either. Needs a synchronous query seam — same blocker as port-with-connection-acquisition-seam-for-the-arel-reader."
+blocked-by: "Re-verified against origin/main 2026-08-24: un-loaded arm still blocked. excluding is still a synchronous chainable recording a DeferredIdsNotIn marker (relation/query-methods.ts:1937-1999, importing predicate-builder/deferred-distinct-pk-in.js at :16 — the body's :1960-1969/:2018-2040 anchors have drifted) and _materializeDeferredDistinctPkPredicates is still async at relation.ts:1857 (body says :1872-1891). Adapter selectAll is still Promise-returning (database-statements.ts:1253/1335 — body says :1293/1375) and toSql(): string is now read by 31 non-test callers (body says 26). Same root blocker as port-with-connection-acquisition-seam-for-the-arel-reader, now recorded as a deps edge."
 closed-reason: null
 ---
 
