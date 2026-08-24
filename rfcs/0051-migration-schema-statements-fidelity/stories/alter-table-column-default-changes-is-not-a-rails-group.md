@@ -1,7 +1,7 @@
 ---
 title: "AlterTable's columnDefaultChanges group is a trails invention — route default changes through ChangeColumnDefaultDefinition"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
