@@ -37,7 +37,7 @@ separate them is left dangling before the `*/`.
 Reproduced against merged `main` (`reconcileFileText`, `--kind calls`, both calls
 still flagged so neither tag is dropped):
 
-````text
+```text
   /**                                     |   /**
    * @missingRailsCall alpha — …          |    * @missingRailsCall alpha — …
    *                                      |    * @missingRailsCall beta — …
@@ -46,7 +46,7 @@ still flagged so neither tag is dropped):
    *                                      |    *   of the SAME family.
    * @missingRailsCall beta — …           |    *
    */                                     |    */
-```text
+```
 
 Same defect class, same blast radius as the one #6958 closed: the edit is
 semantically harmless (no receipt lost, no row moved) but it is churn a reviewer
@@ -81,4 +81,3 @@ existing, intended normalization and is not what this story is about.
       `build.test.ts` "leaves a mixed-family comment alone in either kind").
 - [ ] No dangling blank `*` line before `*/` in either case.
 - [ ] `pnpm parity:api:calls` and `pnpm parity:api:calls:args` stay green.
-````
