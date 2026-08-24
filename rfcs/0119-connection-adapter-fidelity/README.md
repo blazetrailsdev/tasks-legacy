@@ -53,8 +53,15 @@ sides concretely, as 0023's intake rule requires. Representative live examples:
   public `insert`/`update`/`delete`, leaving PG's non-returning arm uncleared.
 
 Left in the catch-all these read as 118 unrelated chores. Grouped, they are one
-campaign with a measurable finish line, over a tree that already has a parity gate
-pointed at it.
+campaign with a measurable finish line.
+
+They also expose a coverage gap that justifies the RFC on its own. When the
+cohort was measured against the existing gates, the adapter tree turned out to be
+almost entirely ungated: `parity:api:extra` covered `arel` only, the method-order
+lint covered `arel` and `activemodel` only, and of the 24 call-baseline rows in
+the whole of `connection_adapters/`, 20 already belonged to RFC 0106 and RFC 0073. **106 verified, cited divergences in a tree where the gates found 4
+attributable rows** is the gap this campaign closes; #6997 closed the first half
+of it by gating `activerecord`'s extra surface.
 
 The cohort is also **live**, not stale: every story in it was last updated in 2026-07
 (47) or 2026-08 (71). A symbol-level sweep against `main` at `152b2ebe9` found six
@@ -120,17 +127,64 @@ Stories carry their `est-loc` from 0023; see the live index
 
 The RFC closes when all three hold:
 
-- Every `call-mismatches-exclude/` row whose source file is under the adapter tree is
-  gone — converged, not rewritten with a better `reason`. The baselines are
-  only-shrink, so this is directly measurable by
-  `pnpm parity:api:calls` and `pnpm parity:api:calls:args`.
-- `pnpm parity:api:extra --package activerecord` reports no untagged public name
-  under the adapter tree; every remaining `@noRailsEquivalent` there carries a
-  reviewed `PERMANENT` reason naming a real TypeScript language wall.
-- Every story in this RFC is `done` by convergence or `closed` with a Rails
-  `file:line` showing there was nothing to converge. Per CLAUDE.md, a
-  deviation-convergence story is never closed by writing a better justification for
-  the deviation, by broadening a baseline reason, or by moving it to another register.
+1. **The extra-surface mark for `activerecord` has been driven down**, and every
+   public TS name remaining under the adapter tree with no Ruby counterpart
+   carries a reviewed `@noRailsEquivalent PERMANENT` reason naming a real
+   TypeScript language wall.
+
+   This is a genuine ratchet as of #6997, which added `activerecord` to
+   `GATED_PACKAGES` and seeded the mark at the measured **399 novel / 1424
+   total**. It is only-shrink: CI fails on any increase, converged surface is
+   narrowed with `pnpm parity:api:extra:tighten`, and there is no reseed. The
+   mark is a high-water mark to shrink, not a budget to spend.
+
+2. **The four call-baseline rows this RFC owns are gone** — converged, not
+   rewritten with a better `reason`:
+
+   | shard                              | row                                               |
+   | ---------------------------------- | ------------------------------------------------- |
+   | `connection-adapters.json`         | Rails builds the `AdapterNotFound` message inline |
+   | `postgresql/oid/cidr.json`         | `cidr.rb:31` builds an `IPAddr.new`               |
+   | `postgresql/oid/legacy-point.json` | `number_for_point` strips a trailing `.0`         |
+   | `sqlite3/schema-definitions.json`  | `change_column` re-enters `column(...)`           |
+
+3. **Every story is `done` by convergence, or `closed` with a Rails `file:line`
+   showing there was nothing to converge.** Per CLAUDE.md, a
+   deviation-convergence story is never closed by writing a better justification
+   for the deviation, by broadening a baseline reason, or by moving it to
+   another register.
+
+### What this RFC does NOT close, and why the gates are thin here
+
+The adapter tree carries **24** `call-mismatches-exclude/` rows in total. Twenty
+of them are **not this RFC's to retire** — their own `reason` strings assign
+them to RFC 0106 (the wide call-set burndown: the sqlite3 construction cluster,
+`abstract/schema-statements`, `postgresql/database-statements` wave 4b, the
+`mysql2/database-statements` args row) and RFC 0073 (the permanent-checkout
+flip: `abstract/connection-pool`, `postgresql/quoting`). Driving those to zero
+is their burndown; claiming them here would double-count the same work and let
+0119 look closable while its own stories sat untouched.
+
+That thinness is the point rather than an embarrassment. The call-set ratchet
+detects exactly one thing — **a Rails call the TS body omits**. It is
+structurally blind to the classes that make up most of this cohort: an invented
+extra branch (`close()`'s old `expire()` arm), wrong control flow (`configsFor`
+returning an array where Rails returns one config), an async/sync shape
+divergence (`sqlForInsert`), a hand-maintained flag standing in for a driver
+read (`transactionStatus`), a JS-shaped public API (`StatementPool` as a `Map`),
+an unescaped regex (`stripTableNamePrefixAndSuffix`). None of those omit a call.
+
+So criterion 3 is doing real work here, not padding: for most stories the
+evidence of convergence is a test pinning the Rails behaviour, not a gate row
+disappearing. **Every story must land such a test** unless the change is a pure
+deletion of unreachable surface.
+
+A third gate — `blazetrails/rails-file-structure-method-order`, currently
+registered for `arel` and `activemodel` only — would cover member ordering
+across this tree. Widening it is tracked as
+`widen-method-order-lint-to-adapter-tree`: 57 violations across 57 files,
+autofixable, but **25,488 LOC** of pure reordering, so it lands as sequenced
+slices rather than one change. It is not a precondition for closing this RFC.
 
 ## Alternatives considered
 
@@ -161,3 +215,10 @@ The RFC closes when all three hold:
 
 - 2026-08-24: initial RFC — carve-out of 118 open connection-adapter stories from
   `0023-surfaced-deviations`, with a phase order and a gate-measurable end condition.
+- 2026-08-24: verified all 118 stories against `main` (152b2ebe9). Closed 9 whose
+  premise had already landed, re-scoped 2 that had partially converged, and
+  corrected stale Rails citations, two backwards titles and nine
+  decision-shaped acceptance criteria. Rewrote §End condition: the original
+  claimed 20 call-baseline rows owned by RFC 0106 and RFC 0073, and named an
+  extra-surface gate that did not cover `activerecord`. #6997 makes that gate
+  real; the remaining evidence of convergence is a per-story test.
