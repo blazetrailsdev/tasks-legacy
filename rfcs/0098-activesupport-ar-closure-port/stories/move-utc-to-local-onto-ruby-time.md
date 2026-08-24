@@ -1,6 +1,6 @@
 ---
 title: "Move utc_to_local onto the ::Time it takes and answers, retiring its @missingRailsCall utc"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
