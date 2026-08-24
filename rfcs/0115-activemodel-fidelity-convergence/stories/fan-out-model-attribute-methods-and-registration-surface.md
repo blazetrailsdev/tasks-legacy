@@ -1,7 +1,7 @@
 ---
 title: "Fan out the attribute-methods and attribute-registration surface from model.ts"
-status: ready
-updated: 2026-08-23
+status: claimed
+updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -10,8 +10,8 @@ deps:
 deps-rfc: []
 est-loc: 300
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T18:16:30Z"
+assignee: "fan-out-model-attribute-methods-and-registration-surface"
 blocked-by: null
 closed-reason: null
 ---
