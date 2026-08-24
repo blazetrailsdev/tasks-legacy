@@ -22,12 +22,19 @@ closed-reason: null
 `PACKAGE_DIRS` map, which has drifted from the authoritative
 `PACKAGE_SRC_SUBDIR` in `scripts/api-compare/config.ts:57-63`:
 
-| manifest emits                                | actual path on disk                            |
-| --------------------------------------------- | ---------------------------------------------- |
-| `packages/actionpack/src/actiondispatch/`     | `packages/actionpack/src/action-dispatch/`     |
-| `packages/actionpack/src/actioncontroller/`   | `packages/actionpack/src/action-controller/`   |
-| `packages/actionpack/src/abstractcontroller/` | `packages/actionpack/src/abstract-controller/` |
-| `packages/actionpack/src/actionpackversion/`  | `packages/actionpack/src/action-pack/`         |
+| package              | manifest emitted                            | actual path on disk                            |
+| -------------------- | ------------------------------------------- | ---------------------------------------------- |
+| `actiondispatch`     | `packages/actionpack/src/actiondispatch/`   | `packages/actionpack/src/action-dispatch/`     |
+| `actioncontroller`   | `packages/actionpack/src/actioncontroller/` | `packages/actionpack/src/action-controller/`   |
+| `abstractcontroller` | _(absent from the map)_                     | `packages/actionpack/src/abstract-controller/` |
+| `actionpackversion`  | _(absent from the map)_                     | `packages/actionpack/src/action-pack/`         |
+
+Two distinct faults, not one. `actiondispatch` / `actioncontroller` were present
+and misspelled. `abstractcontroller` / `actionpackversion` were never in the map
+at all, so their Rails private methods have never been validated in either
+direction — both are api-compared packages (`vendor/sources.ts:113,118`) whose
+TS roots `packageSrcDir` already resolves via `PACKAGE_SRC_SUBDIR`. Deriving the
+map only closes the gap if every package sharing the actionpack dir is in it.
 
 `eslint/rails-private-methods.json` therefore contains **219 dead keys out of
 604** — every actionpack entry. `eslint/rails-private-jsdoc.mjs` looks a file up
@@ -38,11 +45,11 @@ its `files` glob.
 
 Measured 2026-08-24 on a freshly regenerated manifest:
 
-````console
+```console
 npx eslint --no-inline-config -c eslint/rails-private-jsdoc.config.mjs "packages/actionpack/src/**/*.ts"
   before path fix: 0 violations
   after  path fix: 40 violations
-```console
+```
 
 All 40 are the rule's own autofixable "add an `@internal` tag" message
 (`optimizeRoutesGeneration`, `contentSecurityPolicy`, `handleConditionalGetBang`,
@@ -72,10 +79,12 @@ omits entirely — and are tracked by
   (see `require-rails-api.ts` and the sibling story
   `rails-privates-manifest-silently-empty-without-api-compare-output`). There is
   consequently nothing to commit — the fix ships as code only.
+- `MANIFEST_PACKAGES` covers every api-compared package mapping to the
+  `actionpack` dir, pinned by a test so it cannot fall behind `PACKAGES` again.
 - The actionpack violations the fix unlocks are fixed (`eslint --fix` produces
   them; review each tag lands on the right declaration).
 - `npx eslint --no-inline-config -c eslint/rails-private-jsdoc.config.mjs
-  "packages/**/src/**/*.ts"` is clean.
+"packages/**/src/**/*.ts"` is clean.
 
 ### Second defect, found by the autofix
 
@@ -96,4 +105,3 @@ Fix: after projecting the all-private names, subtract every candidate of every
 gates on. Removes 66 names across 7 packages — including `permitted`,
 `nestedScope`, `setContentType`, and activemodel's `attribute`, the case
 `rails-private-jsdoc.mjs:10-13` cites in its own header as what the guard is for.
-````
