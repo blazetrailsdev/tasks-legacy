@@ -1,6 +1,6 @@
 ---
 title: "Port Delegation.generate_method_missing's reserved / __target receiver prefix"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 90
 priority: null
-pr: null
+pr: 6998
 claim: "2026-08-24T18:07:08Z"
 assignee: "stale-story-references-scan-times-out-under-load"
 blocked-by: null
