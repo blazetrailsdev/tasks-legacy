@@ -1,7 +1,7 @@
 ---
 title: "handle_warnings' _handleWarnings hook and _warningCount seam have no Rails counterpart"
-status: ready
-updated: 2026-08-10
+status: closed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Already converged on main (152b2ebe9): `_handleWarnings` and `_warningCount` do not exist anywhere under packages/*/src. Both invented seams were removed."
 ---
 
 ## Context
