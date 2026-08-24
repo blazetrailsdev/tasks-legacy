@@ -1,6 +1,6 @@
 ---
 title: "_cacheSingularTarget's surviving arm writes the inverse target without set_inverse_instance"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 160
 priority: null
-pr: null
+pr: 6981
 claim: "2026-08-24T13:05:17Z"
 assignee: "migrator-pending-migrations-must-not-create-schema-table"
 blocked-by: null
