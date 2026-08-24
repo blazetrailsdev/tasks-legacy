@@ -1,7 +1,7 @@
 ---
 title: "copy_table hoists columns(from) out of the create_table block"
-status: draft
-updated: 2026-08-15
+status: ready
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
