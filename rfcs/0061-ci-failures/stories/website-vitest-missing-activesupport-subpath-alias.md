@@ -1,6 +1,6 @@
 ---
 title: "website-vitest-missing-activesupport-subpath-alias"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0061-ci-failures"
 cluster: null
