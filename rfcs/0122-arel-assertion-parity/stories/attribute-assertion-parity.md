@@ -1,6 +1,6 @@
 ---
 title: "Converge attributes/attribute assertion parity"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
