@@ -1,6 +1,6 @@
 ---
 title: "Converge visitors/mysql and visitors/sqlite assertion parity"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T23:42:13Z"
+assignee: "move-ts-only-extras-out-of-the-remaining-activemodel-type-test-files-part-2"
 blocked-by: null
 closed-reason: null
 ---
