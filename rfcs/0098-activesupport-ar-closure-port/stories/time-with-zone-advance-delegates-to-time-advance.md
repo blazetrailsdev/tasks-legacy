@@ -1,6 +1,6 @@
 ---
 title: "TimeWithZone#advance advances through Time#advance, not a hand-rolled calendar"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
