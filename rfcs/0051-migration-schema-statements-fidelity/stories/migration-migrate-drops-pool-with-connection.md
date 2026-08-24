@@ -1,7 +1,7 @@
 ---
 title: "migration-migrate-drops-pool-with-connection"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T03:57:41Z"
+assignee: "migration-migrate-drops-pool-with-connection"
 blocked-by: null
 closed-reason: null
 ---
