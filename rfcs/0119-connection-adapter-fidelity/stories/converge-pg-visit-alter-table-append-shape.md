@@ -1,7 +1,7 @@
 ---
 title: "PG visit_AlterTable should append Rails' joined groups instead of sniffing a separator"
-status: draft
-updated: 2026-08-07
+status: closed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Already converged on main (152b2ebe9): postgresql/schema-creation.ts:113-131 is three plain `sql +=` appends of `.join(\" \")` groups onto super's output — schema_creation.rb:10-15 line for line. The separator-sniffing branch, its DIVERGENCE comment and the `trimmed === \\`ALTER TABLE ${table}\\`` test are all gone."
 ---
 
 ## Context
