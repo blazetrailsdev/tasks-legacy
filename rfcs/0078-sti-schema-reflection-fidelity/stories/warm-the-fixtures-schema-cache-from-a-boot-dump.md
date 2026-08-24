@@ -1,6 +1,6 @@
 ---
 title: "warm-the-fixtures-schema-cache-from-a-boot-dump"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
