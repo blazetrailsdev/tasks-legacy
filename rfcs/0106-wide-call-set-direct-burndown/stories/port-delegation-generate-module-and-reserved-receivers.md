@@ -1,7 +1,7 @@
 ---
 title: "port-delegation-generate-module-and-reserved-receivers"
-status: blocked
-updated: 2026-08-22
+status: ready
+updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
 packages: []
@@ -10,9 +10,9 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: "2026-08-22T17:50:03Z"
-assignee: "port-delegation-generate-module-and-reserved-receivers"
-blocked-by: "Blocked on unmerged PR #6863 (module-ext-delegation-bundle), which rewrites packages/activesupport/src/delegation.ts (+123 LOC) including Delegation.generate's receiver computation. This story ports the to:-a-Module branch and RESERVED_METHOD_NAMES inside that same rewritten body; landing it from main would duplicate/conflict with #6863. Re-ready once #6863 merges."
+claim: null
+assignee: null
+blocked-by: null
 closed-reason: null
 ---
 
