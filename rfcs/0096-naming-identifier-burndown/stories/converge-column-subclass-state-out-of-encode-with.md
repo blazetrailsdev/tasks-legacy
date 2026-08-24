@@ -1,5 +1,5 @@
 ---
-title: "converge-column-subclass-state-out-of-encode-with"
+title: "Drop subclass state from Column#encodeWith to Rails' seven base keys"
 status: ready
 updated: 2026-08-24
 rfc: "0096-naming-identifier-burndown"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 200
 priority: null
 pr: null
 claim: null
