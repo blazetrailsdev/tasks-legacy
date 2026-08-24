@@ -1,7 +1,7 @@
 ---
 title: "Pin or retire the to_regclass deviation in PG pk_and_sequence_for"
-status: ready
-updated: 2026-07-27
+status: closed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []
@@ -12,7 +12,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Already converged on main (152b2ebe9): postgresql/schema-statements-class.ts:1671-1694 uses Rails' `::regclass` cast (`dep.refobjid = ${quotedTable}::regclass`) inside an outer try mirroring Rails' bare `rescue nil`. `to_regclass` no longer appears in packages/activerecord/src at all, so there is no deviation left to pin or retire."
 ---
 
 ## Context
