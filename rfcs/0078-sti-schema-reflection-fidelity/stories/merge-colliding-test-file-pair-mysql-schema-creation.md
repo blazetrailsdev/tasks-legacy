@@ -1,7 +1,7 @@
 ---
 title: "merge-colliding-test-file-pair-mysql-schema-creation"
-status: in-progress
-updated: 2026-08-23
+status: done
+updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
 packages: []
