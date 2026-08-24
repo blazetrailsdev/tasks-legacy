@@ -1,7 +1,7 @@
 ---
 title: "converge-sync-eager-builders-async-to-sql"
 status: blocked
-updated: 2026-08-23
+updated: 2026-08-24
 rfc: "0107-relation-ts-decomposition"
 cluster: null
 packages: []
@@ -12,7 +12,7 @@ priority: 6
 pr: null
 claim: "2026-08-17T22:06:05Z"
 assignee: "converge-lock-value-stores-locks-not-clause-string"
-blocked-by: "Blocked on an async Relation#toSql (or an async `where`), which cannot ship inside this RFC's 700 LOC PR ceiling: relation.rb:1210-1222 renders through with_connection and apply_join_dependency, whose distinct_relation_for_primary_key branch EXECUTES a query (schema_statements.rb:1429-1452), so trails' applyJoinDependency is async while toSql is consumed synchronously by 412 test and 16 source call sites. The invented sync builders (_applyEagerJoinDependency, _buildEagerIdSubquery, _buildEagerOperandManager, the deferred distinct-PK marker cluster and relation/predicate-builder/deferred-distinct-pk-in.ts) also cover a real MySQL/MariaDB regression -- MySQL rejects IN (SELECT ... LIMIT n) -- so they cannot be deleted before the async path exists. Needs its own PR and its own three-lane adapter run. The sibling toSql with_connection omission is now stated at the call site as a @missingRailsCall tag (relation.ts#toSql) instead of a baseline row."
+blocked-by: "Re-verified against origin/main 2026-08-24: blocker still live, and wider than written. Relation#toSql is still declared `toSql(): string` (relation.ts:1915) and the sync eager builders are all still present (_applyEagerJoinDependency relation.ts:1974, _buildEagerOperandManager :1924, _materializeDeferredDistinctPkPredicates :1857, and relation/predicate-builder/deferred-distinct-pk-in.ts). The call-site count in the body has DRIFTED UPWARD: toSql() is now read by 683 test and 31 non-test call sites (body says 412/16), so the sync-to-async flip is a bigger PR than when filed. Still needs an async toSql (or a sync query seam) plus its own three-lane adapter run; does not fit this RFC's 700 LOC ceiling and wants its own RFC."
 closed-reason: null
 ---
 
