@@ -1,13 +1,13 @@
 ---
 title: "Port ActiveSupport::Delegation so Module#delegate fronts it"
-status: done
+status: in-progress
 updated: 2026-08-24
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
 deps-rfc: []
 est-loc: 350
-pr: 6863
+pr: 6965
 claim: "2026-08-24T02:13:27Z"
 assignee: "activesupport-delegation-module-port"
 blocked-by: null
