@@ -1,6 +1,6 @@
 ---
 title: "Port Ruby's Tempfile block form and retire the two PERMANENT missingRailsCall receipts"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
