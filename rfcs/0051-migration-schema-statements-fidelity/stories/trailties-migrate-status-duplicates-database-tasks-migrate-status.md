@@ -5,7 +5,8 @@ updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
-deps: []
+deps:
+  - kernel-abort-ports-as-a-catchable-throw
 deps-rfc: []
 est-loc: 90
 priority: 56
