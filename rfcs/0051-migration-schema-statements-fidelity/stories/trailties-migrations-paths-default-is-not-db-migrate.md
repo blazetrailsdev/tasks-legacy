@@ -1,6 +1,6 @@
 ---
 title: "trailties defaults migration paths to db/migrations, not Rails' db/migrate"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T11:45:44Z"
+assignee: "boot-dump-fingerprint-misses-mysql-functional-index"
 blocked-by: null
 closed-reason: null
 ---
