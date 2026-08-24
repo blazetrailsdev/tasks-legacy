@@ -1,7 +1,7 @@
 ---
 title: "warm-the-fixtures-schema-cache-from-a-boot-dump"
-status: ready
-updated: 2026-08-23
+status: claimed
+updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T03:39:39Z"
+assignee: "warm-the-fixtures-schema-cache-from-a-boot-dump"
 blocked-by: null
 closed-reason: null
 ---
