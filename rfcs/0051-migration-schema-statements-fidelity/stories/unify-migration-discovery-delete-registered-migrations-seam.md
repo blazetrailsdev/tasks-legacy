@@ -1,15 +1,15 @@
 ---
 title: "Unify the two migration discovery paths and delete the registeredMigrations seam"
-status: ready
-updated: 2026-08-21
+status: claimed
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
 deps-rfc: []
 est-loc: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T09:03:41Z"
+assignee: "unify-migration-discovery-delete-registered-migrations-seam"
 blocked-by: null
 closed-reason: null
 ---
