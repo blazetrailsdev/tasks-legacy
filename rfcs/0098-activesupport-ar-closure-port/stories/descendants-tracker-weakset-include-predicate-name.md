@@ -1,6 +1,6 @@
 ---
 title: "DescendantsTracker::WeakSet's include? reader is the last in-closure missing member"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
