@@ -1,6 +1,6 @@
 ---
 title: "Fan out the validation-runner surface from model.ts to validations.ts"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
@@ -9,7 +9,7 @@ deps:
   - fan-out-model-validates-with-to-validations-with
 deps-rfc: []
 est-loc: 380
-pr: null
+pr: 6979
 claim: "2026-08-24T12:21:44Z"
 assignee: "fan-out-model-validation-runner-surface-to-validations"
 blocked-by: null
