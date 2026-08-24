@@ -1,7 +1,7 @@
 ---
 title: "parity:api:build rewrites a mixed-family JSDoc comment while migrating nothing"
-status: in-progress
-updated: 2026-08-23
+status: done
+updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
 packages: []
