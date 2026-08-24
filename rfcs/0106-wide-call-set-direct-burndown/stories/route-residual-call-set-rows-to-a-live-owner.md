@@ -1,6 +1,6 @@
 ---
 title: "Exit ledger: give each of the 42 residual call-set rows a converged call, a receipt, or a claimable story"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -14,8 +14,8 @@ deps-rfc: []
 est-loc: 200
 priority: 9
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T20:39:36Z"
+assignee: "route-residual-call-set-rows-to-a-live-owner"
 blocked-by: null
 closed-reason: null
 ---
