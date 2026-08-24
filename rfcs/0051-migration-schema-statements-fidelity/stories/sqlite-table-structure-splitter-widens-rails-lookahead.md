@@ -1,7 +1,7 @@
 ---
 title: "tableStructureSql splits on \\s* where Rails splits on \\s"
-status: draft
-updated: 2026-08-09
+status: closed
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Converged by PR #6295 (3d1b45eee, 'sqlite table_structure_sql'). sqlite3-adapter.ts:2449 on origin/main is `new RegExp(`,(?=\\\\s(?:CONSTRAINT|\"(?:${union})\"))`, \"i\")` — a single \\s, matching sqlite3_adapter.rb:785-786. `git grep 'CONSTRAINT|' origin/main -- packages/activerecord/src` returns only that one line; no \\s* widening remains anywhere."
 ---
 
 ## Context
