@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build reflows same-family receipts split by prose"
-status: ready
+status: draft
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
