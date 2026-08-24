@@ -1,6 +1,6 @@
 ---
 title: "Boot-dump fingerprint misses a MySQL functional index's expression"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 80
 priority: null
-pr: null
+pr: 6977
 claim: "2026-08-24T11:45:44Z"
 assignee: "boot-dump-fingerprint-misses-mysql-functional-index"
 blocked-by: null
