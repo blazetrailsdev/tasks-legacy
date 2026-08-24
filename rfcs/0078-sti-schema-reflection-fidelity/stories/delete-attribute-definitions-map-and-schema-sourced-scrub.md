@@ -1,7 +1,7 @@
 ---
 title: "delete-attribute-definitions-map-and-schema-sourced-scrub"
-status: draft
-updated: 2026-08-21
+status: closed
+updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
 packages: []
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Both halves resolved elsewhere. AC1 already landed: 'scrubSchemaSourcedDefinitions' returns ZERO hits on origin/main (git grep -n scrubSchemaSourcedDefinitions origin/main -- packages), and model-schema.ts's reloadSchemaFromCache now only nils memos as Rails' model_schema.rb:553-568 does. AC2 (delete _attributeDefinitions from SchemaHost and every remaining reader) is verbatim the scope of 0115/retire-remaining-attribute-definitions-registry, whose body enumerates the same surviving readers (model-schema.ts synthesized columnsHash fallback, loadSchemaBang, createTable, reconcileVirtualAttributes, base.ts ensureSchemaLoaded). Closing to avoid two stories owning the same deletion; the remaining work is tracked in 0115."
 ---
 
 ## Context
