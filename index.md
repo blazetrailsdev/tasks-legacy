@@ -124,4 +124,4 @@
 | [0119-connection-adapter-fidelity](rfcs/0119-connection-adapter-fidelity/README.md) | Connection-adapter fidelity — converge connection_adapters/ onto the Rails tree | draft | @deanmarano | activerecord |
 | [0120-extra-surface-gating-rollout](rfcs/0120-extra-surface-gating-rollout/README.md) | Extra-surface gating rollout: an enrollment contract for parity:api:extra | draft | @deanmarano | arel, globalid, abstractcontroller, i18n, activerecord |
 | [0121-internal-tag-accounting](rfcs/0121-internal-tag-accounting/README.md) | Constrain @internal to Rails-private surface; account for the rest | draft | @deanmarano | activerecord, actionpack, activemodel, activesupport, actionview, arel, trailties |
-| [0122-arel-assertion-parity](rfcs/0122-arel-assertion-parity/README.md) | arel assertion parity to zero | draft | @your-handle | arel |
+| [0122-arel-assertion-parity](rfcs/0122-arel-assertion-parity/README.md) | arel assertion parity to zero | active | @your-handle | arel |
