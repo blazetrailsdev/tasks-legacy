@@ -1,6 +1,6 @@
 ---
 title: "converge-sqlite3-adapter-construction-call-set-rows"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 160
 priority: null
-pr: null
+pr: 7009
 claim: "2026-08-24T22:30:08Z"
 assignee: "converge-postgresql-database-statements-call-set-rows"
 blocked-by: null
