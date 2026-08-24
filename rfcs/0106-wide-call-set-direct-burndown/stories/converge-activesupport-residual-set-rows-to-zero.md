@@ -1,6 +1,6 @@
 ---
 title: "Retire activesupport's last 3 call-set rows so the package hits the RFC's zero"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
