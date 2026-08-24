@@ -1,6 +1,6 @@
 ---
 title: "make-column-primary-key-flag-authoritative-or-remove-it"
-status: ready
+status: closed
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Done in PR #6980: Column#primaryKey removed entirely (option 2), dumper reads the authoritative key threaded from SchemaDumper#table. Verified sqlite3/PG/MariaDB."
 ---
 
 ## Context
