@@ -59,14 +59,41 @@ omits entirely — and are tracked by
   `scripts/api-compare/config.ts` (`packageSrcDir` / `PACKAGE_DIR_OVERRIDES` +
   `PACKAGE_SRC_SUBDIR`) rather than a private copy, so the two cannot drift
   again.
-- A test asserts every key in the regenerated manifest resolves to a file that
-  exists on disk (guarded so it skips cleanly when `rails-api.json` is absent —
-  the manifest is only buildable in the Ruby-bearing CI job, see
-  `require-rails-api.ts` and the sibling story
-  `rails-privates-manifest-silently-empty-without-api-compare-output`).
-- `eslint/rails-private-methods.json` is regenerated and committed.
-- The 40 actionpack violations are fixed (`eslint --fix` produces them; review
-  each tag lands on the right declaration).
+- A test asserts every package dir the manifest projects onto exists as a
+  directory. **Not** "every manifest key resolves to a file that exists" — that
+  is unachievable and was wrong when this story was written: 134 keys
+  legitimately name Rails files trails has not ported yet, and a dead key is
+  indistinguishable from an unported one. The directory prefix is the level at
+  which the drift is detectable.
+- The manifest-reading half of the test skips cleanly when
+  `eslint/rails-private-methods.json` is absent or empty. The file is
+  **gitignored** and built only by the Ruby-bearing `rails-comparison` CI job,
+  and `railsApiAvailable` writes an empty one when `rails-api.json` is missing
+  (see `require-rails-api.ts` and the sibling story
+  `rails-privates-manifest-silently-empty-without-api-compare-output`). There is
+  consequently nothing to commit — the fix ships as code only.
+- The actionpack violations the fix unlocks are fixed (`eslint --fix` produces
+  them; review each tag lands on the right declaration).
 - `npx eslint --no-inline-config -c eslint/rails-private-jsdoc.config.mjs
-  "packages/actionpack/src/**/*.ts"` is clean.
+  "packages/**/src/**/*.ts"` is clean.
+
+### Second defect, found by the autofix
+
+Unblocking the rule surfaced a false positive that has to be fixed here or the
+PR ships wrong `@internal` tags.
+
+The all-private guard runs on **Ruby** names, but the manifest is keyed by **TS**
+name, and the two are not one-to-one: `rubyMethodToTs` gives a `?` method the
+bare stem as a candidate. So the private `content_security_policy?` contributes
+`contentSecurityPolicy` — the spelling of the **public**
+`content_security_policy` class DSL sitting beside it in
+`action_controller/metal/content_security_policy.rb:40`. `rails-private-jsdoc`
+then demands `@internal` on a public Rails method and hides it from the website
+API reference, which is the exact inversion of the rule's purpose.
+
+Fix: after projecting the all-private names, subtract every candidate of every
+`mixed` name in the same file, so the guard applies in the namespace it actually
+gates on. Removes 66 names across 7 packages — including `permitted`,
+`nestedScope`, `setContentType`, and activemodel's `attribute`, the case
+`rails-private-jsdoc.mjs:10-13` cites in its own header as what the guard is for.
 ````
