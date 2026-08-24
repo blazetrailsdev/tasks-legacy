@@ -1,6 +1,6 @@
 ---
 title: "Converge get_primary_key's schema_cache.primary_keys / table_exists? rows"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
