@@ -1,6 +1,6 @@
 ---
 title: "converge-access-slice-with-indifferent-access"
-status: claimed
+status: blocked
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: "2026-08-24T23:30:07Z"
 assignee: "converge-access-slice-with-indifferent-access"
-blocked-by: null
+blocked-by: "Blocked on unmerged PR #7010 (fan-out-model-serialization-conversion-access-naming-surface): on origin/main packages/activemodel/src/access.ts is still a bare interface and slice/valuesAt live in model.ts, so the call-site note this story must replace does not exist yet. Re-ready once #7010 merges."
 closed-reason: null
 ---
 
