@@ -1,6 +1,6 @@
 ---
 title: "converge-attribute-method-predicate-to-rails-body"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
