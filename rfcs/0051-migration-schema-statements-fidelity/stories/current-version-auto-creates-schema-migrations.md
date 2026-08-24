@@ -1,7 +1,7 @@
 ---
 title: "Migrator#currentVersion auto-creates schema_migrations"
-status: draft
-updated: 2026-08-02
+status: closed
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
@@ -12,7 +12,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Delivered by PR #6982 (ef6c834ec 'Migrator keeps only its migration.rb:1404 surface'). currentVersionReadOnly is gone: `git grep currentVersionReadOnly origin/main -- packages` returns nothing. Migrator#currentVersion (migration.ts:2705-2708) is now exactly migration.rb:1435-1437 — `migrated.max || 0` — with no _ensureSchemaTable call. The story's own post-#6981 correction identified deleting currentVersionReadOnly as the only genuinely convergeable part; that is done."
 ---
 
 ## Context
