@@ -1,6 +1,6 @@
 ---
 title: "Route validates_each through validates_with and delete _registerValidator"
-status: ready
+status: draft
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
