@@ -1,7 +1,7 @@
 ---
 title: "ColumnOptions declares no first/after column-positioning keys"
-status: draft
-updated: 2026-07-29
+status: closed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []
@@ -12,7 +12,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Already converged on main (152b2ebe9): ColumnOptions declares both keys — schema-definitions.ts:563-564 (`first?: boolean`, `after?: string`), carrying the schema_definitions.rb:259 citation this story asked for. Premise 'declares no first or after key' is false."
 ---
 
 ## Context
