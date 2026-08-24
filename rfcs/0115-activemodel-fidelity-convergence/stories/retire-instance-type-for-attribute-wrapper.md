@@ -1,6 +1,6 @@
 ---
 title: "Model#typeForAttribute is invented instance surface"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: null
-pr: null
+pr: 7006
 claim: "2026-08-24T20:39:29Z"
 assignee: "converge-attribute-method-predicate-to-rails-body"
 blocked-by: null
