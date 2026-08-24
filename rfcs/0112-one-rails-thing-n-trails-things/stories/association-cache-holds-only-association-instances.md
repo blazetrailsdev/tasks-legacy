@@ -1,6 +1,6 @@
 ---
 title: "@association_cache holds ad-hoc object literals Rails has no counterpart for"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 200
-pr: null
+pr: 6975
 claim: "2026-08-24T09:21:48Z"
 assignee: "association-cache-holds-only-association-instances"
 blocked-by: null
