@@ -1,6 +1,6 @@
 ---
 title: "Exit ledger: give each of the 42 residual call-set rows a converged call, a receipt, or a claimable story"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
