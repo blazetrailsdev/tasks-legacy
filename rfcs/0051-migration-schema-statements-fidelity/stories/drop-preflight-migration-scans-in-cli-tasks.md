@@ -1,6 +1,6 @@
 ---
 title: "trailties and activerecord-cli scan migrations a second time; the rake tasks do not"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null

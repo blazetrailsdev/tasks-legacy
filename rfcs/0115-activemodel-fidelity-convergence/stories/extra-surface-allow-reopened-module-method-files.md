@@ -1,6 +1,6 @@
 ---
 title: "extra-surface-allow-reopened-module-method-files"
-status: draft
+status: done
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6978
 claim: null
 assignee: null
 blocked-by: null
