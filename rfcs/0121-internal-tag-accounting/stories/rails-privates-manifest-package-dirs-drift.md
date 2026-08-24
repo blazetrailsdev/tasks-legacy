@@ -1,6 +1,6 @@
 ---
 title: "rails-privates manifest: PACKAGE_DIRS drift kills 36% of the manifest"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0121-internal-tag-accounting"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T15:34:50Z"
+assignee: "deanmarano"
 blocked-by: null
 closed-reason: null
 ---
