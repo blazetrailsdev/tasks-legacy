@@ -1,7 +1,7 @@
 ---
 title: "SchemaMigration takes an adapter where Rails takes a pool"
-status: draft
-updated: 2026-07-29
+status: closed
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
@@ -12,7 +12,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Premise gone on origin/main. SchemaMigration's constructor is now constructor(pool: ConnectionPool | NullPool) (schema-migration.ts:57), matching schema_migration.rb:14, and ConnectionPool exposes both accessors — get schemaMigration(): SchemaMigration (connection-pool.ts:593) and get internalMetadata(): InternalMetadata (:597), with the NullPool declare-readonly stubs at :122-123. multi-db-migrator.test.ts:73-74 now builds new SchemaMigration(adapterA.pool) / (adapterB.pool) rather than leasing a connection. Residual nit only: that beforeEach spells the pool as adapterX.pool rather than Base.connectionPool().schemaMigration — not worth a story."
 ---
 
 ## Context
