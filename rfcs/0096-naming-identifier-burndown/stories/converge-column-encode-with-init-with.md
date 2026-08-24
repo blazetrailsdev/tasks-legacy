@@ -1,6 +1,6 @@
 ---
 title: "Converge Column JSON serialization onto encode_with/init_with"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0096-naming-identifier-burndown"
 cluster: null
