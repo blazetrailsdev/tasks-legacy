@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: null
-priority: 5
+priority: 4
 pr: 6928
 claim: "2026-08-23T17:39:45Z"
 assignee: "converge-excluding-deferred-ids-marker-to-eager-materialization"
