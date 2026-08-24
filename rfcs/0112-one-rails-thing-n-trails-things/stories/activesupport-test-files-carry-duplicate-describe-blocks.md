@@ -1,7 +1,7 @@
 ---
 title: "key-generator.test.ts and parameter-filter.test.ts register duplicate describe blocks and a misplaced BacktraceCleaner copy"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-24
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
@@ -9,8 +9,8 @@ deps: []
 deps-rfc: []
 est-loc: 130
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T02:13:27Z"
+assignee: "activesupport-delegation-module-port"
 blocked-by: null
 closed-reason: null
 ---
