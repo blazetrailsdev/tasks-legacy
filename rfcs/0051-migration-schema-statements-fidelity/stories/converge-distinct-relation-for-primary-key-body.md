@@ -1,7 +1,7 @@
 ---
 title: "Converge distinct_relation_for_primary_key's body onto schema_statements.rb:1429-1452"
-status: draft
-updated: 2026-08-17
+status: ready
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
