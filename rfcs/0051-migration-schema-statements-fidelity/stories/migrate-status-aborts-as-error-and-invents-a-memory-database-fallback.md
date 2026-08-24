@@ -1,6 +1,6 @@
 ---
 title: "migrate-status-aborts-as-error-and-invents-a-memory-database-fallback"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
