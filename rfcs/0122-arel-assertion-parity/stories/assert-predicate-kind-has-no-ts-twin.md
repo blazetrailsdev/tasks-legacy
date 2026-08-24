@@ -1,6 +1,6 @@
 ---
 title: "Map assert_predicate onto a kind a vitest matcher can produce"
-status: ready
+status: draft
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
