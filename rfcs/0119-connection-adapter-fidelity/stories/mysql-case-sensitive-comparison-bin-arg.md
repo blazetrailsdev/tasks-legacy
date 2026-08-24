@@ -1,7 +1,7 @@
 ---
 title: "case_sensitive_comparison passes an invented quotedNode() to Arel::Nodes::Bin"
-status: draft
-updated: 2026-08-11
+status: closed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Already converged on main (152b2ebe9): abstract-mysql-adapter.ts:1072-1081 builds `new Nodes.Bin(value)` — the invented `quotedNode()` argument is gone, and `quotedNode` now survives only in one unrelated comment in relation/query-attribute.ts."
 ---
 
 ## Context
