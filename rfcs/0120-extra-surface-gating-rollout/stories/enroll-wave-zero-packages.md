@@ -2,7 +2,7 @@
 title: "Enroll did-you-mean and actionpackversion in the extra-surface gate"
 status: ready
 updated: 2026-08-24
-rfc: "0000-extra-surface-gating-rollout"
+rfc: "0120-extra-surface-gating-rollout"
 cluster: api-compare
 packages: []
 deps: ["extra-surface-mark-dimensions"]

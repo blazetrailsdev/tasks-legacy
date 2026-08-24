@@ -2,7 +2,7 @@
 title: "Burn down and enroll i18n"
 status: ready
 updated: 2026-08-24
-rfc: "0000-extra-surface-gating-rollout"
+rfc: "0120-extra-surface-gating-rollout"
 cluster: api-compare
 packages: ["i18n"]
 deps: ["extra-surface-mark-dimensions", "convergeable-tag-story-id"]

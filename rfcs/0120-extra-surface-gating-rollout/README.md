@@ -1,5 +1,5 @@
 ---
-rfc: "0000-extra-surface-gating-rollout"
+rfc: "0120-extra-surface-gating-rollout"
 title: "Extra-surface gating rollout: an enrollment contract for parity:api:extra"
 status: draft
 created: 2026-08-24
