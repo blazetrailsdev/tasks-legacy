@@ -1,5 +1,5 @@
 ---
-rfc: "0000-connection-adapter-fidelity"
+rfc: "0119-connection-adapter-fidelity"
 title: "Connection-adapter fidelity — converge connection_adapters/ onto the Rails tree"
 status: draft
 created: 2026-08-24
@@ -13,7 +13,7 @@ related-rfcs:
   - "0023-surfaced-deviations"
 ---
 
-# RFC — Connection-adapter fidelity
+# RFC 0119 — Connection-adapter fidelity
 
 ## Summary
 
