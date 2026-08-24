@@ -1,7 +1,7 @@
 ---
 title: "Fan out validates_with from model.ts to validations/with.ts"
-status: ready
-updated: 2026-08-23
+status: claimed
+updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -10,8 +10,8 @@ deps:
 deps-rfc: []
 est-loc: 280
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T11:27:44Z"
+assignee: "fan-out-model-validates-with-to-validations-with"
 blocked-by: null
 closed-reason: null
 ---
