@@ -102,13 +102,16 @@ The rest still need a disposition:
 - `querying.ts` `_load_from_sql → instantiate_instance_of`.
 - `scoping/default.ts` `build_default_scope → any?` (inverted branch shape).
 
-### Failure mode 3 — the conventions fix may retire several for free
+### Failure mode 3 — the conventions fix already landed and did NOT retire these
 
-The RFC's own seeded-reason audit found the `"_" + camel` candidate gap and
-filed `add-leading-underscore-call-candidate-to-conventions`. At least
-`_addConstraintsDj` above matches that shape. Run that story's delta **first**
-and re-measure before writing receipts by hand, so the ledger does not
-hand-justify rows a conventions candidate would delete.
+The RFC's seeded-reason audit found the `"_" + camel` candidate gap and filed
+`add-leading-underscore-call-candidate-to-conventions`, which is **done**
+(PR #6825). So the cheap mechanical retirement has already been taken. The
+survivors are survivors on purpose: `_addConstraintsDj` carries a `Dj` suffix on
+top of the underscore, so no bare `"_" + camel` candidate reaches it. Do not
+re-litigate the conventions table for these rows — the RFC's Scope section puts
+tooling changes to the ratchet out of scope, and a genuinely new conventions
+need is a new RFC, not a widened candidate list bolted onto this ledger.
 
 ## Acceptance criteria
 
@@ -130,10 +133,11 @@ hand-justify rows a conventions candidate would delete.
       RFC with no story naming it, file the story **here** under RFC 0106 rather
       than leaving it delegated — that is this RFC's stated charter: "converges
       any row in its scope regardless of which RFC owns the underlying defect".
-- [ ] `add-leading-underscore-call-candidate-to-conventions` has landed (or been
-      closed with a reason) and its delta has been re-measured, before any
-      by-hand receipt is written for a row whose TS body calls the name under a
-      `_`-prefixed spelling.
+- [ ] For any row whose TS body calls the name under a `_`-prefixed spelling,
+      confirm against the landed
+      `add-leading-underscore-call-candidate-to-conventions` (done, PR #6825) why
+      the existing candidate does not reach it, and record that in the receipt —
+      do not widen the conventions table here.
 - [ ] Open question 1 in the RFC README (`relation.ts` cross-file mixin
       attribution noise) is answered and marked resolved in the README —
       `relation.ts` is now at 0 rows, so the answer is recoverable from the wave
