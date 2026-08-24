@@ -1,6 +1,6 @@
 ---
 title: "Query Parity (diff) failing on main @f8be16b9"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0061-ci-failures"
 cluster: null
