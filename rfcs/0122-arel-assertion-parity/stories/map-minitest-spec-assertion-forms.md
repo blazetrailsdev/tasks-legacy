@@ -1,6 +1,6 @@
 ---
 title: "Map Minitest spec forms, must_be_like and assert_edge in assertion-kinds"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 220
 priority: 1
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T15:39:17Z"
+assignee: "map-minitest-spec-assertion-forms"
 blocked-by: null
 closed-reason: null
 ---
