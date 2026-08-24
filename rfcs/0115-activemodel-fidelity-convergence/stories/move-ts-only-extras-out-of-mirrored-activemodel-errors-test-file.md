@@ -1,6 +1,6 @@
 ---
 title: "Move the TS-only extras out of activemodel's mirrored errors test file"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 420
 priority: null
-pr: null
+pr: 6999
 claim: "2026-08-24T18:04:22Z"
 assignee: "descendants-tracker-weakset-include-predicate-name"
 blocked-by: null
