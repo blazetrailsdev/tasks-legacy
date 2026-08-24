@@ -1,6 +1,6 @@
 ---
 title: "Column coder carries a class tag and subclass state where Rails' writes seven keys"
-status: claimed
+status: blocked
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -12,7 +12,7 @@ priority: 3
 pr: null
 claim: "2026-08-24T16:20:09Z"
 assignee: "sync-reflection-needs-explicit-warm-for-fake-adapter"
-blocked-by: null
+blocked-by: "Premise is factually wrong and the acceptance criteria would DIVERGE from Rails. vendor/rails/activerecord/lib/active_record/connection_adapters/postgresql/column.rb:50-61 and sqlite3/column.rb:36-44 DO define init_with/encode_with (PG writes serial/identity/generated; SQLite3 writes auto_increment), so criterion 'postgresql/column.ts, sqlite3/column.ts carry no encodeWith/initWith override' is not Rails' shape. Only mysql/column.ts's override is genuinely extra (mysql/column.rb has none; extra delegates to MySQL::TypeMetadata). The residual real deviations are (a) the 'class' coder key, whose removal needs the dump to carry class identity outside the Column coder or an adapter-keyed load, and (b) trails storing oid/fmod (PG) and extra (MySQL) on Column where Rails holds them in PostgreSQL::TypeMetadata (type_metadata.rb:7-20) / MySQL::TypeMetadata, plus sqlite3 rowid/generated_type, which Rails loses and trails cannot until the fixtures warm stops comparing a dump-loaded cache against a reflected one (base_test.rb test_clear_cache!). Needs a respec against the actual Rails source before it can be built."
 closed-reason: null
 ---
 
