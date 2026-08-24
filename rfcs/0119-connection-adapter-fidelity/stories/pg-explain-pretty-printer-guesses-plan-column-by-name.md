@@ -1,7 +1,7 @@
 ---
 title: "Converge PostgreSQL::ExplainPrettyPrinter#pp onto Rails' positional column read"
-status: draft
-updated: 2026-08-03
+status: closed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []
@@ -12,7 +12,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Already converged on main (152b2ebe9): postgresql/explain-pretty-printer.ts:29-31 reads positionally — `result.columns[0]` and `row[0]` — which is the convergence this story asked for. No by-name column lookup remains."
 ---
 
 ## Context
