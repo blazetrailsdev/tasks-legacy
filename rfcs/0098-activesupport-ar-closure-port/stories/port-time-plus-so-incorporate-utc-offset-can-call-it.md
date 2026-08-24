@@ -1,7 +1,7 @@
 ---
 title: "Port Time#+ so incorporate_utc_offset's else arm is Rails' `time + offset`"
-status: in-progress
-updated: 2026-08-23
+status: done
+updated: 2026-08-24
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: []
