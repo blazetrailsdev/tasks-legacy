@@ -1,6 +1,6 @@
 ---
 title: "Converge insert/update/delete manager assertion parity"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -9,7 +9,7 @@ deps: ["map-minitest-spec-assertion-forms"]
 deps-rfc: []
 est-loc: 160
 priority: null
-pr: null
+pr: 7003
 claim: "2026-08-24T18:14:58Z"
 assignee: "attribute-assertion-parity"
 blocked-by: null
