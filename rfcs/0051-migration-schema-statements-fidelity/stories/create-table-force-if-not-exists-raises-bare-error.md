@@ -1,6 +1,6 @@
 ---
 title: "create_table raises bare Error instead of ArgumentError for force + if_not_exists"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 40
 priority: 10
-pr: null
+pr: 7012
 claim: "2026-08-24T23:18:09Z"
 assignee: "move-ts-only-extras-out-of-mirrored-activemodel-serialization-test-file"
 blocked-by: null
