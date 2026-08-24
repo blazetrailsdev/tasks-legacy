@@ -1,7 +1,7 @@
 ---
 title: "Delete reflectColumnNames' warm-cache re-invalidation — Rails has one column view"
-status: draft
-updated: 2026-08-21
+status: blocked
+updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
 packages: []
@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: null
 assignee: null
-blocked-by: null
+blocked-by: 'Not actionable yet, per the story''s own ''Converged shape'': ''Do NOT converge it by rewriting the block; converge it by removing the reason it is needed.'' Verified on origin/main 2026-08-24: the warm-cache invalidation block is still live inside reflectColumnNames (packages/activerecord/src/model-schema.ts, the internalSchemaCache branch — ''if (ownSchemaMemo(host, "_schemaLoaded")) reloadSchemaFromCache.call(host)'' after cache.columnsHash returns names), and the poorer view it exists to discard is still created by loadSchema''s synthesized cold-cache columnsHash fallback. AC2 (''loadSchema no longer settles _schemaLoaded against a synthesized cold-cache view'') is the sync-schema-reflection work, which does not exist: loadSchemaFromCacheSync (model-schema.ts:1363) still reads only an already-warm cache and returns false otherwise. Unblock together with the sync-reflection work; sync-reflection-needs-explicit-warm-for-fake-adapter is the first ready step toward it.'
 closed-reason: null
 ---
 
