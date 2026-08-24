@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: null
-priority: 6
+priority: 5
 pr: null
 claim: "2026-08-17T22:06:05Z"
 assignee: "converge-lock-value-stores-locks-not-clause-string"
