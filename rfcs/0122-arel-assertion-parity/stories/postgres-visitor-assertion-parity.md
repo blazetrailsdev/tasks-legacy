@@ -1,6 +1,6 @@
 ---
 title: "Converge visitors/postgres assertion parity"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -9,7 +9,7 @@ deps: ["map-minitest-spec-assertion-forms"]
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: null
+pr: 7013
 claim: "2026-08-24T23:30:07Z"
 assignee: "converge-access-slice-with-indifferent-access"
 blocked-by: null
