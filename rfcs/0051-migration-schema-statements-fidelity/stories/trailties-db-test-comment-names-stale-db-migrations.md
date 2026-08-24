@@ -1,6 +1,6 @@
 ---
 title: "trailties-db-test-comment-names-stale-db-migrations"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
