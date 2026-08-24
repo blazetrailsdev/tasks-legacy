@@ -1,6 +1,6 @@
 ---
 title: "inverseOf folds _dispatchInvert back in and raises Rails' IrreversibleMigration message"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 90
 priority: 11
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T23:18:09Z"
+assignee: "move-ts-only-extras-out-of-mirrored-activemodel-serialization-test-file"
 blocked-by: null
 closed-reason: null
 ---

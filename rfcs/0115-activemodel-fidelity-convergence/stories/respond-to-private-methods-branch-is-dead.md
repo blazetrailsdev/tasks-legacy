@@ -1,6 +1,6 @@
 ---
 title: "respond_to?'s include_private_methods branch cannot fire"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 140
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T23:18:09Z"
+assignee: "move-ts-only-extras-out-of-mirrored-activemodel-serialization-test-file"
 blocked-by: null
 closed-reason: null
 ---
