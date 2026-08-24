@@ -1,7 +1,7 @@
 ---
 rfc: "0098-activesupport-ar-closure-port"
 title: "activesupport AR-closure porting"
-status: active
+status: closed
 created: 2026-08-10
 updated: 2026-08-24
 owner: "@your-handle"
