@@ -37,6 +37,14 @@ delegate to private methods` are the same tautology;
 - most `delegate missing to *` tests call `delegate`, not `delegateMissingTo`,
   because until #6863 `delegateMissingTo` was a marker that did nothing.
 
+PR #6998 converged one more, for the same reason #6863 converged its sample:
+porting `Delegation.generate_method_missing`'s reserved / `__target` receiver
+prefix (`delegation.rb:162`) made Rails' assertion implementable, so
+`delegate missing to with reserved methods` now mirrors `module_test.rb:428`'s
+`DecoratedReserved` (`:117-125`) — `delegate_missing_to :case`, `attr_reader
+:case`, `.name` forwarding to the David person — via `delegateMissingTo` rather
+than `delegate`. Strike it from the tautology list above; the rest stand.
+
 PR #6863 converged one of them as a sample —
 `delegation doesnt mask nested no method error on nil receiver` now mirrors
 Rails' `Product` / `manufacturer` / `type` fixture (`module_test.rb:65-76,
