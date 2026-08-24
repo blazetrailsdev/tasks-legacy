@@ -1,6 +1,6 @@
 ---
 title: "Kernel.abort ports as a catchable throw in migrate_status and check_schema_file"
-status: ready
+status: draft
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
