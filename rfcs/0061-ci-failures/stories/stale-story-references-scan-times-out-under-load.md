@@ -1,6 +1,6 @@
 ---
 title: "stale-story-references whole-tree scans time out at the default 5s under host load"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0061-ci-failures"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 60
 priority: null
-pr: null
+pr: 6998
 claim: "2026-08-24T18:07:08Z"
 assignee: "stale-story-references-scan-times-out-under-load"
 blocked-by: null
