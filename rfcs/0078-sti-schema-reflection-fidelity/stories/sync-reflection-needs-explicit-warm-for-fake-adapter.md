@@ -1,6 +1,6 @@
 ---
 title: "Sync schema reflection silently no-ops for a cold fake-adapter model"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -8,7 +8,7 @@ deps: []
 deps-rfc: []
 est-loc: 90
 priority: 1
-pr: null
+pr: 6996
 claim: "2026-08-24T16:20:09Z"
 assignee: "sync-reflection-needs-explicit-warm-for-fake-adapter"
 blocked-by: null
