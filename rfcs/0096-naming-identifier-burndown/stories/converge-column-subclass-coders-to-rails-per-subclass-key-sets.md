@@ -62,8 +62,15 @@ sqlite3 column reports `virtual?`, and `primary-keys.test.ts` reds with
 - `mysql/column.ts` derives `unsigned` / `autoIncrement` / `virtual` / `extra`
   per `mysql/column.rb:7-24` and drops both coder overrides (the `class` tag
   aside).
-- `sqlite3/column.ts` carries `auto_increment` only (`sqlite3/column.rb:35-42`);
+- `sqlite3/column.ts` carries `auto_increment` only (`sqlite3/column.rb:36-44`);
   `rowid` / `generatedType` are dropped by a round-trip, as in Rails.
+- Dropping `rowid` / `generated_type` is the one arm that is load-bearing in
+  trails and not upstream: Rails only ever compares a reflected cache against
+  another reflected one, while trails' fixtures warm
+  (`test-fixtures/with-transactional-fixtures.ts`, `replaySchemaCacheDump`)
+  installs the boot dump and `base_test.rb`'s `test_clear_cache!` then compares
+  it against a reflected cache. Converge that comparison too, so the sqlite3
+  key set can shrink without reddening it.
 - The three `nil?` / `present?` predicates above are ported with Ruby nil
   semantics (`!= null`), so a nil ivar is falsy.
 - The `Column#encodeWith` deviation comment
