@@ -1,6 +1,6 @@
 ---
 title: "Fan out the ActiveModel dirty surface from model.ts to dirty.ts"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
@@ -9,7 +9,7 @@ deps:
   - fan-out-model-validates-of-macros-to-helper-methods
 deps-rfc: []
 est-loc: 300
-pr: null
+pr: 6990
 claim: "2026-08-24T15:08:28Z"
 assignee: "fan-out-model-dirty-surface-to-dirty-ts"
 blocked-by: null
