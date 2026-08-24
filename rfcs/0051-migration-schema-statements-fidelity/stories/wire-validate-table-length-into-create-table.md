@@ -1,7 +1,7 @@
 ---
 title: "Wire validate_table_length! into create_table"
-status: draft
-updated: 2026-07-29
+status: closed
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
@@ -12,7 +12,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Delivered. abstract/schema-statements.ts createTable now runs both checks at Rails' position, before the force/ifNotExists handling: this.validateCreateTableOptionsBang(options) at :398 and this.validateTableLengthBang(tableName) at :401, mirroring schema_statements.rb:294-295 — the force+ifNotExists raise follows at :404. (The story cited :245 for the unwired body; the call site is now :398-401.)"
 ---
 
 ## Context
