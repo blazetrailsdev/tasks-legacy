@@ -1,6 +1,6 @@
 ---
 title: "Converge get_primary_key's schema_cache.primary_keys / table_exists? rows"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 140
 priority: 3
-pr: null
+pr: 6987
 claim: "2026-08-24T14:19:54Z"
 assignee: "website-vitest-missing-activesupport-subpath-alias"
 blocked-by: null
