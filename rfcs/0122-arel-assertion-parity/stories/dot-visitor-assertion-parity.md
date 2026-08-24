@@ -1,6 +1,6 @@
 ---
 title: "Converge visitors/dot assertion parity"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 130
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T22:30:08Z"
+assignee: "converge-postgresql-database-statements-call-set-rows"
 blocked-by: null
 closed-reason: null
 ---

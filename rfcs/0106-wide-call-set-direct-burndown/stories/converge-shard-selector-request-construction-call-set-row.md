@@ -1,6 +1,6 @@
 ---
 title: "converge-shard-selector-request-construction-call-set-row"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 50
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T22:30:08Z"
+assignee: "converge-postgresql-database-statements-call-set-rows"
 blocked-by: null
 closed-reason: null
 ---
