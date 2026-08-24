@@ -1,7 +1,7 @@
 ---
 title: "collapse-the-activerecord-secure-password-duplicate"
-status: in-progress
-updated: 2026-08-23
+status: done
+updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
