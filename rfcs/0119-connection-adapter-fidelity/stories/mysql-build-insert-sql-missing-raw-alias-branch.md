@@ -1,7 +1,7 @@
 ---
 title: "buildInsertSql never takes Rails' supports_insert_raw_alias_syntax? branch"
-status: draft
-updated: 2026-07-29
+status: closed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []
@@ -12,7 +12,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Already converged on main (152b2ebe9): abstract-mysql-adapter.ts:1149 takes the branch — `if (await this.supportsInsertRawAliasSyntax())` with the full 8.0.19 row-alias body (AS <table>_values, ON DUPLICATE KEY UPDATE). Title premise 'never takes the branch' is false; the predicate is defined at :1743."
 ---
 
 ## Context
