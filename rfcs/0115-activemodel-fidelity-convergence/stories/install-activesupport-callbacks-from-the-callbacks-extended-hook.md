@@ -1,6 +1,6 @@
 ---
 title: "Install ActiveSupport::Callbacks from an ActiveModel::Callbacks extended hook"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: null
-pr: null
+pr: 6987
 claim: "2026-08-24T14:19:54Z"
 assignee: "website-vitest-missing-activesupport-subpath-alias"
 blocked-by: null
