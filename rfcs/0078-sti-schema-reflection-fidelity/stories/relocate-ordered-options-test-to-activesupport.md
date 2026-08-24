@@ -1,6 +1,6 @@
 ---
 title: "relocate-ordered-options-test-to-activesupport"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
