@@ -1,7 +1,7 @@
 ---
 title: "Converge the invented DirtyTracker onto Rails' two mutation trackers"
-status: ready
-updated: 2026-08-23
+status: claimed
+updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -10,8 +10,8 @@ deps:
 deps-rfc: []
 est-loc: 400
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T18:15:29Z"
+assignee: "converge-dirty-tracker-onto-rails-mutation-trackers"
 blocked-by: null
 closed-reason: null
 ---
