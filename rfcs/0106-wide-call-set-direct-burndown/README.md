@@ -229,14 +229,38 @@ decisions instead of re-deriving them.
 
 ## Open questions
 
-1. **Does `relation.ts`'s 117 include cross-file mixin attribution noise?**
-   0084's re-measure found B3's residual "dominated by `owner`/`reflection`/
-   `klass` getter-shape rows" after the receiver-scoping fix landed. Wave 1
-   should measure this first and report it, because if a material share is
-   attribution noise the honest fix is in the extractor, not in 217 ported
-   bodies. Resolve in Wave 1, before Wave 4 is filed.
+1. ~~**Does `relation.ts`'s 117 include cross-file mixin attribution noise?**~~
+   **Resolved 2026-08-24: no material share was attribution noise.** `relation.ts`
+   is at **0** `kind: "set"` rows, retired by ordinary per-row convergence across
+   waves 1–4 — not by an extractor change, and no extractor change was made. The
+   receiver-scoping fix 0084 landed had already removed the `owner`/`reflection`/
+   `klass` getter-shape class before this RFC measured its population, so the 117
+   were real. The honest fix was in the ported bodies, and it worked.
 
 ## Changelog
 
 - 2026-08-14: initial RFC; supersedes 0084 with a measured population and a
   direct-convergence model.
+- 2026-08-21: seeded-reason audit; `add-leading-underscore-call-candidate-to-conventions`
+  filed and landed (PR #6825).
+- 2026-08-24: **exit ledger.** In-scope `kind: "set"` residual re-measured at
+  **37** rows across 22 files — `activerecord` 37, `activesupport` 0, `arel` 0 —
+  and taken to **36** by this story (the `disable-joins-association-scope.ts`
+  `scope -> add_constraints` row converged: the PERMANENT `@missingRailsCall`
+  receipt was sited on `scope` itself, where the flag is raised, instead of on
+  `lastScopeChain`/`_addConstraintsDj`). Down from the 42/25 counted before
+  `converge-get-primary-key-schema-cache-call-set-rows` and
+  `converge-activesupport-residual-set-rows-to-zero` landed (those two retired
+  the 3 `activesupport` rows and 2 `activerecord` rows). Trajectory: 6,845
+  (2026-07-17) → 2,218 (2026-08-03) → 1,134 (2026-08-14) → 42 → **36**
+  (2026-08-24). Every surviving row now names an **open, claimable** story in its
+  `reason`; eight new stories were filed here for the rows delegated to an RFC
+  with no story naming them (RFC 0073 lease rows, RFC 0094 sqlite3 construction,
+  the adapter-layout `column_definitions` seam, the RFC 0082 `String#limit` /
+  `Hash#fetch` idioms, `Schema.define`'s `with_connection` — orphaned when RFC
+  0059 closed — the PostgreSQL `database_statements` pair, `delegated_type` /
+  `build_default_scope`, and the `ShardSelector` request construction), and the
+  eight delegated stories that were `draft` were flipped to `ready`. The two
+  `DEFAULT_ENV` rows were repointed off the **closed**
+  `port-connection-handling-default-env-proc` onto its live successor
+  `converge-establish-connection-default-env-funnel`.
