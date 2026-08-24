@@ -9,7 +9,7 @@ deps:
   - port-with-connection-acquisition-seam-for-the-arel-reader
 deps-rfc: []
 est-loc: 150
-priority: 7
+priority: 6
 pr: 6928
 claim: "2026-08-23T17:39:45Z"
 assignee: "converge-excluding-deferred-ids-marker-to-eager-materialization"
