@@ -1,6 +1,6 @@
 ---
 title: "Port test_user_input_in_time_zone and close activemodel's last parity:test gap"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 90
 priority: null
-pr: null
+pr: 6988
 claim: "2026-08-24T14:30:11Z"
 assignee: "port-user-input-in-time-zone-and-close-the-activemodel-test-gap"
 blocked-by: null
