@@ -1,6 +1,6 @@
 ---
 title: "DatabaseTasks carries five rake-only migration methods Rails has no counterpart for"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 300
 priority: null
-pr: null
+pr: 6977
 claim: "2026-08-24T11:45:44Z"
 assignee: "boot-dump-fingerprint-misses-mysql-functional-index"
 blocked-by: null
