@@ -1,6 +1,6 @@
 ---
 title: "Retire activemodel/callbacks.ts's proto-registration adapter onto ActiveSupport::Callbacks"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
