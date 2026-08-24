@@ -1,6 +1,6 @@
 ---
 title: "Column coder carries a class tag and subclass state where Rails' writes seven keys"
-status: draft
+status: ready
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
