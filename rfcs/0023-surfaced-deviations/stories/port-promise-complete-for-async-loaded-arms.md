@@ -1,7 +1,7 @@
 ---
 title: "Port Promise::Complete and close the @async arms that drop it (ids' loaded? arm)"
-status: draft
-updated: 2026-08-15
+status: ready
+updated: 2026-08-24
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages: []
