@@ -1,6 +1,6 @@
 ---
 title: "DescendantsTracker::WeakSet's include? reader is the last in-closure missing member"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 30
 priority: 1
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T18:04:22Z"
+assignee: "descendants-tracker-weakset-include-predicate-name"
 blocked-by: null
 closed-reason: null
 ---
