@@ -1,6 +1,6 @@
 ---
 title: "Move utc_to_local onto the ::Time it takes and answers, retiring its @missingRailsCall utc"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 180
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T02:09:44Z"
+assignee: "api-build-reflows-same-family-tags-split-by-prose"
 blocked-by: null
 closed-reason: null
 ---
