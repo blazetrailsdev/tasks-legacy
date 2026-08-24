@@ -1,6 +1,6 @@
 ---
 title: "Converge the _default_attributes reset points onto Rails' reload_schema_from_cache"
-status: in-progress
+status: blocked
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -12,7 +12,7 @@ priority: null
 pr: 6962
 claim: "2026-08-24T01:24:28Z"
 assignee: "anchor-jsdoc-tag-recognition-to-line-start"
-blocked-by: null
+blocked-by: "trails' schema load is async (loadSchemaFromAdapter, model-schema.ts:1170), so a caller can force _defaultAttributes before the columns land and latch a memo built without them. Ruby cannot: _default_attributes (attributes.rb:241-252) reads columns_hash through the SYNCHRONOUS load_schema (model_schema.rb:530-546), which re-raises after reload_schema_from_cache when the load fails, so a Ruby memo is built from loaded columns by construction. Removing the trails-only reset in applyColumnsHash was tried in PR #6962 and reddened SQLite, PG and MariaDB: Topic's cold memo survived its load and every read raised UnknownAttributeError: unknown attribute 'title'. Withholding the memo until isSchemaLoaded instead drops eager defineAttribute writes (DefineAttributeSTITest red). Converging needs a sync schema load or a recorded replay of the eager writes; the reset is now justified at the call site with the Rails cites."
 closed-reason: null
 ---
 
