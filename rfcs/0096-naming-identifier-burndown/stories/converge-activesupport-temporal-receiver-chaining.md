@@ -1,7 +1,7 @@
 ---
 title: "converge-activesupport-temporal-receiver-chaining"
-status: ready
-updated: 2026-08-23
+status: claimed
+updated: 2026-08-24
 rfc: "0096-naming-identifier-burndown"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T22:45:55Z"
+assignee: "converge-activesupport-temporal-receiver-chaining"
 blocked-by: null
 closed-reason: null
 ---
