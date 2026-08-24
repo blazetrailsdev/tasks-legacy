@@ -1,7 +1,7 @@
 ---
 title: "Converge AR define_attribute onto define_default_attribute + Attribute::UserProvidedDefault"
-status: in-progress
-updated: 2026-08-23
+status: done
+updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: api-compare
 packages: ["activerecord", "activemodel"]
