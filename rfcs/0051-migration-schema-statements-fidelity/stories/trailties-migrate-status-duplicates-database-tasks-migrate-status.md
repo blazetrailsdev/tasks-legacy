@@ -1,6 +1,6 @@
 ---
 title: "trailties db migrate:status re-implements DatabaseTasks.migrateStatus instead of calling it"
-status: draft
+status: ready
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
