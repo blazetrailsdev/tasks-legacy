@@ -1,6 +1,6 @@
 ---
 title: "Delete Migrator#schemaMigrationTableExists, dead trails-only surface"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 30
 priority: null
-pr: 6989
+pr: 6982
 claim: "2026-08-24T14:48:31Z"
 assignee: "converge-numericality-bigint-exponent-skip"
 blocked-by: null
