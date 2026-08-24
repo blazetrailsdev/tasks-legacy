@@ -1,6 +1,6 @@
 ---
 title: "Converge dump installation onto Rails' cache replacement"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 150
 priority: null
-pr: null
+pr: 6980
 claim: "2026-08-24T12:51:22Z"
 assignee: "converge-schema-cache-install-onto-cache-replacement"
 blocked-by: null
