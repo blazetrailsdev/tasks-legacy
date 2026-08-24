@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 200
-priority: 4
+priority: 7
 pr: 6906
 claim: "2026-08-23T11:12:29Z"
 assignee: "wave-5g-head-sweep"
