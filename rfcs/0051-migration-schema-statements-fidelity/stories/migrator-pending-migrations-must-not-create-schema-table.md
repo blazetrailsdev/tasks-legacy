@@ -1,6 +1,6 @@
 ---
 title: "migrator-pending-migrations-must-not-create-schema-table"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 6981
 claim: "2026-08-24T13:05:17Z"
 assignee: "migrator-pending-migrations-must-not-create-schema-table"
 blocked-by: null
