@@ -1,6 +1,6 @@
 ---
 title: "Sync schema reflection silently no-ops for a cold fake-adapter model"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
