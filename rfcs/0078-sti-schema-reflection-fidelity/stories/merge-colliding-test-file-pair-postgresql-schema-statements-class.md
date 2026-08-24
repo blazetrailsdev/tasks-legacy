@@ -1,6 +1,6 @@
 ---
 title: "Merge the colliding postgresql/schema-statements-class test-file pair"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 450
 priority: null
-pr: 6967
+pr: 6952
 claim: "2026-08-24T02:27:39Z"
 assignee: "merge-colliding-test-file-pair-mysql-schema-statements"
 blocked-by: null
