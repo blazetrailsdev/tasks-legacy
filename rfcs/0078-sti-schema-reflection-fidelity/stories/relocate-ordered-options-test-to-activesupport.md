@@ -1,6 +1,6 @@
 ---
 title: "relocate-ordered-options-test-to-activesupport"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T03:21:39Z"
+assignee: "relocate-ordered-options-test-to-activesupport"
 blocked-by: null
 closed-reason: null
 ---
