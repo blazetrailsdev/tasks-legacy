@@ -1,6 +1,6 @@
 ---
 title: "check-target-version-takes-a-version-argument-rails-takes-none"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T12:51:22Z"
+assignee: "converge-schema-cache-install-onto-cache-replacement"
 blocked-by: null
 closed-reason: null
 ---

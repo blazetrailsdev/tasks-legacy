@@ -1,6 +1,6 @@
 ---
 title: "migrate-status-aborts-as-error-and-invents-a-memory-database-fallback"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 50
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T12:51:22Z"
+assignee: "converge-schema-cache-install-onto-cache-replacement"
 blocked-by: null
 closed-reason: null
 ---
