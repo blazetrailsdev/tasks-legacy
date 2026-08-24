@@ -1,7 +1,7 @@
 ---
 title: "Abstract SchemaCreation declares indexInCreate/visitIndexDefinition that Rails puts only on MySQL"
-status: draft
-updated: 2026-08-05
+status: ready
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
