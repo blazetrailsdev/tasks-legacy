@@ -1,6 +1,6 @@
 ---
 title: "Move the TS-only extras out of the remaining mirrored activemodel type test files"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 550
 priority: null
-pr: null
+pr: 7001
 claim: "2026-08-24T18:28:32Z"
 assignee: "move-ts-only-extras-out-of-the-remaining-mirrored-activemodel-type-test-files"
 blocked-by: null
