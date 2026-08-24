@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build reflows same-family receipts split by prose"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: 2
-pr: null
+pr: 6966
 claim: "2026-08-24T02:09:44Z"
 assignee: "api-build-reflows-same-family-tags-split-by-prose"
 blocked-by: null
