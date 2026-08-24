@@ -1,7 +1,7 @@
 ---
 title: "UrlConfig#to_boolean! port has no callers and mutates in place"
-status: draft
-updated: 2026-07-28
+status: closed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []
@@ -12,7 +12,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Premise is false on main (152b2ebe9): `toBooleanBang` has two live callers — database-configurations/url-config.ts:47-48 (`replica`, `databaseTasks`) — so it is neither dead nor never-run, and the frozen-hash TypeError the story predicted does not occur. If in-place mutation of a frozen config is still a concern it needs re-filing against the live call sites."
 ---
 
 ## Context
