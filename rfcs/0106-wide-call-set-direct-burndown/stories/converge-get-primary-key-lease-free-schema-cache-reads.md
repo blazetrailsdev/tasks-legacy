@@ -1,6 +1,6 @@
 ---
 title: "Converge get_primary_key's tableExists / primaryKeys receipts once RFC 0073 lands"
-status: claimed
+status: blocked
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: "2026-08-24T18:07:08Z"
 assignee: "stale-story-references-scan-times-out-under-load"
-blocked-by: null
+blocked-by: "Gated on RFC 0073 (permanent-connection-checkout flip), still status: draft — unlanded. getPrimaryKey / getPrimaryKeyAttr / primaryKey run on synchronous paths (model construction), while trails' ported tableExists (model-schema.ts:1470) and SchemaCache#primaryKeys are async; their sync cache-only views (cachedTableExists, getCachedPrimaryKeys) exist precisely because no lease-free synchronous read is expressible until 0073 settles the lease shape. Converging now would either lease a connection from a sync getter (the deviation the receipts exist to avoid) or make primaryKey async, breaking every sync caller. Unblock when 0073 lands."
 closed-reason: null
 ---
 
