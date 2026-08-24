@@ -1,7 +1,7 @@
 ---
 title: "Fan out the validates_*_of macros from model.ts to their validator files"
-status: ready
-updated: 2026-08-23
+status: claimed
+updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -10,8 +10,8 @@ deps:
 deps-rfc: []
 est-loc: 220
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T13:50:06Z"
+assignee: "fan-out-model-validation-runner-surface-to-validations"
 blocked-by: null
 closed-reason: null
 ---
