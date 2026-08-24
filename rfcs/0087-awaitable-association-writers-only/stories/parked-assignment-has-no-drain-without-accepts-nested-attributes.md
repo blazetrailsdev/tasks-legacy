@@ -23,7 +23,7 @@ Surfaced while converging `_assignAttribute` in PR #6220.
 `assignAttributes` (`packages/activerecord/src/persistence.ts`) answers a promise
 when a send owed DB I/O — `replace` (`collection_association.rb:46-48`),
 `ids_writer` (`:61-83`), has_one's displacing writer
-(`has_one_association.rb:59-84`). Two callers cannot await it and park it with
+(`has_one_association.rb:59-84`). Three callers cannot await it and park it with
 `parkNestedReaderLoad` instead:
 
 - `_applyScopeAttributes` (`base.ts`) and `populateWithCurrentScopeAttributes`
@@ -32,6 +32,14 @@ when a send owed DB I/O — `replace` (`collection_association.rb:46-48`),
   await. Reached by any `Model.where(assoc: x).new` / `.create`.
 - the `attributes=` accessor (`base.ts`) — `alias attributes= assign_attributes`
   (`activemodel/attribute_assignment.rb:36`); a TS `set` accessor cannot await.
+- `Association#buildRecord`'s `initializeAndYield`
+  (`packages/activerecord/src/associations/association.ts`, added in PR #7005) —
+  `build_record` yields and returns synchronously
+  (`associations/association.rb:383-388`) and `CollectionAssociation#build`
+  returns the record itself (`collection_association.rb:117-122`), so the
+  deferred `initialize_attributes` assign is parked. Reached by any
+  `owner.association(name).build(...)` whose `scope_for_create` names an
+  association writer (`relation.rb:1231-1235`).
 
 **The park has no drain on most models.** `parkNestedReaderLoad` queues onto
 `_pendingNestedReaderLoads`, and the only call to
