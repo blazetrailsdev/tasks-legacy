@@ -1,6 +1,6 @@
 ---
 title: "Fan out the attribute-methods and attribute-registration surface from model.ts"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
@@ -9,7 +9,7 @@ deps:
   - fan-out-model-dirty-surface-to-dirty-ts
 deps-rfc: []
 est-loc: 300
-pr: null
+pr: 7000
 claim: "2026-08-24T18:16:30Z"
 assignee: "fan-out-model-attribute-methods-and-registration-surface"
 blocked-by: null
