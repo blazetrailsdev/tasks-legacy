@@ -1,7 +1,7 @@
 ---
 title: "create_table raises bare Error instead of ArgumentError for force + if_not_exists"
-status: draft
-updated: 2026-08-15
+status: ready
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
