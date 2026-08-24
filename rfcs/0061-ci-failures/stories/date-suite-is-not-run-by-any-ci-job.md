@@ -1,7 +1,7 @@
 ---
 title: "No CI job runs packages/date: 362 date-gem tests are green-by-absence"
-status: in-progress
-updated: 2026-08-23
+status: done
+updated: 2026-08-24
 rfc: "0061-ci-failures"
 cluster: null
 packages: []

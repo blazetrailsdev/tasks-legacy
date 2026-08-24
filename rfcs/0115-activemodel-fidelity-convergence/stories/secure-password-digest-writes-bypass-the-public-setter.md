@@ -1,7 +1,7 @@
 ---
 title: "has_secure_password writes the digest via _writeAttribute, not public_send"
-status: in-progress
-updated: 2026-08-23
+status: done
+updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
