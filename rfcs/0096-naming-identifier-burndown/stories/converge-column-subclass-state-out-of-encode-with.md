@@ -1,6 +1,6 @@
 ---
 title: "Drop subclass state from Column#encodeWith to Rails' seven base keys"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T18:07:08Z"
+assignee: "stale-story-references-scan-times-out-under-load"
 blocked-by: null
 closed-reason: null
 ---
