@@ -1,6 +1,6 @@
 ---
 title: "Declare the nine undeclared instance-side HelperMethods arms on Model"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 40
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T14:48:31Z"
+assignee: "converge-numericality-bigint-exponent-skip"
 blocked-by: null
 closed-reason: null
 ---
