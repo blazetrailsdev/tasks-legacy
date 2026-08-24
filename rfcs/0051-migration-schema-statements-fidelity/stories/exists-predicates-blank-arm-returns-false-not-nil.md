@@ -1,7 +1,7 @@
 ---
 title: "data_source_exists?/table_exists?/view_exists? return false for a blank name where Rails returns nil"
-status: draft
-updated: 2026-08-15
+status: ready
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
