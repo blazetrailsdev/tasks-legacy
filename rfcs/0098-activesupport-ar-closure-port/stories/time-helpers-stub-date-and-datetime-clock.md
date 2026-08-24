@@ -1,7 +1,7 @@
 ---
 title: "time-helpers-stub-date-and-datetime-clock"
-status: ready
-updated: 2026-08-23
+status: closed
+updated: 2026-08-24
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: []
@@ -14,7 +14,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Both acceptance criteria are already met on origin/main by trails#6872 (878b8129d, 'travel_to stubs Rails Time/Date/DateTime receivers'). (1) The clock seam was decided and implemented: packages/activesupport/src/testing/time-helpers.ts:216-228 now stubs Date.today and DateTime.now alongside Time.now/Time.new, and the extra clock.now stub carries the comment explaining why trails has a fifth receiver Ruby lacks; its blocker-dep time-now-cheap-enough-for-the-clock-path landed as trails#6890. (2) scripts/api-compare/call-mismatches-exclude/activesupport/testing/time-helpers.json was deleted by that same commit ('git show origin/main:<path>' -> 'does not exist in origin/main'), so the 'at' and 'order:parse,toTime' rows are gone. parity:api now reports testing/time_helpers.rb at 15/15, 100%."
 ---
 
 ## Context
