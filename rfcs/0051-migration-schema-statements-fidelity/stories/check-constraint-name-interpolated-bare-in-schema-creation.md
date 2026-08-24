@@ -1,7 +1,7 @@
 ---
 title: "visit_CheckConstraintDefinition interpolates the constraint name bare, not quoted"
-status: draft
-updated: 2026-08-06
+status: ready
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
