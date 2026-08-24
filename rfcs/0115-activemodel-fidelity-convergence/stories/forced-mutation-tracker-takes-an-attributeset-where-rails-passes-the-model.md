@@ -1,6 +1,6 @@
 ---
 title: "forced-mutation-tracker-takes-an-attributeset-where-rails-passes-the-model"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
