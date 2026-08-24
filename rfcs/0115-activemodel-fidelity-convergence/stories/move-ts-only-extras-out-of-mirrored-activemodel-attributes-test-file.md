@@ -1,6 +1,6 @@
 ---
 title: "Move the TS-only extras out of activemodel's mirrored attributes test file"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T22:54:10Z"
+assignee: "forced-mutation-tracker-takes-an-attributeset-where-rails-passes-the-model"
 blocked-by: null
 closed-reason: null
 ---
