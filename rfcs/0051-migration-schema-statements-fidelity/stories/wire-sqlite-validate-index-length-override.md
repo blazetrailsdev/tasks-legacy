@@ -1,7 +1,7 @@
 ---
 title: "Wire the dead SQLite validate_index_length! override onto the adapter"
-status: draft
-updated: 2026-07-29
+status: closed
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
@@ -12,7 +12,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Delivered. The override is no longer dead: sqlite3/schema-statements.ts:208 exports validateIndexLengthBang (delegating via AbstractSchemaStatements.prototype.validateIndexLengthBang.call at :215), sqlite3-adapter.ts:32 imports it as sqliteValidateIndexLengthBang and installs it as override validateIndexLengthBang(tableName, newName, internal = false) at :2185 with the Rails cite at :2177. The dispatch site abstract/schema-statements.ts:1832 passes options.internal through, so SQLite now gets Rails' internal exemption."
 ---
 
 ## Context
