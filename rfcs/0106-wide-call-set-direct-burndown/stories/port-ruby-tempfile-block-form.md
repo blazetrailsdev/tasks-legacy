@@ -8,7 +8,7 @@ packages: ["activesupport", "activerecord"]
 deps: []
 deps-rfc: []
 est-loc: 260
-priority: null
+priority: 5
 pr: null
 claim: "2026-08-24T13:47:15Z"
 assignee: "converge-activesupport-residual-set-rows-to-zero"
