@@ -1,7 +1,7 @@
 ---
 title: "Merge the colliding postgresql/schema-statements-class test-file pair"
-status: ready
-updated: 2026-08-23
+status: claimed
+updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 450
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T02:27:39Z"
+assignee: "merge-colliding-test-file-pair-mysql-schema-statements"
 blocked-by: null
 closed-reason: null
 ---
