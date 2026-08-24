@@ -1,7 +1,7 @@
 ---
 title: "PG exec_insert's pk == false arm runs bespoke scaffolding instead of Rails' super"
-status: draft
-updated: 2026-08-16
+status: closed
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Already converged on main (152b2ebe9): postgresql-adapter.ts:2450-2456 is Rails' single arm — `if (this._useInsertReturning || pk === false) return super.execInsert(...)` — citing database_statements.rb:46-47. The bespoke scaffolding on the pk === false path is gone."
 ---
 
 # PG `exec_insert`'s `pk == false` arm runs bespoke scaffolding instead of Rails' `super`
