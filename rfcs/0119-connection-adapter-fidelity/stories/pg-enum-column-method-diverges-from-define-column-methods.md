@@ -1,5 +1,5 @@
 ---
-title: "PG TableDefinition#enum is unimplemented and diverges from Rails' generated shape"
+title: "Abstract TableDefinition#enum is PG-only surface in Rails"
 status: draft
 updated: 2026-07-29
 rfc: "0119-connection-adapter-fidelity"
@@ -17,56 +17,39 @@ closed-reason: null
 
 ## Context
 
-Surfaced while porting the variadic `*names` shape in PR #5575, which
-deliberately left `enum` out of scope.
+Re-scoped 2026-08-24 against `main` (152b2ebe9). This story originally named
+three divergences; two have since converged and one is owned elsewhere:
 
-`enum` IS one of the 31 types in PostgreSQL's `define_column_methods` call
-(`vendor/rails/activerecord/lib/active_record/connection_adapters/postgresql/schema_definitions.rb:185-189`),
-so in Rails it has exactly the same generated body as its 30 siblings:
+- **Converged** — `enum` is now implemented on `PostgreSQL::TableDefinition`
+  (`packages/activerecord/src/connection-adapters/postgresql/schema-definitions.ts:841-850`),
+  where Rails puts it, rather than only declared in that file's `ColumnMethods`
+  interface.
+- **Converged** — it now passes `:enum` as the column type with the enum name
+  riding along in options (`this.column(name, "enum", { ...rest, enumType })`),
+  matching the generated body from
+  `vendor/rails/activerecord/lib/active_record/connection_adapters/postgresql/schema_definitions.rb:185-189`.
+- **Owned elsewhere** — the snake_case `enum_type` option key against the
+  camelCase convention is the whole subject of
+  `unify-enum-type-option-spelling-across-dsl-and-typetosql`, which covers the
+  DSL, `typeToSql` and the dumper together. Not duplicated here.
 
-```ruby
-def enum(*names, **options)
-  raise ArgumentError, "Missing column name(s) for enum" if names.empty?
-  names.each { |name| column(name, :enum, **options) }
-end
-```
+What remains, and is not covered by any other story: **the abstract
+`TableDefinition` still carries `enum`**
+(`packages/activerecord/src/connection-adapters/abstract/schema-definitions.ts:1487`).
 
-trails diverges three ways:
+Rails declares `enum` only through PostgreSQL's `define_column_methods` call
+(`postgresql/schema_definitions.rb:185-189`). `ActiveRecord::ConnectionAdapters::TableDefinition`
+has no `enum` — a `t.enum` on a MySQL or SQLite table definition is a
+`NoMethodError` in Rails and silently type-checks in trails.
 
-1. `enum` is **declared but never implemented** on
-   `PostgreSQL::TableDefinition`. It appears only in that file's
-   `ColumnMethods` interface
-   (`packages/activerecord/src/connection-adapters/postgresql/schema-definitions.ts:97`)
-   with no matching class member. The live implementation is the abstract
-   `TableDefinition#enum`
-   (`abstract/schema-definitions.ts:1396-1398`), which is not where Rails puts it.
-2. It takes a **required** `enum_type` option and forwards that as the column
-   type, rather than passing `:enum` as the type with `enum_type` riding along
-   in options.
-3. The option key is snake_case `enum_type`, against the repo's camelCase
-   convention, and the abstract implementation destructures that literal key.
-
-That signature is why PR #5575 could not fold `enum` into the variadic
-conversion: a trailing-options split would read the required option hash as a
-column name.
-
-The PG-specific `enumType(name, enumName, options)` helper is a separate
-trails-only surface in the same file and should be reviewed alongside this.
-
-Note `abstract/schema-dumper.ts:393` emits `t.enum(...)` lines, so the dumper
-output is the compatibility constraint on any signature change.
+This is the same shape as `drop-jsonb-from-abstract-table-definition`: PG-only
+column surface that leaked onto the abstract definition.
 
 ## Acceptance criteria
 
-- [ ] `enum` is implemented on `PostgreSQL::TableDefinition` with Rails'
-      generated `*names, **options` shape, raising
-      `Missing column name(s) for enum` on an empty name list.
-- [ ] `enum_type` is passed through options as a camelCase key rather than being
-      consumed as the column type; the abstract override is removed or
-      justified at the call site.
-- [ ] The PG `ColumnMethods` interface entry matches the implementation — no
-      declared-but-unimplemented member.
-- [ ] `abstract/schema-dumper.ts`'s `t.enum(...)` emission still round-trips;
-      PG schema-dumper suite green.
-- [ ] `enumType` reviewed: either justified as a needed extra or removed.
-- [ ] Green on all three lanes; parity:api delta non-negative.
+- `enum` is removed from the abstract `TableDefinition` and its `ColumnMethods`
+  interface; it survives only on the PostgreSQL subclass.
+- A `t.enum` call on a non-PostgreSQL table definition no longer type-checks.
+- Existing PG enum schema tests stay green on the PostgreSQL lane.
+- `pnpm parity:api:extra --package activerecord` does not grow (the gate added
+  by #6997 covers this file).

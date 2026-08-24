@@ -62,14 +62,29 @@ reason.
 `SchemaDumper.create`, with `schema-dumper.ts` obtaining its wrapped source some
 other way (or not needing one).
 
+## Status against `main` (152b2ebe9), 2026-08-24
+
+Partially converged. The **abstract** `createSchemaDumper` now takes Rails'
+`(options)` and passes itself
+(`connection-adapters/abstract/schema-statements.ts:1934` —
+`SchemaDumper.create(this, options)`). The four remaining sites still take
+`(source, options)`:
+
+- `connection-adapters/postgresql-adapter.ts:3920`
+- `connection-adapters/mysql2-adapter.ts:1279`
+- `connection-adapters/sqlite3-adapter.ts:1703`
+- `connection-adapters/sqlite3/schema-statements.ts:195` (module-level export)
+
+Two call sites thread the extra argument and have to go with them:
+`schema-dumper.ts:543` and `:572-573`.
+
 ## Acceptance criteria
 
-1. All five `createSchemaDumper` definitions take `(options)` alone and pass
-   `this`, matching the four Ruby definitions cited above.
-2. `schema-dumper.ts:543` and `:572-573` are converged with them; whatever
-   `wrappedSource` provides is either unnecessary or supplied without an extra
-   parameter, with the reason recorded at the call site.
-3. The three `create_schema_dumper` rows leave the convergeable `naming`
-   population; no `call-mismatches-exclude/` row is added.
-4. `pnpm build && pnpm test` green — schema-dump output byte-identical on
-   SQLite, PostgreSQL and MySQL; `pnpm parity:api` arity delta non-negative.
+- The four remaining `createSchemaDumper` definitions take `(options)` only and
+  pass `self`, matching `abstract/schema_statements.rb`,
+  `postgresql/schema_statements.rb`, `mysql/schema_statements.rb` and
+  `sqlite3/schema_statements.rb`.
+- `schema-dumper.ts:543` and `:572-573` stop threading a separate source, and
+  the `as any` casts guarding that argument go with them.
+- Schema-dump tests stay green on all three adapter lanes.
+- `pnpm parity:api:calls` / `:args` do not regress.
