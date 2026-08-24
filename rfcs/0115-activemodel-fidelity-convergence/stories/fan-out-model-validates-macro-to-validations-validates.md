@@ -1,6 +1,6 @@
 ---
 title: "Fan out the validates macro from model.ts to validations/validates.ts"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
@@ -9,7 +9,7 @@ deps:
   - retire-model-set-callback-skip-callback-run-callbacks-passthrough
 deps-rfc: []
 est-loc: 300
-pr: null
+pr: 6963
 claim: "2026-08-24T01:33:42Z"
 assignee: "fan-out-model-validates-macro-to-validations-validates"
 blocked-by: null
