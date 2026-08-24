@@ -1,6 +1,6 @@
 ---
 title: "Retire activesupport's last 3 call-set rows so the package hits the RFC's zero"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T13:47:15Z"
+assignee: "converge-activesupport-residual-set-rows-to-zero"
 blocked-by: null
 closed-reason: null
 ---
