@@ -1,6 +1,6 @@
 ---
 title: "CheckConstraintDefinition#defined_for? ports the fetch(:validate) and **options arms"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: 14
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T23:54:09Z"
+assignee: "move-ts-only-extras-out-of-mirrored-activemodel-attribute-test-file"
 blocked-by: null
 closed-reason: null
 ---
