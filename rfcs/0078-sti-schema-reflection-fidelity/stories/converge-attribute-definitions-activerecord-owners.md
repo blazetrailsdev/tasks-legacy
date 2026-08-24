@@ -1,7 +1,7 @@
 ---
 title: "converge-attribute-definitions-activerecord-owners"
-status: blocked
-updated: 2026-08-21
+status: closed
+updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
 packages: []
@@ -15,10 +15,10 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: "2026-08-21T09:10:24Z"
-assignee: "converge-attribute-definitions-activerecord-owners"
-blocked-by: 'Blocked on the reader splits and on sync schema reflection. (1) Ordering: this story is the map''s OWNER — converging it removes the writes into `_attributeDefinitions`, but 3 of the 4 reader splits are not started (converge-attribute-definitions-core-readers, -leaf-membership-readers, -peripheral-readers are all `ready`; -activemodel-readers #6804 and -activerecord-core-readers #6805 are still in review). model-schema.ts (columnsHash synthesized fallback :354-368, applyColumnsHash :1265-1331, reconcileVirtualAttributes :1564-1572), persistence.ts, enum.ts, fixtures.ts, encryption.ts:142, nested-attributes.ts and type-caster/map.ts all still read the map on main, so dropping the writes now is a correctness break, not a convergence. (2) Root blocker for AC1/AC2 measured, not assumed: seeding `_defaultAttributes` phase 1 from columnsHash alone (attributes.rb:241-245) reds 3 DefaultAttributesTest/DefineAttributeTest cases in packages/activerecord/src/attributes.test.ts ("_defaultAttributes seeds schema columns via fromDatabase then replays user pending queue", "attribute() overriding only type preserves the schema default", "define_attribute with userProvidedDefault false uses database cast") because trails'' adapter feeds reflected columns through `defineAttribute(..., userProvidedDefault: false)` into the defs map instead of a synchronously-resolvable `columns_hash`. Converging `defineAttribute` onto Rails'' `attribute_types[name] = cast_type; define_default_attribute(..., from_user:)` (attributes.rb:231-238) drops those seeds on the next `attribute()` reset, because Rails survives that reset via the column seed and trails'' connection-free `cachedColumnsHash` misses on the bare `new Model()` path. AC3 has the same root: `ensureSchemaLoaded` exists only because trails'' reflection is async, so the three readers cannot go until columns_hash is synchronously available. Unblock after all five reader stories land, and pair AC1/AC3 with the sync-reflection work rather than shipping them piecemeal.'
-closed-reason: null
+claim: null
+assignee: null
+blocked-by: null
+closed-reason: "AC1+AC2 delivered by #6948 (retire-attribute-definitions-registry-for-default-attributes, RFC 0115): on origin/main packages/activerecord/src/attributes.ts contains ZERO '_attributeDefinitions' references (git grep -c = 0) — _defaultAttributes():93 now seeds phase 1 from this.columnsHash():96 per attributes.rb:241-245, and defineAttribute routes through defineDefaultAttribute(name, value, type, {fromUser}) per attributes.rb:277-291. The blocked-by's ordering half is also stale: all five reader splits landed (#6769, #6804, #6805, #6806, #6807). The only surviving AC is AC3 (base.ts:1393 ensureSchemaLoaded still iterates this._attributeDefinitions), which is explicitly owned by 0115/retire-remaining-attribute-definitions-registry ('base.ts — ensureSchemaLoaded's declaration-scan bail'), whose body says to re-triage this story against it rather than duplicate it. Closing as superseded."
 ---
 
 ## Context
