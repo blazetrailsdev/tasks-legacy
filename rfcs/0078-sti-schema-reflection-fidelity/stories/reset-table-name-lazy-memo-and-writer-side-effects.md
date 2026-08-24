@@ -1,6 +1,6 @@
 ---
 title: "Fold resolveTableName back into Rails' table_name / reset_table_name / compute_table_name split"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0078-sti-schema-reflection-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 140
 priority: 2
-pr: null
+pr: 6996
 claim: "2026-08-24T16:20:09Z"
 assignee: "sync-reflection-needs-explicit-warm-for-fake-adapter"
 blocked-by: null
