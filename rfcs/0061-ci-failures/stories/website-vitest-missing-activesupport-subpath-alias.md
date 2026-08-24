@@ -18,25 +18,36 @@ closed-reason: null
 
 ## Context
 
-Two frontiers tests in `packages/website` fail at collection time with:
+`packages/website/src/lib/frontiers/sandbox-sw.test.ts`'s
+`"trail-cli accepts generate model command"` case fails on `origin/main`
+(verified at 20cf3f521 in a detached worktree sharing this checkout's
+`node_modules`):
 
 ```text
-Error: Cannot find module '@blazetrails/activesupport/temporal' imported from
-  packages/trailties/src/generators/generated-attribute.ts
+Error: Test timed out in 5000ms.
+ ❯ src/lib/frontiers/sandbox-sw.test.ts:180:5
 ```
 
-- `packages/website/src/lib/frontiers/runtime.test.ts` (whole suite fails to collect)
-- `packages/website/src/lib/frontiers/sandbox-sw.test.ts` — the
-  `"trail-cli accepts generate model command"` case
+The CLI never answers, because the generator import chain
+(`VfsModelGenerator` -> `ModelGenerator` -> `generated-attribute`) reaches
+`packages/trailties/src/generators/generated-attribute.ts:2`:
+
+```ts
+import { Temporal } from "@blazetrails/activesupport/temporal";
+```
 
 `packages/website/vitest.config.ts:9` aliases only the package root
 (`@blazetrails/activesupport` -> `../activesupport/src/index.ts`); the
-`/temporal` subpath has no alias, so the import from
-`packages/trailties/src/generators/generated-attribute.ts:2` — pulled in
-through `VfsModelGenerator` -> `ModelGenerator` -> `generated-attribute` —
-never resolves. `packages/website/vite.config.ts:33,55` has its own
-`pkgAlias` list plus a `startsWith("@blazetrails/activesupport/")` external
-rule; the two configs disagree.
+`/temporal` subpath has no alias. With an incomplete workspace link set the
+failure surfaces as the underlying
+`Cannot find module '@blazetrails/activesupport/temporal'` instead of the
+timeout, which is the same root cause seen more directly.
+`packages/website/vite.config.ts:33,55` keeps its own `pkgAlias` list plus a
+`startsWith("@blazetrails/activesupport/")` external rule; the two configs
+disagree.
+
+`runtime.test.ts` fails to collect in the same way when the workspace links
+are incomplete, so treat it as part of the same fix.
 
 Reproduce (a fresh worktree needs `npx svelte-kit sync` first, or every
 website test fails earlier with a TSConfckParseError on
@@ -44,15 +55,15 @@ website test fails earlier with a TSConfckParseError on
 
 ```bash
 cd packages/website && npx svelte-kit sync
-npx vitest run src/lib/frontiers/runtime.test.ts src/lib/frontiers/sandbox-sw.test.ts
+npx vitest run src/lib/frontiers/sandbox-sw.test.ts src/lib/frontiers/runtime.test.ts
 ```
 
-Pre-existing on `origin/main` — surfaced while verifying an unrelated rename in
-PR #6982, whose diff touches neither `generated-attribute.ts`, `activesupport`,
-nor either website config. See the memory note
-`project_new_package_subpath_needs_four_registrations.md`: a new cross-package
-subpath needs the vitest alias plus both dx-test tsconfigs, and the website
-project is a fourth registration site that was missed.
+Surfaced while verifying an unrelated rename in PR #6982, whose diff touches
+neither `generated-attribute.ts`, `activesupport`, nor either website config.
+See the memory note `project_new_package_subpath_needs_four_registrations.md`:
+a new cross-package subpath needs the vitest alias plus both dx-test
+tsconfigs, and the website project is a further registration site that was
+missed.
 
 ## Acceptance criteria
 
