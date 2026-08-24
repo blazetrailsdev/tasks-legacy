@@ -1,6 +1,6 @@
 ---
 title: "Port Delegation.generate_method_missing's reserved / __target receiver prefix"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null

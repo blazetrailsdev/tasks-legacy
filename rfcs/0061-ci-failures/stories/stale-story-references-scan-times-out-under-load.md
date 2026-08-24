@@ -1,6 +1,6 @@
 ---
 title: "stale-story-references whole-tree scans time out at the default 5s under host load"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0061-ci-failures"
 cluster: null
