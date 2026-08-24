@@ -1,6 +1,6 @@
 ---
 title: "Converge the _default_attributes reset points onto Rails' reload_schema_from_cache"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 260
 priority: null
-pr: null
+pr: 6962
 claim: "2026-08-24T01:24:28Z"
 assignee: "anchor-jsdoc-tag-recognition-to-line-start"
 blocked-by: null
