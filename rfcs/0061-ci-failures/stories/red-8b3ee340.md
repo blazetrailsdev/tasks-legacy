@@ -1,6 +1,6 @@
 ---
 title: "Unit Tests failing on main @8b3ee340"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0061-ci-failures"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: 0
-pr: null
+pr: 7002
 claim: "2026-08-24T18:34:35Z"
 assignee: "red-8b3ee340"
 blocked-by: null
