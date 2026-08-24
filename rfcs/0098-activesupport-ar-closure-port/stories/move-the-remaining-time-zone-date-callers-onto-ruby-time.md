@@ -1,7 +1,7 @@
 ---
 title: "Move values/time-zone.ts' remaining Date-seated period callers onto ::Time, deleting utcTimeFrom"
-status: in-progress
-updated: 2026-08-23
+status: done
+updated: 2026-08-24
 rfc: "0098-activesupport-ar-closure-port"
 cluster: null
 packages: []
