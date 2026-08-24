@@ -1,6 +1,6 @@
 ---
 title: "Port test_user_input_in_time_zone and close activemodel's last parity:test gap"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
