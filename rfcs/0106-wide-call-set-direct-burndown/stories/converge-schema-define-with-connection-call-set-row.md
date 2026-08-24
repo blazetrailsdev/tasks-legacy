@@ -1,6 +1,6 @@
 ---
 title: "converge-schema-define-with-connection-call-set-row"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T22:18:08Z"
+assignee: "converge-delegated-type-and-default-scope-call-set-rows"
 blocked-by: null
 closed-reason: null
 ---

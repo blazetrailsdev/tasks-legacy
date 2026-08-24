@@ -1,6 +1,6 @@
 ---
 title: "converge-residual-connection-lease-call-set-rows"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 140
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T22:18:08Z"
+assignee: "converge-delegated-type-and-default-scope-call-set-rows"
 blocked-by: null
 closed-reason: null
 ---
