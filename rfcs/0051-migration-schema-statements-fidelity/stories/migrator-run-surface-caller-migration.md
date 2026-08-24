@@ -1,7 +1,7 @@
 ---
 title: "migrator-run-surface-caller-migration"
-status: ready
-updated: 2026-08-09
+status: claimed
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps:
@@ -9,8 +9,8 @@ deps:
 deps-rfc: []
 est-loc: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T13:19:12Z"
+assignee: "migrator-run-surface-caller-migration"
 blocked-by: null
 closed-reason: null
 ---
