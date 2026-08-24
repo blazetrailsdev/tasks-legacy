@@ -1,7 +1,7 @@
 ---
 title: "discriminate-class-for-record-should-call-find-sti-class"
-status: draft
-updated: 2026-08-22
+status: ready
+updated: 2026-08-24
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages: []
