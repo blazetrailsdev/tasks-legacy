@@ -103,6 +103,35 @@ end     { assertionCount: 0,   kind: 0,   value: 0 }
 activemodel's `kind` also tightens 448 → 446 in the tooling story (the same
 spec-form rules fire on two of its tests).
 
+## The trails side stays vitest-native
+
+The two Rails-side helpers this RFC maps (`must_be_like`, `assert_edge`) exist
+in the Ruby we mirror, so reading them correctly is not a design choice. The
+trails side is a choice, and the answer is **native vitest matchers**, not a
+port of the helper.
+
+Measured over all 58,551 trails assertion tokens in the repo, only 2,172 (3.7%)
+fail to normalize, and the unmapped tail is not vitest matchers — it is trails
+helpers mirroring Rails helpers whose Ruby twins are also unmapped
+(`assertQueriesCount` 230, `assertNoQueries` 189, `assertQueriesMatch` 102,
+`assertDifference` 50, …). `TRAILS_MAP` already covers what our tests use.
+
+So `must_be_like` ports as a **string normalizer inside a native matcher**, the
+shape `packages/arel/src/select-manager.test.ts:15` already uses:
+
+```ts
+expect(mustBeLike(visitor.compile(ast))).toBe(mustBeLike(`SELECT id FROM "users"`));
+```
+
+The extractor reads the terminal `toBe` and maps it to `equal` with no
+special-casing. `assert_edge` ports to a native
+`expect(dot).toMatch(/->.*label="case"/)`.
+
+That normalizer currently lives inside one test file. The first burndown story
+to need it hoists it to `packages/arel/src/test-helpers/must-be-like.ts` —
+mirroring Rails keeping it in `helper.rb` — and the rest import it. Nine
+copy-pasted definitions is the outcome to avoid.
+
 ## Constraints every story here inherits
 
 - **NEVER rename or reword a test name.** Names are how `parity:test` matches.

@@ -53,6 +53,15 @@ the squeezed SQL string, not a substring check.
     `scripts/test-compare/assertion-kinds.ts` with a one-line justification
     citing both sides' semantics, and report the effect on all five packages'
     marks. Never a per-file workaround.
+- Use the shared `mustBeLike` normalizer from
+  `packages/arel/src/test-helpers/must-be-like.ts`, which mirrors Rails putting
+  it in `vendor/rails/activerecord/test/cases/arel/helper.rb:10-13`. It is a
+  string normalizer inside a native `expect(...).toBe(...)`, NOT an assertion
+  wrapper — `expect(mustBeLike(visitor.compile(ast))).toBe(mustBeLike(\`…\`))`—
+so the extractor reads the terminal`toBe`with no special-casing. If that
+file does not exist yet, hoist it there as part of this story from its
+current local definition at`packages/arel/src/select-manager.test.ts:15`,
+  and leave no second copy behind. Do not redefine it per test file.
 - **No test name is renamed or reworded.** Names are how `parity:test` matches.
   If behaviour does not fit the name, the implementation changes.
 - The touched tests pass: `pnpm vitest run packages/arel/src/select-manager.test.ts`.
