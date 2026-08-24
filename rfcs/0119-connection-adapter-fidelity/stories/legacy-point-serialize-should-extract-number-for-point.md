@@ -1,7 +1,7 @@
 ---
 title: "legacy-point-serialize-should-extract-number-for-point"
-status: draft
-updated: 2026-08-22
+status: ready
+updated: 2026-08-24
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []
