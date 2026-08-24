@@ -1,6 +1,6 @@
 ---
 title: "Converge the nodes/* assertion parity tail"
-status: claimed
+status: in-progress
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -9,7 +9,7 @@ deps: ["map-minitest-spec-assertion-forms"]
 deps-rfc: []
 est-loc: 240
 priority: null
-pr: null
+pr: 7015
 claim: "2026-08-24T23:06:10Z"
 assignee: "fan-out-model-json-serializer-surface"
 blocked-by: null
