@@ -1,6 +1,6 @@
 ---
 title: "Map Minitest spec forms, must_be_like and assert_edge in assertion-kinds"
-status: in-progress
+status: done
 updated: 2026-08-24
 rfc: "0122-arel-assertion-parity"
 cluster: null
