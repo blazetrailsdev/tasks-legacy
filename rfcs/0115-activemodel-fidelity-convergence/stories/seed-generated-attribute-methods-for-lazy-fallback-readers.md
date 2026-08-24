@@ -1,6 +1,6 @@
 ---
 title: "Seed GeneratedAttributeMethods for classes reached only through isInstanceMethodAlreadyImplemented"
-status: ready
+status: claimed
 updated: 2026-08-24
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 160
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-24T01:24:28Z"
+assignee: "anchor-jsdoc-tag-recognition-to-line-start"
 blocked-by: null
 closed-reason: null
 ---
