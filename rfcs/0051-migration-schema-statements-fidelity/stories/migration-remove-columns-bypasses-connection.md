@@ -1,7 +1,7 @@
 ---
 title: "Migration#removeColumns loops instead of forwarding to the connection"
-status: draft
-updated: 2026-07-29
+status: ready
+updated: 2026-08-24
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
