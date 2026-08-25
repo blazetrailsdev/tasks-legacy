@@ -1,6 +1,6 @@
 ---
 title: "read-attribute-miss-path-answers-undefined-not-nomethoderror"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 140
 priority: 2
-pr: null
+pr: 7035
 claim: "2026-08-25T14:10:32Z"
 assignee: "attribute-dup-must-redup-mutable-value"
 blocked-by: null
