@@ -1,6 +1,6 @@
 ---
 title: "Base's constructor splits store-accessor keys out of assign_attributes"
-status: ready
+status: draft
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
