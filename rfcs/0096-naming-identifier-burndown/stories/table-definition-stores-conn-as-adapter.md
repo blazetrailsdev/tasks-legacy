@@ -1,6 +1,6 @@
 ---
 title: "TableDefinition and SchemaCreation store Rails' @conn under a trails name (_adapter / adapter)"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 80
 priority: null
-pr: null
+pr: 7040
 claim: "2026-08-25T15:35:31Z"
 assignee: "table-definition-stores-conn-as-adapter"
 blocked-by: null
