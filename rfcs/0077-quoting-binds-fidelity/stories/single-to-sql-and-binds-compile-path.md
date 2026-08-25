@@ -5,7 +5,8 @@ updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
 packages: []
-deps: []
+deps:
+  - should-prepare-should-be-without-prepared-statement
 deps-rfc: []
 est-loc: 200
 priority: 7
