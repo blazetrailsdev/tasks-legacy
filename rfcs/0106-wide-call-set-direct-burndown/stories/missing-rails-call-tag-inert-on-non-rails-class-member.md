@@ -1,6 +1,6 @@
 ---
 title: "parity:api:build should report a @missingRailsCall tag on a non-Rails class member as INERT"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 140
 priority: 1
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T09:46:54Z"
+assignee: "missing-rails-call-tag-inert-on-non-rails-class-member"
 blocked-by: null
 closed-reason: null
 ---
