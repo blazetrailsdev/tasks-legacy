@@ -9,7 +9,7 @@ deps:
   - retire-remaining-attribute-definitions-registry
 deps-rfc: []
 est-loc: 300
-priority: null
+priority: 6
 pr: null
 claim: null
 assignee: null
