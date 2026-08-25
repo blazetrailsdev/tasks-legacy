@@ -1,6 +1,6 @@
 ---
 title: "converge-association-check-klass-onto-reflection-check-validity"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T15:54:32Z"
+assignee: "converge-association-check-klass-onto-reflection-check-validity"
 blocked-by: null
 closed-reason: null
 ---

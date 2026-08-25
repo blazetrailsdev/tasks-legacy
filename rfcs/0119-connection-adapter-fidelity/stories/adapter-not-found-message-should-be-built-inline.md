@@ -1,7 +1,7 @@
 ---
 title: "adapter-not-found-message-should-be-built-inline"
-status: ready
-updated: 2026-08-24
+status: claimed
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 30
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T15:54:32Z"
+assignee: "converge-association-check-klass-onto-reflection-check-validity"
 blocked-by: null
 closed-reason: null
 ---

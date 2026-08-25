@@ -1,7 +1,7 @@
 ---
 title: "Converge abstract_mysql_adapter concurrency tests from adapter-level SQL to the model layer"
-status: ready
-updated: 2026-07-27
+status: claimed
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []
@@ -9,8 +9,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T15:54:32Z"
+assignee: "converge-association-check-klass-onto-reflection-check-validity"
 blocked-by: null
 closed-reason: null
 ---
