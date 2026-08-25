@@ -1,6 +1,6 @@
 ---
 title: "acquire_connection owns the blocking queue wait, as connection_pool.rb:862 does"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
