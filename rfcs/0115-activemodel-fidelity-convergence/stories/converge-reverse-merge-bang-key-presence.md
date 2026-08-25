@@ -1,6 +1,6 @@
 ---
 title: "converge-reverse-merge-bang-key-presence"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 7029
 claim: "2026-08-25T12:46:55Z"
 assignee: "converge-reverse-merge-bang-key-presence"
 blocked-by: null
