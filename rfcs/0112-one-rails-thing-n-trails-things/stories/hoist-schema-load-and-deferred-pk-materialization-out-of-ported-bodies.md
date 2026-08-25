@@ -1,6 +1,6 @@
 ---
 title: "Hoist ensureSchemaLoaded and deferred distinct-PK materialization out of ids/pluck/calculation bodies"
-status: claimed
+status: ready
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
@@ -9,8 +9,8 @@ deps: []
 deps-rfc: []
 est-loc: 250
 pr: null
-claim: "2026-08-25T17:30:31Z"
-assignee: "exec-scope-takes-explicit-fn-instead-of-instance-exec"
+claim: null
+assignee: null
 blocked-by: null
 closed-reason: null
 ---
