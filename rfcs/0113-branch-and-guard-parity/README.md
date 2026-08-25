@@ -3,7 +3,7 @@ rfc: "0113-branch-and-guard-parity"
 title: "Branch and guard parity — the axis the call gates cannot see"
 status: draft
 created: 2026-08-18
-updated: 2026-08-19
+updated: 2026-08-25
 owner: "@deanmarano"
 packages:
   - "activerecord"
@@ -26,6 +26,7 @@ related-rfcs:
   - "0084-wide-call-set-burndown"
   - "0095-call-argument-parity"
   - "0108-call-gate-false-positives"
+priority: 3
 ---
 
 # RFC 0113 — Branch and guard parity
