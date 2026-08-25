@@ -9,7 +9,7 @@ deps:
   - forced-mutation-tracker-takes-an-attributeset-where-rails-passes-the-model
 deps-rfc: []
 est-loc: 260
-priority: null
+priority: 4
 pr: null
 claim: null
 assignee: null
