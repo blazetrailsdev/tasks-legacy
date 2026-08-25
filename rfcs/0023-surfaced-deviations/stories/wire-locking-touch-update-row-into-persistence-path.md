@@ -4,6 +4,8 @@ status: ready
 updated: 2026-06-26
 rfc: "0023-surfaced-deviations"
 cluster: null
+packages:
+  - "activerecord"
 deps:
   - persistence-test-canonical-wave15
 deps-rfc: []

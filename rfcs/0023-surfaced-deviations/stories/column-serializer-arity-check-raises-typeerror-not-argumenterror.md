@@ -4,7 +4,12 @@ status: draft
 updated: 2026-08-22
 rfc: "0023-surfaced-deviations"
 cluster: null
-packages: []
+packages:
+  - "activemodel"
+  - "activerecord"
+  - "activesupport"
+  - "globalid"
+  - "i18n"
 deps: []
 deps-rfc: []
 est-loc: 60

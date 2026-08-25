@@ -4,7 +4,8 @@ status: draft
 updated: 2026-08-19
 rfc: "0023-surfaced-deviations"
 cluster: null
-packages: []
+packages:
+  - "activemodel"
 deps: ["bare-pattern-generates-reader-not-accessor-property"]
 deps-rfc: []
 est-loc: 120

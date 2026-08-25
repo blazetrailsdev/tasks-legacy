@@ -4,7 +4,9 @@ status: draft
 updated: 2026-08-12
 rfc: "0023-surfaced-deviations"
 cluster: null
-packages: []
+packages:
+  - "activemodel"
+  - "arel"
 deps: []
 deps-rfc: []
 est-loc: 40

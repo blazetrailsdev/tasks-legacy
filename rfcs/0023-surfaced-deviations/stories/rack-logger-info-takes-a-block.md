@@ -4,7 +4,8 @@ status: ready
 updated: 2026-08-21
 rfc: "0023-surfaced-deviations"
 cluster: null
-packages: []
+packages:
+  - "trailties"
 deps: []
 deps-rfc: []
 est-loc: 90

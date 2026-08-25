@@ -4,7 +4,8 @@ status: draft
 updated: 2026-08-17
 rfc: "0023-surfaced-deviations"
 cluster: null
-packages: []
+packages:
+  - "globalid"
 deps: []
 deps-rfc: []
 est-loc: 60

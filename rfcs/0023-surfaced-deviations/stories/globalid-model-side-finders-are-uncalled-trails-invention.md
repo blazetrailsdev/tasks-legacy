@@ -4,6 +4,9 @@ status: ready
 updated: 2026-07-27
 rfc: "0023-surfaced-deviations"
 cluster: null
+packages:
+  - "activerecord"
+  - "globalid"
 deps: []
 deps-rfc: []
 est-loc: null

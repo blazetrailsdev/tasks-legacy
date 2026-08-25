@@ -4,6 +4,8 @@ status: draft
 updated: 2026-08-02
 rfc: "0023-surfaced-deviations"
 cluster: null
+packages:
+  - "activerecord"
 deps: []
 deps-rfc: []
 est-loc: 180

@@ -5,7 +5,22 @@ status: postponed
 created: 2026-06-11
 updated: 2026-08-09
 owner: "@deanmarano"
-packages: []
+packages:
+  - "actionpack"
+  - "actionview"
+  - "activemodel"
+  - "activerecord"
+  - "activerecord-cli"
+  - "activesupport"
+  - "arel"
+  - "date"
+  - "did-you-mean"
+  - "globalid"
+  - "i18n"
+  - "nokogiri"
+  - "rack"
+  - "trailties"
+  - "website"
 clusters:
   - rails-deviation
   - followup

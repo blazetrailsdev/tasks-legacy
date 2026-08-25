@@ -4,7 +4,8 @@ status: draft
 updated: 2026-08-22
 rfc: "0023-surfaced-deviations"
 cluster: null
-packages: []
+packages:
+  - "activerecord"
 deps: ["port-promise-complete-for-async-loaded-arms"]
 deps-rfc: []
 est-loc: 120
