@@ -1,6 +1,6 @@
 ---
 title: "NullSchemaMigration carries five invented no-op members; Rails' is an empty class"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: 33
-pr: null
+pr: 7022
 claim: "2026-08-25T00:54:07Z"
 assignee: "split-model-mixin-surface-to-active-model-model"
 blocked-by: null
