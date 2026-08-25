@@ -1,6 +1,6 @@
 ---
 title: "Converge table, factory_methods and attributes/math assertion parity"
-status: claimed
+status: ready
 updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 170
 priority: null
 pr: null
-claim: "2026-08-25T01:44:12Z"
-assignee: "retire-attribute-set-narrow-to"
+claim: null
+assignee: null
 blocked-by: null
 closed-reason: null
 ---
