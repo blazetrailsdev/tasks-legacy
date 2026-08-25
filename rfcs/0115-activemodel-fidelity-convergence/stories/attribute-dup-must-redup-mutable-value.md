@@ -1,6 +1,6 @@
 ---
 title: "attribute-dup-must-redup-mutable-value"
-status: claimed
+status: blocked
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: "2026-08-25T13:11:04Z"
 assignee: "attribute-dup-must-redup-mutable-value"
-blocked-by: null
+blocked-by: "Blocked on open PR #7028 (converge-attribute-set-builder-residue): the story's whole surface, Attribute#dup() in packages/activemodel/src/attribute.ts, does not exist on main — #7028 introduces it. Implementing initialize_dup semantics here would either stack on that branch or re-add the method in attribute-set/builder.ts's pre-#7028 shape (dupAttribute + LazyAttributeHash.cloneAttr), conflicting with it file-wide. Re-ready once #7028 merges."
 closed-reason: null
 ---
 
