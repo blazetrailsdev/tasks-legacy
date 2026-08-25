@@ -1,6 +1,6 @@
 ---
 title: "EncryptedFile#encryptor passes NullSerializer where Rails passes Marshal"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
