@@ -1,8 +1,8 @@
 ---
 title: "Delete reflectColumnNames' warm-cache re-invalidation — Rails has one column view"
 status: blocked
-updated: 2026-08-24
-rfc: "0078-sti-schema-reflection-fidelity"
+updated: 2026-08-25
+rfc: "0123-blocked-convergence-holding"
 cluster: null
 packages: []
 deps: []

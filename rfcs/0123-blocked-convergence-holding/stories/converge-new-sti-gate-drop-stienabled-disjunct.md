@@ -1,8 +1,8 @@
 ---
 title: "Drop the last trails-only input to the new() STI gate (the stiEnabled disjunct), leaving _has_attribute? alone"
 status: blocked
-updated: 2026-08-18
-rfc: "0078-sti-schema-reflection-fidelity"
+updated: 2026-08-25
+rfc: "0123-blocked-convergence-holding"
 cluster: null
 packages: []
 deps: []
