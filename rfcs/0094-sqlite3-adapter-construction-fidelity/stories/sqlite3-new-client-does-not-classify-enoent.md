@@ -55,7 +55,7 @@ until it is what actually opens the driver handle (`sqlite3_adapter.rb:807`).
 
 - [ ] `newClient` opens the driver and raises `NoDatabaseError` for the
       missing-file errno, re-raising anything else — the `include?("No such
-  file or directory")` discrimination at Rails' site.
+file or directory")` discrimination at Rails' site.
 - [ ] `translateException` no longer carries the missing-database mapping that
       only existed to cover for the open path, unless Rails has it there too.
 - [ ] The `@missingRailsCall include?` receipt on `newClient` is deleted.
