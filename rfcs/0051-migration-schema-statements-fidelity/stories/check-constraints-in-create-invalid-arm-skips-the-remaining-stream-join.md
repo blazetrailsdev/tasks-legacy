@@ -1,6 +1,6 @@
 ---
 title: "check_constraints_in_create's invalid arm returns a raw array where Rails puts a joined block to a remaining stream"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
