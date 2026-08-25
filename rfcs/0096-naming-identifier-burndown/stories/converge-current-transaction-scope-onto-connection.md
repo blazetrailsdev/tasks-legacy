@@ -1,7 +1,7 @@
 ---
 title: "converge-current-transaction-scope-onto-connection"
-status: ready
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
 packages: []
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 7014
 claim: null
 assignee: null
 blocked-by: null
