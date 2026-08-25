@@ -1,6 +1,6 @@
 ---
 title: "Round-trip the PG/MySQL TypeMetadata through the schema-cache coder so the Column subclasses can delegate oid/fmod/extra"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
