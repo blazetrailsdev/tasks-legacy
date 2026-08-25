@@ -1,7 +1,7 @@
 ---
 title: "Sweep the arel assertion residue and tighten the mark to zero"
-status: ready
-updated: 2026-08-24
+status: claimed
+updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null
 packages: ["arel"]
@@ -21,8 +21,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T15:46:30Z"
+assignee: "sqlite-attached-schema-notion-has-no-rails-counterpart"
 blocked-by: null
 closed-reason: null
 ---
