@@ -1,6 +1,6 @@
 ---
 title: "Migrator#currentMigration invents a version-0 guard and reads the private list"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
