@@ -1,6 +1,6 @@
 ---
 title: "arel-duplicates-activemodel-type-default-value"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null
@@ -12,8 +12,8 @@ deps-rfc: []
 est-loc: 40
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T15:39:01Z"
+assignee: "arel-case-reader-readonly-vs-attr-accessor"
 blocked-by: null
 closed-reason: null
 ---
