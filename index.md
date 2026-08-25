@@ -4,7 +4,6 @@
 
 | RFC | Title | Status | Owner | Packages |
 |-----|-------|--------|-------|----------|
-| [0000-arel-surfaced-deviations](rfcs/0000-arel-surfaced-deviations/README.md) | Arel surfaced deviations — narrow slots, invented conversions, and value semantics | draft | @deanmarano | arel, activerecord, activemodel |
 | [0001-task-system](rfcs/0001-task-system/README.md) | Task system (RFCs + story files + fast index) | closed | @deanmarano | — |
 | [0002-bootstrap-databasetasks](rfcs/0002-bootstrap-databasetasks/README.md) | Drop bootstrap-test-handler, route test setup through DatabaseTasks | closed | @deanmarano | activerecord |
 | [0003-activerecord-cli](rfcs/0003-activerecord-cli/README.md) | Standalone ActiveRecord DX + activerecord-cli package | closed | @deanmarano | activerecord, activerecord-cli, trails-tsc, trailties |
@@ -127,3 +126,4 @@
 | [0121-internal-tag-accounting](rfcs/0121-internal-tag-accounting/README.md) | Constrain @internal to Rails-private surface; account for the rest | active | @deanmarano | activerecord, actionpack, activemodel, activesupport, actionview, arel, trailties |
 | [0122-arel-assertion-parity](rfcs/0122-arel-assertion-parity/README.md) | arel assertion parity to zero | active | @deanmarano | arel |
 | [0123-blocked-convergence-holding](rfcs/0123-blocked-convergence-holding/README.md) | Holding epic: blocked convergence work carried from RFCs 0078 / 0096 / 0106 / 0107 | active | @deanmarano | activerecord, activemodel, arel, activesupport |
+| [0124-arel-surfaced-deviations](rfcs/0124-arel-surfaced-deviations/README.md) | Arel surfaced deviations — narrow slots, invented conversions, and value semantics | draft | @deanmarano | arel, activerecord, activemodel |

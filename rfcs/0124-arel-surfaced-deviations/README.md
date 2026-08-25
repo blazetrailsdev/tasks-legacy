@@ -1,5 +1,5 @@
 ---
-rfc: "0000-arel-surfaced-deviations"
+rfc: "0124-arel-surfaced-deviations"
 title: "Arel surfaced deviations — narrow slots, invented conversions, and value semantics"
 status: draft
 created: 2026-08-25
