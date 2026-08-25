@@ -1,6 +1,6 @@
 ---
 title: "rails-privates manifest covers no gem packages: 381 unvalidatable @internal tags"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0121-internal-tag-accounting"
 cluster: null
@@ -9,7 +9,7 @@ deps: ["rails-privates-manifest-package-dirs-drift"]
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: null
+pr: 7042
 claim: "2026-08-25T15:38:33Z"
 assignee: "pg-table-definition-takes-unlogged-as-an-option-rails-reads-the-adapter"
 blocked-by: null
