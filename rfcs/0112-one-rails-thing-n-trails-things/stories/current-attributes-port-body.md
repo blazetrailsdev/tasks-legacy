@@ -1,6 +1,6 @@
 ---
 title: "Port CurrentAttributes' body to current_attributes.rb (defaults, Delegation.generate, IsolatedExecutionState, reset)"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 400
-pr: null
+pr: 7055
 claim: "2026-08-25T17:22:41Z"
 assignee: "current-attributes-port-body"
 blocked-by: null
