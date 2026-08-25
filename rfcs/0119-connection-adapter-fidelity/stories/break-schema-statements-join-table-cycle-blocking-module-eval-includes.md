@@ -1,6 +1,6 @@
 ---
 title: "Break the schema-statements -> join-table -> model-schema cycle so AbstractAdapter's includes can return to the class body"
-status: claimed
+status: blocked
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: "2026-08-25T17:17:28Z"
 assignee: "converge-token-for-class-attribute-stores"
-blocked-by: null
+blocked-by: 'Measured: cutting migration/join-table.ts -> model-schema.ts with a zero-import slot DOES break the cycle (scripts/test-deps/ green with the mixin block back at module scope), but it reds the whole AR suite at collection time — ''Class extends value undefined'' at associations/collection-proxy.ts. The edge is also the accidental load-order guarantee the package relies on: the vitest setup preload entered associations.ts early through join-table -> model-schema -> associations, so associations.ts was always fully evaluated before relation.ts. Cut it and relation.ts -> insert-all.ts -> model-schema.ts -> associations.ts -> (associations.ts:6, a bare side-effect ''import "./associations/collection-proxy.js"'') -> relation.ts crashes with Relation still in TDZ. Approach 2 does not exist: every path from schema-statements.ts to abstract-adapter.ts runs through model-schema.ts, and model-schema.ts reaches abstract-adapter.ts by several independent legs; cutting model-schema -> connection-handling with a slot was tried and measured, and adapter-graph-import-tdz.test.ts still fails via model-schema -> associations -> persistence -> connection-handling. BLOCKER: associations.ts:6 must stop eagerly force-loading collection-proxy.ts (its ctor is already published through associations/collection-proxy-slot.ts) so relation.ts/associations.ts stop being load-order dependent. That is separate work on the relation<->associations cycle, not this story''s ~150 LOC.'
 closed-reason: null
 ---
 
