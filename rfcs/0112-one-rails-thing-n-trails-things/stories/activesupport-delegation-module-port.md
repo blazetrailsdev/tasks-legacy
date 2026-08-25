@@ -1,7 +1,7 @@
 ---
 title: "Port ActiveSupport::Delegation so Module#delegate fronts it"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
