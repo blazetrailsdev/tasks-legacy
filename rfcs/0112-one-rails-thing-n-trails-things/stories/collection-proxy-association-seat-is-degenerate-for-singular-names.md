@@ -1,6 +1,6 @@
 ---
 title: "collection-proxy-association-seat-is-degenerate-for-singular-names"
-status: ready
+status: draft
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
