@@ -65,7 +65,7 @@ strings that emit source; check whether it needs the same treatment here.
       `eslint.config.mjs` AND the `files` glob of
       `eslint/rails-private-jsdoc.config.mjs`.
 - [ ] `npx eslint --no-inline-config -c eslint/rails-private-jsdoc.config.mjs
-  "packages/trailties/src/**/*.ts"` is clean.
+"packages/trailties/src/**/*.ts"` is clean.
 - [ ] Every added `@internal` is verified against the vendored Ruby's
       `private`/`protected` section, not just the manifest.
 - [ ] `Rails API/Test Comparison` green.
