@@ -1,6 +1,6 @@
 ---
 title: "Converge AttributeSet#deep_dup and reverse_merge! onto Ruby's dup semantics"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 160
 priority: null
-pr: null
+pr: 7027
 claim: "2026-08-25T12:22:53Z"
 assignee: "converge-attribute-deep-dup-onto-ruby-dup"
 blocked-by: null
