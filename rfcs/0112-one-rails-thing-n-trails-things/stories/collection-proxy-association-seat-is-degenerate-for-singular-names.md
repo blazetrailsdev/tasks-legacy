@@ -1,6 +1,6 @@
 ---
 title: "collection-proxy-association-seat-is-degenerate-for-singular-names"
-status: claimed
+status: ready
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: "2026-08-25T16:18:38Z"
-assignee: "collection-proxy-association-seat-is-degenerate-for-singular-names"
+claim: null
+assignee: null
 blocked-by: null
 closed-reason: null
 ---
