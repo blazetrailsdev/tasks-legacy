@@ -1,7 +1,7 @@
 ---
 title: "respond_to?'s include_private_methods branch cannot fire"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
