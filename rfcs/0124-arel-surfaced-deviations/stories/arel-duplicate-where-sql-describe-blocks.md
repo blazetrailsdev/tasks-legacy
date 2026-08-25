@@ -1,6 +1,6 @@
 ---
 title: "arel-duplicate-where-sql-describe-blocks"
-status: ready
+status: closed
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Duplicate of dedupe-bespoke-where-sql-describe-blocks (same file, same two where_sql describe blocks), which predates it"
 ---
 
 ## Context
