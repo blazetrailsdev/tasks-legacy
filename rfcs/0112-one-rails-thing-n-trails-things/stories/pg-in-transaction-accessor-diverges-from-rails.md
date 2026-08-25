@@ -1,6 +1,6 @@
 ---
 title: "PG inTransaction accessor is materialized-only where Rails' in_transaction? counts lazy frames"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 60
-pr: null
+pr: 7049
 claim: "2026-08-25T16:58:47Z"
 assignee: "converge-duplicate-url-options-and-url-for"
 blocked-by: null
