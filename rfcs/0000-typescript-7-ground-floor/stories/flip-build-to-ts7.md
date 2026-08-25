@@ -31,16 +31,18 @@ rejected.
 The spike in the RFC (2026-08-25, `typescript@7.0.2` run over this repo's real
 18-project graph) already established what this costs:
 
-- **Diagnostics:** 2, both TS4094 in `trailties/src/application.ts` — retired by
-  `fix-anonymous-class-declaration-emit`. Otherwise **zero** across 3,472 files.
+- **Diagnostics on the 7.1 target:** 10, from **2 root causes** — the `TS2883`
+  in `activesupport/src/yaml.ts` (which cascades into 7) and the `TS4094` pair in
+  `trailties/src/application.ts`. Both retired by this story's deps. On 7.0.2
+  only the TS4094 pair appears; `TS2883` is a 7.1-line check.
 - **`types: []`** (TS 7's changed default, RFC #59's headline risk): **zero**
   hits. No package here relies on ambient `@types/*` auto-inclusion.
 - **`.d.ts` shape:** 14 of 3,338 files differ (0.42%), in four benign classes —
   member reordering, accessors preserved rather than collapsed, a type alias
   preserved rather than expanded, and JSDoc retained. Full list in the RFC.
-- **Speed:** cold full-monorepo `tsc --build` 215.0s → 20.9s (10.3×);
-  `tsc -b packages/activerecord` 102.8s → 19.9s (5.2×). Both on a host at load
-  41–59, so treat the ratio as the reliable figure.
+- **Speed** (quiet host, load 3–5): cold full-monorepo `tsc --build`
+  **91.75s → 9.73s (7.0.2) → 8.47s (7.1-dev)**; `tsc -b packages/activerecord`
+  **69.92s → 8.34s**. Warm no-op 0.47s; incremental after one AR edit 6.36s.
 
 Note for the `.d.ts` review: TS 7 retains `/** @internal */` in emitted
 declarations where TS 5.9.3 drops it. `parity:api:extra` and
@@ -49,7 +51,9 @@ is expected to be inert — confirm it rather than assume it (RFC open question 
 
 ## Acceptance criteria
 
-- [ ] Root `package.json` pins `typescript` at an exact 7.x.
+- [ ] Root `package.json` pins `typescript` at an **exact** version on the 7.1
+      line — a specific `7.1.0-dev.*` nightly, never the `next` tag — with a note
+      that it moves to 7.1 stable on 2026-11-10.
 - [ ] The only remaining 5.x resolution is `@blazetrails/trails-tsc`'s, via an
       explicit alias (e.g. `typescript-5@npm:typescript@5.9.3`), scoped to its
       views pipeline and documented at the declaration.

@@ -8,7 +8,7 @@ packages: ["trailties"]
 deps: []
 deps-rfc: []
 est-loc: 15
-priority: null
+priority: 1
 pr: null
 claim: null
 assignee: null

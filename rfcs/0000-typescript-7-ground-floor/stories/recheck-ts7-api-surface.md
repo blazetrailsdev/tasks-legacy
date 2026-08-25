@@ -1,5 +1,5 @@
 ---
-title: "Re-check the TS 7 API surface against trails-tsc at 7.1 beta"
+title: "Move the pin to 7.1 stable and re-check the trails-tsc gaps"
 status: blocked
 updated: 2026-08-25
 rfc: "0000-typescript-7-ground-floor"
@@ -16,6 +16,18 @@ blocked-by: "TypeScript 7.1 beta — scheduled 2026-09-09 (microsoft/TypeScript#
 ---
 
 ## Context
+
+**Two jobs now that the RFC targets the 7.1 line:** move the pinned compiler off
+the `7.1.0-dev` nightly onto 7.1 stable when it ships (2026-11-10), and re-check
+whether the two `trails-tsc` gaps closed. Beta is 2026-09-09 — the point at
+which the API surface stops moving and the re-check becomes meaningful.
+
+Re-confirmed 2026-08-25 against `7.1.0-dev.20260825.1`: there is still **no
+solution-builder, build, or watch API of any kind**, verified by both a content
+grep of `dist/` and the exported-name index. So the expected answer is "still
+blocked" — this story exists so that is a lookup rather than a re-derivation.
+
+## Original context
 
 RFC `0000-typescript-7-ground-floor` recommends waiting on TS 7.1 and names
 exactly two gaps that keep `trails-tsc` on TypeScript 5.x — and therefore keep
@@ -43,9 +55,11 @@ lookup rather than a re-derivation.
       updated in place, with the version string and verification date recorded.
 - [ ] An explicit **yes/no** is recorded for each of the two gaps, with a
       source link (release notes, `.d.ts`, or an upstream issue reply).
-- [ ] The RFC's Recommendation section is updated: either the wait continues
-      with a new named condition, or the blocker is declared closed and the
-      TS 7.1-stable stories move to `ready`.
+- [ ] The pinned `typescript` moves from the `7.1.0-dev` nightly to 7.1 stable,
+      with `pnpm build` / `pnpm typecheck` green and no new diagnostics.
+- [ ] The RFC records whether the two `trails-tsc` gaps closed; if they did,
+      `port-trails-tsc-to-ts7-api` moves to `ready` and the aliased 5.x is
+      scheduled for removal.
 - [ ] If either gap is a "no", the `trails-tsc` rewrite alternative (RFC
       § Alternatives considered) is costed rather than left as a sentence.
 

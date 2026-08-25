@@ -1,5 +1,5 @@
 ---
-title: "Reimplement trailties' parseTs() on the TS 7 API"
+title: "Move trailties' parseTs() onto the TS 7 API"
 status: ready
 updated: 2026-08-25
 rfc: "0000-typescript-7-ground-floor"
@@ -7,8 +7,8 @@ cluster: build-infra
 packages: ["trailties"]
 deps: []
 deps-rfc: []
-est-loc: 40
-priority: 2
+est-loc: 20
+priority: 3
 pr: null
 claim: null
 assignee: null
@@ -32,6 +32,11 @@ subpath) — a helper users import to assert generated templates parse. It uses
 `transpileModule` purely as a way to get syntactic diagnostics out of a string;
 the comment says as much.
 
+**Since the RFC retargeted to the 7.1 line, this is an import-path change
+rather than a port:** `transpileModule` exists on `API` in 7.1
+(`API.transpileModule(input, options)`), so the body can stay as it is. What
+follows is the 7.0.2 fallback, retained in case the pin lands on 7.0.2 instead.
+
 `transpileModule` does not exist in TS 7.0.2 (it arrives in the 7.1 nightly).
 But the function's actual need — syntactic diagnostics from a source string —
 is served on 7.0.2 by a `Project` over `createVirtualFileSystem` plus
@@ -52,7 +57,8 @@ trailties' only reason to require TypeScript 5.
 
 ## Acceptance criteria
 
-- [ ] `parseTs()` no longer imports the TypeScript 5.x API.
+- [ ] `parseTs()` no longer imports the TypeScript 5.x API — on the 7.1 pin
+      that is `API.transpileModule` from `typescript/unstable/sync`.
 - [ ] It returns equivalent diagnostics to the 5.9.3 implementation for valid
       TypeScript, syntactically-invalid TypeScript, and Ruby source.
 - [ ] The published signature is unchanged, or the change is deliberate and
