@@ -1,7 +1,7 @@
 ---
 title: "Move the TS-only extras out of activemodel's mirrored attribute test file"
-status: claimed
-updated: 2026-08-24
+status: in-progress
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 300
 priority: null
-pr: null
+pr: 7017
 claim: "2026-08-24T23:54:09Z"
 assignee: "move-ts-only-extras-out-of-mirrored-activemodel-attribute-test-file"
 blocked-by: null
