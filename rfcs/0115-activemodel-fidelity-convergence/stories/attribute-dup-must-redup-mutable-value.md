@@ -1,6 +1,6 @@
 ---
 title: "attribute-dup-must-redup-mutable-value"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T13:11:04Z"
+assignee: "attribute-dup-must-redup-mutable-value"
 blocked-by: null
 closed-reason: null
 ---
