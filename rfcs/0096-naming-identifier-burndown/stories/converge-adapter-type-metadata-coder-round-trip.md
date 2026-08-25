@@ -1,6 +1,6 @@
 ---
 title: "Round-trip the PG/MySQL TypeMetadata through the schema-cache coder so the Column subclasses can delegate oid/fmod/extra"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 220
 priority: null
-pr: null
+pr: 7026
 claim: "2026-08-25T09:46:54Z"
 assignee: "missing-rails-call-tag-inert-on-non-rails-class-member"
 blocked-by: null
