@@ -1,6 +1,6 @@
 ---
 title: "PostgreSQL's dropTable override has no Rails counterpart"
-status: ready
+status: draft
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
