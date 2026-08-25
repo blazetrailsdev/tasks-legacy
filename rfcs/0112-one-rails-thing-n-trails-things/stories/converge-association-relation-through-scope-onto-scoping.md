@@ -1,7 +1,7 @@
 ---
 title: "AssociationRelation create/build use scoping instead of the _pendingThroughScope field"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
@@ -9,8 +9,8 @@ deps: []
 deps-rfc: []
 est-loc: 140
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T16:34:34Z"
+assignee: "converge-association-relation-through-scope-onto-scoping"
 blocked-by: null
 closed-reason: null
 ---
