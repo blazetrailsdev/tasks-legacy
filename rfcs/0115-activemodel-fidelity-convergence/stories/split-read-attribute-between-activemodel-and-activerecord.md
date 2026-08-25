@@ -1,7 +1,7 @@
 ---
 title: "ActiveModel _read_attribute carries ActiveRecord's body"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
