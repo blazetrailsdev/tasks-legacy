@@ -1,6 +1,6 @@
 ---
 title: "acquire_connection owns the blocking queue wait, as connection_pool.rb:862 does"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 150
 priority: null
-pr: null
+pr: 7056
 claim: "2026-08-25T17:17:28Z"
 assignee: "converge-token-for-class-attribute-stores"
 blocked-by: null
