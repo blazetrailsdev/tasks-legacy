@@ -3,8 +3,8 @@ rfc: "0101-activesupport-out-of-closure-surface"
 title: "activesupport out-of-closure surface: cache stores and XmlMini"
 status: postponed
 created: 2026-08-12
-updated: 2026-08-17
-owner: "@your-handle"
+updated: 2026-08-25
+owner: "@deanmarano"
 packages:
   - "activesupport"
 clusters: []

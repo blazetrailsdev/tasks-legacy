@@ -98,14 +98,14 @@
 | [0093-proxy-dynamic-method-consistency](rfcs/0093-proxy-dynamic-method-consistency/README.md) | Proxy dynamic-method consistency | draft | @deanmarano | activerecord, activemodel |
 | [0094-sqlite3-adapter-construction-fidelity](rfcs/0094-sqlite3-adapter-construction-fidelity/README.md) | SQLite3 adapter construction fidelity | draft | @deanmarano | activerecord |
 | [0095-call-argument-parity](rfcs/0095-call-argument-parity/README.md) | Call-argument parity (parity:api:calls:args) | closed | @deanmarano | activerecord, arel |
-| [0096-naming-identifier-burndown](rfcs/0096-naming-identifier-burndown/README.md) | Local/parameter identifier burndown (call-argument `naming` class) | active | @your-handle | activerecord, arel, activesupport, activemodel, i18n, trailties, globalid, did-you-mean |
+| [0096-naming-identifier-burndown](rfcs/0096-naming-identifier-burndown/README.md) | Local/parameter identifier burndown (call-argument `naming` class) | active | @deanmarano | activerecord, arel, activesupport, activemodel, i18n, trailties, globalid, did-you-mean |
 | [0097-parity-output-sharding](rfcs/0097-parity-output-sharding/README.md) | Per-source-file sharding for parity registers and artifacts | draft | @deanmarano | — |
-| [0098-activesupport-ar-closure-port](rfcs/0098-activesupport-ar-closure-port/README.md) | activesupport AR-closure porting | closed | @your-handle | activesupport |
+| [0098-activesupport-ar-closure-port](rfcs/0098-activesupport-ar-closure-port/README.md) | activesupport AR-closure porting | closed | @deanmarano | activesupport |
 | [0099-call-argument-convergence](rfcs/0099-call-argument-convergence/README.md) | Call-argument convergence burndown (activerecord + deps) | closed | @deanmarano | activerecord, arel, activemodel, activesupport, i18n, globalid |
 | [0100-package-size-and-publish-shape](rfcs/0100-package-size-and-publish-shape/README.md) | Package size and publish shape | draft | @deanmarano | activerecord, activemodel, activesupport, arel, date, i18n, globalid, did-you-mean |
-| [0101-activesupport-out-of-closure-surface](rfcs/0101-activesupport-out-of-closure-surface/README.md) | activesupport out-of-closure surface: cache stores and XmlMini | postponed | @your-handle | activesupport |
-| [0102-adapter-version-reader-fidelity](rfcs/0102-adapter-version-reader-fidelity/README.md) | Adapter version and column-reflection reader fidelity | closed | @your-handle | activerecord |
-| [0103-parity-api-scoring-correctness](rfcs/0103-parity-api-scoring-correctness/README.md) | parity:api scoring correctness residue | closed | @your-handle | — |
+| [0101-activesupport-out-of-closure-surface](rfcs/0101-activesupport-out-of-closure-surface/README.md) | activesupport out-of-closure surface: cache stores and XmlMini | postponed | @deanmarano | activesupport |
+| [0102-adapter-version-reader-fidelity](rfcs/0102-adapter-version-reader-fidelity/README.md) | Adapter version and column-reflection reader fidelity | closed | @deanmarano | activerecord |
+| [0103-parity-api-scoring-correctness](rfcs/0103-parity-api-scoring-correctness/README.md) | parity:api scoring correctness residue | closed | @deanmarano | — |
 | [0104-twitter-app-full-stack-integration](rfcs/0104-twitter-app-full-stack-integration/README.md) | First full-stack trails application: route to rendered HTML | draft | @deanmarano | actionpack, actionview, trailties, tse-compiler, activerecord, activerecord-cli |
 | [0105-ar-deps-test-parity-100](rfcs/0105-ar-deps-test-parity-100/README.md) | ActiveRecord + dependencies to 100% on the test-compare gate | active | @deanmarano | activerecord, activesupport, activemodel, date, i18n, arel, globalid, did-you-mean |
 | [0106-wide-call-set-direct-burndown](rfcs/0106-wide-call-set-direct-burndown/README.md) | Wide call-set direct burndown (activerecord, arel, activesupport) | superseded | @deanmarano | activerecord, arel, activesupport |
@@ -119,10 +119,10 @@
 | [0114-collection-proxy-decomposition](rfcs/0114-collection-proxy-decomposition/README.md) | collection-proxy.ts decomposition: converge the proxy back onto its association | closed | @deanmarano | activerecord |
 | [0115-activemodel-fidelity-convergence](rfcs/0115-activemodel-fidelity-convergence/README.md) | activemodel package-wide fidelity convergence and line-bloat burndown | active | @deanmarano | activemodel, activerecord, activesupport, actionview |
 | [0116-activejob-dependent-activerecord-work](rfcs/0116-activejob-dependent-activerecord-work/README.md) | ActiveJob-dependent ActiveRecord work: the dependent: :destroy_async closure | draft | @deanmarano | activerecord |
-| [0117-arel-extra-surface-burndown](rfcs/0117-arel-extra-surface-burndown/README.md) | arel extra TS surface burndown to zero | closed | @your-handle | arel |
+| [0117-arel-extra-surface-burndown](rfcs/0117-arel-extra-surface-burndown/README.md) | arel extra TS surface burndown to zero | closed | @deanmarano | arel |
 | [0118-rfc-story-cap-and-succession](rfcs/0118-rfc-story-cap-and-succession/README.md) | Open-story pressure signal and a supersede that carries stories | draft | @deanmarano | — |
 | [0119-connection-adapter-fidelity](rfcs/0119-connection-adapter-fidelity/README.md) | Connection-adapter fidelity — converge connection_adapters/ onto the Rails tree | draft | @deanmarano | activerecord |
 | [0120-extra-surface-gating-rollout](rfcs/0120-extra-surface-gating-rollout/README.md) | Extra-surface gating rollout: an enrollment contract for parity:api:extra | draft | @deanmarano | arel, globalid, abstractcontroller, i18n, activerecord |
 | [0121-internal-tag-accounting](rfcs/0121-internal-tag-accounting/README.md) | Constrain @internal to Rails-private surface; account for the rest | draft | @deanmarano | activerecord, actionpack, activemodel, activesupport, actionview, arel, trailties |
-| [0122-arel-assertion-parity](rfcs/0122-arel-assertion-parity/README.md) | arel assertion parity to zero | active | @your-handle | arel |
+| [0122-arel-assertion-parity](rfcs/0122-arel-assertion-parity/README.md) | arel assertion parity to zero | active | @deanmarano | arel |
 | [0123-blocked-convergence-holding](rfcs/0123-blocked-convergence-holding/README.md) | Holding epic: blocked convergence work carried from RFCs 0078 / 0096 / 0106 / 0107 | active | @deanmarano | activerecord, activemodel, arel, activesupport |

@@ -3,8 +3,8 @@ rfc: "0102-adapter-version-reader-fidelity"
 title: "Adapter version and column-reflection reader fidelity"
 status: closed
 created: 2026-08-12
-updated: 2026-08-13
-owner: "@your-handle"
+updated: 2026-08-25
+owner: "@deanmarano"
 packages:
   - "activerecord"
 clusters: []

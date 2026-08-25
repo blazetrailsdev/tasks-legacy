@@ -3,8 +3,8 @@ rfc: "0117-arel-extra-surface-burndown"
 title: "arel extra TS surface burndown to zero"
 status: closed
 created: 2026-08-22
-updated: 2026-08-23
-owner: "@your-handle"
+updated: 2026-08-25
+owner: "@deanmarano"
 packages:
   - "arel"
 clusters: []

@@ -4,7 +4,7 @@ title: "Local/parameter identifier burndown (call-argument `naming` class)"
 status: active
 created: 2026-08-10
 updated: 2026-08-25
-owner: "@your-handle"
+owner: "@deanmarano"
 packages:
   - activerecord
   - arel

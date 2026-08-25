@@ -3,8 +3,8 @@ rfc: "0103-parity-api-scoring-correctness"
 title: "parity:api scoring correctness residue"
 status: closed
 created: 2026-08-12
-updated: 2026-08-13
-owner: "@your-handle"
+updated: 2026-08-25
+owner: "@deanmarano"
 packages: []
 clusters: []
 priority: 2

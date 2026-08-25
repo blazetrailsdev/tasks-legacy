@@ -3,8 +3,8 @@ rfc: "0122-arel-assertion-parity"
 title: "arel assertion parity to zero"
 status: active
 created: 2026-08-24
-updated: 2026-08-24
-owner: "@your-handle"
+updated: 2026-08-25
+owner: "@deanmarano"
 packages:
   - "arel"
 clusters: []
