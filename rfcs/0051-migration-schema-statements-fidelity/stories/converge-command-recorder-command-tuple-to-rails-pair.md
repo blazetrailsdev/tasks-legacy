@@ -1,6 +1,6 @@
 ---
 title: "inverseOf and _commands carry Rails' [method, args] pair, not a { cmd, args } object"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 260
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T00:30:08Z"
+assignee: "relocate-model-name-to-naming-module"
 blocked-by: null
 closed-reason: null
 ---

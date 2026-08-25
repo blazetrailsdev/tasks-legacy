@@ -1,7 +1,7 @@
 ---
 title: "relocate-model-name-to-naming-module"
-status: ready
-updated: 2026-08-24
+status: claimed
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T00:30:08Z"
+assignee: "relocate-model-name-to-naming-module"
 blocked-by: null
 closed-reason: null
 ---

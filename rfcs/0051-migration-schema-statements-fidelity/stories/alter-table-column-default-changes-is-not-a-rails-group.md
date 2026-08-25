@@ -1,7 +1,7 @@
 ---
 title: "AlterTable's columnDefaultChanges group is a trails invention — route default changes through ChangeColumnDefaultDefinition"
-status: ready
-updated: 2026-08-24
+status: claimed
+updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: 30
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T00:30:08Z"
+assignee: "relocate-model-name-to-naming-module"
 blocked-by: null
 closed-reason: null
 ---
