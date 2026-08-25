@@ -1,6 +1,6 @@
 ---
 title: "SQLite3 indexes sorts PRAGMA index_info rows by seqno; Rails maps them in PRAGMA order"
-status: ready
+status: draft
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
