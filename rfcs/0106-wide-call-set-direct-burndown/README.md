@@ -265,3 +265,16 @@ decisions instead of re-deriving them.
   `DEFAULT_ENV` rows were repointed off the **closed**
   `port-connection-handling-default-env-proc` onto its live successor
   `converge-establish-connection-default-env-funnel`.
+
+## Closed 2026-08-25 — superseded by 0123-blocked-convergence-holding
+
+Every story here had shipped or been closed except 3, and all 3 were
+**blocked** — nothing was pickup-able, so the RFC could not make progress under
+its own ownership.
+
+Those 3 stories — align-collect-calls-filter-with-ruby-extractor, converge-get-primary-key-lease-free-schema-cache-reads and mysql2-execute-batch-routes-through-raw-execute — were carried into
+`0123-blocked-convergence-holding`, a holding epic, with their blocked status,
+blocker reasons, priorities, deps and est-loc intact. Their slugs are preserved
+verbatim, so cross-RFC dep references still resolve. Nothing was ratified,
+re-justified or dropped; see that RFC's README for the blocker groupings and for
+which blockers now read stale.

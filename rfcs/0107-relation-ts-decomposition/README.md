@@ -231,3 +231,16 @@ before F2 and F3, since both feed the builder.
 Ordering: **F5 → F6 → F1 → F2 → F3 → F4**, with F4 last because its blast
 radius (every sibling module reads the private fields) is widest and it is
 cheapest once the file has stopped moving.
+
+## Closed 2026-08-25 — superseded by 0123-blocked-convergence-holding
+
+Every story here had shipped or been closed except 4, and all 4 were
+**blocked** — nothing was pickup-able, so the RFC could not make progress under
+its own ownership.
+
+Those 4 stories — port-with-connection-acquisition-seam-for-the-arel-reader, converge-sync-eager-builders-async-to-sql, converge-excluding-deferred-ids-marker-to-eager-materialization and load-async-bypasses-exec-queries-prerequisites — were carried into
+`0123-blocked-convergence-holding`, a holding epic, with their blocked status,
+blocker reasons, priorities, deps and est-loc intact. Their slugs are preserved
+verbatim, so cross-RFC dep references still resolve. Nothing was ratified,
+re-justified or dropped; see that RFC's README for the blocker groupings and for
+which blockers now read stale.
