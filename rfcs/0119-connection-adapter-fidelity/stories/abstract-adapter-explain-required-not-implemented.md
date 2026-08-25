@@ -1,6 +1,6 @@
 ---
 title: "Make abstract adapter #explain a required NotImplementedError member, not an optional type slot"
-status: in-progress
+status: blocked
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -12,7 +12,7 @@ priority: null
 pr: 7041
 claim: "2026-08-25T15:30:56Z"
 assignee: "port-attribute-method-pattern-match-struct"
-blocked-by: null
+blocked-by: "Blocked on schema-statements-host-type-inherits-adapter-surface: interface SchemaStatements extends DatabaseAdapter (abstract/schema-statements.ts:313) republishes every REQUIRED adapter member as extra surface, so flipping explain? to explain moves activerecord 1392->1393 and reds parity:api:extra:gate. The NotImplementedError base body landed in #7041; the required-member half waits on that inheritance being removed."
 closed-reason: null
 ---
 
