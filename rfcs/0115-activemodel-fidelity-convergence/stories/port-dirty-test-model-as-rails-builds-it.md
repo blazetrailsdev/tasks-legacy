@@ -1,7 +1,7 @@
 ---
 title: "Port dirty_test.rb's DirtyModel as Rails builds it, so the file exercises ForcedMutationTracker"
-status: draft
-updated: 2026-08-24
+status: ready
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
