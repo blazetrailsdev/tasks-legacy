@@ -2,7 +2,7 @@
 title: "Port activerecord-cli's tsc-wrapper to the TS 7 API"
 status: ready
 updated: 2026-08-25
-rfc: "0000-typescript-7-reevaluation"
+rfc: "0000-typescript-7-ground-floor"
 cluster: build-infra
 packages: ["activerecord-cli"]
 deps: []
@@ -17,7 +17,7 @@ blocked-by: null
 
 ## Context
 
-Per RFC `0000-typescript-7-reevaluation`'s API-surface mapping (2026-08-25),
+Per RFC `0000-typescript-7-ground-floor`'s API-surface mapping (2026-08-25),
 `activerecord-cli`'s `tsc-wrapper` is **not** the blocker — it is plausibly
 migratable on TS 7.1. Its compiler use, by file:
 

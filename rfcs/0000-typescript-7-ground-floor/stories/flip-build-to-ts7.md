@@ -1,8 +1,8 @@
 ---
 title: "Flip the pinned typescript to 7.x and drop TypeScript 5.x"
-status: blocked
+status: draft
 updated: 2026-08-25
-rfc: "0000-typescript-7-reevaluation"
+rfc: "0000-typescript-7-ground-floor"
 cluster: build-infra
 packages:
   ["activerecord", "activesupport", "activemodel", "trailties", "trails-tsc", "activerecord-cli"]
@@ -18,12 +18,12 @@ priority: null
 pr: null
 claim: null
 assignee: null
-blocked-by: "Depends on port-trails-tsc-to-ts7-api, which is itself blocked on TS 7 shipping a programmatic --build and LS plugin hosting. Also requires TS 7.1 stable (scheduled 2026-11-10)."
+blocked-by: null
 ---
 
 ## Context
 
-The terminal story of RFC `0000-typescript-7-reevaluation`. Once no package
+The terminal story of RFC `0000-typescript-7-ground-floor`. Once no package
 needs the TypeScript 5.x programmatic API, the migration is a **single-compiler
 swap with no split env** — which is the only form the maintainer has not
 rejected.
@@ -49,8 +49,10 @@ is expected to be inert — confirm it rather than assume it (RFC open question 
 
 ## Acceptance criteria
 
-- [ ] Root `package.json` pins `typescript` at an exact 7.x; no package declares
-      a 5.x dependency or peer range that resolves to 5.x.
+- [ ] Root `package.json` pins `typescript` at an exact 7.x.
+- [ ] The only remaining 5.x resolution is `@blazetrails/trails-tsc`'s, via an
+      explicit alias (e.g. `typescript-5@npm:typescript@5.9.3`), scoped to its
+      views pipeline and documented at the declaration.
 - [ ] `pnpm build`, `pnpm typecheck`, `pnpm test:types:virtualized` and
       `pnpm guides:typecheck` are green.
 - [ ] The `.d.ts` shape delta versus the last 5.9.3 build is reviewed file by
@@ -65,13 +67,15 @@ is expected to be inert — confirm it rather than assume it (RFC open question 
 
 ## Definition of done
 
-A flip that leaves any `typescript` 5.x in the lockfile does not close this
-story — the whole point is that there is exactly one compiler.
+A flip that leaves 5.x resolving for any package **other than**
+`@blazetrails/trails-tsc` does not close this story. `trails-tsc`'s aliased 5.x
+is expected and scoped (RFC § Non-goals); anything beyond it is the split this
+RFC is avoiding.
 
 ## Verification
 
 ```bash
-pnpm why typescript            # expect exactly one 7.x entry
+pnpm why typescript            # expect 7.x everywhere except trails-tsc's alias
 pnpm build && pnpm typecheck
 pnpm test:types:virtualized
 pnpm parity:api:calls && pnpm parity:api:calls:args && pnpm parity:api:extra:gate

@@ -2,7 +2,7 @@
 title: "Fix TS4094 declaration emit on Application's anonymous executor/reloader classes"
 status: ready
 updated: 2026-08-25
-rfc: "0000-typescript-7-reevaluation"
+rfc: "0000-typescript-7-ground-floor"
 cluster: build-infra
 packages: ["trailties"]
 deps: []
@@ -42,7 +42,7 @@ packages/trailties/src/application.ts(45,12): error TS4094: …
 `.d.ts` for an exported anonymous class expression that inherits them. This is
 the **only** diagnostic difference between TS 5.9.3 and TS 7.0.2 across all 18
 projects and 3,472 `.ts` files (measured 2026-08-25, RFC
-`0000-typescript-7-reevaluation` § "The spike"), and it is the one thing that
+`0000-typescript-7-ground-floor` § "The spike"), and it is the one thing that
 makes `trailties/dist/application.d.ts` fail to emit under TS 7.
 
 Worth fixing on its own merits regardless of whether trails ever adopts TS 7:

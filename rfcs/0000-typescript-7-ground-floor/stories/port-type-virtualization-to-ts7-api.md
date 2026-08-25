@@ -2,7 +2,7 @@
 title: "Port activerecord's type-virtualization to the TS 7 API"
 status: ready
 updated: 2026-08-25
-rfc: "0000-typescript-7-reevaluation"
+rfc: "0000-typescript-7-ground-floor"
 cluster: build-infra
 packages: ["activerecord"]
 deps: []
@@ -23,7 +23,7 @@ plus `scripts/materialize-model-declares.ts` and a test). It uses
 `createSourceFile`, `createScanner`, `getLeadingCommentRanges`, `getModifiers`,
 `canHaveModifiers`, `forEachChild` and ~20 node type guards.
 
-RFC `0000-typescript-7-reevaluation` found this package while re-checking the
+RFC `0000-typescript-7-ground-floor` found this package while re-checking the
 consumer count — #59's framing named only `trails-tsc` and `activerecord-cli`,
 and this one was missed. It is one of four packages that would otherwise force a
 split environment, and per the RFC's § "What the virtual FS closes" it is

@@ -2,7 +2,7 @@
 title: "Port trails-tsc to the TS 7 API (the split-env blocker)"
 status: blocked
 updated: 2026-08-25
-rfc: "0000-typescript-7-reevaluation"
+rfc: "0000-typescript-7-ground-floor"
 cluster: build-infra
 packages: ["trails-tsc"]
 deps: ["recheck-ts7-api-surface"]
@@ -17,7 +17,16 @@ blocked-by: "No TS 7 equivalent for programmatic --build (createSolutionBuilder)
 
 ## Context
 
-This is **the** blocker described in RFC `0000-typescript-7-reevaluation`.
+**Not on the ground-floor path (2026-08-25).** `@blazetrails/trails-tsc`
+publishes only the `trails-tsc-views` bin, serving the TSE views pipeline, which
+is roadmap-stage (ActionView 8.2% of API surface, P3). The user-facing
+`trails-tsc` typecheck bin belongs to `activerecord-cli`, not this package —
+`src/cli.ts:6-10` says otherwise and is stale. So this package keeps a pinned
+5.x and does **not** block declaring TypeScript 7 as trails' floor.
+
+## Original context
+
+This is **the** blocker described in RFC `0000-typescript-7-ground-floor`.
 `trails-tsc` is the single package that forces a split TS 5.x + TS 7
 environment, which is the shape the maintainer rejected on
 [tasks PR #59](https://github.com/blazetrailsdev/tasks/pull/59) (2026-07-22:

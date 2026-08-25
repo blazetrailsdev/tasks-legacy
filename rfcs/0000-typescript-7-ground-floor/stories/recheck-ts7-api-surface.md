@@ -2,7 +2,7 @@
 title: "Re-check the TS 7 API surface against trails-tsc at 7.1 beta"
 status: blocked
 updated: 2026-08-25
-rfc: "0000-typescript-7-reevaluation"
+rfc: "0000-typescript-7-ground-floor"
 cluster: build-infra
 packages: ["trails-tsc", "activerecord-cli"]
 deps: []
@@ -17,7 +17,7 @@ blocked-by: "TypeScript 7.1 beta — scheduled 2026-09-09 (microsoft/TypeScript#
 
 ## Context
 
-RFC `0000-typescript-7-reevaluation` recommends waiting on TS 7.1 and names
+RFC `0000-typescript-7-ground-floor` recommends waiting on TS 7.1 and names
 exactly two gaps that keep `trails-tsc` on TypeScript 5.x — and therefore keep
 any TS 7 adoption a "split env", which the maintainer rejected on
 [tasks PR #59](https://github.com/blazetrailsdev/tasks/pull/59) (2026-07-22):

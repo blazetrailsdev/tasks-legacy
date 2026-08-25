@@ -1,6 +1,6 @@
 ---
-rfc: "0000-typescript-7-reevaluation"
-title: "TypeScript 7 re-evaluation: measured cost of waiting, and the remaining blocker"
+rfc: "0000-typescript-7-ground-floor"
+title: "Make TypeScript 7 the ground-floor version for trails"
 status: draft
 created: 2026-08-25
 updated: 2026-08-25
@@ -17,42 +17,87 @@ clusters:
   - "developer-experience"
 ---
 
-<!-- Unnumbered until merge: dir stays `0000-typescript-7-reevaluation`,
+<!-- Unnumbered until merge: dir stays `0000-typescript-7-ground-floor`,
      `rfc:` stays `0000-...`, H1 stays number-free.
      `scripts/finalize-rfc.mjs` assigns the number at merge. -->
 
-# RFC — TypeScript 7 re-evaluation: measured cost of waiting, and the remaining blocker
+# RFC — Make TypeScript 7 the ground-floor version for trails
 
 ## Recommendation
 
-**Wait. Do not migrate yet.** Re-evaluate at **TypeScript 7.1 beta
-(2026-09-09)** and decide at **7.1 stable (target 2026-11-10)**.
+**Proceed. Declare TypeScript 7 the ground-floor version for trails, on
+7.0.2, now.** No split environment, no wait for 7.1.
 
-The named condition is narrower than it was in July, and now has exactly two
-items, both owned by `trails-tsc`:
+This reverses the framing of the closed [tasks PR #59][pr59], which asked
+"should we migrate our build to TS 7?" — a tooling question whose measured
+answer is "the benefit is modest" (§ Motivation). The question that matters is
+**what TypeScript can a trails user target**, and there the answer is sharp:
+today, trails is TS 7-hostile. Two published packages declare
+`typescript: "^5.0.0"` peers that a TS 7 user's install resolves against, and a
+third declares `>=5.0.0` while shipping a subpath that cannot work on TS 7 at
+all. That is our floor, and it is stated wrongly.
 
-1. A programmatic **`--build` / solution-builder** equivalent
-   (`createSolutionBuilder`, `createSolutionBuilderHost`,
-   `createEmitAndSemanticDiagnosticsBuilderProgram`).
-2. **Language-Service plugin hosting** — a way to inject a host and decorate a
-   `LanguageService`, which is what `trails-tsc`'s `./ts-plugin` export is.
+The blocker that closed #59 turns out not to sit on this path. `trails-tsc`'s
+two irreducible gaps — programmatic `--build` and Language-Service plugin
+hosting — serve the **`trails-tsc-views` / TSE views pipeline**, which is
+roadmap-stage (ActionView is 8.2% of API surface, P3, per `docs/index.md`), not
+shipped DX. Every surface a trails user touches today is either already TS
+7-clean or migratable on 7.0.2, verified by probe rather than inference:
 
-Neither exists in TS 7.0.2 or in the 7.1 nightly as of 2026-08-25, and neither
-appears as a line item in the TS 7.1 iteration plan. Until they land, adopting
-TS 7 still requires pinning TypeScript 5.x alongside it — the **split env** the
-maintainer rejected on [tasks PR #59][pr59] (2026-07-22: _"Not interested in the
-split env, will wait for native APIs in v7."_). That objection is unchanged in
-kind, but its scope changed. Four packages import the compiler API, not two —
-and **two of them can migrate today, on 7.0.2**, independent of this decision
-(see § "What the virtual FS closes"). After that work, the split would be
-`trails-tsc` alone (plus `trailties` until 7.1).
+| user-facing surface                                       | owner              | TS 7 status                                                           |
+| --------------------------------------------------------- | ------------------ | --------------------------------------------------------------------- |
+| published `.d.ts` for all 17 packages                     | all                | ✅ **already clean** — 14 of 3,338 files differ, all benign (§ spike) |
+| `trails-tsc` typecheck bin — the app's `typecheck` script | `activerecord-cli` | ✅ **migratable on 7.0.2** — virtual FS closes it                     |
+| `activerecord` `./type-virtualization/*` subpath          | `activerecord`     | ✅ migratable on 7.0.2 (published; carries a design call)             |
+| `trails` CLI                                              | `trailties`        | ✅ unaffected                                                         |
+| `./template-builder/testing` `parseTs()`                  | `trailties`        | ✅ **migratable on 7.0.2** — reimplemented and verified               |
+| three `typescript` peer ranges                            | 3 packages         | ❌ **actively wrong today** — this is the floor                       |
+| `trails-tsc-views` / TSE views                            | `trails-tsc`       | ❌ blocked — **roadmap-stage, not on the ground-floor path**          |
 
-This is a decision record, not a migration plan. It ships so the next
-re-evaluation starts from measured data instead of redoing this work. The one
-piece of work it does schedule is a single unblocking fix
-(`fix-anonymous-class-declaration-emit`) that is worth doing on its own merits.
+So the ground-floor move is: fix the peer ranges to say TS 7, port the two
+parse-and-walk consumers, reimplement one 12-line helper, and leave
+`trails-tsc`'s views pipeline on a pinned 5.x until its upstream gaps close.
 
-## Motivation — what we actually pay for not upgrading
+**Is that a split environment?** Only in the narrow sense that one
+roadmap-stage package keeps a 5.x dependency. It is not the shape #59 proposed
+and the maintainer rejected: there, the split was permanent, load-bearing, and
+sat under the shipped DX. Here the shipped DX is entirely TS 7 and the residue
+is a package whose blocked feature is not yet a product. If that distinction
+does not hold for the reviewer, the fallback is to defer only
+`port-type-virtualization-to-ts7-api` and still fix the peer ranges — the floor
+declaration is the part that has to be right regardless.
+
+### A correction worth surfacing
+
+`packages/trails-tsc/src/cli.ts:6-10` says `activerecord` publishes the
+user-facing `trails-tsc` bin. It does not — **`activerecord-cli` does**
+(`bin/trails-tsc.js`). The example app's `typecheck` script resolves to
+`activerecord-cli`'s tsc-wrapper, which is the migratable one. The blocked
+package (`@blazetrails/trails-tsc`) publishes only `trails-tsc-views`. This
+distinction is load-bearing for the whole recommendation, and the stale comment
+is what obscured it.
+
+## Motivation — the floor is stated wrongly today
+
+The primary motivation is correctness of our published contract, not speed.
+Three of the 17 published packages declare a `typescript` peer dependency, and
+all three are wrong for a TS 7 user (verified 2026-08-25):
+
+| package                     | declared peer | reality                                                                                                                    |
+| --------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `@blazetrails/trails-tsc`   | `^5.0.0`      | **excludes TS 7** — a TS 7 user gets a peer conflict                                                                       |
+| `@blazetrails/trailties`    | `^5.0.0`      | **excludes TS 7** — but nothing in it actually needs 5.x                                                                   |
+| `@blazetrails/activerecord` | `>=5.0.0`     | **admits TS 7 and then fails** — `./type-virtualization/*` needs `ts.createSourceFile`-from-text, which TS 7 does not have |
+
+`activerecord`'s is the worst of the three: the range invites a TS 7 user in and
+the subpath then cannot work. That is a bug in the published contract today,
+independent of any migration.
+
+The rest of this section is the _secondary_ case — the internal cost of staying
+on 5.x. It is included because #59 asserted it without measuring, and because a
+future reader deserves the real numbers. It is **not** the argument for this RFC.
+
+### What we actually pay for not upgrading
 
 RFC #59 asserted that typecheck is "the CI long pole" and that the cold
 pre-commit path costs "~60s". **Both claims are wrong.** They were never
@@ -137,14 +182,17 @@ a measurement.
 `scripts/typecheck.mjs` is a 29-line wrapper that does nothing but
 `spawnSync(tsc, ["--build"])`, so its cost is exactly `tsc --build`'s.
 
-### Editor cost — **unmeasured**
+### Editor cost — **unmeasured, and deliberately postponed**
 
 `packages/activerecord/src` is 165,308 non-test LOC (`find … -name '*.ts' -not
 -name '*.test.ts' | xargs cat | wc -l`, 2026-08-25), dwarfing the next package
 (`activesupport`, 40,356). Open-to-ready and "loading…" latency in an editor
 were **not measured** — this work ran headless and any number would be a guess.
-It is the most plausible remaining benefit and the one we have no data on.
-`measure-editor-ls-latency` (below) exists to close that gap.
+No `tsconfig` in this repo declares a `plugins` array and there is no
+`.vscode/settings.json`, so the TSE language-service plugin is not wired into
+any editor today — there is no integration to regress or improve yet. The
+measurement is parked with the views pipeline (`measure-editor-ls-latency`,
+status `draft`) and is not part of the ground-floor case.
 
 ### The agent-fleet multiplier
 
@@ -173,7 +221,7 @@ pays the incremental path, but there is no instrumentation recording hook
 invocations (including the ones that never reach a commit), so multiplying
 55 × 8s would be a fabricated number rather than a measured one.
 
-### Summary of the cost of waiting
+### Summary: the secondary case
 
 | Axis              | Cost of staying on TS 5.9.3                                 |
 | ----------------- | ----------------------------------------------------------- |
@@ -184,9 +232,10 @@ invocations (including the ones that never reach a commit), so multiplying
 | Host contention   | real but small: ~0.9 CPU-hours/week, concentrated in bursts |
 | Editor latency    | **unmeasured** — the likeliest real win, and the open gap   |
 
-This is a genuine but modest cost. It does not justify a split environment. It
-would comfortably justify a clean single-compiler migration once one is
-possible.
+This is a genuine but modest cost, and on its own it would not justify much of
+anything. It is not why this RFC recommends proceeding — the published contract
+being wrong is (§ Motivation). Read this section as the answer to "what do we
+also get", not "why do this".
 
 ## Design — what shipped since 2026-07-08
 
@@ -492,10 +541,18 @@ fear, not a measurement; the real thing is a 15-file allowlist.
 
 ## Non-goals
 
-- **Migrating `trails-tsc` to a TS 7 API.** Impossible today: no programmatic
-  `--build`, no LS plugin hosting. This is the blocker, not a task.
-- **Shipping a split TS 5.x + TS 7 environment.** Explicitly rejected by the
-  maintainer on [PR #59][pr59]. This RFC does not re-propose it.
+- **Migrating `@blazetrails/trails-tsc` to a TS 7 API.** Impossible today: no
+  programmatic `--build`, no LS plugin hosting (both measured, § "What it does
+  not close"). It keeps a pinned 5.x. This is **not** on the ground-floor path —
+  it publishes only `trails-tsc-views`, serving the roadmap-stage TSE views
+  pipeline.
+- **Re-proposing #59's split.** That split was permanent, load-bearing, and sat
+  under the shipped DX. This RFC puts the entire shipped DX on TS 7 and leaves a
+  5.x dependency only in a package whose blocked feature is not yet a product.
+- **Measuring or optimising editor / language-service latency.** Deliberately
+  postponed: the TSE language-service plugin is not wired into any `tsconfig` or
+  editor config in this repo, so there is no editor integration to regress or
+  improve yet. Revisit when the views pipeline ships.
 - **Building the dual-run diagnostic-parity gate from RFC #59.** The measured
   diagnostic delta is 2 errors in 1 file and the `.d.ts` delta is 14 files. A
   parity harness is disproportionate to a 15-row allowlist; if we migrate, the
@@ -510,95 +567,103 @@ fear, not a measurement; the real thing is a 15-file allowlist.
 
 ## Alternatives considered
 
-- **Migrate now, keep pinned TS 5.x for `trails-tsc` only.** This is RFC #59's
-  proposal, narrowed from two packages to one. Rejected: it is still a split
-  env, which is the stated objection, and the measured benefit (zero PR
-  wall-clock, ~8.9 runner-hours/week) does not buy off two compilers in one
-  repo.
+- **Wait for TS 7.1 (2026-11-10) and migrate everything at once.** This was
+  this RFC's own recommendation until the user-facing surface was examined.
+  Rejected: it leaves three published peer ranges wrong for eleven more weeks,
+  and nothing on the ground-floor path actually needs 7.1 — `parseTs()`, the
+  last apparent 7.1 dependency, was reimplemented on 7.0.2 and verified.
+- **#59's proposal: flip the build, pin 5.x for the API consumers.** Rejected
+  for the reason it was rejected the first time — that split was permanent,
+  load-bearing, and sat under the shipped DX. It also inverts the priority: it
+  optimises our build while leaving the published contract wrong.
+- **Fix only the peer ranges, port nothing.** Narrow `activerecord` to `^5.0.0`
+  and admit trails is a TS 5 framework. Honest and nearly free, and it remains
+  the fallback if the reviewer rejects the residual 5.x in `trails-tsc`. Not
+  preferred: it makes a temporary tooling gap into a stated product limit, when
+  three of the four consumers can move today.
 - **Rewrite `trails-tsc` to not need the compiler API** — drop the LS plugin,
-  shell out to `tsc --build` instead of driving the solution builder.
-  Rejected as premature: it discards working DX tooling to chase a benefit
-  we have now measured as modest, and 7.1 may make the rewrite unnecessary or
-  much smaller. Worth reconsidering only if 7.1 ships without the two gaps
-  closed.
+  shell out to `tsc --build`. Rejected, and now on measured grounds rather than
+  as premature: the shell-out is structurally impossible (§ "What it does not
+  close"), and the package is off the ground-floor path anyway, so the rewrite
+  buys nothing a pinned 5.x does not.
 - **Adopt TS 7 for CI only, keep TS 5.x locally.** Rejected: drift between what
-  CI checks and what developers check, in exchange for the one axis (runner
-  minutes) with the smallest payoff.
-- **Do nothing and do not write this down.** Rejected: that is what produced a
-  13-month-stale RFC whose central claim had to be re-derived from scratch. The
-  decision record _is_ the deliverable.
+  CI checks and what developers check, for the axis with the smallest payoff.
 
 ## Rollout
 
-Only one story is `ready`. The rest are `blocked` on a dated external event and
-exist so the re-evaluation is cheap rather than a from-scratch redo.
+Ordered so the published contract is correct first and the internal build
+follows. Every story branches from `main` and stands alone.
 
-1. **Now (unblocked, worth doing regardless of TS 7).**
-   - `fix-anonymous-class-declaration-emit` — fix the two TS4094 sites in
-     `trailties/src/application.ts`.
-   - `port-tsc-wrapper-to-ts7-api` — the virtual FS closes its only real gap on
-     7.0.2; no 7.1 wait.
-   - `port-type-virtualization-to-ts7-api` — same shape, but it is **published
-     surface**, so it carries a design decision the others do not.
+1. **Declare the floor.**
+   - `declare-typescript-7-peer-ranges` — fix the three wrong `typescript` peer
+     ranges and state the supported TypeScript in the README. This is the RFC's
+     headline change and the one that is wrong today regardless of everything
+     below.
 
-   Together these shrink the eventual split from four packages to one
-   (`trails-tsc`, plus `trailties` until 7.1) — worth doing whether or not we
-   ever adopt TS 7.
+2. **Make the shipped DX true on TS 7** (all three are 7.0.2, no 7.1 wait).
+   - `port-tsc-wrapper-to-ts7-api` — the user-facing `trails-tsc` typecheck bin.
+   - `port-type-virtualization-to-ts7-api` — published `activerecord` subpath;
+     carries the out-of-process / `unstable/` design call.
+   - `port-trailties-parsets-to-ts7-api` — reimplement `parseTs()` on
+     `getSyntacticDiagnostics`; already verified working.
 
-2. **At TS 7.1 beta, 2026-09-09 (the API surface freezes).**
-   - `recheck-ts7-api-surface` — re-run this RFC's API-surface mapping against
-     the 7.1 beta and record the verdict for `trails-tsc`.
+3. **Unblock the internal build.**
+   - `fix-anonymous-class-declaration-emit` — the two TS4094 sites, the only
+     diagnostic standing between `tsc --build` and a clean TS 7 run.
+   - `flip-build-to-ts7` — swap the pinned `typescript`; `@blazetrails/trails-tsc`
+     keeps an aliased 5.x for its views pipeline.
 
-3. **At TS 7.1 stable, 2026-11-10 — gated on the two gaps closing.**
-   - `port-trails-tsc-to-ts7-api` — the blocker; only actionable if the
-     solution-builder and LS-plugin gaps close.
-   - `flip-build-to-ts7` — swap the pinned `typescript` and drop TS 5.x
-     entirely. Single-compiler, no split env.
-
-4. **Independent of the above.**
-   - `measure-editor-ls-latency` — close the one unmeasured axis.
+4. **Deferred, not scheduled.**
+   - `port-trails-tsc-to-ts7-api` — blocked upstream; revisit per
+     `recheck-ts7-api-surface`.
+   - `recheck-ts7-api-surface` — at 7.1 beta (2026-09-09), re-check the two gaps.
+   - `measure-editor-ls-latency` — postponed with the views pipeline.
 
 ## Verification
 
-This RFC is a decision record; its verification is that the decision is
-re-checkable, not that code changed.
-
-- **Unblocked work:** `pnpm build` under `typescript@7.0.2` produces **zero**
-  diagnostics across all 18 projects (today: 2). Verified by re-running the
-  spike after `fix-anonymous-class-declaration-emit`.
-- **Re-evaluation trigger:** `recheck-ts7-api-surface` closes with an explicit
-  yes/no on each of the two gaps, dated and sourced, by 2026-09-16.
-- **If we ever migrate:** exactly one `typescript` version resolves in the
-  workspace (`pnpm why typescript` shows a single 7.x), and no
-  `Build & Type Check` regression in the CI medians recorded above.
-- **Cost baseline for the next re-evaluation:** the numbers in Motivation are
-  reproducible by the recorded methods, on a host whose load average is stated
-  alongside the result.
+- **The floor is stated correctly.** No published package declares a
+  `typescript` peer range that admits a version it cannot work on. Concretely:
+  `pnpm -r exec node -p "require('./package.json').peerDependencies"` shows no
+  `^5.0.0`, and `activerecord`'s range matches what
+  `./type-virtualization/*` actually supports.
+- **The shipped DX runs on TS 7.** In a scratch project with only
+  `typescript@7.x` installed: `trails-tsc --noEmit -p tsconfig.json` succeeds
+  against `examples/twitter-clone`, and `parseTs()` from
+  `@blazetrails/trailties/template-builder/testing` returns the same diagnostics
+  it does on 5.9.3.
+- **The internal build is clean.** `tsc --build` under `typescript@7.x` produces
+  **zero** diagnostics across all 18 projects (today: 2).
+- **The 5.x residue is contained.** `pnpm why typescript` resolves 5.x only
+  under `@blazetrails/trails-tsc`; no other package, and no batch `tsc --build`
+  in CI or hooks, uses it.
+- **No consumer-visible type regression.** The `.d.ts` delta versus the last
+  5.9.3 build stays within the 14 files enumerated in § spike, each reviewed.
 
 ## Open questions
 
-1. **Does TS 7.1 ship a programmatic `--build`?** Not on the iteration plan, and
-   measurement confirms nothing today substitutes for it — the API's
-   explicitly-opened projects lack reference redirection (712 diagnostics vs
-   `--build`'s 2), up-to-date checking, ordering, and emit.
-   _Recommendation:_ ask upstream (`microsoft/TypeScript` discussion) before
-   7.1 beta prep on 2026-09-04, so the answer is known while it can still
-   influence 7.1 rather than 7.2.
-2. **Does TS 7.1's Language Service API admit plugins?** The plan lists
-   "Language Service API" with no plugin item, and the nightly's
-   `LanguageService` is a five-method server client. _Recommendation:_ same —
-   ask upstream, and treat a "no" as the trigger to seriously cost the
-   `trails-tsc` rewrite alternative.
-3. **What does TS 7 cost/save in the editor?** Unmeasured, and the likeliest
-   real win. _Recommendation:_ `measure-editor-ls-latency`, independent of
-   everything else here.
+1. **Does one roadmap-stage package keeping a 5.x dependency count as the split
+   that was rejected?** This is the reviewer's call and the RFC's main risk.
+   _Recommendation:_ it does not — the rejected split sat under the shipped DX,
+   this residue sits under an unshipped pipeline. If the reviewer disagrees, the
+   fallback is Rollout phase 1 alone (fix the peer ranges), which is correct
+   either way.
+2. **Should `activerecord`'s `type-virtualization` consume the TS 7 API at all?**
+   It is published surface, the API is out-of-process (~99ms spawn, where today's
+   parse is in-process), and it is exported under `unstable/` with no semver
+   guarantee. _Recommendation:_ decide inside
+   `port-type-virtualization-to-ts7-api`; "keep 5.x internally and narrow the
+   peer range" is a legitimate outcome that still fixes the floor.
+3. **What TypeScript floor do we actually promise — `>=7.0.0`, or a pinned
+   minor?** 7.0.2 is 48 days old with no patch, and 7.1 lands 2026-11-10.
+   _Recommendation:_ `>=7.0.0` on published peers; revisit if 7.1 breaks
+   something.
 4. **Does TS 7 retaining `@internal` in `.d.ts` affect our tooling?**
    `parity:api:extra` and `blazetrails/unbacked-internal-needs-receipt` read
    source, not emit, so probably not. _Recommendation:_ confirm during
    `flip-build-to-ts7`; not a blocker.
-5. **Are the CI runners hosted or self-hosted?** The $220/year figure assumes
-   GitHub-hosted list pricing. _Recommendation:_ confirm before quoting the
-   dollar figure anywhere; the runner-hours number stands either way.
+5. **Are the CI runners hosted or self-hosted?** Only affects the dollar figure
+   in § Motivation, which is secondary evidence. _Recommendation:_ confirm before
+   quoting it; the runner-hours number stands either way.
 
 ## Sources
 
@@ -627,6 +692,16 @@ dist-tags time`, queried 2026-08-25.
 
 ## Changelog
 
+- 2026-08-25: reframed from "should we migrate the build" to "make TS 7 the
+  ground floor". Renamed from `0000-typescript-7-reevaluation`. Recommendation
+  flipped from **wait** to **proceed on 7.0.2**: the three published
+  `typescript` peer ranges are wrong for TS 7 today, and every user-facing
+  surface is either already TS 7-clean or migratable on 7.0.2 (`parseTs()`
+  reimplemented and verified). Established that the `trails-tsc` blocker serves
+  `trails-tsc-views` / the roadmap-stage TSE pipeline, not shipped DX — and that
+  the user-facing `trails-tsc` bin belongs to `activerecord-cli`, not
+  `@blazetrails/trails-tsc` as `cli.ts:6-10` claims. Editor/LS work postponed
+  with the views pipeline.
 - 2026-08-25: revised after probing `typescript/unstable/fs`. Corrected the
   consumer count (four packages, not one — `activerecord`'s published
   `type-virtualization` and `trailties` were missed); corrected the
