@@ -1,6 +1,6 @@
 ---
 title: "rails-private-methods.json is keyed per-file, so one entity's private name over-tags unrelated same-named members"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0121-internal-tag-accounting"
 cluster: null
