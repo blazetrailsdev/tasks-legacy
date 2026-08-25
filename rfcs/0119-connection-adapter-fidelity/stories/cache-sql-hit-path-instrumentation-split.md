@@ -1,6 +1,6 @@
 ---
 title: "cacheSql: hit-path instrumentation and dup split out of Rails' single cache_sql"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -8,7 +8,7 @@ deps: []
 deps-rfc: []
 est-loc: 60
 priority: null
-pr: null
+pr: 7046
 claim: "2026-08-25T15:54:32Z"
 assignee: "converge-association-check-klass-onto-reflection-check-validity"
 blocked-by: null
