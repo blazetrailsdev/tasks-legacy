@@ -80,7 +80,7 @@
 | [0074-i18n-parity](rfcs/0074-i18n-parity/README.md) | i18n gem parity | closed | @deanmarano | i18n, activesupport, activemodel, activerecord, date |
 | [0075-collection-association-target-fidelity](rfcs/0075-collection-association-target-fidelity/README.md) | Collection association target-store fidelity | draft | @deanmarano | activerecord |
 | [0076-execute-primitive-convergence](rfcs/0076-execute-primitive-convergence/README.md) | execute/raw_execute/perform_query primitive convergence | draft | @deanmarano | activerecord |
-| [0077-quoting-binds-fidelity](rfcs/0077-quoting-binds-fidelity/README.md) | Adapter quoting and bind-param fidelity | draft | @deanmarano | activerecord, arel |
+| [0077-quoting-binds-fidelity](rfcs/0077-quoting-binds-fidelity/README.md) | Adapter quoting and bind-param fidelity | active | @deanmarano | activerecord, arel |
 | [0078-sti-schema-reflection-fidelity](rfcs/0078-sti-schema-reflection-fidelity/README.md) | STI / schema-reflection attribute-definition fidelity | superseded | @deanmarano | activerecord, activemodel |
 | [0079-drop-rebuild-canonical-tables](rfcs/0079-drop-rebuild-canonical-tables/README.md) | Drive rebuildCanonicalTables call sites to zero, then delete it | draft | @deanmarano | activerecord |
 | [0080-api-compare-jsdoc-metadata](rfcs/0080-api-compare-jsdoc-metadata/README.md) | api-compare JSDoc metadata: one tag family for calls parity and extra surface | closed | @deanmarano | activerecord, abstractcontroller, globalid, arel |
