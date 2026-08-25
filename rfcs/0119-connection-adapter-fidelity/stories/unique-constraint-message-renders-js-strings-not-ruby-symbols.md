@@ -1,6 +1,6 @@
 ---
 title: "uniqueConstraintForBang renders the column array as JS strings, not Ruby symbols"
-status: ready
+status: draft
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
