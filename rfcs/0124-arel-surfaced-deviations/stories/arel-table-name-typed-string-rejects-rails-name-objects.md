@@ -1,6 +1,6 @@
 ---
 title: "Arel::Table#name is typed string, rejecting the SqlLiteral/node names Rails accepts"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null
