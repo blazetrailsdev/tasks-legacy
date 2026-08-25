@@ -1,7 +1,7 @@
 ---
 title: "Port SQLite3 remove_foreign_key's own option comparison instead of reusing defined_for?"
-status: draft
-updated: 2026-07-27
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

@@ -1,7 +1,7 @@
 ---
 title: "port-dependencies-interlock-permit-concurrent-loads"
-status: draft
-updated: 2026-08-12
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

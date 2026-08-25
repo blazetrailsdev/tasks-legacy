@@ -1,7 +1,7 @@
 ---
 title: "commit_flash duck-types session.enabled? and folds Rails' second branch"
-status: draft
-updated: 2026-08-18
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: guard-parity
 packages: []

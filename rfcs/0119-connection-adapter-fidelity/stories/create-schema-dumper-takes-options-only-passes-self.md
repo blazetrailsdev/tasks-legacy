@@ -1,7 +1,7 @@
 ---
 title: "create_schema_dumper takes (source, options) where Rails takes (options) and passes self"
-status: draft
-updated: 2026-08-23
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

@@ -1,7 +1,7 @@
 ---
 title: "sqlite3 module-level schema/database-statements delegates duplicate the adapter and never run"
-status: draft
-updated: 2026-08-02
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

@@ -1,7 +1,7 @@
 ---
 title: "Numericality is_number?/option_as_number pre-coerce instead of letting parse_as_number dispatch"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 packages: []

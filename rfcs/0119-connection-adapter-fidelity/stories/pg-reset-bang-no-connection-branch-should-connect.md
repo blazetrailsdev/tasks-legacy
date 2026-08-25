@@ -1,7 +1,7 @@
 ---
 title: "PG resetBang's no-connection branch runs super where Rails returns connect!"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

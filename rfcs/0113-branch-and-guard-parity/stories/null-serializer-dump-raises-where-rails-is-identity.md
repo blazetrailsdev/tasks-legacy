@@ -1,7 +1,7 @@
 ---
 title: "NullSerializer.dump raises TypeError where Rails' is identity"
-status: draft
-updated: 2026-08-08
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 packages: []

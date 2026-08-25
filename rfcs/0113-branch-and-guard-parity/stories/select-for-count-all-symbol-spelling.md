@@ -1,7 +1,7 @@
 ---
 title: 'Spell select_for_count''s :all Symbol as ":all" instead of the SQL literal "*"'
-status: draft
-updated: 2026-08-15
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: guard-parity
 packages: []

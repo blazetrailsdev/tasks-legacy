@@ -1,7 +1,7 @@
 ---
 title: "converge-number-helper-percentage-currency-converters"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: guard-parity
 packages: []

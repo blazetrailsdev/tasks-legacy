@@ -1,7 +1,7 @@
 ---
 title: "sqlite3 check_constraints regex adds a quoted-name arm and caps nesting depth"
-status: draft
-updated: 2026-08-03
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

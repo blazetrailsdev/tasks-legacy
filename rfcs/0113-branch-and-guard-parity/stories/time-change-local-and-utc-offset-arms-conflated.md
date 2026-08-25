@@ -1,7 +1,7 @@
 ---
 title: "Time#change conflates the elsif zone and trailing utc_offset arms and drops isdst"
-status: draft
-updated: 2026-08-08
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 packages: []

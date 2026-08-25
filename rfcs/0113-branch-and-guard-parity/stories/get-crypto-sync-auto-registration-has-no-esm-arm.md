@@ -1,7 +1,7 @@
 ---
 title: "get-crypto-sync-auto-registration-has-no-esm-arm"
-status: draft
-updated: 2026-08-15
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 packages: []

@@ -1,7 +1,7 @@
 ---
 title: "Arel fetchAttribute's boolean-returning block protocol is a trails invention"
-status: draft
-updated: 2026-08-03
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 deps: []

@@ -1,7 +1,7 @@
 ---
 title: "Accept PostgreSQL::Name in quoteTableName and the pk-sequence callers"
-status: draft
-updated: 2026-08-02
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

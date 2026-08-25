@@ -1,7 +1,7 @@
 ---
 title: "Widen rails-file-structure-method-order to the connection-adapter tree"
-status: draft
-updated: 2026-08-24
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

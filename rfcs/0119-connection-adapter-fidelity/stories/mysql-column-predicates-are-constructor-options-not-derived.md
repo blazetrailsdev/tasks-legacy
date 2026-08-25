@@ -1,7 +1,7 @@
 ---
 title: "MySQL::Column takes unsigned/auto_increment/virtual/extra as constructor options where Rails derives them"
-status: draft
-updated: 2026-08-13
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

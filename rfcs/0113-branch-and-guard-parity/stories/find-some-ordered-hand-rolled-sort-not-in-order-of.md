@@ -1,7 +1,7 @@
 ---
 title: "find_some_ordered hand-rolls in_order_of and inverts Rails' branch order"
-status: draft
-updated: 2026-08-16
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 packages: []

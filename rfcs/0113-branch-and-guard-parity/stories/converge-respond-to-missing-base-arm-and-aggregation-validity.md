@@ -1,7 +1,7 @@
 ---
 title: "respondToMissing drops respond_to_missing?'s self == Base arm and Method#valid?'s reflect_on_aggregation"
-status: draft
-updated: 2026-08-05
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 deps: []
@@ -44,7 +44,7 @@ end
 
 Also unported in that file: `Method` / `FindBy` / `FindByBang`
 (`dynamic_matchers.rb:26, :93, :105`) and `method_missing` (`:15`).
-`dynamic_matchers.rb` is registered in `scripts/api-compare/unported-files.ts`
+`dynamic_matchers.rb` is registered in `scripts/parity/unported-files/`
 (its reason now notes the partial `respond_to_missing?` port), so none of this
 is scored by `parity:api` today.
 
@@ -58,7 +58,8 @@ is scored by `parity:api` today.
   baseline. No test renames.
 - Decide (and record in the PR) whether the `Method` / `FindBy` / `FindByBang`
   classes are portable at all in TS; if they are not, the
-  `unported-files.ts` reason is the place that says so, not a new register row.
+  `scripts/parity/unported-files/` reason is the place that says so, not a new
+  register row.
 
 ## Re-homed from `0023-surfaced-deviations` (2026-08-18)
 

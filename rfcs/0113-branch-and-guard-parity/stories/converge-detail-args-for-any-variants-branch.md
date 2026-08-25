@@ -1,7 +1,7 @@
 ---
 title: "detailArgsForAny drops Rails' variants: :any loop arm, which also blocks the details_cache_key call"
-status: draft
-updated: 2026-08-14
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: arm-order
 packages: []

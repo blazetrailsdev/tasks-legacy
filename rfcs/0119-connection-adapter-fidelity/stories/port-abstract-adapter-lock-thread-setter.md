@@ -1,7 +1,7 @@
 ---
 title: "Port AbstractAdapter#lock_thread= and free the lockThread name"
-status: draft
-updated: 2026-08-12
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

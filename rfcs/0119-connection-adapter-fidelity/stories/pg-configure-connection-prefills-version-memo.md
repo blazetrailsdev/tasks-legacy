@@ -1,7 +1,7 @@
 ---
 title: "PG configure_connection pre-fills the version memo instead of letting check_version fetch"
-status: draft
-updated: 2026-08-08
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

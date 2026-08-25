@@ -1,7 +1,7 @@
 ---
 title: "port load_async/FutureResult so DatabaseStatements#select takes its async arm"
-status: draft
-updated: 2026-08-09
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

@@ -1,7 +1,7 @@
 ---
 title: "sqlite3 translate_exception mirrors Rails' six arms (missing BusyException, extra ValueTooLong)"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: arm-order
 packages: []

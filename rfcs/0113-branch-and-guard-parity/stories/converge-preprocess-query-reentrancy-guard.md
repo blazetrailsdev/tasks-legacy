@@ -1,7 +1,7 @@
 ---
 title: "Remove or relocate the preprocessQuery re-entrancy guard Rails does not have"
-status: draft
-updated: 2026-07-29
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 deps: []

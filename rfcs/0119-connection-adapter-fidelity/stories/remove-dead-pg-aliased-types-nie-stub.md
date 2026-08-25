@@ -1,7 +1,7 @@
 ---
 title: "Delete the dead PG aliased_types @nie stub shadowed by the real class override"
-status: draft
-updated: 2026-08-05
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

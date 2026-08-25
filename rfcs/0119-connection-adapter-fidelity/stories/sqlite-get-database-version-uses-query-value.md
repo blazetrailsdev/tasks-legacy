@@ -1,7 +1,7 @@
 ---
 title: "SQLite3Adapter#getDatabaseVersion probes the raw driver, not query_value"
-status: draft
-updated: 2026-08-08
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

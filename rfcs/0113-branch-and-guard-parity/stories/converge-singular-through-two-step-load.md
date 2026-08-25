@@ -1,7 +1,7 @@
 ---
 title: "Converge has_one :through off the two-step load onto the scope chain"
-status: draft
-updated: 2026-08-03
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 deps: []

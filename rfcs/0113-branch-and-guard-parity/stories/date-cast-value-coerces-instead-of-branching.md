@@ -1,7 +1,7 @@
 ---
 title: "Date/DateTime cast_value coerces every input to a trimmed string instead of Rails' three-arm class branch"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 packages: []

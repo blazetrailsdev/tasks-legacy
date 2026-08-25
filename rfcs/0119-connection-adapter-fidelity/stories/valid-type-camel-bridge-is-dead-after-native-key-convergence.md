@@ -1,7 +1,7 @@
 ---
 title: "Remove isValidType's dead snake-to-camel native-type bridge"
-status: draft
-updated: 2026-07-29
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

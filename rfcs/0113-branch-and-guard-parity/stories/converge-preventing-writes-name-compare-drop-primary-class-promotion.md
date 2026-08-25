@@ -1,7 +1,7 @@
 ---
 title: 'core.ts isPreventingWrites promotes primary classes to "Base"; Rails compares klass.name plainly'
-status: draft
-updated: 2026-08-07
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 packages: []

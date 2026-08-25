@@ -1,7 +1,7 @@
 ---
 title: "Restore AbstractAdapter mixin wiring to module-evaluation time now that base.ts is out of the cycle"
-status: draft
-updated: 2026-08-01
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

@@ -1,7 +1,7 @@
 ---
 title: "Arel DeleteManager#group / UpdateManager#group drop Rails' Symbol arm"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 packages: []

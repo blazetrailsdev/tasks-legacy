@@ -1,7 +1,7 @@
 ---
 title: "Drop the schema-dumper cast-type null coalesce once the MySQL type-map lookup converges"
-status: draft
-updated: 2026-08-22
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

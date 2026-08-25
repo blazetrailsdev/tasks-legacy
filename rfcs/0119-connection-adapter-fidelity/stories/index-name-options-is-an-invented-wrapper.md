@@ -1,7 +1,7 @@
 ---
 title: "Delete the trails-only indexNameOptions wrapper; index_name takes column_names"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

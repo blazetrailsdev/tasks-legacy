@@ -1,7 +1,7 @@
 ---
 title: "StatementPool's public surface is a JS Map API, not Rails'"
-status: draft
-updated: 2026-08-18
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

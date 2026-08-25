@@ -1,7 +1,7 @@
 ---
 title: "converge-abstract-dumper-column-spec-bodies-onto-rails"
-status: draft
-updated: 2026-08-05
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

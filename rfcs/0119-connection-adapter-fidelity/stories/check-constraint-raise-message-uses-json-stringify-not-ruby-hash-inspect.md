@@ -1,7 +1,7 @@
 ---
 title: "checkConstraintForBang renders options with JSON.stringify, not Ruby Hash to_s"
-status: draft
-updated: 2026-08-02
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

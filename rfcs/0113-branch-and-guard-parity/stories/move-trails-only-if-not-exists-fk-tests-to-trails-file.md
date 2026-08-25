@@ -1,7 +1,7 @@
 ---
 title: "Move the trails-only addForeignKey ifNotExists cases out of the Rails-mapped on-adapter test file"
-status: draft
-updated: 2026-07-30
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 deps: []

@@ -1,7 +1,7 @@
 ---
 title: "sql_for_insert is async in trails because supports_insert_returning? and primary_key are; Rails' is sync"
-status: draft
-updated: 2026-08-21
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

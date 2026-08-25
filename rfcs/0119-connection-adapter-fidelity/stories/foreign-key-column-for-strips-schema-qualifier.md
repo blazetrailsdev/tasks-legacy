@@ -1,7 +1,7 @@
 ---
 title: "foreign_key_column_for strips a schema qualifier Rails does not"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

@@ -1,7 +1,7 @@
 ---
 title: "Preloader::Association#initialize drops the preload_scope.empty_scope? arm of @associate"
-status: draft
-updated: 2026-08-12
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: guard-parity
 packages: []

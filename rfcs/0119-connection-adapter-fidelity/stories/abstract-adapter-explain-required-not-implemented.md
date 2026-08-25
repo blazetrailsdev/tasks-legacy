@@ -1,7 +1,7 @@
 ---
 title: "Make abstract adapter #explain a required NotImplementedError member, not an optional type slot"
-status: draft
-updated: 2026-08-16
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

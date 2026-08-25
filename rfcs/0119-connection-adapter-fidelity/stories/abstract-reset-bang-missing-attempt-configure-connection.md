@@ -1,7 +1,7 @@
 ---
 title: "AbstractAdapter#resetBang drops Rails' attempt_configure_connection"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

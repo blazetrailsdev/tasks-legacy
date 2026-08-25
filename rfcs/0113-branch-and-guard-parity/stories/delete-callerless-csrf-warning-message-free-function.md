@@ -1,7 +1,7 @@
 ---
 title: "Delete the callerless warningMessage(origin, baseUrl) free function"
-status: draft
-updated: 2026-08-18
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 packages: []

@@ -1,7 +1,7 @@
 ---
 title: "has_one nullifyOwnerAttributes misses the primary-key guard and nulls the polymorphic type column"
-status: draft
-updated: 2026-07-30
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: guard-parity
 deps: []

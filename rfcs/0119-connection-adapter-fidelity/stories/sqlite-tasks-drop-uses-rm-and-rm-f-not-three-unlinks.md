@@ -1,7 +1,7 @@
 ---
 title: "SQLiteDatabaseTasks#drop hand-unlinks three files where Rails calls FileUtils.rm + one array rm_f"
-status: draft
-updated: 2026-08-09
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

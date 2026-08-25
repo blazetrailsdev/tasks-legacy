@@ -1,7 +1,7 @@
 ---
 title: "TransactionManager#synchronize is check-then-set, not a queue: a same-turn arrival overtakes a parked waiter"
-status: draft
-updated: 2026-08-10
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

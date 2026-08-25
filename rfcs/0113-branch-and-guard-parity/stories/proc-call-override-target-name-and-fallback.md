@@ -1,7 +1,7 @@
 ---
 title: "CallTemplate::ProcCall keeps Rails' @override_target name and its || target fallback"
-status: draft
-updated: 2026-08-16
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 packages: []

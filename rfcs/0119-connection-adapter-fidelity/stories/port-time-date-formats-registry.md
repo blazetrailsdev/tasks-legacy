@@ -1,7 +1,7 @@
 ---
 title: "Port the Time::DATE_FORMATS / Date::DATE_FORMATS registry and route TimeWithZone#to_fs through it"
-status: draft
-updated: 2026-08-15
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

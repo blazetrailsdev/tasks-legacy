@@ -1,7 +1,7 @@
 ---
 title: "rails-privates manifest covers no gem packages: 381 unvalidatable @internal tags"
-status: draft
-updated: 2026-08-24
+status: ready
+updated: 2026-08-25
 rfc: "0121-internal-tag-accounting"
 cluster: null
 packages: []

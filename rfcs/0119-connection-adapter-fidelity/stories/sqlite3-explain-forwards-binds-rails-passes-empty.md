@@ -1,7 +1,7 @@
 ---
 title: "sqlite3 explain forwards binds where Rails passes []"
-status: draft
-updated: 2026-07-31
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

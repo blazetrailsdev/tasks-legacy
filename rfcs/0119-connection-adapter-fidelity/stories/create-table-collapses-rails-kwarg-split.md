@@ -1,7 +1,7 @@
 ---
 title: "createTable bundles Rails' named kwargs and **options into one object, forcing a non-Rails local"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

@@ -1,7 +1,7 @@
 ---
 title: "ActiveRecord alias-attribute generation is a stub where Rails loops patterns, clears the cache and raises"
-status: draft
-updated: 2026-08-14
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 packages: []

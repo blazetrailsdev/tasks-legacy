@@ -1,7 +1,7 @@
 ---
 title: "columnsHash() does not re-reflect after in-transaction DDL, blocking citext change_table assertion"
-status: draft
-updated: 2026-07-30
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

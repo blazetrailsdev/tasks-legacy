@@ -1,7 +1,7 @@
 ---
 title: "Port core_ext/time/calculations.rb onto the Time class, not free functions"
-status: draft
-updated: 2026-08-06
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
 deps: []
@@ -63,7 +63,7 @@ which direction the existing package graph allows.
 
 **When this lands, update the override.** #6160 pinned
 `"activesupport:core_ext/time/calculations.rb": "time-ext.ts"` in
-`RUBY_FILE_TS_OVERRIDES` (`scripts/api-compare/conventions.ts`). A port to
+`RUBY_FILE_TS_OVERRIDES` (`scripts/parity/conventions.ts`). A port to
 `core-ext/time/calculations.ts` makes that entry wrong — delete it so the
 default kebab-case rule resolves the file, and the entry's shared comment
 block (it covers all three calculations.rb files) shrinks accordingly.

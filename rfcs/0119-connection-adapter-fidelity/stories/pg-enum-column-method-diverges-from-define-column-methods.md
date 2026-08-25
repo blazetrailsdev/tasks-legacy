@@ -1,7 +1,7 @@
 ---
 title: "Abstract TableDefinition#enum is PG-only surface in Rails"
-status: draft
-updated: 2026-07-29
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

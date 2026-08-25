@@ -1,7 +1,7 @@
 ---
 title: "Type::Decimal has no ::Numeric (Rational) cast arm"
-status: draft
-updated: 2026-08-17
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 packages: []
@@ -39,7 +39,7 @@ closed-reason: null
 Float, String, BigDecimal and bigint arms but has NO `::Numeric` arm and no
 `respond_to?(:to_d)` fallback — a Rational lands in the trailing
 `return null`. `Rational` is a real trails type
-(`packages/date/src/rational.ts`, exported from `@blazetrails/date`, which
+(`packages/date/src/date.ts`, exported from `@blazetrails/date`, which
 activemodel already depends on).
 
 Surfaced by RFC 0105's activemodel assertion-parity work (PR #6639): three

@@ -1,7 +1,7 @@
 ---
 title: "Bake db_warnings_action into a callable at config time instead of branching in handle_warnings"
-status: draft
-updated: 2026-08-12
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

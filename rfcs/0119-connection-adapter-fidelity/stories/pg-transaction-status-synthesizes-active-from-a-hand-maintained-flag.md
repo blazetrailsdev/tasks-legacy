@@ -1,7 +1,7 @@
 ---
 title: "PG transactionStatus synthesizes PQTRANS_ACTIVE from a hand-maintained flag"
-status: draft
-updated: 2026-08-16
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

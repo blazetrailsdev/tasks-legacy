@@ -1,7 +1,7 @@
 ---
 title: "Require @noRailsEquivalent alongside @internal where no Rails-private counterpart exists"
-status: draft
-updated: 2026-08-24
+status: ready
+updated: 2026-08-25
 rfc: "0121-internal-tag-accounting"
 cluster: null
 packages:

@@ -1,7 +1,7 @@
 ---
 title: "Drop the invented :variables config validation from PostgreSQLAdapter"
-status: draft
-updated: 2026-08-22
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

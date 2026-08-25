@@ -1,7 +1,7 @@
 ---
 title: "rename_table passes new_name to pk_and_sequence_for, which resolves the schema itself"
-status: draft
-updated: 2026-08-17
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

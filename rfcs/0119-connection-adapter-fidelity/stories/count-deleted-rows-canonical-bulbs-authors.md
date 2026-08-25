@@ -1,7 +1,7 @@
 ---
 title: "count_deleted_rows_with_lock port uses bespoke test_bulbs/test_authors tables"
-status: draft
-updated: 2026-08-19
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

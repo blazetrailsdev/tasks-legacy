@@ -1,7 +1,7 @@
 ---
 title: "Scheme#key_provider adds an encryptor: early return Rails has no equivalent for"
-status: draft
-updated: 2026-08-11
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 packages: []

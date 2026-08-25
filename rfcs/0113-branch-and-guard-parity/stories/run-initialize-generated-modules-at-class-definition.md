@@ -1,7 +1,7 @@
 ---
 title: "Run initializeGeneratedModules at class-definition time and drop the instanceof gate arm"
-status: draft
-updated: 2026-08-12
+status: ready
+updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: invented-arm
 packages: []

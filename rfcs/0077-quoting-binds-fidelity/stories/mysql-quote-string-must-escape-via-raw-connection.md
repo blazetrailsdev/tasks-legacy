@@ -66,3 +66,15 @@ story with the second without maintainer sign-off.
       equivalent under `NO_BACKSLASH_ESCAPES` and a multi-byte charset.
 - [ ] Regression tests that FAIL on baseline for both conditions.
 - [ ] SQLite, PostgreSQL and MySQL/MariaDB lanes green.
+
+## Triage note (2026-08-25): the baseline shard in this body is gone
+
+`scripts/api-compare/call-mismatches-exclude/activerecord/connection-adapters/abstract-mysql-adapter.json`
+**no longer exists**. The rows this story cites were retired from the baseline
+into `@missingRailsCall … PERMANENT` receipts at the call sites in
+`packages/activerecord/src/connection-adapters/abstract-mysql-adapter.ts`
+(`with_raw_connection` at :1185). Converging therefore deletes
+the **JSDoc receipt**, not a baseline row — and note the receipt currently reads
+`PERMANENT`, which this story disputes: it is the tag that has to go, not be
+reworded. Everything else here — the Rails and trails `file:line` citations and
+the described divergence — is unaffected and was re-verified live on 2026-08-25.

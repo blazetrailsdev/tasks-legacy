@@ -1,7 +1,7 @@
 ---
 title: "pg-type-map-timezone-option-is-inert"
-status: draft
-updated: 2026-08-23
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []

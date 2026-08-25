@@ -1,7 +1,7 @@
 ---
 title: "fold-emit-table-back-into-base-dumper-table"
-status: draft
-updated: 2026-08-05
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 deps: []

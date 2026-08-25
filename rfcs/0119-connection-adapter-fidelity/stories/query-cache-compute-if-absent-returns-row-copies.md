@@ -1,7 +1,7 @@
 ---
 title: "compute_if_absent returns per-row copies where Rails returns the stored entry"
-status: draft
-updated: 2026-08-23
+status: ready
+updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
 packages: []
