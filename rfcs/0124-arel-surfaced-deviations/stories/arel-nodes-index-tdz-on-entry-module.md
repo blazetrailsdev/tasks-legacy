@@ -1,6 +1,6 @@
 ---
 title: "Two arel modules throw a TDZ error when entered as ESM entry modules"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null
@@ -10,7 +10,7 @@ deps: []
 deps-rfc: []
 est-loc: 120
 priority: null
-pr: null
+pr: 7043
 claim: "2026-08-25T15:39:01Z"
 assignee: "arel-case-reader-readonly-vs-attr-accessor"
 blocked-by: null
