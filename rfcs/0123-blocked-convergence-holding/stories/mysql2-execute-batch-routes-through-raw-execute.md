@@ -1,8 +1,8 @@
 ---
 title: "mysql2 executeBatch calls rawExecute per combined block, not execute"
 status: blocked
-updated: 2026-08-23
-rfc: "0106-wide-call-set-direct-burndown"
+updated: 2026-08-25
+rfc: "0123-blocked-convergence-holding"
 cluster: null
 packages: []
 deps: []

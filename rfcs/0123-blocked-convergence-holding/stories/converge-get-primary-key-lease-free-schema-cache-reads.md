@@ -1,8 +1,8 @@
 ---
 title: "Converge get_primary_key's tableExists / primaryKeys receipts once RFC 0073 lands"
 status: blocked
-updated: 2026-08-24
-rfc: "0106-wide-call-set-direct-burndown"
+updated: 2026-08-25
+rfc: "0123-blocked-convergence-holding"
 cluster: null
 packages: []
 deps: []

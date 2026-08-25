@@ -1,9 +1,9 @@
 ---
 rfc: "0106-wide-call-set-direct-burndown"
 title: "Wide call-set direct burndown (activerecord, arel, activesupport)"
-status: active
+status: superseded
 created: 2026-08-15
-updated: 2026-08-21
+updated: 2026-08-25
 owner: "@deanmarano"
 packages:
   - "activerecord"
@@ -16,6 +16,7 @@ related-rfcs:
   - "0099-call-argument-convergence"
   - "0096-naming-identifier-burndown"
 priority: 1
+superseded-by: "0123-blocked-convergence-holding"
 ---
 
 ## Summary
