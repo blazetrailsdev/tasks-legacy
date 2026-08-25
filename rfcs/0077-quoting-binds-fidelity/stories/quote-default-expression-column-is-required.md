@@ -1,6 +1,6 @@
 ---
 title: "quote_default_expression's column is required in Rails, optional in trails"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
