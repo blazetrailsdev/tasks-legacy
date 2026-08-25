@@ -1,7 +1,7 @@
 ---
 title: "key-generator.test.ts and parameter-filter.test.ts register duplicate describe blocks and a misplaced BacktraceCleaner copy"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 packages: []
