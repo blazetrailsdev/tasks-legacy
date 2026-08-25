@@ -1,6 +1,6 @@
 ---
 title: "Make abstract adapter #explain a required NotImplementedError member, not an optional type slot"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T15:30:56Z"
+assignee: "port-attribute-method-pattern-match-struct"
 blocked-by: null
 closed-reason: null
 ---
