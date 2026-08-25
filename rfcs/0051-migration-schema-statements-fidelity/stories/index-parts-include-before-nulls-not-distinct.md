@@ -1,7 +1,7 @@
 ---
 title: "SchemaDumper#index_parts emits nullsNotDistinct before include"
-status: claimed
-updated: 2026-08-24
+status: in-progress
+updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 60
 priority: 12
-pr: null
+pr: 7017
 claim: "2026-08-24T23:54:09Z"
 assignee: "move-ts-only-extras-out-of-mirrored-activemodel-attribute-test-file"
 blocked-by: null
