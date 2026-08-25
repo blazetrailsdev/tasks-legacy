@@ -1,6 +1,6 @@
 ---
 title: "converge-token-for-class-attribute-stores"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: null
-pr: null
+pr: 7056
 claim: "2026-08-25T17:17:28Z"
 assignee: "converge-token-for-class-attribute-stores"
 blocked-by: null
