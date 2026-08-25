@@ -1,7 +1,7 @@
 ---
 title: "Converge the nodes/* assertion parity tail"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null
 packages: ["arel"]
