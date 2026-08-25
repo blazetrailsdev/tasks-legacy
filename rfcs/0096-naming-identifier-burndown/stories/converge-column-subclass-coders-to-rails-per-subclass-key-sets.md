@@ -1,6 +1,6 @@
 ---
 title: "Converge the adapter Column coders to Rails' per-subclass key sets (delegate oid/fmod, derive MySQL extra)"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 300
 priority: null
-pr: null
+pr: 7032
 claim: "2026-08-25T12:58:54Z"
 assignee: "split-model-mixin-surface-to-active-model-model"
 blocked-by: null
