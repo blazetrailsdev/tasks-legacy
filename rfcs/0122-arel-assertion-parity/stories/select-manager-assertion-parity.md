@@ -1,6 +1,6 @@
 ---
 title: "Converge select_manager assertion parity"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -9,7 +9,7 @@ deps: ["map-minitest-spec-assertion-forms"]
 deps-rfc: []
 est-loc: 300
 priority: null
-pr: null
+pr: 7025
 claim: "2026-08-25T01:39:08Z"
 assignee: "converge-forget-change-unconditional"
 blocked-by: null
