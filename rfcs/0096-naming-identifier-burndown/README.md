@@ -3,7 +3,7 @@ rfc: "0096-naming-identifier-burndown"
 title: "Local/parameter identifier burndown (call-argument `naming` class)"
 status: active
 created: 2026-08-10
-updated: 2026-08-18
+updated: 2026-08-25
 owner: "@your-handle"
 packages:
   - activerecord
@@ -18,7 +18,7 @@ clusters:
   - "api-compare"
 related-rfcs:
   - "0095-call-argument-parity"
-priority: 4
+priority: 2
 ---
 
 ## Summary
