@@ -1,6 +1,6 @@
 ---
 title: "columnsHash() does not re-reflect after in-transaction DDL, blocking citext change_table assertion"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -8,7 +8,7 @@ deps: []
 deps-rfc: []
 est-loc: 80
 priority: null
-pr: null
+pr: 7044
 claim: "2026-08-25T15:46:30Z"
 assignee: "sqlite-attached-schema-notion-has-no-rails-counterpart"
 blocked-by: null
