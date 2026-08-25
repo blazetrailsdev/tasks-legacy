@@ -1,6 +1,6 @@
 ---
 title: "_exec_scope takes an explicit fn parameter instead of Rails' instance_exec block"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
