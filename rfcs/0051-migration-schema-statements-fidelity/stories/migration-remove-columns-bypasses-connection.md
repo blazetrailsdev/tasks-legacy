@@ -1,6 +1,6 @@
 ---
 title: "Migration#removeColumns loops instead of forwarding to the connection"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
