@@ -1,6 +1,6 @@
 ---
 title: "PG TableDefinition takes unlogged as a ctor option; Rails reads PostgreSQLAdapter.create_unlogged_tables directly"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
