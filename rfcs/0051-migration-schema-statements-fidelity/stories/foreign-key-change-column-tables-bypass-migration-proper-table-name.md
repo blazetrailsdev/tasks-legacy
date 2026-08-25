@@ -1,14 +1,14 @@
 ---
 title: "Change-column tables are created via direct createTable with decorated literals, bypassing Migration#properTableName"
-status: claimed
-updated: 2026-08-24
+status: in-progress
+updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
 deps-rfc: []
 est-loc: 80
 priority: 21
-pr: null
+pr: 7017
 claim: "2026-08-24T23:54:09Z"
 assignee: "move-ts-only-extras-out-of-mirrored-activemodel-attribute-test-file"
 blocked-by: null
