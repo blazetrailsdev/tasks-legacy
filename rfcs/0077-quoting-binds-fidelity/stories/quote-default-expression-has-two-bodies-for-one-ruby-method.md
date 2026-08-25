@@ -1,6 +1,6 @@
 ---
 title: "quote_default_expression has two bodies for one Ruby method"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 70
 priority: null
-pr: null
+pr: 7047
 claim: "2026-08-25T16:18:38Z"
 assignee: "collection-proxy-association-seat-is-degenerate-for-singular-names"
 blocked-by: null
