@@ -1,6 +1,6 @@
 ---
 title: "Require @noRailsEquivalent alongside @internal where no Rails-private counterpart exists"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0121-internal-tag-accounting"
 cluster: null
@@ -10,7 +10,7 @@ deps: ["rails-privates-manifest-package-dirs-drift"]
 deps-rfc: []
 est-loc: 400
 priority: null
-pr: null
+pr: 7045
 claim: "2026-08-25T15:36:20Z"
 assignee: "require-no-rails-equivalent-on-unbacked-internal"
 blocked-by: null
