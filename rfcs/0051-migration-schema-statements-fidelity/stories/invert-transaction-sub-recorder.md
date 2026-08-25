@@ -76,3 +76,34 @@ today nothing but a direct `recorder.transaction(...)` in a test can reach
 irreversible` still raises — after this change via Rails' path (the
   sub-recorder failing to invert `execute`) rather than the unconditional throw.
 - SQLite, PostgreSQL and MySQL/MariaDB lanes green.
+
+## Status after PR #7038
+
+PR #7038 (`migration-recording-flag-should-be-the-connection`) landed most of
+this while making the recorder the connection, so the remaining scope is
+narrower than the body above:
+
+- DONE — `invertTransaction` no longer throws. It builds
+  `["transaction", args, invertionsProc]` over a sub-recorder on `delegate`,
+  mirroring `command_recorder.rb:186-190`.
+- DONE — `transaction` is recorded: `CommandRecorder.prototype.transaction`
+  (the generated forwarder, `command_recorder.rb:125-132`) now exists, and
+  `invertible-migration.test.ts` > `migrate revert transaction` passes through
+  it, because `Migration`'s connection IS the recorder while reverting.
+- DONE — `command-recorder.test.ts` > `invert transaction with irreversible
+inside is irreversible` now raises through Rails' path (the block's `execute`
+  failing to invert), not an unconditional throw.
+- REMAINING — the block is run by the `transaction` forwarder, not inside
+  `invertTransaction`, because `inverse_of` is sync in both languages while a
+  TS block returns a promise and the run must COMPLETE before the `transaction`
+  tuple is appended (Ruby's ordering, `command_recorder.rb:187`). Converging
+  this means an await point inside `record`/`inverseOf` — i.e. making that
+  chain async — which also reds every synchronous
+  `expect(recorder.inverseOf(...)).toEqual(...)` in `command-recorder.test.ts`.
+  Weigh that against leaving the split, which is documented at both call sites.
+- REMAINING — `Migration#transaction` still does not exist, so
+  `InvertibleTransactionMigration` mirrors the Ruby's behaviour through
+  `this.connection.transaction(...)` rather than its spelling. Note Rails'
+  `Migration` has no `#transaction` either — it reaches the connection through
+  `method_missing` (`migration.rb:1045-1057`) — so check whether this criterion
+  is asking for a method Rails does not have before adding one.
