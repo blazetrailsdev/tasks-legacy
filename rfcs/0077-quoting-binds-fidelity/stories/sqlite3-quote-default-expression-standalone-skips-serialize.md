@@ -1,6 +1,6 @@
 ---
 title: "sqlite3 quote_default_expression standalone skips super's cast-type serialize"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 80
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T18:50:35Z"
+assignee: "pg-column-serial-identity-fields-are-public-where-rails-has-ivars"
 blocked-by: null
 closed-reason: null
 ---

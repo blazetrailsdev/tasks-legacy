@@ -1,6 +1,6 @@
 ---
 title: "associations.ts must stop force-loading collection-proxy.ts at module scope (~150 LOC)"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 150
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T18:50:35Z"
+assignee: "pg-column-serial-identity-fields-are-public-where-rails-has-ivars"
 blocked-by: null
 closed-reason: null
 ---

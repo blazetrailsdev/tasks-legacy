@@ -1,6 +1,6 @@
 ---
 title: "Converge abstract_mysql_adapter concurrency tests from adapter-level SQL to the model layer"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -9,8 +9,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T18:50:35Z"
+assignee: "pg-column-serial-identity-fields-are-public-where-rails-has-ivars"
 blocked-by: null
 closed-reason: null
 ---
