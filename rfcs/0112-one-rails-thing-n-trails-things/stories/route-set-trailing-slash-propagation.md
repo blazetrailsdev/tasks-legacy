@@ -45,7 +45,7 @@ commented-out assertions for the same gap.
 - [ ] The five `trailing slash*` cases in
       `action-controller/controller/url-for.test.ts` are real assertions again
       (they are `it.skip` as of PR #7049), along with `using nil script name
-  properly concats with original script name`, which covers the sibling
+properly concats with original script name`, which covers the sibling
       `original_script_name` arm (`route_set.rb:869-873`).
 - [ ] The commented-out assertions at
       `action-dispatch/dispatch/url-generation.test.ts:239-256` are restored.
