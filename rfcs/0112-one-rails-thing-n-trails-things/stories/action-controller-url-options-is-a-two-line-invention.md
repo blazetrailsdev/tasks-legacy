@@ -1,6 +1,6 @@
 ---
 title: "ActionController::UrlFor#url_options is a two-line invention beside a free urlOptionsFromRequest"
-status: ready
+status: draft
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
