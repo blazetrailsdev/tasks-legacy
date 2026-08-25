@@ -1,6 +1,6 @@
 ---
 title: "PG/MySQL Column subclasses rebuild the TypeMetadata their adapter already built"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 160
 priority: null
-pr: null
+pr: 7033
 claim: "2026-08-25T13:22:54Z"
 assignee: "table-definition-takes-conn-positionally-and-invents-adaptername"
 blocked-by: null
