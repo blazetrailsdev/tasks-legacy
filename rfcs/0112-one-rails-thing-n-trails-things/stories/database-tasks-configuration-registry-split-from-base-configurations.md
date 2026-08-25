@@ -1,6 +1,6 @@
 ---
 title: "DatabaseTasks.databaseConfiguration is a separate registry from Base.configurations"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
