@@ -1,7 +1,7 @@
 ---
 title: "fan-out-model-json-serializer-surface"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: 7015
+pr: 7010
 claim: "2026-08-24T23:06:10Z"
 assignee: "fan-out-model-json-serializer-surface"
 blocked-by: null
