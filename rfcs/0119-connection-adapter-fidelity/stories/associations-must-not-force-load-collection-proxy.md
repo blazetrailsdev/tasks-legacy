@@ -1,6 +1,6 @@
 ---
 title: "associations.ts must stop force-loading collection-proxy.ts at module scope (~150 LOC)"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null

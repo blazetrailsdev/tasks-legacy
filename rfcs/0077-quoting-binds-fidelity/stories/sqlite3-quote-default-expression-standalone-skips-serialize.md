@@ -1,6 +1,6 @@
 ---
 title: "sqlite3 quote_default_expression standalone skips super's cast-type serialize"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null

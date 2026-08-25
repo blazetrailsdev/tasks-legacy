@@ -1,6 +1,6 @@
 ---
 title: "Converge abstract_mysql_adapter concurrency tests from adapter-level SQL to the model layer"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
