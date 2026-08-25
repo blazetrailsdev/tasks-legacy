@@ -1,6 +1,6 @@
 ---
 title: "SchemaSource advertises a sync arm Rails' @connection does not have"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 90
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T18:47:56Z"
+assignee: "converge-association-check-klass-onto-reflection-check-validity"
 blocked-by: null
 closed-reason: null
 ---
