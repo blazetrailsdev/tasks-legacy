@@ -1,6 +1,6 @@
 ---
 title: "table-remove-check-constraint-drops-the-expression"
-status: ready
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 7019
 claim: null
 assignee: null
 blocked-by: null
