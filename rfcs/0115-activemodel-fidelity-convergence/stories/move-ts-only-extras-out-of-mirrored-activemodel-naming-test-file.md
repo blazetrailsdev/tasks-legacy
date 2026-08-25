@@ -1,6 +1,6 @@
 ---
 title: "Move the TS-only extras out of activemodel's mirrored naming test file"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
