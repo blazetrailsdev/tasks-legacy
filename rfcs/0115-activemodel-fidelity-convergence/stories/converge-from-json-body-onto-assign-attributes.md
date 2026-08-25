@@ -1,6 +1,6 @@
 ---
 title: "converge-from-json-body-onto-assign-attributes"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T01:16:44Z"
+assignee: "fan-out-model-json-serializer-surface"
 blocked-by: null
 closed-reason: null
 ---
