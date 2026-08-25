@@ -98,7 +98,7 @@
 | [0093-proxy-dynamic-method-consistency](rfcs/0093-proxy-dynamic-method-consistency/README.md) | Proxy dynamic-method consistency | draft | @deanmarano | activerecord, activemodel |
 | [0094-sqlite3-adapter-construction-fidelity](rfcs/0094-sqlite3-adapter-construction-fidelity/README.md) | SQLite3 adapter construction fidelity | draft | @deanmarano | activerecord |
 | [0095-call-argument-parity](rfcs/0095-call-argument-parity/README.md) | Call-argument parity (parity:api:calls:args) | closed | @deanmarano | activerecord, arel |
-| [0096-naming-identifier-burndown](rfcs/0096-naming-identifier-burndown/README.md) | Local/parameter identifier burndown (call-argument `naming` class) | active | @deanmarano | activerecord, arel, activesupport, activemodel, i18n, trailties, globalid, did-you-mean |
+| [0096-naming-identifier-burndown](rfcs/0096-naming-identifier-burndown/README.md) | Local/parameter identifier burndown (call-argument `naming` class) | closed | @deanmarano | activerecord, arel, activesupport, activemodel, i18n, trailties, globalid, did-you-mean |
 | [0097-parity-output-sharding](rfcs/0097-parity-output-sharding/README.md) | Per-source-file sharding for parity registers and artifacts | draft | @deanmarano | — |
 | [0098-activesupport-ar-closure-port](rfcs/0098-activesupport-ar-closure-port/README.md) | activesupport AR-closure porting | closed | @deanmarano | activesupport |
 | [0099-call-argument-convergence](rfcs/0099-call-argument-convergence/README.md) | Call-argument convergence burndown (activerecord + deps) | closed | @deanmarano | activerecord, arel, activemodel, activesupport, i18n, globalid |

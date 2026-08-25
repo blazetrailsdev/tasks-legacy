@@ -1,7 +1,7 @@
 ---
 rfc: "0096-naming-identifier-burndown"
 title: "Local/parameter identifier burndown (call-argument `naming` class)"
-status: active
+status: closed
 created: 2026-08-10
 updated: 2026-08-25
 owner: "@deanmarano"
