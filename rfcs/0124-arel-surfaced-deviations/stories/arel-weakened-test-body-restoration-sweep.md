@@ -1,6 +1,6 @@
 ---
 title: "Restore weakened arel ported test bodies"
-status: draft
+status: ready
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null
@@ -61,3 +61,7 @@ suite is worth the same sweep.
   exposes; file separately if a fix exceeds this story's budget.
 - Start from `select_manager_test.rb` and the `visitors/` tests, which are the
   highest-yield files based on #5631.
+- `pnpm parity:test` delta non-negative and `pnpm vitest run packages/arel`
+  green; report the assertion-mismatch counts for arel before and after, since a
+  restored body makes previously-uncomparable assertions comparable and the mark
+  in `scripts/test-compare/assertion-mismatch-mark.json` is only-shrink.

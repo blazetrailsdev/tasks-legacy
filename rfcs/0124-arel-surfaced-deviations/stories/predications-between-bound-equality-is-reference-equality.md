@@ -1,6 +1,6 @@
 ---
 title: "between's degenerate-range arm uses JS === where Ruby == is value equality"
-status: draft
+status: ready
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null
@@ -60,6 +60,7 @@ Ruby-vs-JS equality/truthiness conversion classes.
 - `between({ begin: d, end: d2 })` with two equal-valued `Date` bounds builds
   `Nodes::Equality`, matching `predications.rb:56-57`.
 - A regression test that FAILS on the current `===` (see
-  `packages/arel/src/predications-range.test.ts`'s "range begin == end collapses
-  to Equality" case, which only covers primitives today).
+  `packages/arel/src/predications.test.ts:95`'s "range begin == end collapses to
+  Equality" case, which only covers primitives today — the file moved when #6856
+  folded `predications-range.ts` into `predications.ts`).
 - `pnpm vitest run packages/arel` green; AR range/where suites green.

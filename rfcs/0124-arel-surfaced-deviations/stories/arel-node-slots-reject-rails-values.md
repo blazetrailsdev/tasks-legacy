@@ -1,6 +1,6 @@
 ---
 title: "Arel node slots typed narrower than the Ruby slot (Table#get, Function expressions, Cte body)"
-status: draft
+status: ready
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null

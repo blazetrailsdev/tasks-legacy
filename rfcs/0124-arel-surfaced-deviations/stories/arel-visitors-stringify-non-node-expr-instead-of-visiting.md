@@ -1,6 +1,6 @@
 ---
 title: "Arel visitors stringify a non-Node expr instead of visiting it"
-status: draft
+status: ready
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null

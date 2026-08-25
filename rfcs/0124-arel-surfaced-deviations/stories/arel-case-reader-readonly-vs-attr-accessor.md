@@ -1,6 +1,6 @@
 ---
 title: "Arel::Nodes::Case#case is readonly where Rails has attr_accessor"
-status: draft
+status: ready
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null

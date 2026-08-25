@@ -1,6 +1,6 @@
 ---
 title: "Base ToSql visits Cube/RollUp/GroupingElement/GroupingSet, which Rails leaves PostgreSQL-only"
-status: draft
+status: ready
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null

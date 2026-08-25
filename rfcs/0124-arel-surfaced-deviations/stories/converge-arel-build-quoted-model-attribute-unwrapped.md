@@ -1,6 +1,6 @@
 ---
 title: "converge-arel-build-quoted-model-attribute-unwrapped"
-status: draft
+status: ready
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null
