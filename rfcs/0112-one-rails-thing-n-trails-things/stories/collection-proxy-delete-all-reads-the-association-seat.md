@@ -1,6 +1,6 @@
 ---
 title: "CollectionProxy#deleteAll re-looks the association up through the owner instead of reading the @association seat"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T14:18:30Z"
+assignee: "migration-recording-flag-should-be-the-connection"
 blocked-by: null
 closed-reason: null
 ---

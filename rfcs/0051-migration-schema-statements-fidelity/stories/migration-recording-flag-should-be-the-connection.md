@@ -1,6 +1,6 @@
 ---
 title: "Migration's _recording flag is a branch Rails does not have (recorder should BE the connection)"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 400
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T14:18:30Z"
+assignee: "migration-recording-flag-should-be-the-connection"
 blocked-by: null
 closed-reason: null
 ---

@@ -1,6 +1,6 @@
 ---
 title: "AbstractAdapter#resetBang drops Rails' attempt_configure_connection"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 40
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T14:18:30Z"
+assignee: "migration-recording-flag-should-be-the-connection"
 blocked-by: null
 closed-reason: null
 ---
