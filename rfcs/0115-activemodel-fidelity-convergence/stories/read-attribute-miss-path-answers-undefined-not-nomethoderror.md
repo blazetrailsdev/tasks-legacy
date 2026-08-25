@@ -1,6 +1,6 @@
 ---
 title: "read-attribute-miss-path-answers-undefined-not-nomethoderror"
-status: draft
+status: ready
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
