@@ -1,6 +1,6 @@
 ---
 title: "Active Record MariaDB Tests (2) failing on main @d059b0dc"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0061-ci-failures"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: 0
-pr: null
+pr: 7023
 claim: "2026-08-25T01:22:23Z"
 assignee: "red-d059b0dc"
 blocked-by: null
