@@ -1,6 +1,6 @@
 ---
 title: "Restore AbstractAdapter mixin wiring to module-evaluation time now that base.ts is out of the cycle"
-status: claimed
+status: blocked
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -11,7 +11,7 @@ priority: null
 pr: null
 claim: "2026-08-25T15:38:33Z"
 assignee: "pg-table-definition-takes-unlogged-as-an-option-rails-reads-the-adapter"
-blocked-by: null
+blocked-by: "Residual import cycle survives PR #5775's base.ts removal: abstract/schema-statements.ts -> migration/join-table.ts -> model-schema.ts -> connection-handling.ts -> connection-adapters.ts -> abstract-adapter.ts. Entered through SchemaStatements, module-eval-time include(AbstractAdapter, SchemaStatements) reads it in TDZ (verified: Object.keys(undefined) in include()). The join-table -> model-schema edge is Rails' own (migration/join_table.rb:11-13). Comment at abstract-adapter.ts now cites the real cycle."
 closed-reason: null
 ---
 
