@@ -1,6 +1,6 @@
 ---
 title: "Return Rails' AttributeMethod Struct from AttributeMethodPattern#match"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 140
 priority: null
-pr: null
+pr: 7041
 claim: "2026-08-25T15:30:56Z"
 assignee: "port-attribute-method-pattern-match-struct"
 blocked-by: null
