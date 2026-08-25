@@ -1,6 +1,6 @@
 ---
 title: "Break the schema-statements -> join-table -> model-schema cycle so AbstractAdapter's includes can return to the class body"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 150
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T17:17:28Z"
+assignee: "converge-token-for-class-attribute-stores"
 blocked-by: null
 closed-reason: null
 ---
