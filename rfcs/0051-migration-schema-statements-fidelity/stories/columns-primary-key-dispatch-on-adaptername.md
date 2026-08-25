@@ -1,6 +1,6 @@
 ---
 title: "columns/primary_key dispatch on adapterName instead of per-adapter overrides"
-status: claimed
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 300
 priority: 51
-pr: null
+pr: 7008
 claim: "2026-08-25T13:11:04Z"
 assignee: "attribute-dup-must-redup-mutable-value"
 blocked-by: null
