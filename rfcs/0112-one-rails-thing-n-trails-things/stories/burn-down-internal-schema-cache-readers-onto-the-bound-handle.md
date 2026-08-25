@@ -1,6 +1,6 @@
 ---
 title: "Burn down internalSchemaCache readers onto the bound schema reflection"
-status: ready
+status: draft
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
