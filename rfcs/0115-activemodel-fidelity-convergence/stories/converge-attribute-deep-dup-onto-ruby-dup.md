@@ -1,6 +1,6 @@
 ---
 title: "Converge AttributeSet#deep_dup and reverse_merge! onto Ruby's dup semantics"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
