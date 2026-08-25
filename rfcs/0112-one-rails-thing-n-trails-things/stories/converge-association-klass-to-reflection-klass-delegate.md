@@ -1,6 +1,6 @@
 ---
 title: "Make Association#klass the plain reflection.klass delegate Rails has"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 100
-pr: null
+pr: 7039
 claim: "2026-08-25T14:34:31Z"
 assignee: "converge-association-klass-to-reflection-klass-delegate"
 blocked-by: null
