@@ -1,7 +1,7 @@
 ---
 title: "db_warnings_action is resolved per adapter, not once at config time"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 packages: []
@@ -9,8 +9,8 @@ deps: []
 deps-rfc: []
 est-loc: 90
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T17:22:41Z"
+assignee: "current-attributes-port-body"
 blocked-by: null
 closed-reason: null
 ---
