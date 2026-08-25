@@ -1,7 +1,7 @@
 ---
 title: "Converge attribute-set/builder.ts's residue onto attribute_set/builder.rb"
-status: ready
-updated: 2026-08-23
+status: claimed
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
 packages: ["activemodel"]
@@ -10,8 +10,8 @@ deps:
 deps-rfc: []
 est-loc: 180
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T12:34:50Z"
+assignee: "converge-attribute-set-builder-residue"
 blocked-by: null
 closed-reason: null
 ---
