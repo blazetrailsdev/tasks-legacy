@@ -1,6 +1,6 @@
 ---
 title: "SchemaSource advertises a sync arm Rails' @connection does not have"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
