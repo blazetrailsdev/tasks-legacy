@@ -1,7 +1,7 @@
 ---
 title: "Route validates_each through validates_with and delete _registerValidator"
-status: draft
-updated: 2026-08-24
+status: closed
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Delivered on origin/main. validations.ts ClassMethods.validatesEach is now exactly Rails' single send: this.validatesWith(BlockValidator, this._mergeAttributes([...attrNames, options]), block) (packages/activemodel/src/validations.ts:264-271, cited validations.rb:88-90), and the block already threads through validatesWith. git grep -n 'registerValidator' origin/main -- packages returns zero hits, so Model._registerValidator is gone as the story required."
 ---
 
 ## Context
