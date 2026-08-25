@@ -1,7 +1,7 @@
 ---
 title: "Converge DirtyTracker#changedInPlace onto Attribute#changed_in_place?"
-status: draft
-updated: 2026-08-24
+status: closed
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Premise gone on origin/main. The invented DirtyTracker was retired (PR #7004 converged Dirty onto the two Rails mutation trackers): git grep 'DirtyTracker' origin/main -- packages/activemodel/src returns zero hits. AttributeMutationTracker#changedInPlace is now Rails' one line verbatim -- 'return this.attributes.getAttribute(attrName).changedInPlace()' (attribute-mutation-tracker.ts:100-101 = attribute_mutation_tracker.rb:50-52); Forced/Null trackers return false as Rails does (:170, :255). Dirty#attributeChangedInPlace just delegates (dirty.ts:164-169). No '@missingRailsCall changed_in_place?' tag survives anywhere in packages/."
 ---
 
 ## Context
