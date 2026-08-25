@@ -1,6 +1,6 @@
 ---
 title: "Restore weakened arel ported test bodies"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null
