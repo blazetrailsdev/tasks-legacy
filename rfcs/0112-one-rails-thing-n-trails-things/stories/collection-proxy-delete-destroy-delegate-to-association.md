@@ -1,6 +1,6 @@
 ---
 title: "CollectionProxy#delete/#destroy should delegate to the association like Rails"
-status: claimed
+status: done
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 220
-pr: null
+pr: 6435
 claim: "2026-08-25T12:59:40Z"
 assignee: "collection-proxy-association-ivar-takes-rails-name"
 blocked-by: null
