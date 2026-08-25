@@ -1,6 +1,6 @@
 ---
 title: "check_constraints_in_create's invalid arm returns a raw array where Rails puts a joined block to a remaining stream"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 70
 priority: 35
-pr: null
+pr: 7026
 claim: "2026-08-25T09:46:54Z"
 assignee: "missing-rails-call-tag-inert-on-non-rails-class-member"
 blocked-by: null
