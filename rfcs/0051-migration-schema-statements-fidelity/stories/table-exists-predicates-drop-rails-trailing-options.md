@@ -1,6 +1,6 @@
 ---
 title: "Table#columnExists/foreignKeyExists/checkConstraintExists drop Rails' trailing options"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 130
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T12:46:55Z"
+assignee: "converge-reverse-merge-bang-key-presence"
 blocked-by: null
 closed-reason: null
 ---
