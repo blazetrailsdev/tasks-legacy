@@ -1,5 +1,5 @@
 ---
-title: "invert-transaction-sub-recorder"
+title: "invert_transaction throws where Rails reverts the block through a sub-recorder"
 status: ready
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 180
 priority: null
 pr: null
 claim: null

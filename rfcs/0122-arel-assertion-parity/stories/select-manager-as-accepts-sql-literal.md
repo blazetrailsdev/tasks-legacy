@@ -1,5 +1,5 @@
 ---
-title: "select-manager-as-accepts-sql-literal"
+title: "SelectManager#as rejects a SqlLiteral where Rails' SqlLiteral.new accepts one"
 status: ready
 updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 40
 priority: null
 pr: null
 claim: null
