@@ -1,13 +1,13 @@
 ---
 title: "Converge columnForAttribute onto the bound schema cache"
-status: claimed
+status: done
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
 deps-rfc: []
 est-loc: 60
-pr: null
+pr: 6369
 claim: "2026-08-25T14:26:33Z"
 assignee: "consolidate-three-assign-attributes-implementations"
 blocked-by: null
