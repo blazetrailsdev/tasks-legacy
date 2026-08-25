@@ -5,7 +5,8 @@ updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
-deps: []
+deps:
+  - forced-mutation-tracker-takes-an-attributeset-where-rails-passes-the-model
 deps-rfc: []
 est-loc: 260
 priority: null
