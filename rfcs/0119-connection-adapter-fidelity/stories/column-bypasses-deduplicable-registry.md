@@ -1,6 +1,6 @@
 ---
 title: "Column bypasses the Deduplicable registry and has no deduplicateKey"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -8,7 +8,7 @@ deps: []
 deps-rfc: []
 est-loc: 140
 priority: null
-pr: null
+pr: 7047
 claim: "2026-08-25T16:18:38Z"
 assignee: "collection-proxy-association-seat-is-degenerate-for-singular-names"
 blocked-by: null
