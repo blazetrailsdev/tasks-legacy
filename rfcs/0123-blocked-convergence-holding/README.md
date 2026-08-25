@@ -1,7 +1,7 @@
 ---
 rfc: "0123-blocked-convergence-holding"
 title: "Holding epic: blocked convergence work carried from RFCs 0078 / 0096 / 0106 / 0107"
-status: draft
+status: active
 created: 2026-08-25
 updated: 2026-08-25
 owner: "@deanmarano"
