@@ -1,6 +1,6 @@
 ---
 title: "Converge table, factory_methods and attributes/math assertion parity"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -9,7 +9,7 @@ deps: ["map-minitest-spec-assertion-forms"]
 deps-rfc: []
 est-loc: 170
 priority: null
-pr: null
+pr: 7029
 claim: "2026-08-25T12:46:55Z"
 assignee: "converge-reverse-merge-bang-key-presence"
 blocked-by: null
