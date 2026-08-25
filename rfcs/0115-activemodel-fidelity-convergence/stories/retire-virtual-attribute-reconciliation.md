@@ -5,7 +5,8 @@ updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
-deps: []
+deps:
+  - retire-remaining-attribute-definitions-registry
 deps-rfc: []
 est-loc: 300
 priority: null
