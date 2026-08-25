@@ -123,6 +123,6 @@
 | [0118-rfc-story-cap-and-succession](rfcs/0118-rfc-story-cap-and-succession/README.md) | Open-story pressure signal and a supersede that carries stories | draft | @deanmarano | — |
 | [0119-connection-adapter-fidelity](rfcs/0119-connection-adapter-fidelity/README.md) | Connection-adapter fidelity — converge connection_adapters/ onto the Rails tree | draft | @deanmarano | activerecord |
 | [0120-extra-surface-gating-rollout](rfcs/0120-extra-surface-gating-rollout/README.md) | Extra-surface gating rollout: an enrollment contract for parity:api:extra | draft | @deanmarano | arel, globalid, abstractcontroller, i18n, activerecord |
-| [0121-internal-tag-accounting](rfcs/0121-internal-tag-accounting/README.md) | Constrain @internal to Rails-private surface; account for the rest | draft | @deanmarano | activerecord, actionpack, activemodel, activesupport, actionview, arel, trailties |
+| [0121-internal-tag-accounting](rfcs/0121-internal-tag-accounting/README.md) | Constrain @internal to Rails-private surface; account for the rest | active | @deanmarano | activerecord, actionpack, activemodel, activesupport, actionview, arel, trailties |
 | [0122-arel-assertion-parity](rfcs/0122-arel-assertion-parity/README.md) | arel assertion parity to zero | active | @deanmarano | arel |
 | [0123-blocked-convergence-holding](rfcs/0123-blocked-convergence-holding/README.md) | Holding epic: blocked convergence work carried from RFCs 0078 / 0096 / 0106 / 0107 | active | @deanmarano | activerecord, activemodel, arel, activesupport |

@@ -1,7 +1,7 @@
 ---
 rfc: "0121-internal-tag-accounting"
 title: "Constrain @internal to Rails-private surface; account for the rest"
-status: draft
+status: active
 created: 2026-08-24
 updated: 2026-08-25
 owner: "@deanmarano"
