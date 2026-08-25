@@ -1,6 +1,6 @@
 ---
 title: "Drop the isInitialized filter from values_before_type_cast / values_for_database"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: null
+pr: 7029
 claim: "2026-08-25T12:46:55Z"
 assignee: "converge-reverse-merge-bang-key-presence"
 blocked-by: null
