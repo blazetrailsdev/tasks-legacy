@@ -3,7 +3,7 @@ rfc: "0119-connection-adapter-fidelity"
 title: "Connection-adapter fidelity — converge connection_adapters/ onto the Rails tree"
 status: draft
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-25
 owner: "@deanmarano"
 packages:
   - "activerecord"
@@ -11,6 +11,7 @@ clusters:
   - "rails-deviation"
 related-rfcs:
   - "0023-surfaced-deviations"
+priority: 3
 ---
 
 # RFC 0119 — Connection-adapter fidelity
