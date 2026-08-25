@@ -1,6 +1,6 @@
 ---
 title: "PG TableDefinition takes unlogged as a ctor option; Rails reads PostgreSQLAdapter.create_unlogged_tables directly"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 90
 priority: null
-pr: null
+pr: 7042
 claim: "2026-08-25T15:38:33Z"
 assignee: "pg-table-definition-takes-unlogged-as-an-option-rails-reads-the-adapter"
 blocked-by: null
