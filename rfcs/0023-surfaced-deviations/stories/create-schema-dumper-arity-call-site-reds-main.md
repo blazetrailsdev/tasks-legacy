@@ -1,5 +1,5 @@
 ---
-title: "create-schema-dumper-arity-call-site-reds-main"
+title: "createSchemaDumper call site passes the adapter where options belong, redding main"
 status: draft
 updated: 2026-08-25
 rfc: "0023-surfaced-deviations"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 20
 priority: null
 pr: null
 claim: null
