@@ -1,8 +1,8 @@
 ---
 title: "Type Attribute#name for the nil Table#[] accepts, dropping the Table#get cast"
 status: draft
-updated: 2026-08-16
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"
@@ -82,3 +82,16 @@ Surfaced while landing
   `vendor/rails/arel`, which is on PATH).
 - `pnpm parity:api:calls` / `:args` clean; `parity:api` / `parity:test` deltas
   non-negative; green on SQLite, PostgreSQL and MySQL/MariaDB.
+
+## Triage note (2026-08-25): half of this has landed
+
+`Attribute.name` has already widened once since this was filed — the
+`AttributeRelation` interface at `packages/arel/src/attributes/attribute.ts:32`
+now declares `name: string | SqlLiteral`, which covers the sibling
+`arel-table-star-stores-a-string-not-a-sqlliteral` story's half.
+
+What this story still owns is the **null** arm, and it is unchanged:
+`attribute.ts:47` declares `readonly name: string` on the class, and
+`table.ts:176-182` still smuggles the null through
+`new Attribute(table ?? this, resolved as string)` with the call-site comment
+citing `relation.rb:1027-1031`. The cast is the acceptance signal.

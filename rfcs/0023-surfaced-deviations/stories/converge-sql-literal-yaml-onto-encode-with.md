@@ -1,7 +1,7 @@
 ---
 title: "SqlLiteral#toYAML is invented surface; Rails' encode_with dumps a plain scalar"
-status: draft
-updated: 2026-08-21
+status: closed
+updated: 2026-08-25
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages:
@@ -14,7 +14,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Converged. Re-verified 2026-08-25: nodes/sql-literal.ts:36 declares `encodeWith(coder: { scalar: string })` at the Rails name (sql_literal.rb:18-20) and the invented toYAML \u2014 with its !sql_literal tag, value: key and hand-rolled newline escaping \u2014 is gone from the file."
 ---
 
 ## Context

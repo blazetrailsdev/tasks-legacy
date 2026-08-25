@@ -1,8 +1,8 @@
 ---
 title: "arel-duplicates-activemodel-type-default-value"
 status: draft
-updated: 2026-08-12
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "activemodel"

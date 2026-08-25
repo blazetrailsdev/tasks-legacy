@@ -1,7 +1,7 @@
 ---
 title: "SelectManager#join wraps a String relation in SqlLiteral before create_join; Rails passes it raw"
-status: draft
-updated: 2026-08-11
+status: closed
+updated: 2026-08-25
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages:
@@ -14,7 +14,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Converged. Re-verified 2026-08-25: select-manager.ts:219-226 runs Rails' `case relation when String, Nodes::SqlLiteral` arm for the emptiness check and StringJoin promotion only, then calls `this.createJoin(relation, null, klass)` with the ORIGINAL relation (select_manager.rb:102-113). The string-to-SqlLiteral conversion this story exists to remove is gone, and the create_join naming row with it."
 ---
 
 ## Context

@@ -1,8 +1,8 @@
 ---
 title: "build_quoted drops Rails' Arel::Table pass-through arm"
 status: draft
-updated: 2026-08-24
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"

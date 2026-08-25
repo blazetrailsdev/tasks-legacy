@@ -1,8 +1,8 @@
 ---
 title: "Arel::Table#star stores a plain string, forcing a sentinel branch in visit_Arel_Attributes_Attribute"
 status: draft
-updated: 2026-08-11
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"

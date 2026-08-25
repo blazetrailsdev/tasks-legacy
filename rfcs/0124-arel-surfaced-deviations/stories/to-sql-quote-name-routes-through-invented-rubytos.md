@@ -1,8 +1,8 @@
 ---
 title: "ToSql#quoteTableName/quoteColumnName route the name through an invented rubyToS helper"
 status: draft
-updated: 2026-08-11
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"
@@ -120,3 +120,20 @@ so it was NOT absorbed into the converging PR.
       composite-primary-key `table[primaryKey].desc` path that motivated it.
 - [ ] The two `naming` rows leave `pnpm parity:api:calls:args:report`; arel and
       adapter quoting tests green on all three adapters.
+
+## Triage note (2026-08-25): the helper has been renamed, the divergence has not
+
+This story calls the helper `rubyToS`. It is now spelled **`toS`** — grep for
+`rubyToS` in `packages/arel/src` returns nothing. The divergence itself is
+unchanged and was re-verified live: `visitors/to-sql.ts:1484-1490`
+(`quoteTableName`) and its `quoteColumnName` twin still route `name` through
+`toS(...)` before handing it to the connection, where `to_sql.rb:872-878` passes
+`name` straight through after the SqlLiteral guard.
+
+The call-site comment now states the reason explicitly — trails reaches here
+with an Array name for a composite primary key, which Ruby renders `["a", "b"]`
+rather than `a,b` — which is exactly the load-bearing behaviour the absorbed
+`arel-visitor-to-s-belongs-in-adapter-quoting` section says must move DOWN into
+each adapter's quoting module, not be deleted. Read `name`'s parameter type
+(`string | Nodes.SqlLiteral`) before starting: widening the adapter side is the
+prerequisite.

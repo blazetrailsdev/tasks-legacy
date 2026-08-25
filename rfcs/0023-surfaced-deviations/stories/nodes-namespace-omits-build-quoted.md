@@ -1,6 +1,6 @@
 ---
 title: "Nodes namespace omits build_quoted, forcing callers past it into casted.js"
-status: draft
+status: closed
 updated: 2026-08-25
 rfc: "0023-surfaced-deviations"
 cluster: null
@@ -14,7 +14,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Duplicate of `nodes-build-quoted-missing-from-nodes-namespace`, which is carried into 0124-arel-surfaced-deviations. Both describe the identical gap \u2014 buildQuoted is defined in nodes/casted.ts but not re-exported from nodes/index.ts, so `Nodes.buildQuoted` does not resolve where Ruby has `Arel::Nodes.build_quoted` (casted.rb:47-58). The survivor is kept because it additionally records the RFC 0117 finding from PR #7016 (adding the re-export moved arel's extra-surface measurement to novel 1 / total 65 and turned parity:api:extra:gate red), which is the actual blocker. Verified still live 2026-08-25: nodes/index.ts has no buildQuoted export."
 ---
 
 ## Context

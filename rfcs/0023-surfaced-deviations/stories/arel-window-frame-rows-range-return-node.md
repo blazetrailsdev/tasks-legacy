@@ -1,7 +1,7 @@
 ---
 title: "Window#frame/rows/range return this where Rails returns the frame node"
-status: draft
-updated: 2026-08-11
+status: closed
+updated: 2026-08-25
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages:
@@ -14,7 +14,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Converged. Re-verified 2026-08-25: nodes/window.ts:36-56 is Rails' shape exactly \u2014 `frame(expr): Node` stores and returns `expr`, and `rows`/`range` return `Rows`/`Range` from BOTH arms (window.rb:30-48). The `Rows | this` / `Range | this` union is gone."
 ---
 
 # `Window#frame`/`rows`/`range` return `this` where Rails returns the frame node

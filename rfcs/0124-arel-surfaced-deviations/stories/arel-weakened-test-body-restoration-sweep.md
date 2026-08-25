@@ -1,8 +1,8 @@
 ---
 title: "Restore weakened arel ported test bodies"
 status: draft
-updated: 2026-07-30
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"

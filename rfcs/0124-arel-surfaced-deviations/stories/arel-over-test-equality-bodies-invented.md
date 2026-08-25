@@ -1,8 +1,8 @@
 ---
 title: "over_test equality bodies assert nothing; port Rails' Over value equality"
 status: ready
-updated: 2026-07-27
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"

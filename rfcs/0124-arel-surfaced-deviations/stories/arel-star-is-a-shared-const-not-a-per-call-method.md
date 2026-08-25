@@ -1,8 +1,8 @@
 ---
 title: "Arel.star is a shared const; Rails allocates a fresh SqlLiteral per call"
 status: draft
-updated: 2026-08-11
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"

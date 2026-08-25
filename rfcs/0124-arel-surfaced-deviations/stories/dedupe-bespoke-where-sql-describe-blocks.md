@@ -1,8 +1,8 @@
 ---
 title: "Remove bespoke duplicate where_sql describe blocks in select-manager.test.ts"
 status: ready
-updated: 2026-07-27
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"

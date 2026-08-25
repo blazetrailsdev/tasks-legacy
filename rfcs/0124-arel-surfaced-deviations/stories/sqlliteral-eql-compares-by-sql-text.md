@@ -1,8 +1,8 @@
 ---
 title: "SqlLiteral#eql must compare by SQL text, not Node#eql's serialized fields"
 status: draft
-updated: 2026-08-23
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "activerecord"

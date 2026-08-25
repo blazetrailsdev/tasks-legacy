@@ -2,7 +2,7 @@
 title: "Arel::Table#name is typed string, rejecting the SqlLiteral/node names Rails accepts"
 status: draft
 updated: 2026-08-25
-rfc: "0023-surfaced-deviations"
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"

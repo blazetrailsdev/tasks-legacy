@@ -1,8 +1,8 @@
 ---
 title: "Store a SelectManager in Cte.relation so visit_Arel_Nodes_Cte drops its invented paren branch"
 status: draft
-updated: 2026-08-22
-rfc: "0023-surfaced-deviations"
+updated: 2026-08-25
+rfc: "0124-arel-surfaced-deviations"
 cluster: null
 packages:
   - "arel"

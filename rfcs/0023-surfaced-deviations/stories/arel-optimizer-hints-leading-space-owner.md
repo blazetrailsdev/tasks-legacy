@@ -1,7 +1,7 @@
 ---
 title: "OptimizerHints visitor owns maybe_visit's leading space"
-status: draft
-updated: 2026-08-11
+status: closed
+updated: 2026-08-25
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages:
@@ -14,7 +14,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Converged. Re-verified 2026-08-25: visitors/to-sql.ts:505 appends `/*+ ${hints} */` with NO leading space, matching to_sql.rb:170-172, and the separator is maybeVisit's as to_sql.rb:891-895 has it. The ownership question this story exists to settle is settled the Rails way."
 ---
 
 ## Context

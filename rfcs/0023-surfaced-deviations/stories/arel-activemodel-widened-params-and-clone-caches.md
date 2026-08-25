@@ -1,7 +1,7 @@
 ---
 title: "arel-activemodel-widened-params-and-clone-caches"
-status: draft
-updated: 2026-08-12
+status: closed
+updated: 2026-08-25
 rfc: "0023-surfaced-deviations"
 cluster: null
 packages:
@@ -15,7 +15,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Converged. Re-verified against origin/main 2026-08-25: all three parts are done. select-manager.ts:399,406 declare `intersect(other: SelectManager)` / `except(other: SelectManager)` with no union type and no hoisted otherAst local (select_manager.rb:209-216); attribute-set.ts:197-199 is `new AttributeSet(transformValues(this.attributes(), (attr) => attr.deepDup()))` with no clone cache (attribute_set.rb:73-75, converged by the RFC 0115 dup split, #7027); attribute-set/builder.ts:260-266 unions eachKey in Rails' types -> values -> delegate order (builder.rb:129-132). Nothing left to converge."
 ---
 
 ## Context
