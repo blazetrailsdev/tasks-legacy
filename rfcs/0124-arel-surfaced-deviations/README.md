@@ -1,7 +1,7 @@
 ---
 rfc: "0124-arel-surfaced-deviations"
 title: "Arel surfaced deviations — narrow slots, invented conversions, and value semantics"
-status: draft
+status: active
 created: 2026-08-25
 updated: 2026-08-25
 owner: "@deanmarano"

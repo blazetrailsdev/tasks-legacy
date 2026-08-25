@@ -126,4 +126,4 @@
 | [0121-internal-tag-accounting](rfcs/0121-internal-tag-accounting/README.md) | Constrain @internal to Rails-private surface; account for the rest | active | @deanmarano | activerecord, actionpack, activemodel, activesupport, actionview, arel, trailties |
 | [0122-arel-assertion-parity](rfcs/0122-arel-assertion-parity/README.md) | arel assertion parity to zero | active | @deanmarano | arel |
 | [0123-blocked-convergence-holding](rfcs/0123-blocked-convergence-holding/README.md) | Holding epic: blocked convergence work carried from RFCs 0078 / 0096 / 0106 / 0107 | active | @deanmarano | activerecord, activemodel, arel, activesupport |
-| [0124-arel-surfaced-deviations](rfcs/0124-arel-surfaced-deviations/README.md) | Arel surfaced deviations — narrow slots, invented conversions, and value semantics | draft | @deanmarano | arel, activerecord, activemodel |
+| [0124-arel-surfaced-deviations](rfcs/0124-arel-surfaced-deviations/README.md) | Arel surfaced deviations — narrow slots, invented conversions, and value semantics | active | @deanmarano | arel, activerecord, activemodel |
