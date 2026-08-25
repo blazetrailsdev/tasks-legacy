@@ -1,6 +1,6 @@
 ---
 title: "to-sql.test.ts still builds ~130 visitors on the abstract-adapter quoter"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 240
 priority: null
-pr: null
+pr: 7041
 claim: "2026-08-25T15:30:56Z"
 assignee: "port-attribute-method-pattern-match-struct"
 blocked-by: null
