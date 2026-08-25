@@ -1,7 +1,7 @@
 ---
 title: "Browser CLI's MigrationContext override re-introduces the retired hyphen filename alias"
-status: ready
-updated: 2026-08-24
+status: claimed
+updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 50
 priority: 20
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T12:58:54Z"
+assignee: "split-model-mixin-surface-to-active-model-model"
 blocked-by: null
 closed-reason: null
 ---

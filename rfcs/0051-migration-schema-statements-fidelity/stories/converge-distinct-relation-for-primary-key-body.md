@@ -1,7 +1,7 @@
 ---
 title: "Converge distinct_relation_for_primary_key's body onto schema_statements.rb:1429-1452"
-status: ready
-updated: 2026-08-24
+status: claimed
+updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 90
 priority: 37
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T12:58:54Z"
+assignee: "split-model-mixin-surface-to-active-model-model"
 blocked-by: null
 closed-reason: null
 ---
