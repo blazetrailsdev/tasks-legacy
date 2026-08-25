@@ -1,6 +1,6 @@
 ---
 title: "PG/MySQL Column subclasses rebuild the TypeMetadata their adapter already built"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null

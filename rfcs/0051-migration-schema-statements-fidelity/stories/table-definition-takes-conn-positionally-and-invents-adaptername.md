@@ -1,6 +1,6 @@
 ---
 title: "TableDefinition smuggles conn through the options bag and carries a dead adapterName"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
