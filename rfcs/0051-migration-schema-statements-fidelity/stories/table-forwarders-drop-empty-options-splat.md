@@ -1,6 +1,6 @@
 ---
 title: "Table forwarders pass no trailing options when empty, as Ruby's **options does"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
