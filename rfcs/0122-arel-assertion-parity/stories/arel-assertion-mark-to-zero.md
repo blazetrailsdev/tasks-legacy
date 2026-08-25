@@ -1,6 +1,6 @@
 ---
 title: "Sweep the arel assertion residue and tighten the mark to zero"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -21,8 +21,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T17:14:37Z"
+assignee: "converge-test-fixtures-class-attribute-stores"
 blocked-by: null
 closed-reason: null
 ---

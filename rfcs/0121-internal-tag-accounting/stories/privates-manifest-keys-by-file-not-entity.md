@@ -1,6 +1,6 @@
 ---
 title: "rails-private-methods.json is keyed per-file, so one entity's private name over-tags unrelated same-named members"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0121-internal-tag-accounting"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 300
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T17:14:37Z"
+assignee: "converge-test-fixtures-class-attribute-stores"
 blocked-by: null
 closed-reason: null
 ---
