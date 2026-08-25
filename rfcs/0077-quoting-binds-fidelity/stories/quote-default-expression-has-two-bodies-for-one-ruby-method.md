@@ -1,6 +1,6 @@
 ---
 title: "quote_default_expression has two bodies for one Ruby method"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null

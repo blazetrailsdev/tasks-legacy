@@ -1,6 +1,6 @@
 ---
 title: "column-construction-does-not-go-through-the-deduplicable-hook"
-status: ready
+status: done
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 7047
 claim: null
 assignee: null
 blocked-by: null
