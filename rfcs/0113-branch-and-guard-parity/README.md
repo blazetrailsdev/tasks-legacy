@@ -1,7 +1,7 @@
 ---
 rfc: "0113-branch-and-guard-parity"
 title: "Branch and guard parity — the axis the call gates cannot see"
-status: draft
+status: active
 created: 2026-08-18
 updated: 2026-08-25
 owner: "@deanmarano"
