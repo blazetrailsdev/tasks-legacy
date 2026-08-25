@@ -1,6 +1,6 @@
 ---
 title: "ActiveRecord alias-attribute generation is a stub where Rails loops patterns, clears the cache and raises"
-status: claimed
+status: done
 updated: 2026-08-25
 rfc: "0113-branch-and-guard-parity"
 cluster: missing-arm
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 220
 priority: null
-pr: null
+pr: 6838
 claim: "2026-08-25T15:13:50Z"
 assignee: "activerecord-alias-attribute-method-stubs-take-code-generator"
 blocked-by: null
