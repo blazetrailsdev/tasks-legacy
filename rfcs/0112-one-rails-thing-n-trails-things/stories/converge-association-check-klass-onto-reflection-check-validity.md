@@ -1,6 +1,6 @@
 ---
 title: "converge-association-check-klass-onto-reflection-check-validity"
-status: claimed
+status: blocked
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: "2026-08-25T15:54:32Z"
 assignee: "converge-association-check-klass-onto-reflection-check-validity"
-blocked-by: null
+blocked-by: "Depends on unmerged PR #7039 (converge-association-klass-to-reflection-klass-delegate): the story's premise — Association#klass being the bare reflection.klass delegate, and the constructor backing the rich registered reflection — is not in origin/main yet, so checkKlass cannot drop its own re-resolve/derive+constantize fallback without duplicating that PR's work, and editing the same method region would overlap an open sibling branch. Re-ready once #7039 merges."
 closed-reason: null
 ---
 
