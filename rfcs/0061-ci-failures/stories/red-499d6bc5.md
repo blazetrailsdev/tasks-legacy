@@ -1,6 +1,6 @@
 ---
 title: "Lint failing on main @499d6bc5"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0061-ci-failures"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: 0
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T14:27:44Z"
+assignee: "red-499d6bc5"
 blocked-by: null
 closed-reason: null
 ---
