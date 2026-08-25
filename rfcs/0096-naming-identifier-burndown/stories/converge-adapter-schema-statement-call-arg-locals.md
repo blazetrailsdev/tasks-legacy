@@ -1,6 +1,6 @@
 ---
 title: "Converge the residual adapter call-argument locals (PG default/rename/index, SQLite3 table_info and dflt_value)"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T01:44:12Z"
+assignee: "retire-attribute-set-narrow-to"
 blocked-by: null
 closed-reason: null
 ---

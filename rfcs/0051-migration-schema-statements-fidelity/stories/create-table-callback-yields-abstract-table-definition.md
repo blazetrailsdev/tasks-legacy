@@ -1,6 +1,6 @@
 ---
 title: "createTable callback is typed as the abstract TableDefinition, not the adapter's"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T01:44:12Z"
+assignee: "retire-attribute-set-narrow-to"
 blocked-by: null
 closed-reason: null
 ---

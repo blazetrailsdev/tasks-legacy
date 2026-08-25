@@ -1,6 +1,6 @@
 ---
 title: "retire-attribute-set-narrow-to"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: null
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T01:44:12Z"
+assignee: "retire-attribute-set-narrow-to"
 blocked-by: null
 closed-reason: null
 ---
