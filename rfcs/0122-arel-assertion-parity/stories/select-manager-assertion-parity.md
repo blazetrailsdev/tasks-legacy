@@ -1,7 +1,7 @@
 ---
 title: "Converge select_manager assertion parity"
-status: ready
-updated: 2026-08-24
+status: claimed
+updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null
 packages: ["arel"]
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 300
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T01:39:08Z"
+assignee: "converge-forget-change-unconditional"
 blocked-by: null
 closed-reason: null
 ---

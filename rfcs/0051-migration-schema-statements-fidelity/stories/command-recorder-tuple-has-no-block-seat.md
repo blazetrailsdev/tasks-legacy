@@ -1,6 +1,6 @@
 ---
 title: "CommandRecorder's command tuple has no block seat, so changeTable's bulk path can't record Rails' lambda"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 200
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T01:39:08Z"
+assignee: "converge-forget-change-unconditional"
 blocked-by: null
 closed-reason: null
 ---
