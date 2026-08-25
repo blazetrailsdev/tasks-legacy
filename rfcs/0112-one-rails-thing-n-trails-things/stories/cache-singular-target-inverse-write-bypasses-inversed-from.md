@@ -1,7 +1,7 @@
 ---
 title: "_cacheSingularTarget's surviving arm writes the inverse target without set_inverse_instance"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: null
 packages: []
