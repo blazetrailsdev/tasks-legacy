@@ -1,6 +1,6 @@
 ---
 title: "Migration's _recording flag is a branch Rails does not have (recorder should BE the connection)"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
