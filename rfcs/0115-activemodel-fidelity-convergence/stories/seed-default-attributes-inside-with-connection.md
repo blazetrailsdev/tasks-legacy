@@ -1,7 +1,7 @@
 ---
 title: "Seed _default_attributes' columns inside with_connection instead of a best-effort connection probe"
-status: draft
-updated: 2026-08-23
+status: blocked
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: null
 assignee: null
-blocked-by: null
+blocked-by: "Gated, not shippable alone — confirmed against origin/main 2026-08-25. The story's own converged shape requires either a synchronous schema load on the construction path or a real with_connection acquisition seam. That seam is 0123-blocked-convergence-holding/port-with-connection-acquisition-seam-for-the-arel-reader, which is itself blocked and re-verified live on 2026-08-24 (ConnectionPool#withConnection is still async; wants its own RFC). Meanwhile the premise still stands verbatim: packages/activerecord/src/attributes.ts:94 still opens _defaultAttributes with the !isSchemaLoaded eager columnsHash() probe and :121 still falls back through pool.activeConnection. Removing the value-type fallback without the seam regresses the no-permanent-checkout guarantee (permanent_connection_checkout = :disallowed). Unblock when the seam story lands or a sync schema load exists."
 closed-reason: null
 ---
 
