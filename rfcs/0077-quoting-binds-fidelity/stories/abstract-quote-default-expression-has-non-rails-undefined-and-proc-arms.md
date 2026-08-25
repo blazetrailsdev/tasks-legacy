@@ -1,6 +1,6 @@
 ---
 title: "abstract quote_default_expression has an undefined arm and a Proc TypeError Rails does not"
-status: ready
+status: draft
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
