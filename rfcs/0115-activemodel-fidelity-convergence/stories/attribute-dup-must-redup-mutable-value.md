@@ -1,6 +1,6 @@
 ---
 title: "Collapse Attribute#dup onto initialize_dup so builder.rb's .dup call sites re-dup mutable values"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 120
 priority: 1
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T14:10:32Z"
+assignee: "attribute-dup-must-redup-mutable-value"
 blocked-by: null
 closed-reason: null
 ---

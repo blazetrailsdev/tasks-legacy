@@ -1,6 +1,6 @@
 ---
 title: "_shouldPrepare should be Rails' without_prepared_statement? on the abstract adapter"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 60
 priority: 1
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T14:10:32Z"
+assignee: "attribute-dup-must-redup-mutable-value"
 blocked-by: null
 closed-reason: null
 ---
