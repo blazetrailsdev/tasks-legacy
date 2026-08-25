@@ -1,13 +1,13 @@
 ---
 title: "Remove invented SchemaDumper.dumpWithVersion; use dump_schema_information + dump header"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
 deps-rfc: []
 est-loc: 90
-pr: null
+pr: 7037
 claim: "2026-08-25T14:26:33Z"
 assignee: "consolidate-three-assign-attributes-implementations"
 blocked-by: null
