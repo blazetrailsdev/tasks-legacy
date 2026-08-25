@@ -1,7 +1,7 @@
 ---
 title: "Anchor JSDoc tag recognition to line start so prose mentions stop minting phantom tags"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
 packages: []
