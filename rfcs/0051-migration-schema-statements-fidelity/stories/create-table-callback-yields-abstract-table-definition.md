@@ -1,5 +1,5 @@
 ---
-title: "create-table-callback-yields-abstract-table-definition"
+title: "createTable callback is typed as the abstract TableDefinition, not the adapter's"
 status: ready
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 120
 priority: null
 pr: null
 claim: null
