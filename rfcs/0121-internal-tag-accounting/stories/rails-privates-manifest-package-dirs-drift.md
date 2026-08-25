@@ -1,7 +1,7 @@
 ---
 title: "rails-privates manifest: PACKAGE_DIRS drift kills 36% of the manifest"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0121-internal-tag-accounting"
 cluster: null
 packages: ["actionpack"]
