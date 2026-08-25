@@ -1,6 +1,6 @@
 ---
 title: "Delete _findTargetReachable and gate the strict-loading raise on the real find_target? path"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
@@ -8,7 +8,7 @@ packages: []
 deps: []
 deps-rfc: []
 est-loc: 220
-pr: null
+pr: 7053
 claim: "2026-08-25T16:34:34Z"
 assignee: "converge-association-relation-through-scope-onto-scoping"
 blocked-by: null
