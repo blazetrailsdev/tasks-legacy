@@ -1,6 +1,6 @@
 ---
 title: "Duck-typed Attribute/BinaryData checks work around a duplicate activemodel copy"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 90
 priority: 3
-pr: null
+pr: 7042
 claim: "2026-08-25T15:38:33Z"
 assignee: "pg-table-definition-takes-unlogged-as-an-option-rails-reads-the-adapter"
 blocked-by: null
