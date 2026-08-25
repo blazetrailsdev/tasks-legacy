@@ -1,6 +1,6 @@
 ---
 title: "Abstract rename_table ships a working body where Rails raises NotImplementedError"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null

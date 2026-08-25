@@ -1,6 +1,6 @@
 ---
 title: "Converge visitors/to_sql assertion parity"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null

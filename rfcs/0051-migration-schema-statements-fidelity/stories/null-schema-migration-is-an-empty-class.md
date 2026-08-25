@@ -1,6 +1,6 @@
 ---
 title: "NullSchemaMigration carries five invented no-op members; Rails' is an empty class"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
