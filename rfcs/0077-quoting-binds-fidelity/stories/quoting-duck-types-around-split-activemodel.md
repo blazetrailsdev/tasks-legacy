@@ -1,6 +1,6 @@
 ---
 title: "Duck-typed Attribute/BinaryData checks work around a duplicate activemodel copy"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
