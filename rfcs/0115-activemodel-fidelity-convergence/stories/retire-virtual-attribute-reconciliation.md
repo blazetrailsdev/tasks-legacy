@@ -1,7 +1,7 @@
 ---
 title: "Retire reconcileVirtualAttributes and the virtual-attribute flag (column_names is DB-sourced in Rails)"
-status: draft
-updated: 2026-08-23
+status: ready
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
