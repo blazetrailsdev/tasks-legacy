@@ -1,6 +1,6 @@
 ---
 title: "change_column quotes its default against a synthetic { sqlType } object, not a column"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: null
-pr: null
+pr: 7056
 claim: "2026-08-25T17:17:28Z"
 assignee: "converge-token-for-class-attribute-stores"
 blocked-by: null
