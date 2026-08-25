@@ -1,15 +1,15 @@
 ---
 title: "Converge NoTouching.no_touching block onto apply_to (drop duplicate push/pop)"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
 deps-rfc: []
 est-loc: 30
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T17:06:37Z"
+assignee: "converge-no-touching-block-onto-apply-to"
 blocked-by: null
 closed-reason: null
 ---
