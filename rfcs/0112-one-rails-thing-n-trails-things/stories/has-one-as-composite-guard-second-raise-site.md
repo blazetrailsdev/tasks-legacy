@@ -1,13 +1,13 @@
 ---
 title: "Converge or remove the trailing CompositePrimaryKeyMismatchError raises in _findHasOneTarget"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: split-stores
 deps: []
 deps-rfc: []
 est-loc: 60
-pr: null
+pr: 7050
 claim: "2026-08-25T16:42:34Z"
 assignee: "converge-clear-cache-lock-mysql-sqlite"
 blocked-by: null
