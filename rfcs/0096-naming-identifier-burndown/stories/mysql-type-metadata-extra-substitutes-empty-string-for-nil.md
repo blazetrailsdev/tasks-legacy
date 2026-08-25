@@ -1,6 +1,6 @@
 ---
 title: 'MySQL::TypeMetadata#extra substitutes "" where Rails is nil'
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 90
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T12:22:53Z"
+assignee: "converge-attribute-deep-dup-onto-ruby-dup"
 blocked-by: null
 closed-reason: null
 ---

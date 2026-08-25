@@ -1,6 +1,6 @@
 ---
 title: "Arel tests build visitors on the abstract-adapter quoter where Rails uses FakeRecord"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
 cluster: null
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 250
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T12:22:53Z"
+assignee: "converge-attribute-deep-dup-onto-ruby-dup"
 blocked-by: null
 closed-reason: null
 ---
