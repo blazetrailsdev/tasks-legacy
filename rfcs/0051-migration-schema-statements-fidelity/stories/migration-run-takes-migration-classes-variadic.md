@@ -1,6 +1,6 @@
 ---
 title: "Migration#run takes one instance where Rails takes migration classes"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 200
 priority: 52
-pr: null
+pr: 7031
 claim: "2026-08-25T13:11:04Z"
 assignee: "attribute-dup-must-redup-mutable-value"
 blocked-by: null
