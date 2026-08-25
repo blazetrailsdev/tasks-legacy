@@ -1,6 +1,6 @@
 ---
 title: "Active Record MariaDB Tests (2) failing on main @d059b0dc"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0061-ci-failures"
 cluster: null
