@@ -1,6 +1,6 @@
 ---
 title: "TableDefinition#enum substitutes the enum name for the column type, bypassing enum_type validation"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
