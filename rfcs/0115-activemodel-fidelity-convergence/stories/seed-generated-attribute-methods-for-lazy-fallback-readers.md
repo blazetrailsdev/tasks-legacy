@@ -1,7 +1,7 @@
 ---
 title: "Seed GeneratedAttributeMethods for classes reached only through isInstanceMethodAlreadyImplemented"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
