@@ -1,7 +1,7 @@
 ---
 title: "converge-postgresql-database-statements-call-set-rows"
-status: in-progress
-updated: 2026-08-24
+status: done
+updated: 2026-08-25
 rfc: "0106-wide-call-set-direct-burndown"
 cluster: null
 packages: ["activerecord"]
