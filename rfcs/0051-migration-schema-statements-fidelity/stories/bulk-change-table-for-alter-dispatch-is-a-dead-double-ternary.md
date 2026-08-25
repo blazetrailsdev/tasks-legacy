@@ -1,6 +1,6 @@
 ---
 title: "bulkChangeTable's *_for_alter dispatch is a dead double-ternary and a hand-rolled partition"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
