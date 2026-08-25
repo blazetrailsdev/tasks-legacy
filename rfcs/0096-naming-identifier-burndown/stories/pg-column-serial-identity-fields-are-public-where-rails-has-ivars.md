@@ -1,6 +1,6 @@
 ---
 title: "PG Column#serial and #identity are public fields where Rails keeps ivars behind predicates"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 70
 priority: null
-pr: null
+pr: 7061
 claim: "2026-08-25T18:50:35Z"
 assignee: "pg-column-serial-identity-fields-are-public-where-rails-has-ivars"
 blocked-by: null
