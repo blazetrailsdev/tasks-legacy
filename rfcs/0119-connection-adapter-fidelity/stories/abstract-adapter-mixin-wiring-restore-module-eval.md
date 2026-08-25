@@ -1,6 +1,6 @@
 ---
 title: "Restore AbstractAdapter mixin wiring to module-evaluation time now that base.ts is out of the cycle"
-status: ready
+status: claimed
 updated: 2026-08-25
 rfc: "0119-connection-adapter-fidelity"
 cluster: null
@@ -9,8 +9,8 @@ deps-rfc: []
 est-loc: 120
 priority: null
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T15:38:33Z"
+assignee: "pg-table-definition-takes-unlogged-as-an-option-rails-reads-the-adapter"
 blocked-by: null
 closed-reason: null
 ---
