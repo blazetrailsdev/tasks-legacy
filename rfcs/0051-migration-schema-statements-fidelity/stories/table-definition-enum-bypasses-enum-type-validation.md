@@ -1,6 +1,6 @@
 ---
 title: "TableDefinition#enum substitutes the enum name for the column type, bypassing enum_type validation"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -8,7 +8,7 @@ deps: []
 deps-rfc: []
 est-loc: 60
 priority: 15
-pr: null
+pr: 7018
 claim: "2026-08-25T00:06:07Z"
 assignee: "move-ts-only-extras-out-of-mirrored-activemodel-naming-test-file"
 blocked-by: null
