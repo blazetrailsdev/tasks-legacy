@@ -1,7 +1,7 @@
 ---
 title: "Wrap raw execute() array binds in OID::Array::Data so PG type_cast needs no bare-Array arm"
-status: draft
-updated: 2026-08-09
+status: ready
+updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
 packages: []
