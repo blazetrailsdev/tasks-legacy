@@ -1,5 +1,5 @@
 ---
-title: "sqlite3-primary-key-singular-override-has-no-rails-counterpart"
+title: "SQLite3Adapter#primaryKey is a bespoke override; Rails has only primary_keys plus the abstract delegation"
 status: draft
 updated: 2026-08-25
 rfc: "0023-surfaced-deviations"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 60
 priority: null
 pr: null
 claim: null

@@ -1,5 +1,5 @@
 ---
-title: "arel-node-tests-assert-on-wrong-node-class"
+title: "arel node tests assert on the wrong node class (copy-pasted bodies)"
 status: draft
 updated: 2026-08-25
 rfc: "0122-arel-assertion-parity"
@@ -7,7 +7,7 @@ cluster: null
 packages: []
 deps: []
 deps-rfc: []
-est-loc: null
+est-loc: 200
 priority: null
 pr: null
 claim: null
