@@ -1,6 +1,6 @@
 ---
 title: "arel-duplicates-activemodel-type-default-value"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null

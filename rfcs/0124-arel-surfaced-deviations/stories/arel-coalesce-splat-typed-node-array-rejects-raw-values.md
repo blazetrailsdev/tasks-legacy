@@ -1,6 +1,6 @@
 ---
 title: "FactoryMethods#coalesce types its splat Node[], rejecting the raw values Rails passes through"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null

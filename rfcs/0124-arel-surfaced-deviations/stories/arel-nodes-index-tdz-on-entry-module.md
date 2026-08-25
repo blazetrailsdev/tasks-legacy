@@ -1,6 +1,6 @@
 ---
 title: "Two arel modules throw a TDZ error when entered as ESM entry modules"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0124-arel-surfaced-deviations"
 cluster: null
