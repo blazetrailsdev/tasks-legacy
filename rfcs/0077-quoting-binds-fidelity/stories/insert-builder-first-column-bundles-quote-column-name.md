@@ -1,7 +1,7 @@
 ---
 title: "InsertBuilder#firstColumn bundles Rails' keys.first + quote_column_name, so no adapter buildInsertSql can mirror rb:638-682"
-status: draft
-updated: 2026-08-15
+status: closed
+updated: 2026-08-25
 rfc: "0077-quoting-binds-fidelity"
 cluster: null
 packages: []
@@ -13,7 +13,7 @@ pr: null
 claim: null
 assignee: null
 blocked-by: null
-closed-reason: null
+closed-reason: "Delivered on origin/main. (1) InsertBuilder#firstColumn() no longer exists: git grep -n firstColumn origin/main -- packages/activerecord/src returns only unrelated hits in relation/calculations.ts. (2) The MySQL adapter now mirrors abstract_mysql_adapter.rb:638-640 directly — abstract-mysql-adapter.ts:1111-1112 reads 'const [first] = insert.keys; const noOpColumn = first !== undefined ? this.quoteColumnName(first) : undefined', i.e. raw keys off the builder plus the dialect's own quote_column_name. (3) InsertBuilder now exposes 'readonly keys: Set<string>' (insert-all.ts:604) per insert_all.rb:228, and Builder#valuesList() exists (insert-all.ts:695). (4) The two baselined rows are gone with their whole shard: scripts/api-compare/call-mismatches-exclude/activerecord/connection-adapters/abstract-mysql-adapter.json does not exist in origin/main. Residual: into() still bundles the compiled VALUES list rather than Rails' two-fragment split — documented at insert-all.ts:588-592, a separate smaller item, not this story's premise."
 ---
 
 ## Context
