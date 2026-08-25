@@ -3,7 +3,7 @@ rfc: "0121-internal-tag-accounting"
 title: "Constrain @internal to Rails-private surface; account for the rest"
 status: draft
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-25
 owner: "@deanmarano"
 packages:
   - "activerecord"
@@ -17,6 +17,7 @@ clusters: []
 related-rfcs:
   - "0025-fidelity-verification-tooling"
   - "0080-api-compare-jsdoc-metadata"
+priority: 3
 ---
 
 ## Problem
