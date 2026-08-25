@@ -71,3 +71,22 @@ are then deleted, leaving the call as Rails writes it.
 - [ ] `pnpm parity:api` delta non-negative; `pnpm parity:api:calls` / `:args`
       clean.
 - [ ] SQLite, PostgreSQL and MySQL/MariaDB lanes green.
+
+## Progress (PR #7041, 2026-08-25)
+
+The base body landed: `explain` in
+`connection-adapters/abstract/database-statements.ts` now raises
+`NotImplementedError` with Rails' `(arel, binds = [], options = [])` signature
+(`database_statements.rb:180-182`), replacing the invented
+`throw new Error("explain must be implemented by adapter subclass")`.
+
+The remaining half — making the member REQUIRED on the abstract adapter and
+dropping `execExplain`'s `!` — is blocked on
+`schema-statements-host-type-inherits-adapter-surface`. Measured on that PR:
+`interface SchemaStatements extends DatabaseAdapter`
+(`abstract/schema-statements.ts:313`) republishes every REQUIRED adapter member
+as public surface of `schema-statements.ts`, so flipping `explain?` to `explain`
+adds the extra-surface row `schema-statements.ts::explain` and moves
+activerecord 1392 -> 1393, reddening `pnpm parity:api:extra:gate`. Optional
+members are exempt from that count; reverting only the `?` restored 1392. The
+mark must not be raised, so the inheritance has to go first.
