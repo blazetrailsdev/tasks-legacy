@@ -1,5 +1,5 @@
 ---
-title: "Drop the invented  alias beside Rails' "
+title: "Drop the invented Rollup alias beside Rails' RollUp"
 status: draft
 updated: 2026-08-25
 rfc: "0023-surfaced-deviations"
