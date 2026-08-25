@@ -1,14 +1,14 @@
 ---
 title: "visit_CheckConstraintDefinition interpolates the constraint name bare, not quoted"
-status: claimed
-updated: 2026-08-24
+status: in-progress
+updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 deps: []
 deps-rfc: []
 est-loc: 40
 priority: 13
-pr: null
+pr: 7016
 claim: "2026-08-24T23:42:13Z"
 assignee: "move-ts-only-extras-out-of-the-remaining-activemodel-type-test-files-part-2"
 blocked-by: null
