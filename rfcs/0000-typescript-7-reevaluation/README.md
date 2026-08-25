@@ -42,7 +42,10 @@ appears as a line item in the TS 7.1 iteration plan. Until they land, adopting
 TS 7 still requires pinning TypeScript 5.x alongside it — the **split env** the
 maintainer rejected on [tasks PR #59][pr59] (2026-07-22: _"Not interested in the
 split env, will wait for native APIs in v7."_). That objection is unchanged in
-kind, but it now applies to **one** package rather than two.
+kind, but its scope changed. Four packages import the compiler API, not two —
+and **two of them can migrate today, on 7.0.2**, independent of this decision
+(see § "What the virtual FS closes"). After that work, the split would be
+`trails-tsc` alone (plus `trailties` until 7.1).
 
 This is a decision record, not a migration plan. It ships so the next
 re-evaluation starts from measured data instead of redoing this work. The one
@@ -257,7 +260,21 @@ shows **115 new exported names**, including a `LanguageService` class,
 `TextEdit`, and an import-adder. The API is under active build-out and is
 tracking exactly the gaps below.
 
-### API-surface mapping for our two consumers
+### API-surface mapping for our compiler-API consumers
+
+**Correction to the framing inherited from #59:** this repo has **four**
+compiler-API consumers, not two. `grep -rn 'from "typescript"'` across
+`packages/` (2026-08-25) finds **34 import sites**:
+
+| package                                   | sites | uses                                                           | status                  |
+| ----------------------------------------- | ----- | -------------------------------------------------------------- | ----------------------- |
+| `trails-tsc`                              | 16    | solution builder, LS plugin                                    | **blocked**             |
+| `activerecord` `src/type-virtualization/` | 8     | `createSourceFile`, `createScanner`, `getLeadingCommentRanges` | **migratable on 7.0.2** |
+| `activerecord-cli` `tsc-wrapper`          | 8     | `createSourceFile` + diagnostics                               | **migratable on 7.0.2** |
+| `trailties` `template-builder/testing.ts` | 2     | `transpileModule`                                              | migratable on 7.1       |
+
+`activerecord`'s is published surface — `./type-virtualization/*.js` is an
+`exports` subpath backed by the `typescript: ">=5.0.0"` peer dependency.
 
 Method: `grep -rhoE '\bts\.[A-Za-z][A-Za-z0-9_]*'` across
 `packages/trails-tsc/src` and `packages/activerecord-cli/src` (2026-08-25),
@@ -284,7 +301,7 @@ with runtime spot-checks via `require("typescript/unstable/ast")`.
 | **`createSolutionBuilder` / `createSolutionBuilderHost` / `createEmitAndSemanticDiagnosticsBuilderProgram`**                 | ✗     | ✗             | **no programmatic `--build`.** Not in the 7.1 iteration plan                                                                                                                                                                                            |
 | **`LanguageServiceHost` / `ScriptSnapshot` / decorating a `LanguageService`**                                                | ✗     | ✗             | 7.1's `LanguageService` class is **server-owned with 5 methods** (`getImportAdderEdits`, `getImportEditsForSymbols`, `getReferencedSymbolsForNode`, `getSignatureUsage`, `getCompletionsAtPosition`). There is no host injection and no plugin protocol |
 
-#### Verdict: `activerecord-cli`'s `tsc-wrapper` — **plausibly migratable on 7.1**
+#### Verdict: `activerecord-cli`'s `tsc-wrapper` — **migratable today on 7.0.2**
 
 Its work is parse-and-diagnose. `schema-ts-parser.ts` and
 `schema-ts-model-parser.ts` are pure AST walks (guards + `forEachChild` +
@@ -292,7 +309,8 @@ Its work is parse-and-diagnose. `schema-ts-parser.ts` and
 missing text-parse, which a virtual-FS `Project` covers.
 `auto-import.ts` is the same shape. `cli.ts`'s `getPreEmitDiagnostics` +
 formatting helpers are compose-or-reimplement. No solution builder, no LS
-plugin. **This package is not the blocker.**
+plugin. **This package is not the blocker, and it does not need to wait for
+7.1** — the virtual-FS measurements below close its only real gap.
 
 #### Verdict: `trails-tsc` — **not migratable, and not scheduled to become so**
 
@@ -311,6 +329,75 @@ Two of its five compiler-touching modules have no path forward:
 would be reworkable onto the snapshot API. The two above are not.
 
 **This is the whole remaining blocker, and it is one package.**
+
+### What the virtual FS closes (measured 2026-08-25, TS 7.0.2)
+
+`typescript/unstable/fs`'s `createVirtualFileSystem` / `FileSystem` delegation
+turned out to close the largest gap in the table above. This was verified by
+building working probes against `typescript@7.0.2`, not by reading `.d.ts`.
+
+**Text parsing works.** A virtual FS holding a tsconfig + one source file, opened
+via `new API({ fs })` → `updateSnapshot({ openProjects })` → `Program.getSourceFile()`,
+returns a real AST. The `unstable/ast` guards (`isCallExpression`, `isIdentifier`,
+`isPropertyAccessExpression`) and `node.forEachChild` all work on it, and a walk
+over a schema-shaped file extracted exactly the call names
+`schema-ts-parser.ts` extracts. On
+`packages/activerecord/src/test-helpers/test-schema.ts` (2,034 lines) both
+compilers produce **identical node counts (5,686)**.
+
+| same file, same dense walk | TS 5.9.3                    | TS 7.0.2 via virtual FS     |
+| -------------------------- | --------------------------- | --------------------------- |
+| parse                      | 71.0ms (`createSourceFile`) | **5.5ms** (`getSourceFile`) |
+| dense walk, 5,686 nodes    | 1.4ms                       | 3.5ms                       |
+| total, warm process        | 72.4ms                      | **9.0ms**                   |
+| one-time `API` spawn       | —                           | ~99ms                       |
+
+The AST is shipped over the wire **once** and materialized locally — the walk is
+not per-node RPC. The walk is 2.5× slower (remote node materialization) but the
+parse win dominates from the second file onward. For a one-shot CLI parsing a
+single file, TS 7 is roughly a wash (108ms vs 72ms).
+
+**The real-FS + in-memory overlay pattern works** — the `tsc-wrapper` case. An
+in-memory tsconfig and source, type-checked against the real on-disk
+`activerecord` project, correctly reported
+`TS2322: Type 'number' is not assignable to type 'string'`, with 2 overlay hits
+and 64 real-FS fallthroughs (`readFile` returning `undefined` falls through to
+disk, per the documented contract).
+
+**Diagnostics arrive pre-flattened** as
+`{ fileName, pos, end, code, category, text }`. This removes the need for
+`flattenDiagnosticMessageText` entirely, and `computeLineStarts`
+(`unstable/ast/scanner`) converts `pos` to line/column — so `formatDiagnostics`
+is a short reimplementation rather than a gap.
+
+#### What it does **not** close: `--build`
+
+`trails-tsc/src/build.ts` is not merely a `--build` driver — it is a
+**virtualizing** build. `buildCompilerHost` (`src/host.ts`) intercepts `readFile`
+so plugins rewrite source text before the compiler sees it, and
+`remapDiagnostics` maps diagnostics from the virtualized text back to the
+user's original coordinates via cached line deltas. Two consequences:
+
+- **Shelling out to `tsc --build` cannot replace it.** The CLI compiles what is
+  on disk and exposes no filesystem hook. This was the cheapest hoped-for escape
+  and it is structurally unavailable.
+- **The API gets halfway.** `unstable/fs`'s `readFile` hook is a direct analogue
+  of `buildCompilerHost` — opening all 18 project configs fired **16,233**
+  `readFile` callbacks into JS, with a targeted file intercepted 4×. So the
+  virtualization mechanism ports cleanly.
+
+But the API hands back _projects_, not a _build_. Opening the root
+`tsconfig.json` yields **1** project with 0 root files — the reference graph does
+not expand. Opening all 18 configs explicitly works (18 projects, 6.2s), but
+without `--build` semantics: `activerecord`'s full semantic check then reports
+**712 diagnostics against `tsc --build`'s 2**, because module resolution follows
+`node_modules/@blazetrails/arel/src/*.ts` instead of redirecting to
+`../arel/dist/*.d.ts` the way `references` does. There is also no up-to-date
+checking, no build ordering, and no emit at all in 7.0.2 (`Program.emit` arrives
+in 7.1). Rebuilding those **is** reimplementing the solution builder.
+
+`trails-tsc` therefore stays blocked on both counts, and this is now a measured
+conclusion rather than an inference from the missing exports.
 
 ### Compatibility survey, re-verified 2026-08-25
 
@@ -413,6 +500,9 @@ fear, not a measurement; the real thing is a 15-file allowlist.
   diagnostic delta is 2 errors in 1 file and the `.d.ts` delta is 14 files. A
   parity harness is disproportionate to a 15-row allowlist; if we migrate, the
   spike script plus a one-shot review is enough.
+- **Replacing `trails-tsc`'s solution builder by shelling out to `tsc --build`.**
+  Measured as structurally impossible: the build virtualizes source text through
+  plugin `readFile` interception, and the `tsc` CLI has no filesystem hook.
 - **Flipping the editor Language Service.** Out of scope until 7.1 ships an API
   a plugin can attach to.
 - **Adopting TS 7-only language features.** A compiler swap at behavioural
@@ -446,14 +536,20 @@ exist so the re-evaluation is cheap rather than a from-scratch redo.
 1. **Now (unblocked, worth doing regardless of TS 7).**
    - `fix-anonymous-class-declaration-emit` — fix the two TS4094 sites in
      `trailties/src/application.ts`.
+   - `port-tsc-wrapper-to-ts7-api` — the virtual FS closes its only real gap on
+     7.0.2; no 7.1 wait.
+   - `port-type-virtualization-to-ts7-api` — same shape, but it is **published
+     surface**, so it carries a design decision the others do not.
+
+   Together these shrink the eventual split from four packages to one
+   (`trails-tsc`, plus `trailties` until 7.1) — worth doing whether or not we
+   ever adopt TS 7.
 
 2. **At TS 7.1 beta, 2026-09-09 (the API surface freezes).**
    - `recheck-ts7-api-surface` — re-run this RFC's API-surface mapping against
      the 7.1 beta and record the verdict for `trails-tsc`.
 
 3. **At TS 7.1 stable, 2026-11-10 — gated on the two gaps closing.**
-   - `port-tsc-wrapper-to-ts7-api` — move `activerecord-cli`'s `tsc-wrapper`
-     onto the TS 7 API.
    - `port-trails-tsc-to-ts7-api` — the blocker; only actionable if the
      solution-builder and LS-plugin gaps close.
    - `flip-build-to-ts7` — swap the pinned `typescript` and drop TS 5.x
@@ -481,7 +577,10 @@ re-checkable, not that code changed.
 
 ## Open questions
 
-1. **Does TS 7.1 ship a programmatic `--build`?** Not on the iteration plan.
+1. **Does TS 7.1 ship a programmatic `--build`?** Not on the iteration plan, and
+   measurement confirms nothing today substitutes for it — the API's
+   explicitly-opened projects lack reference redirection (712 diagnostics vs
+   `--build`'s 2), up-to-date checking, ordering, and emit.
    _Recommendation:_ ask upstream (`microsoft/TypeScript` discussion) before
    7.1 beta prep on 2026-09-04, so the answer is known while it can still
    influence 7.1 rather than 7.2.
@@ -528,6 +627,14 @@ dist-tags time`, queried 2026-08-25.
 
 ## Changelog
 
+- 2026-08-25: revised after probing `typescript/unstable/fs`. Corrected the
+  consumer count (four packages, not one — `activerecord`'s published
+  `type-virtualization` and `trailties` were missed); corrected the
+  `createSourceFile` row from a hard gap to a verified rework, which moves two
+  packages to "migratable today on 7.0.2"; added measured parse/walk numbers and
+  the overlay result; recorded that shelling out to `tsc --build` cannot replace
+  the virtualizing solution builder, so `trails-tsc` is blocked by measurement
+  rather than by inference.
 - 2026-08-25: initial RFC. Supersedes the closed
   `0000-typescript-7-native-compiler` (tasks PR #59). Re-verified every dated
   claim; corrected the "CI long pole" and "~60s cold pre-commit" premises with

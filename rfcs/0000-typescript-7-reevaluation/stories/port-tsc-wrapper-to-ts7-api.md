@@ -1,18 +1,18 @@
 ---
 title: "Port activerecord-cli's tsc-wrapper to the TS 7 API"
-status: blocked
+status: ready
 updated: 2026-08-25
 rfc: "0000-typescript-7-reevaluation"
 cluster: build-infra
 packages: ["activerecord-cli"]
-deps: ["recheck-ts7-api-surface"]
+deps: []
 deps-rfc: []
 est-loc: 250
 priority: null
 pr: null
 claim: null
 assignee: null
-blocked-by: "TypeScript 7.1 stable — scheduled 2026-11-10 (microsoft/TypeScript#63703). Also gated on the repo actually deciding to migrate, which requires the trails-tsc blocker to clear."
+blocked-by: null
 ---
 
 ## Context
@@ -31,22 +31,35 @@ migratable on TS 7.1. Its compiler use, by file:
 
 Translation notes from the RFC's mapping:
 
-- `ts.createSourceFile(text, …)` has **no TS 7 equivalent** — `ast/factory`'s
-  `createSourceFile` builds from statements and `ast/scanner` is token-level.
-  Parsing a standalone file means routing through a `Project` over
-  `createVirtualFileSystem` (`typescript/unstable/fs`).
+- `ts.createSourceFile(text, …)` routes through a `Project` over
+  `createVirtualFileSystem` (`typescript/unstable/fs`). **Verified working on
+  7.0.2** (RFC § "What the virtual FS closes"): identical AST (5,686 nodes on a
+  2,034-line file), guards and `node.forEachChild` intact, and the real-FS +
+  in-memory overlay pattern this package needs correctly type-checks synthesized
+  files against the on-disk project. Parse is 5.5ms vs 5.9.3's 71.0ms; the dense
+  walk is 2.5× slower; a one-time ~99ms `API` spawn applies per process.
 - `getPreEmitDiagnostics` composes from `Program.getSyntacticDiagnostics` +
   `getSemanticDiagnostics` + `getDeclarationDiagnostics` +
   `getConfigFileParsingDiagnostics`.
 - `readConfigFile` / `parseJsonConfigFileContent` / `parseCommandLine` are on
   `API` in the 7.1 nightly.
-- The four diagnostic **formatting** helpers have no TS 7 equivalent at all and
-  must be reimplemented (~100 LOC).
+- Diagnostics arrive pre-flattened as
+  `{ fileName, pos, end, code, category, text }`, so
+  `flattenDiagnosticMessageText` is unnecessary and `formatDiagnostics` is a
+  short reimplementation over `computeLineStarts` (`unstable/ast/scanner`).
 - `ts.sys` → `node:fs`; `ExitStatus` → a 3-member local enum.
 - `forEachChild` is now a **method on `Node`**, not a free function.
 
 `tsc-wrapper` drives the virtualized DX type tests
 (`pnpm test:types:virtualized`), whose CI job medians 1.4m over 155 runs.
+
+**This story does not need 7.1 and does not need a repo-wide TS 7 decision.**
+It is worth landing on its own: it removes one of the four packages that would
+otherwise force a split environment.
+
+Note the API is exported under `unstable/` — no semver guarantee. Acceptable for
+internal tooling like this; the same is not automatically true of published
+surface (see `port-type-virtualization-to-ts7-api`).
 
 ## Acceptance criteria
 

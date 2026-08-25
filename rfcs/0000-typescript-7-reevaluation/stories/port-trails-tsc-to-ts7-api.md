@@ -12,7 +12,7 @@ priority: null
 pr: null
 claim: null
 assignee: null
-blocked-by: "No TS 7 equivalent exists for programmatic --build (createSolutionBuilder) or for LanguageService plugin hosting, as of typescript@7.0.2 and 7.1.0-dev.20260825.1 (verified 2026-08-25). Neither is a line item in the TS 7.1 iteration plan (microsoft/TypeScript#63703). This story is not actionable until both gaps close."
+blocked-by: "No TS 7 equivalent for programmatic --build (createSolutionBuilder) or LanguageService plugin hosting, as of typescript@7.0.2 and 7.1.0-dev.20260825.1 (verified 2026-08-25); neither is a line item in the 7.1 iteration plan (microsoft/TypeScript#63703). Two escapes were measured and ruled out: shelling out to tsc --build cannot carry the virtualizing host, and rebuilding the build on the API loses reference redirection (712 diagnostics vs 2), up-to-date checking, ordering, and emit."
 ---
 
 ## Context
@@ -35,8 +35,24 @@ against `typescript@7.0.2` and `typescript@7.1.0-dev.20260825.1`):
 | **`src/build.ts`**                      | **`createSolutionBuilder`, `createSolutionBuilderHost`, `createEmitAndSemanticDiagnosticsBuilderProgram`, `ExitStatus`** | **none — no programmatic `--build` in TS 7**                                                                       |
 | **`src/lsp-plugin.ts`** (`./ts-plugin`) | **`LanguageServiceHost`, `ScriptSnapshot`, decorating `LanguageService`**                                                | **none — 7.1's `LanguageService` is a 5-method server-owned client with no host injection and no plugin protocol** |
 
-The four reworkable modules are real work but ordinary. The two bolded ones
-have no upstream story.
+The four reworkable modules are real work but ordinary — and the virtual FS
+makes them more tractable than the table suggests: `unstable/fs`'s `readFile`
+hook is a direct analogue of `buildCompilerHost`'s source-text interception
+(measured: opening all 18 project configs fired 16,233 `readFile` callbacks into
+JS). The two bolded ones have no upstream story, and two candidate escapes were
+measured and ruled out (2026-08-25):
+
+- **Shell out to `tsc --build`.** Structurally impossible. `build.ts` is a
+  _virtualizing_ build — plugins rewrite source text before the compiler sees it
+  and `remapDiagnostics` maps coordinates back. The `tsc` CLI compiles what is on
+  disk and exposes no filesystem hook.
+- **Rebuild the solution builder on the API.** The API returns projects, not a
+  build. Opening the root `tsconfig.json` yields 1 project with 0 root files;
+  opening all 18 explicitly works but loses reference redirection —
+  `activerecord`'s semantic check reports **712 diagnostics against
+  `tsc --build`'s 2**, resolving `node_modules/@blazetrails/arel/src/*.ts`
+  instead of `../arel/dist/*.d.ts`. No up-to-date checking, no ordering, no emit
+  before 7.1.
 
 ## Acceptance criteria
 
