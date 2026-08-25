@@ -1,6 +1,6 @@
 ---
 title: "Burn down the activemodel call-mismatch baseline rows"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: "api-compare"
@@ -11,7 +11,7 @@ deps:
   - converge-dirty-tracker-onto-rails-mutation-trackers
 deps-rfc: []
 est-loc: 300
-pr: null
+pr: 7034
 claim: "2026-08-25T13:58:43Z"
 assignee: "burn-down-activemodel-call-mismatch-baseline-rows"
 blocked-by: null
