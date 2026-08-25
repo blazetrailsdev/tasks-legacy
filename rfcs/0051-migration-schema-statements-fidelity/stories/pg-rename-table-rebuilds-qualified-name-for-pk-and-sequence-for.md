@@ -1,6 +1,6 @@
 ---
 title: "PG renameTable passes an invented renamedName to pkAndSequenceFor"
-status: claimed
+status: in-progress
 updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: 70
 priority: 36
-pr: null
+pr: 7026
 claim: "2026-08-25T09:46:54Z"
 assignee: "missing-rails-call-tag-inert-on-non-rails-class-member"
 blocked-by: null
