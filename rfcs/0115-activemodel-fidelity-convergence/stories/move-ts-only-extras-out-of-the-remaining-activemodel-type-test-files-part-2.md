@@ -1,7 +1,7 @@
 ---
 title: "move-ts-only-extras-out-of-the-remaining-activemodel-type-test-files-part-2"
-status: claimed
-updated: 2026-08-24
+status: in-progress
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: []
@@ -9,7 +9,7 @@ deps: []
 deps-rfc: []
 est-loc: null
 priority: null
-pr: null
+pr: 7016
 claim: "2026-08-24T23:42:13Z"
 assignee: "move-ts-only-extras-out-of-the-remaining-activemodel-type-test-files-part-2"
 blocked-by: null
