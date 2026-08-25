@@ -121,7 +121,7 @@
 | [0116-activejob-dependent-activerecord-work](rfcs/0116-activejob-dependent-activerecord-work/README.md) | ActiveJob-dependent ActiveRecord work: the dependent: :destroy_async closure | draft | @deanmarano | activerecord |
 | [0117-arel-extra-surface-burndown](rfcs/0117-arel-extra-surface-burndown/README.md) | arel extra TS surface burndown to zero | closed | @deanmarano | arel |
 | [0118-rfc-story-cap-and-succession](rfcs/0118-rfc-story-cap-and-succession/README.md) | Open-story pressure signal and a supersede that carries stories | draft | @deanmarano | — |
-| [0119-connection-adapter-fidelity](rfcs/0119-connection-adapter-fidelity/README.md) | Connection-adapter fidelity — converge connection_adapters/ onto the Rails tree | draft | @deanmarano | activerecord |
+| [0119-connection-adapter-fidelity](rfcs/0119-connection-adapter-fidelity/README.md) | Connection-adapter fidelity — converge connection_adapters/ onto the Rails tree | active | @deanmarano | activerecord |
 | [0120-extra-surface-gating-rollout](rfcs/0120-extra-surface-gating-rollout/README.md) | Extra-surface gating rollout: an enrollment contract for parity:api:extra | draft | @deanmarano | arel, globalid, abstractcontroller, i18n, activerecord |
 | [0121-internal-tag-accounting](rfcs/0121-internal-tag-accounting/README.md) | Constrain @internal to Rails-private surface; account for the rest | active | @deanmarano | activerecord, actionpack, activemodel, activesupport, actionview, arel, trailties |
 | [0122-arel-assertion-parity](rfcs/0122-arel-assertion-parity/README.md) | arel assertion parity to zero | active | @deanmarano | arel |
