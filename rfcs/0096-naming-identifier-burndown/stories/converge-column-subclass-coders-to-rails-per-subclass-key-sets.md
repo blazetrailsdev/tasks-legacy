@@ -1,6 +1,6 @@
 ---
 title: "Converge the adapter Column coders to Rails' per-subclass key sets (delegate oid/fmod, derive MySQL extra)"
-status: in-progress
+status: done
 updated: 2026-08-25
 rfc: "0096-naming-identifier-burndown"
 cluster: null
