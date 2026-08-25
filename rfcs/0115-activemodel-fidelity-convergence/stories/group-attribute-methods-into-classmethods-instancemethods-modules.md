@@ -1,7 +1,7 @@
 ---
 title: "Group attribute-methods.ts into real ClassMethods / InstanceMethods module objects"
 status: ready
-updated: 2026-08-23
+updated: 2026-08-25
 rfc: "0115-activemodel-fidelity-convergence"
 cluster: null
 packages: ["activemodel"]
@@ -14,6 +14,7 @@ claim: null
 assignee: null
 blocked-by: null
 closed-reason: null
+priority: 8
 ---
 
 ## Context
