@@ -1,7 +1,7 @@
 ---
 title: "Collapse the SQLite visit_CreateIndexDefinition fork back onto the abstract body"
-status: ready
-updated: 2026-08-24
+status: claimed
+updated: 2026-08-25
 rfc: "0051-migration-schema-statements-fidelity"
 cluster: null
 packages: []
@@ -10,8 +10,8 @@ deps-rfc: []
 est-loc: 90
 priority: 38
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T13:22:54Z"
+assignee: "table-definition-takes-conn-positionally-and-invents-adaptername"
 blocked-by: null
 closed-reason: null
 ---
