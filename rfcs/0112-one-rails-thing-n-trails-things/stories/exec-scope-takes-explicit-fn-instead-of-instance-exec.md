@@ -1,15 +1,15 @@
 ---
 title: "_exec_scope takes an explicit fn parameter instead of Rails' instance_exec block"
-status: ready
-updated: 2026-08-22
+status: claimed
+updated: 2026-08-25
 rfc: "0112-one-rails-thing-n-trails-things"
 cluster: duplicate-bodies
 deps: []
 deps-rfc: []
 est-loc: 160
 pr: null
-claim: null
-assignee: null
+claim: "2026-08-25T17:30:31Z"
+assignee: "exec-scope-takes-explicit-fn-instead-of-instance-exec"
 blocked-by: null
 closed-reason: null
 ---
